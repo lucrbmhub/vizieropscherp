@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as VoorWerkgeversRouteImport } from './routes/voor-werkgevers'
 import { Route as UwvTrajectRouteImport } from './routes/uwv-traject'
 import { Route as OverOnsRouteImport } from './routes/over-ons'
+import { Route as LeiderschapRouteImport } from './routes/leiderschap'
 import { Route as KennismakenRouteImport } from './routes/kennismaken'
 import { Route as InzichtenRouteImport } from './routes/inzichten'
 import { Route as CoachingVoorMijRouteImport } from './routes/coaching-voor-mij'
@@ -56,6 +57,11 @@ const UwvTrajectRoute = UwvTrajectRouteImport.update({
 const OverOnsRoute = OverOnsRouteImport.update({
   id: '/over-ons',
   path: '/over-ons',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeiderschapRoute = LeiderschapRouteImport.update({
+  id: '/leiderschap',
+  path: '/leiderschap',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KennismakenRoute = KennismakenRouteImport.update({
@@ -236,6 +242,7 @@ export interface FileRoutesByFullPath {
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
   '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
+  '/leiderschap': typeof LeiderschapRoute
   '/over-ons': typeof OverOnsRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
@@ -270,6 +277,7 @@ export interface FileRoutesByTo {
   '/coaches': typeof CoachesRoute
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
   '/kennismaken': typeof KennismakenRoute
+  '/leiderschap': typeof LeiderschapRoute
   '/over-ons': typeof OverOnsRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
@@ -306,6 +314,7 @@ export interface FileRoutesById {
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
   '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
+  '/leiderschap': typeof LeiderschapRoute
   '/over-ons': typeof OverOnsRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
@@ -343,6 +352,7 @@ export interface FileRouteTypes {
     | '/coaching-voor-mij'
     | '/inzichten'
     | '/kennismaken'
+    | '/leiderschap'
     | '/over-ons'
     | '/uwv-traject'
     | '/voor-werkgevers'
@@ -377,6 +387,7 @@ export interface FileRouteTypes {
     | '/coaches'
     | '/coaching-voor-mij'
     | '/kennismaken'
+    | '/leiderschap'
     | '/over-ons'
     | '/uwv-traject'
     | '/voor-werkgevers'
@@ -412,6 +423,7 @@ export interface FileRouteTypes {
     | '/coaching-voor-mij'
     | '/inzichten'
     | '/kennismaken'
+    | '/leiderschap'
     | '/over-ons'
     | '/uwv-traject'
     | '/voor-werkgevers'
@@ -448,6 +460,7 @@ export interface RootRouteChildren {
   CoachingVoorMijRoute: typeof CoachingVoorMijRoute
   InzichtenRoute: typeof InzichtenRouteWithChildren
   KennismakenRoute: typeof KennismakenRoute
+  LeiderschapRoute: typeof LeiderschapRoute
   OverOnsRoute: typeof OverOnsRoute
   UwvTrajectRoute: typeof UwvTrajectRoute
   VoorWerkgeversRoute: typeof VoorWerkgeversRoute
@@ -474,6 +487,13 @@ declare module '@tanstack/react-router' {
       path: '/over-ons'
       fullPath: '/over-ons'
       preLoaderRoute: typeof OverOnsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leiderschap': {
+      id: '/leiderschap'
+      path: '/leiderschap'
+      fullPath: '/leiderschap'
+      preLoaderRoute: typeof LeiderschapRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/kennismaken': {
@@ -770,6 +790,7 @@ const rootRouteChildren: RootRouteChildren = {
   CoachingVoorMijRoute: CoachingVoorMijRoute,
   InzichtenRoute: InzichtenRouteWithChildren,
   KennismakenRoute: KennismakenRoute,
+  LeiderschapRoute: LeiderschapRoute,
   OverOnsRoute: OverOnsRoute,
   UwvTrajectRoute: UwvTrajectRoute,
   VoorWerkgeversRoute: VoorWerkgeversRoute,
