@@ -330,7 +330,7 @@ address{font-style:normal}
 .footer-grid p,.footer-grid address{font-size:13.5px;line-height:1.65;color:var(--mint-dof)}
 .footer-grid address{margin-bottom:12px}
 .footer-grid address strong{display:block;font-weight:500;color:var(--mint)}
-.footer-brand{display:flex;align-items:center;gap:11px;margin-bottom:14px;color:#F5EFE3}
+.footer-brand,.footer-grid .footer-brand{display:flex;align-items:center;gap:11px;margin-bottom:14px;color:#F5EFE3}
 .footer-brand span{font-family:var(--f-display);font-weight:500;font-size:18px;color:#F5EFE3}
 .footer-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px;font-size:12px;color:#8FA6A0}
 .footer-bottom a{color:#8FA6A0;border-bottom:1px solid #8FA6A0}
