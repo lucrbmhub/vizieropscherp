@@ -1,7 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/uwv-traject")({
-  head: () => ({ meta: [{ title: "Werkfit Maken &amp; Naar Werk via UWV | Vizier op Scherp" }] }),
+  head: () => ({
+    meta: [
+      { title: "UWV-traject: Werkfit & Naar Werk | Vizier op Scherp" },
+      { name: "description", content: "Werkfit Maken en Naar Werk-trajecten via UWV in Amsterdam en Haarlem. Vaste coach, jouw tempo, geen ingewikkelde taal. Kosteloos via UWV." },
+      { property: "og:title", content: "UWV-traject: Werkfit & Naar Werk | Vizier op Scherp" },
+      { property: "og:description", content: "Weer stappen zetten richting werk met een vaste coach. Persoonlijk, geduldig en in jouw tempo." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://vizieropscherp.lovable.app/uwv-traject" },
+    ],
+    links: [{ rel: "canonical", href: "https://vizieropscherp.lovable.app/uwv-traject" }],
+  }),
   component: Page,
 });
 

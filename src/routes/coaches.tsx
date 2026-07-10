@@ -1,7 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/coaches")({
-  head: () => ({ meta: [{ title: "Onze coaches | Gecertificeerde loopbaancoaches | Vizier op Scherp" }] }),
+  head: () => ({
+    meta: [
+      { title: "Onze coaches | Gecertificeerd team | Vizier op Scherp" },
+      { name: "description", content: "Maak kennis met het kleine, vaste netwerk van gecertificeerde loopbaancoaches in Amsterdam en Haarlem. Echte mensen, geen anonieme database." },
+      { property: "og:title", content: "Onze coaches | Vizier op Scherp" },
+      { property: "og:description", content: "Zelah, Lianne, Maaike, Floor en Luc: ervaren loopbaancoaches met een eigen verhaal en aanpak." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://vizieropscherp.lovable.app/coaches" },
+    ],
+    links: [{ rel: "canonical", href: "https://vizieropscherp.lovable.app/coaches" }],
+  }),
   component: Page,
 });
 

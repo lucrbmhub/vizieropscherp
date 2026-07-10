@@ -1,7 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/over-ons")({
-  head: () => ({ meta: [{ title: "Over Vizier op Scherp | Regionaal netwerk voor loopbaancoaching" }] }),
+  head: () => ({
+    meta: [
+      { title: "Over ons | Vizier op Scherp" },
+      { name: "description", content: "Vizier op Scherp is een regionaal netwerk voor loopbaancoaching in Amsterdam, Haarlem en omgeving. Ons verhaal, onze aanpak en werkwijze." },
+      { property: "og:title", content: "Over Vizier op Scherp" },
+      { property: "og:description", content: "Kwaliteit door focus. Eenvoud door organisatie. Eén aanspreekpunt en heldere afspraken." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://vizieropscherp.lovable.app/over-ons" },
+    ],
+    links: [{ rel: "canonical", href: "https://vizieropscherp.lovable.app/over-ons" }],
+  }),
   component: Page,
 });
 

@@ -1,7 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/voor-werkgevers")({
-  head: () => ({ meta: [{ title: "Loopbaancoaching voor uw medewerkers | Vizier op Scherp" }] }),
+  head: () => ({
+    meta: [
+      { title: "Loopbaancoaching voor werkgevers & HR | Vizier op Scherp" },
+      { name: "description", content: "Loopbaancoaching en coachingpool voor werkgevers in Amsterdam, Haarlem en omgeving. Eén aanspreekpunt, gecertificeerde coaches, heldere prijsafspraken." },
+      { property: "og:title", content: "Loopbaancoaching voor werkgevers & HR | Vizier op Scherp" },
+      { property: "og:description", content: "Coachingpool, individuele trajecten en proactieve loopbaangesprekken. Georganiseerd voor HR, persoonlijk voor de medewerker." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://vizieropscherp.lovable.app/voor-werkgevers" },
+    ],
+    links: [{ rel: "canonical", href: "https://vizieropscherp.lovable.app/voor-werkgevers" }],
+  }),
   component: Page,
 });
 

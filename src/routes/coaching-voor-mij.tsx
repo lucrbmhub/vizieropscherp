@@ -1,7 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/coaching-voor-mij")({
-  head: () => ({ meta: [{ title: "Loopbaancoaching voor jou | Vizier op Scherp Amsterdam &amp; Haarlem" }] }),
+  head: () => ({
+    meta: [
+      { title: "Coaching voor mij | Loopbaancoaching Amsterdam & Haarlem" },
+      { name: "description", content: "Loopbaancoaching voor medewerkers en particulieren in Amsterdam en Haarlem. Je kiest zelf je coach, in jouw tempo, gericht op concrete stappen." },
+      { property: "og:title", content: "Coaching voor mij | Vizier op Scherp" },
+      { property: "og:description", content: "Doorverwezen of zoek je zelf coaching? Maak vrijblijvend kennis met een coach die bij je past." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://vizieropscherp.lovable.app/coaching-voor-mij" },
+    ],
+    links: [{ rel: "canonical", href: "https://vizieropscherp.lovable.app/coaching-voor-mij" }],
+  }),
   component: Page,
 });
 
