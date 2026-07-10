@@ -224,8 +224,7 @@ address{font-style:normal}
 .steps--4{grid-template-columns:repeat(4,minmax(0,1fr))}
 .steps--5{grid-template-columns:repeat(5,minmax(0,1fr))}
 .steps>*{min-width:0}
-.step{position:relative;border-top:2px solid var(--petrol);padding-top:18px;display:flex;flex-direction:column;gap:10px}
-.step::before{content:"";position:absolute;top:-6px;left:0;width:10px;height:10px;background:var(--koraal);transform:rotate(45deg)}
+.step{position:relative;padding-top:18px;display:flex;flex-direction:column;gap:10px}
 .step .num{font-family:var(--f-display);font-weight:600;font-size:15px;color:var(--gold-label)}
 .step h3{font-size:20px}
 .step p{font-size:14.5px}
