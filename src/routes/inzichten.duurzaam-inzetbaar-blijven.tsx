@@ -11,6 +11,7 @@ export const Route = createFileRoute("/inzichten/duurzaam-inzetbaar-blijven")({
       { property: "og:url", content: "https://vizieropscherp.lovable.app/inzichten/duurzaam-inzetbaar-blijven" },
     ],
     links: [{ rel: "canonical", href: "https://vizieropscherp.lovable.app/inzichten/duurzaam-inzetbaar-blijven" }],
+    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Duurzaam inzetbaar blijven in je werk", "description": "Hoe blijf je duurzaam inzetbaar in je werk? Ontdek de vier dingen die je vitaal, vaardig en gemotiveerd houden, plus een korte zelfcheck. Coaching in Amsterdam en Haarlem.", "url": "https://vizieropscherp.lovable.app/inzichten/duurzaam-inzetbaar-blijven", "inLanguage": "nl-NL", "mainEntityOfPage": "https://vizieropscherp.lovable.app/inzichten/duurzaam-inzetbaar-blijven", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "https://vizieropscherp.lovable.app/#organization"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://vizieropscherp.lovable.app/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "https://vizieropscherp.lovable.app/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Duurzaam inzetbaar blijven in je werk", "item": "https://vizieropscherp.lovable.app/inzichten/duurzaam-inzetbaar-blijven"}]}]}` }],
   }),
   component: Page,
 });
