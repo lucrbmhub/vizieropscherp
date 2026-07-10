@@ -95,6 +95,39 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600&family=Instrument+Sans:wght@400;500;600&display=swap" },
       { rel: "stylesheet", href: "/styles.css" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://vizieropscherp.lovable.app/#organization",
+              name: "Vizier op Scherp",
+              url: "https://vizieropscherp.lovable.app/",
+              logo: "https://vizieropscherp.lovable.app/favicon.ico",
+              email: "hallo@vizieropscherp.nl",
+              telephone: "+31202146466",
+              areaServed: ["Amsterdam", "Haarlem", "Noord-Holland"],
+              sameAs: ["https://www.linkedin.com/company/10002759/"],
+              address: [
+                { "@type": "PostalAddress", streetAddress: "Klein Heiligland 84", postalCode: "2011 EJ", addressLocality: "Haarlem", addressCountry: "NL" },
+                { "@type": "PostalAddress", streetAddress: "IJsbaanpad 9", postalCode: "1076 CV", addressLocality: "Amsterdam", addressCountry: "NL" },
+              ],
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://vizieropscherp.lovable.app/#website",
+              url: "https://vizieropscherp.lovable.app/",
+              name: "Vizier op Scherp",
+              inLanguage: "nl-NL",
+              publisher: { "@id": "https://vizieropscherp.lovable.app/#organization" },
+            },
+          ],
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
