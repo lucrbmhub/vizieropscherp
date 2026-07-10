@@ -17,6 +17,17 @@ import { Route as InzichtenRouteImport } from './routes/inzichten'
 import { Route as CoachingVoorMijRouteImport } from './routes/coaching-voor-mij'
 import { Route as CoachesRouteImport } from './routes/coaches'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as InzichtenIndexRouteImport } from './routes/inzichten.index'
+import { Route as InzichtenJobCraftingRouteImport } from './routes/inzichten.job-crafting'
+import { Route as InzichtenJeEersteBaanRouteImport } from './routes/inzichten.je-eerste-baan'
+import { Route as InzichtenImpostersyndroomTwijfelAlsKrachtRouteImport } from './routes/inzichten.impostersyndroom-twijfel-als-kracht'
+import { Route as InzichtenHetTegenbodRouteImport } from './routes/inzichten.het-tegenbod'
+import { Route as InzichtenGoedeLoopbaancoachKiezenRouteImport } from './routes/inzichten.goede-loopbaancoach-kiezen'
+import { Route as InzichtenGeneratiesOpDeWerkvloerRouteImport } from './routes/inzichten.generaties-op-de-werkvloer'
+import { Route as InzichtenErvarenTalentAlsKansRouteImport } from './routes/inzichten.ervaren-talent-als-kans'
+import { Route as InzichtenEnergieEnMotivatieInWerkRouteImport } from './routes/inzichten.energie-en-motivatie-in-werk'
+import { Route as InzichtenDuurzameInzetbaarheidWerkgeverRouteImport } from './routes/inzichten.duurzame-inzetbaarheid-werkgever'
+import { Route as InzichtenDuurzaamInzetbaarBlijvenRouteImport } from './routes/inzichten.duurzaam-inzetbaar-blijven'
 
 const VoorWerkgeversRoute = VoorWerkgeversRouteImport.update({
   id: '/voor-werkgevers',
@@ -58,37 +69,131 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InzichtenIndexRoute = InzichtenIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => InzichtenRoute,
+} as any)
+const InzichtenJobCraftingRoute = InzichtenJobCraftingRouteImport.update({
+  id: '/job-crafting',
+  path: '/job-crafting',
+  getParentRoute: () => InzichtenRoute,
+} as any)
+const InzichtenJeEersteBaanRoute = InzichtenJeEersteBaanRouteImport.update({
+  id: '/je-eerste-baan',
+  path: '/je-eerste-baan',
+  getParentRoute: () => InzichtenRoute,
+} as any)
+const InzichtenImpostersyndroomTwijfelAlsKrachtRoute =
+  InzichtenImpostersyndroomTwijfelAlsKrachtRouteImport.update({
+    id: '/impostersyndroom-twijfel-als-kracht',
+    path: '/impostersyndroom-twijfel-als-kracht',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
+const InzichtenHetTegenbodRoute = InzichtenHetTegenbodRouteImport.update({
+  id: '/het-tegenbod',
+  path: '/het-tegenbod',
+  getParentRoute: () => InzichtenRoute,
+} as any)
+const InzichtenGoedeLoopbaancoachKiezenRoute =
+  InzichtenGoedeLoopbaancoachKiezenRouteImport.update({
+    id: '/goede-loopbaancoach-kiezen',
+    path: '/goede-loopbaancoach-kiezen',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
+const InzichtenGeneratiesOpDeWerkvloerRoute =
+  InzichtenGeneratiesOpDeWerkvloerRouteImport.update({
+    id: '/generaties-op-de-werkvloer',
+    path: '/generaties-op-de-werkvloer',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
+const InzichtenErvarenTalentAlsKansRoute =
+  InzichtenErvarenTalentAlsKansRouteImport.update({
+    id: '/ervaren-talent-als-kans',
+    path: '/ervaren-talent-als-kans',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
+const InzichtenEnergieEnMotivatieInWerkRoute =
+  InzichtenEnergieEnMotivatieInWerkRouteImport.update({
+    id: '/energie-en-motivatie-in-werk',
+    path: '/energie-en-motivatie-in-werk',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
+const InzichtenDuurzameInzetbaarheidWerkgeverRoute =
+  InzichtenDuurzameInzetbaarheidWerkgeverRouteImport.update({
+    id: '/duurzame-inzetbaarheid-werkgever',
+    path: '/duurzame-inzetbaarheid-werkgever',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
+const InzichtenDuurzaamInzetbaarBlijvenRoute =
+  InzichtenDuurzaamInzetbaarBlijvenRouteImport.update({
+    id: '/duurzaam-inzetbaar-blijven',
+    path: '/duurzaam-inzetbaar-blijven',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/coaches': typeof CoachesRoute
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
-  '/inzichten': typeof InzichtenRoute
+  '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
   '/over-ons': typeof OverOnsRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
+  '/inzichten/duurzaam-inzetbaar-blijven': typeof InzichtenDuurzaamInzetbaarBlijvenRoute
+  '/inzichten/duurzame-inzetbaarheid-werkgever': typeof InzichtenDuurzameInzetbaarheidWerkgeverRoute
+  '/inzichten/energie-en-motivatie-in-werk': typeof InzichtenEnergieEnMotivatieInWerkRoute
+  '/inzichten/ervaren-talent-als-kans': typeof InzichtenErvarenTalentAlsKansRoute
+  '/inzichten/generaties-op-de-werkvloer': typeof InzichtenGeneratiesOpDeWerkvloerRoute
+  '/inzichten/goede-loopbaancoach-kiezen': typeof InzichtenGoedeLoopbaancoachKiezenRoute
+  '/inzichten/het-tegenbod': typeof InzichtenHetTegenbodRoute
+  '/inzichten/impostersyndroom-twijfel-als-kracht': typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
+  '/inzichten/je-eerste-baan': typeof InzichtenJeEersteBaanRoute
+  '/inzichten/job-crafting': typeof InzichtenJobCraftingRoute
+  '/inzichten/': typeof InzichtenIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/coaches': typeof CoachesRoute
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
-  '/inzichten': typeof InzichtenRoute
   '/kennismaken': typeof KennismakenRoute
   '/over-ons': typeof OverOnsRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
+  '/inzichten/duurzaam-inzetbaar-blijven': typeof InzichtenDuurzaamInzetbaarBlijvenRoute
+  '/inzichten/duurzame-inzetbaarheid-werkgever': typeof InzichtenDuurzameInzetbaarheidWerkgeverRoute
+  '/inzichten/energie-en-motivatie-in-werk': typeof InzichtenEnergieEnMotivatieInWerkRoute
+  '/inzichten/ervaren-talent-als-kans': typeof InzichtenErvarenTalentAlsKansRoute
+  '/inzichten/generaties-op-de-werkvloer': typeof InzichtenGeneratiesOpDeWerkvloerRoute
+  '/inzichten/goede-loopbaancoach-kiezen': typeof InzichtenGoedeLoopbaancoachKiezenRoute
+  '/inzichten/het-tegenbod': typeof InzichtenHetTegenbodRoute
+  '/inzichten/impostersyndroom-twijfel-als-kracht': typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
+  '/inzichten/je-eerste-baan': typeof InzichtenJeEersteBaanRoute
+  '/inzichten/job-crafting': typeof InzichtenJobCraftingRoute
+  '/inzichten': typeof InzichtenIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/coaches': typeof CoachesRoute
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
-  '/inzichten': typeof InzichtenRoute
+  '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
   '/over-ons': typeof OverOnsRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
+  '/inzichten/duurzaam-inzetbaar-blijven': typeof InzichtenDuurzaamInzetbaarBlijvenRoute
+  '/inzichten/duurzame-inzetbaarheid-werkgever': typeof InzichtenDuurzameInzetbaarheidWerkgeverRoute
+  '/inzichten/energie-en-motivatie-in-werk': typeof InzichtenEnergieEnMotivatieInWerkRoute
+  '/inzichten/ervaren-talent-als-kans': typeof InzichtenErvarenTalentAlsKansRoute
+  '/inzichten/generaties-op-de-werkvloer': typeof InzichtenGeneratiesOpDeWerkvloerRoute
+  '/inzichten/goede-loopbaancoach-kiezen': typeof InzichtenGoedeLoopbaancoachKiezenRoute
+  '/inzichten/het-tegenbod': typeof InzichtenHetTegenbodRoute
+  '/inzichten/impostersyndroom-twijfel-als-kracht': typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
+  '/inzichten/je-eerste-baan': typeof InzichtenJeEersteBaanRoute
+  '/inzichten/job-crafting': typeof InzichtenJobCraftingRoute
+  '/inzichten/': typeof InzichtenIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,16 +206,37 @@ export interface FileRouteTypes {
     | '/over-ons'
     | '/uwv-traject'
     | '/voor-werkgevers'
+    | '/inzichten/duurzaam-inzetbaar-blijven'
+    | '/inzichten/duurzame-inzetbaarheid-werkgever'
+    | '/inzichten/energie-en-motivatie-in-werk'
+    | '/inzichten/ervaren-talent-als-kans'
+    | '/inzichten/generaties-op-de-werkvloer'
+    | '/inzichten/goede-loopbaancoach-kiezen'
+    | '/inzichten/het-tegenbod'
+    | '/inzichten/impostersyndroom-twijfel-als-kracht'
+    | '/inzichten/je-eerste-baan'
+    | '/inzichten/job-crafting'
+    | '/inzichten/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/coaches'
     | '/coaching-voor-mij'
-    | '/inzichten'
     | '/kennismaken'
     | '/over-ons'
     | '/uwv-traject'
     | '/voor-werkgevers'
+    | '/inzichten/duurzaam-inzetbaar-blijven'
+    | '/inzichten/duurzame-inzetbaarheid-werkgever'
+    | '/inzichten/energie-en-motivatie-in-werk'
+    | '/inzichten/ervaren-talent-als-kans'
+    | '/inzichten/generaties-op-de-werkvloer'
+    | '/inzichten/goede-loopbaancoach-kiezen'
+    | '/inzichten/het-tegenbod'
+    | '/inzichten/impostersyndroom-twijfel-als-kracht'
+    | '/inzichten/je-eerste-baan'
+    | '/inzichten/job-crafting'
+    | '/inzichten'
   id:
     | '__root__'
     | '/'
@@ -121,13 +247,24 @@ export interface FileRouteTypes {
     | '/over-ons'
     | '/uwv-traject'
     | '/voor-werkgevers'
+    | '/inzichten/duurzaam-inzetbaar-blijven'
+    | '/inzichten/duurzame-inzetbaarheid-werkgever'
+    | '/inzichten/energie-en-motivatie-in-werk'
+    | '/inzichten/ervaren-talent-als-kans'
+    | '/inzichten/generaties-op-de-werkvloer'
+    | '/inzichten/goede-loopbaancoach-kiezen'
+    | '/inzichten/het-tegenbod'
+    | '/inzichten/impostersyndroom-twijfel-als-kracht'
+    | '/inzichten/je-eerste-baan'
+    | '/inzichten/job-crafting'
+    | '/inzichten/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CoachesRoute: typeof CoachesRoute
   CoachingVoorMijRoute: typeof CoachingVoorMijRoute
-  InzichtenRoute: typeof InzichtenRoute
+  InzichtenRoute: typeof InzichtenRouteWithChildren
   KennismakenRoute: typeof KennismakenRoute
   OverOnsRoute: typeof OverOnsRoute
   UwvTrajectRoute: typeof UwvTrajectRoute
@@ -192,14 +329,128 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/inzichten/': {
+      id: '/inzichten/'
+      path: '/'
+      fullPath: '/inzichten/'
+      preLoaderRoute: typeof InzichtenIndexRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/job-crafting': {
+      id: '/inzichten/job-crafting'
+      path: '/job-crafting'
+      fullPath: '/inzichten/job-crafting'
+      preLoaderRoute: typeof InzichtenJobCraftingRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/je-eerste-baan': {
+      id: '/inzichten/je-eerste-baan'
+      path: '/je-eerste-baan'
+      fullPath: '/inzichten/je-eerste-baan'
+      preLoaderRoute: typeof InzichtenJeEersteBaanRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/impostersyndroom-twijfel-als-kracht': {
+      id: '/inzichten/impostersyndroom-twijfel-als-kracht'
+      path: '/impostersyndroom-twijfel-als-kracht'
+      fullPath: '/inzichten/impostersyndroom-twijfel-als-kracht'
+      preLoaderRoute: typeof InzichtenImpostersyndroomTwijfelAlsKrachtRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/het-tegenbod': {
+      id: '/inzichten/het-tegenbod'
+      path: '/het-tegenbod'
+      fullPath: '/inzichten/het-tegenbod'
+      preLoaderRoute: typeof InzichtenHetTegenbodRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/goede-loopbaancoach-kiezen': {
+      id: '/inzichten/goede-loopbaancoach-kiezen'
+      path: '/goede-loopbaancoach-kiezen'
+      fullPath: '/inzichten/goede-loopbaancoach-kiezen'
+      preLoaderRoute: typeof InzichtenGoedeLoopbaancoachKiezenRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/generaties-op-de-werkvloer': {
+      id: '/inzichten/generaties-op-de-werkvloer'
+      path: '/generaties-op-de-werkvloer'
+      fullPath: '/inzichten/generaties-op-de-werkvloer'
+      preLoaderRoute: typeof InzichtenGeneratiesOpDeWerkvloerRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/ervaren-talent-als-kans': {
+      id: '/inzichten/ervaren-talent-als-kans'
+      path: '/ervaren-talent-als-kans'
+      fullPath: '/inzichten/ervaren-talent-als-kans'
+      preLoaderRoute: typeof InzichtenErvarenTalentAlsKansRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/energie-en-motivatie-in-werk': {
+      id: '/inzichten/energie-en-motivatie-in-werk'
+      path: '/energie-en-motivatie-in-werk'
+      fullPath: '/inzichten/energie-en-motivatie-in-werk'
+      preLoaderRoute: typeof InzichtenEnergieEnMotivatieInWerkRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/duurzame-inzetbaarheid-werkgever': {
+      id: '/inzichten/duurzame-inzetbaarheid-werkgever'
+      path: '/duurzame-inzetbaarheid-werkgever'
+      fullPath: '/inzichten/duurzame-inzetbaarheid-werkgever'
+      preLoaderRoute: typeof InzichtenDuurzameInzetbaarheidWerkgeverRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/duurzaam-inzetbaar-blijven': {
+      id: '/inzichten/duurzaam-inzetbaar-blijven'
+      path: '/duurzaam-inzetbaar-blijven'
+      fullPath: '/inzichten/duurzaam-inzetbaar-blijven'
+      preLoaderRoute: typeof InzichtenDuurzaamInzetbaarBlijvenRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
   }
 }
+
+interface InzichtenRouteChildren {
+  InzichtenDuurzaamInzetbaarBlijvenRoute: typeof InzichtenDuurzaamInzetbaarBlijvenRoute
+  InzichtenDuurzameInzetbaarheidWerkgeverRoute: typeof InzichtenDuurzameInzetbaarheidWerkgeverRoute
+  InzichtenEnergieEnMotivatieInWerkRoute: typeof InzichtenEnergieEnMotivatieInWerkRoute
+  InzichtenErvarenTalentAlsKansRoute: typeof InzichtenErvarenTalentAlsKansRoute
+  InzichtenGeneratiesOpDeWerkvloerRoute: typeof InzichtenGeneratiesOpDeWerkvloerRoute
+  InzichtenGoedeLoopbaancoachKiezenRoute: typeof InzichtenGoedeLoopbaancoachKiezenRoute
+  InzichtenHetTegenbodRoute: typeof InzichtenHetTegenbodRoute
+  InzichtenImpostersyndroomTwijfelAlsKrachtRoute: typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
+  InzichtenJeEersteBaanRoute: typeof InzichtenJeEersteBaanRoute
+  InzichtenJobCraftingRoute: typeof InzichtenJobCraftingRoute
+  InzichtenIndexRoute: typeof InzichtenIndexRoute
+}
+
+const InzichtenRouteChildren: InzichtenRouteChildren = {
+  InzichtenDuurzaamInzetbaarBlijvenRoute:
+    InzichtenDuurzaamInzetbaarBlijvenRoute,
+  InzichtenDuurzameInzetbaarheidWerkgeverRoute:
+    InzichtenDuurzameInzetbaarheidWerkgeverRoute,
+  InzichtenEnergieEnMotivatieInWerkRoute:
+    InzichtenEnergieEnMotivatieInWerkRoute,
+  InzichtenErvarenTalentAlsKansRoute: InzichtenErvarenTalentAlsKansRoute,
+  InzichtenGeneratiesOpDeWerkvloerRoute: InzichtenGeneratiesOpDeWerkvloerRoute,
+  InzichtenGoedeLoopbaancoachKiezenRoute:
+    InzichtenGoedeLoopbaancoachKiezenRoute,
+  InzichtenHetTegenbodRoute: InzichtenHetTegenbodRoute,
+  InzichtenImpostersyndroomTwijfelAlsKrachtRoute:
+    InzichtenImpostersyndroomTwijfelAlsKrachtRoute,
+  InzichtenJeEersteBaanRoute: InzichtenJeEersteBaanRoute,
+  InzichtenJobCraftingRoute: InzichtenJobCraftingRoute,
+  InzichtenIndexRoute: InzichtenIndexRoute,
+}
+
+const InzichtenRouteWithChildren = InzichtenRoute._addFileChildren(
+  InzichtenRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CoachesRoute: CoachesRoute,
   CoachingVoorMijRoute: CoachingVoorMijRoute,
-  InzichtenRoute: InzichtenRoute,
+  InzichtenRoute: InzichtenRouteWithChildren,
   KennismakenRoute: KennismakenRoute,
   OverOnsRoute: OverOnsRoute,
   UwvTrajectRoute: UwvTrajectRoute,
