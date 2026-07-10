@@ -366,6 +366,7 @@ address{font-style:normal}
   .header-inner{position:relative;flex-wrap:nowrap}
 }
 @media (max-width:860px){
+  .container{padding:0 36px}
   .g3,.g4,.steps--4{grid-template-columns:repeat(2,minmax(0,1fr))}
   .row{grid-template-columns:1fr}
   .vrail-item{grid-template-columns:1fr}
@@ -378,18 +379,18 @@ address{font-style:normal}
   .footer-grid{gap:32px}
 }
 @media (max-width:620px){
-  .container{padding:0 20px}
+  .container{padding:0 24px}
   .section{padding:48px 0}
   .hero-pad{padding:40px 0 36px}
   .g2,.g3,.g4,.steps--4,.steps--5,.bigstats,.footer-grid{grid-template-columns:1fr}
-  .facet-inner{padding:28px 20px}
+  .facet-inner{padding:28px 24px}
   .float-card{position:static;width:100%;left:auto;bottom:auto;margin-top:20px}
   .watermark{display:none}
   .hero-media{margin-bottom:0}
   .overlap-pad{padding-top:48px!important}
   .coach{flex-direction:column;gap:16px}
   .avatar{width:60px;height:60px;font-size:20px}
-  .card{padding:22px}
+  .card{padding:24px}
   .header-inner{min-height:56px}
   .brand span{font-size:17px}
   .faq summary{font-size:17px;padding:16px 0}
