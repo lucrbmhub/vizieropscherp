@@ -366,12 +366,12 @@ address{font-style:normal}
   .header-inner{position:relative;flex-wrap:nowrap}
 }
 @media (max-width:860px){
-  .container{padding:0 36px}
+  .container{padding:0 32px}
   .g3,.g4,.steps--4{grid-template-columns:repeat(2,minmax(0,1fr))}
   .row{grid-template-columns:1fr}
   .vrail-item{grid-template-columns:1fr}
   .g2-wide{grid-template-columns:1fr}
-  .hero-pad{padding:56px 0 48px}
+  .hero-pad{padding:56px 0 48px;padding-left:8px;padding-right:8px}
   .section{padding:72px 0}
   .hero-media{margin-bottom:-60px}
   .overlap-pad{padding-top:110px!important}
@@ -379,9 +379,9 @@ address{font-style:normal}
   .footer-grid{gap:32px}
 }
 @media (max-width:620px){
-  .container{padding:0 24px}
+  .container{padding:0 20px}
   .section{padding:48px 0}
-  .hero-pad{padding:40px 0 36px}
+  .hero-pad{padding:40px 0 36px;padding-left:8px;padding-right:8px}
   .g2,.g3,.g4,.steps--4,.steps--5,.bigstats,.footer-grid{grid-template-columns:1fr}
   .facet-inner{padding:28px 24px}
   .float-card{position:static;width:100%;left:auto;bottom:auto;margin-top:20px}
@@ -396,6 +396,7 @@ address{font-style:normal}
   .faq summary{font-size:17px;padding:16px 0}
   .hero-grid{gap:32px}
 }
+
 
 /* ---------- Hamburger ---------- */
 .nav-toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;background:transparent;border:1px solid var(--line);border-radius:10px;cursor:pointer;padding:0;color:var(--ink);margin-left:auto}
