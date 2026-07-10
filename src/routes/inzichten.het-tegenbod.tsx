@@ -11,6 +11,7 @@ export const Route = createFileRoute("/inzichten/het-tegenbod")({
       { property: "og:url", content: "https://vizieropscherp.lovable.app/inzichten/het-tegenbod" },
     ],
     links: [{ rel: "canonical", href: "https://vizieropscherp.lovable.app/inzichten/het-tegenbod" }],
+    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Het tegenbod: waarom het vertrek meestal alleen uitstelt", "description": "Een goede medewerker zegt op en de reflex is een tegenbod. Waarom dat het vertrek meestal alleen uitstelt, wat u er werkelijk mee koopt, en welk gesprek wel helpt. Voor werkgevers in de regio Amsterdam en Haarlem.", "url": "https://vizieropscherp.lovable.app/inzichten/het-tegenbod", "inLanguage": "nl-NL", "mainEntityOfPage": "https://vizieropscherp.lovable.app/inzichten/het-tegenbod", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "https://vizieropscherp.lovable.app/#organization"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://vizieropscherp.lovable.app/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "https://vizieropscherp.lovable.app/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Het tegenbod: waarom het vertrek meestal alleen uitstelt", "item": "https://vizieropscherp.lovable.app/inzichten/het-tegenbod"}]}]}` }],
   }),
   component: Page,
 });
