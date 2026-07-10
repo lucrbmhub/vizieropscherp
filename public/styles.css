@@ -408,3 +408,9 @@ address{font-style:normal}
 .nav-toggle[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
 .nav-toggle[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
 
+
+/* Coach avatar photos */
+.avatar:has(img){background:transparent}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;border-radius:50%}
+.coach-mini .avatar{width:120px;height:120px}
+@media (max-width:620px){.coach-mini .avatar{width:96px;height:96px}}
