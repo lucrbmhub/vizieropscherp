@@ -116,6 +116,35 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  useEffect(() => {
+    const headers = document.querySelectorAll(".site-header .header-inner");
+    const cleanups: Array<() => void> = [];
+    headers.forEach((headerInner) => {
+      const nav = headerInner.querySelector(".main-nav") as HTMLElement | null;
+      if (!nav) return;
+      if (headerInner.querySelector(".nav-toggle")) return;
+      const btn = document.createElement("button");
+      btn.className = "nav-toggle";
+      btn.type = "button";
+      btn.setAttribute("aria-label", "Menu openen");
+      btn.setAttribute("aria-expanded", "false");
+      btn.innerHTML = "<span></span>";
+      const handler = () => {
+        const open = nav.classList.toggle("open");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        btn.setAttribute("aria-label", open ? "Menu sluiten" : "Menu openen");
+      };
+      btn.addEventListener("click", handler);
+      headerInner.appendChild(btn);
+      cleanups.push(() => {
+        btn.removeEventListener("click", handler);
+        btn.remove();
+        nav.classList.remove("open");
+      });
+    });
+    return () => cleanups.forEach((c) => c());
+  });
+
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
