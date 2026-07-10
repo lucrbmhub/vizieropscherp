@@ -131,6 +131,7 @@ address{font-style:normal}
 .stats{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;font-size:14px;color:var(--mint-dof)}
 .stats b{font-family:var(--f-display);font-weight:600;font-size:18px;color:#F5EFE3}
 .stats .dia{width:1px;height:15px;background:currentColor;opacity:.4;transform:none}
+.hero-copy .stats{display:none}
 
 /* overlappende hero-media */
 .hero-media{position:relative;z-index:2;margin-bottom:-120px}
