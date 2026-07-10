@@ -366,6 +366,7 @@ address{font-style:normal}
   .header-inner{position:relative;flex-wrap:nowrap}
 }
 @media (max-width:860px){
+  .container{padding:0 28px}
   .g3,.g4,.steps--4{grid-template-columns:repeat(2,minmax(0,1fr))}
   .row{grid-template-columns:1fr}
   .vrail-item{grid-template-columns:1fr}
