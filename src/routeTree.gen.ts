@@ -18,6 +18,16 @@ import { Route as CoachingVoorMijRouteImport } from './routes/coaching-voor-mij'
 import { Route as CoachesRouteImport } from './routes/coaches'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as InzichtenIndexRouteImport } from './routes/inzichten.index'
+import { Route as InzichtenSolliciterenEnArbeidsmarktRouteImport } from './routes/inzichten.solliciteren-en-arbeidsmarkt'
+import { Route as InzichtenSkillsgerichtWervenRouteImport } from './routes/inzichten.skillsgericht-werven'
+import { Route as InzichtenRichtingVindenInJeLoopbaanRouteImport } from './routes/inzichten.richting-vinden-in-je-loopbaan'
+import { Route as InzichtenPersoonlijkeEffectiviteitRouteImport } from './routes/inzichten.persoonlijke-effectiviteit'
+import { Route as InzichtenPassieTerugvindenInJeWerkRouteImport } from './routes/inzichten.passie-terugvinden-in-je-werk'
+import { Route as InzichtenOutplacementOfLoopbaancoachingRouteImport } from './routes/inzichten.outplacement-of-loopbaancoaching'
+import { Route as InzichtenMentaleVermoeidheidEnEigenRegieRouteImport } from './routes/inzichten.mentale-vermoeidheid-en-eigen-regie'
+import { Route as InzichtenLoopbaanswitchNaJe40eRouteImport } from './routes/inzichten.loopbaanswitch-na-je-40e'
+import { Route as InzichtenLoopbaangesprekMetMedewerkerRouteImport } from './routes/inzichten.loopbaangesprek-met-medewerker'
+import { Route as InzichtenKostenVanEenVerkeerdeMatchRouteImport } from './routes/inzichten.kosten-van-een-verkeerde-match'
 import { Route as InzichtenJobCraftingRouteImport } from './routes/inzichten.job-crafting'
 import { Route as InzichtenJeEersteBaanRouteImport } from './routes/inzichten.je-eerste-baan'
 import { Route as InzichtenImpostersyndroomTwijfelAlsKrachtRouteImport } from './routes/inzichten.impostersyndroom-twijfel-als-kracht'
@@ -74,6 +84,66 @@ const InzichtenIndexRoute = InzichtenIndexRouteImport.update({
   path: '/',
   getParentRoute: () => InzichtenRoute,
 } as any)
+const InzichtenSolliciterenEnArbeidsmarktRoute =
+  InzichtenSolliciterenEnArbeidsmarktRouteImport.update({
+    id: '/solliciteren-en-arbeidsmarkt',
+    path: '/solliciteren-en-arbeidsmarkt',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
+const InzichtenSkillsgerichtWervenRoute =
+  InzichtenSkillsgerichtWervenRouteImport.update({
+    id: '/skillsgericht-werven',
+    path: '/skillsgericht-werven',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
+const InzichtenRichtingVindenInJeLoopbaanRoute =
+  InzichtenRichtingVindenInJeLoopbaanRouteImport.update({
+    id: '/richting-vinden-in-je-loopbaan',
+    path: '/richting-vinden-in-je-loopbaan',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
+const InzichtenPersoonlijkeEffectiviteitRoute =
+  InzichtenPersoonlijkeEffectiviteitRouteImport.update({
+    id: '/persoonlijke-effectiviteit',
+    path: '/persoonlijke-effectiviteit',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
+const InzichtenPassieTerugvindenInJeWerkRoute =
+  InzichtenPassieTerugvindenInJeWerkRouteImport.update({
+    id: '/passie-terugvinden-in-je-werk',
+    path: '/passie-terugvinden-in-je-werk',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
+const InzichtenOutplacementOfLoopbaancoachingRoute =
+  InzichtenOutplacementOfLoopbaancoachingRouteImport.update({
+    id: '/outplacement-of-loopbaancoaching',
+    path: '/outplacement-of-loopbaancoaching',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
+const InzichtenMentaleVermoeidheidEnEigenRegieRoute =
+  InzichtenMentaleVermoeidheidEnEigenRegieRouteImport.update({
+    id: '/mentale-vermoeidheid-en-eigen-regie',
+    path: '/mentale-vermoeidheid-en-eigen-regie',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
+const InzichtenLoopbaanswitchNaJe40eRoute =
+  InzichtenLoopbaanswitchNaJe40eRouteImport.update({
+    id: '/loopbaanswitch-na-je-40e',
+    path: '/loopbaanswitch-na-je-40e',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
+const InzichtenLoopbaangesprekMetMedewerkerRoute =
+  InzichtenLoopbaangesprekMetMedewerkerRouteImport.update({
+    id: '/loopbaangesprek-met-medewerker',
+    path: '/loopbaangesprek-met-medewerker',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
+const InzichtenKostenVanEenVerkeerdeMatchRoute =
+  InzichtenKostenVanEenVerkeerdeMatchRouteImport.update({
+    id: '/kosten-van-een-verkeerde-match',
+    path: '/kosten-van-een-verkeerde-match',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
 const InzichtenJobCraftingRoute = InzichtenJobCraftingRouteImport.update({
   id: '/job-crafting',
   path: '/job-crafting',
@@ -151,6 +221,16 @@ export interface FileRoutesByFullPath {
   '/inzichten/impostersyndroom-twijfel-als-kracht': typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
   '/inzichten/je-eerste-baan': typeof InzichtenJeEersteBaanRoute
   '/inzichten/job-crafting': typeof InzichtenJobCraftingRoute
+  '/inzichten/kosten-van-een-verkeerde-match': typeof InzichtenKostenVanEenVerkeerdeMatchRoute
+  '/inzichten/loopbaangesprek-met-medewerker': typeof InzichtenLoopbaangesprekMetMedewerkerRoute
+  '/inzichten/loopbaanswitch-na-je-40e': typeof InzichtenLoopbaanswitchNaJe40eRoute
+  '/inzichten/mentale-vermoeidheid-en-eigen-regie': typeof InzichtenMentaleVermoeidheidEnEigenRegieRoute
+  '/inzichten/outplacement-of-loopbaancoaching': typeof InzichtenOutplacementOfLoopbaancoachingRoute
+  '/inzichten/passie-terugvinden-in-je-werk': typeof InzichtenPassieTerugvindenInJeWerkRoute
+  '/inzichten/persoonlijke-effectiviteit': typeof InzichtenPersoonlijkeEffectiviteitRoute
+  '/inzichten/richting-vinden-in-je-loopbaan': typeof InzichtenRichtingVindenInJeLoopbaanRoute
+  '/inzichten/skillsgericht-werven': typeof InzichtenSkillsgerichtWervenRoute
+  '/inzichten/solliciteren-en-arbeidsmarkt': typeof InzichtenSolliciterenEnArbeidsmarktRoute
   '/inzichten/': typeof InzichtenIndexRoute
 }
 export interface FileRoutesByTo {
@@ -171,6 +251,16 @@ export interface FileRoutesByTo {
   '/inzichten/impostersyndroom-twijfel-als-kracht': typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
   '/inzichten/je-eerste-baan': typeof InzichtenJeEersteBaanRoute
   '/inzichten/job-crafting': typeof InzichtenJobCraftingRoute
+  '/inzichten/kosten-van-een-verkeerde-match': typeof InzichtenKostenVanEenVerkeerdeMatchRoute
+  '/inzichten/loopbaangesprek-met-medewerker': typeof InzichtenLoopbaangesprekMetMedewerkerRoute
+  '/inzichten/loopbaanswitch-na-je-40e': typeof InzichtenLoopbaanswitchNaJe40eRoute
+  '/inzichten/mentale-vermoeidheid-en-eigen-regie': typeof InzichtenMentaleVermoeidheidEnEigenRegieRoute
+  '/inzichten/outplacement-of-loopbaancoaching': typeof InzichtenOutplacementOfLoopbaancoachingRoute
+  '/inzichten/passie-terugvinden-in-je-werk': typeof InzichtenPassieTerugvindenInJeWerkRoute
+  '/inzichten/persoonlijke-effectiviteit': typeof InzichtenPersoonlijkeEffectiviteitRoute
+  '/inzichten/richting-vinden-in-je-loopbaan': typeof InzichtenRichtingVindenInJeLoopbaanRoute
+  '/inzichten/skillsgericht-werven': typeof InzichtenSkillsgerichtWervenRoute
+  '/inzichten/solliciteren-en-arbeidsmarkt': typeof InzichtenSolliciterenEnArbeidsmarktRoute
   '/inzichten': typeof InzichtenIndexRoute
 }
 export interface FileRoutesById {
@@ -193,6 +283,16 @@ export interface FileRoutesById {
   '/inzichten/impostersyndroom-twijfel-als-kracht': typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
   '/inzichten/je-eerste-baan': typeof InzichtenJeEersteBaanRoute
   '/inzichten/job-crafting': typeof InzichtenJobCraftingRoute
+  '/inzichten/kosten-van-een-verkeerde-match': typeof InzichtenKostenVanEenVerkeerdeMatchRoute
+  '/inzichten/loopbaangesprek-met-medewerker': typeof InzichtenLoopbaangesprekMetMedewerkerRoute
+  '/inzichten/loopbaanswitch-na-je-40e': typeof InzichtenLoopbaanswitchNaJe40eRoute
+  '/inzichten/mentale-vermoeidheid-en-eigen-regie': typeof InzichtenMentaleVermoeidheidEnEigenRegieRoute
+  '/inzichten/outplacement-of-loopbaancoaching': typeof InzichtenOutplacementOfLoopbaancoachingRoute
+  '/inzichten/passie-terugvinden-in-je-werk': typeof InzichtenPassieTerugvindenInJeWerkRoute
+  '/inzichten/persoonlijke-effectiviteit': typeof InzichtenPersoonlijkeEffectiviteitRoute
+  '/inzichten/richting-vinden-in-je-loopbaan': typeof InzichtenRichtingVindenInJeLoopbaanRoute
+  '/inzichten/skillsgericht-werven': typeof InzichtenSkillsgerichtWervenRoute
+  '/inzichten/solliciteren-en-arbeidsmarkt': typeof InzichtenSolliciterenEnArbeidsmarktRoute
   '/inzichten/': typeof InzichtenIndexRoute
 }
 export interface FileRouteTypes {
@@ -216,6 +316,16 @@ export interface FileRouteTypes {
     | '/inzichten/impostersyndroom-twijfel-als-kracht'
     | '/inzichten/je-eerste-baan'
     | '/inzichten/job-crafting'
+    | '/inzichten/kosten-van-een-verkeerde-match'
+    | '/inzichten/loopbaangesprek-met-medewerker'
+    | '/inzichten/loopbaanswitch-na-je-40e'
+    | '/inzichten/mentale-vermoeidheid-en-eigen-regie'
+    | '/inzichten/outplacement-of-loopbaancoaching'
+    | '/inzichten/passie-terugvinden-in-je-werk'
+    | '/inzichten/persoonlijke-effectiviteit'
+    | '/inzichten/richting-vinden-in-je-loopbaan'
+    | '/inzichten/skillsgericht-werven'
+    | '/inzichten/solliciteren-en-arbeidsmarkt'
     | '/inzichten/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -236,6 +346,16 @@ export interface FileRouteTypes {
     | '/inzichten/impostersyndroom-twijfel-als-kracht'
     | '/inzichten/je-eerste-baan'
     | '/inzichten/job-crafting'
+    | '/inzichten/kosten-van-een-verkeerde-match'
+    | '/inzichten/loopbaangesprek-met-medewerker'
+    | '/inzichten/loopbaanswitch-na-je-40e'
+    | '/inzichten/mentale-vermoeidheid-en-eigen-regie'
+    | '/inzichten/outplacement-of-loopbaancoaching'
+    | '/inzichten/passie-terugvinden-in-je-werk'
+    | '/inzichten/persoonlijke-effectiviteit'
+    | '/inzichten/richting-vinden-in-je-loopbaan'
+    | '/inzichten/skillsgericht-werven'
+    | '/inzichten/solliciteren-en-arbeidsmarkt'
     | '/inzichten'
   id:
     | '__root__'
@@ -257,6 +377,16 @@ export interface FileRouteTypes {
     | '/inzichten/impostersyndroom-twijfel-als-kracht'
     | '/inzichten/je-eerste-baan'
     | '/inzichten/job-crafting'
+    | '/inzichten/kosten-van-een-verkeerde-match'
+    | '/inzichten/loopbaangesprek-met-medewerker'
+    | '/inzichten/loopbaanswitch-na-je-40e'
+    | '/inzichten/mentale-vermoeidheid-en-eigen-regie'
+    | '/inzichten/outplacement-of-loopbaancoaching'
+    | '/inzichten/passie-terugvinden-in-je-werk'
+    | '/inzichten/persoonlijke-effectiviteit'
+    | '/inzichten/richting-vinden-in-je-loopbaan'
+    | '/inzichten/skillsgericht-werven'
+    | '/inzichten/solliciteren-en-arbeidsmarkt'
     | '/inzichten/'
   fileRoutesById: FileRoutesById
 }
@@ -334,6 +464,76 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/inzichten/'
       preLoaderRoute: typeof InzichtenIndexRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/solliciteren-en-arbeidsmarkt': {
+      id: '/inzichten/solliciteren-en-arbeidsmarkt'
+      path: '/solliciteren-en-arbeidsmarkt'
+      fullPath: '/inzichten/solliciteren-en-arbeidsmarkt'
+      preLoaderRoute: typeof InzichtenSolliciterenEnArbeidsmarktRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/skillsgericht-werven': {
+      id: '/inzichten/skillsgericht-werven'
+      path: '/skillsgericht-werven'
+      fullPath: '/inzichten/skillsgericht-werven'
+      preLoaderRoute: typeof InzichtenSkillsgerichtWervenRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/richting-vinden-in-je-loopbaan': {
+      id: '/inzichten/richting-vinden-in-je-loopbaan'
+      path: '/richting-vinden-in-je-loopbaan'
+      fullPath: '/inzichten/richting-vinden-in-je-loopbaan'
+      preLoaderRoute: typeof InzichtenRichtingVindenInJeLoopbaanRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/persoonlijke-effectiviteit': {
+      id: '/inzichten/persoonlijke-effectiviteit'
+      path: '/persoonlijke-effectiviteit'
+      fullPath: '/inzichten/persoonlijke-effectiviteit'
+      preLoaderRoute: typeof InzichtenPersoonlijkeEffectiviteitRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/passie-terugvinden-in-je-werk': {
+      id: '/inzichten/passie-terugvinden-in-je-werk'
+      path: '/passie-terugvinden-in-je-werk'
+      fullPath: '/inzichten/passie-terugvinden-in-je-werk'
+      preLoaderRoute: typeof InzichtenPassieTerugvindenInJeWerkRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/outplacement-of-loopbaancoaching': {
+      id: '/inzichten/outplacement-of-loopbaancoaching'
+      path: '/outplacement-of-loopbaancoaching'
+      fullPath: '/inzichten/outplacement-of-loopbaancoaching'
+      preLoaderRoute: typeof InzichtenOutplacementOfLoopbaancoachingRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/mentale-vermoeidheid-en-eigen-regie': {
+      id: '/inzichten/mentale-vermoeidheid-en-eigen-regie'
+      path: '/mentale-vermoeidheid-en-eigen-regie'
+      fullPath: '/inzichten/mentale-vermoeidheid-en-eigen-regie'
+      preLoaderRoute: typeof InzichtenMentaleVermoeidheidEnEigenRegieRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/loopbaanswitch-na-je-40e': {
+      id: '/inzichten/loopbaanswitch-na-je-40e'
+      path: '/loopbaanswitch-na-je-40e'
+      fullPath: '/inzichten/loopbaanswitch-na-je-40e'
+      preLoaderRoute: typeof InzichtenLoopbaanswitchNaJe40eRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/loopbaangesprek-met-medewerker': {
+      id: '/inzichten/loopbaangesprek-met-medewerker'
+      path: '/loopbaangesprek-met-medewerker'
+      fullPath: '/inzichten/loopbaangesprek-met-medewerker'
+      preLoaderRoute: typeof InzichtenLoopbaangesprekMetMedewerkerRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/kosten-van-een-verkeerde-match': {
+      id: '/inzichten/kosten-van-een-verkeerde-match'
+      path: '/kosten-van-een-verkeerde-match'
+      fullPath: '/inzichten/kosten-van-een-verkeerde-match'
+      preLoaderRoute: typeof InzichtenKostenVanEenVerkeerdeMatchRouteImport
       parentRoute: typeof InzichtenRoute
     }
     '/inzichten/job-crafting': {
@@ -420,6 +620,16 @@ interface InzichtenRouteChildren {
   InzichtenImpostersyndroomTwijfelAlsKrachtRoute: typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
   InzichtenJeEersteBaanRoute: typeof InzichtenJeEersteBaanRoute
   InzichtenJobCraftingRoute: typeof InzichtenJobCraftingRoute
+  InzichtenKostenVanEenVerkeerdeMatchRoute: typeof InzichtenKostenVanEenVerkeerdeMatchRoute
+  InzichtenLoopbaangesprekMetMedewerkerRoute: typeof InzichtenLoopbaangesprekMetMedewerkerRoute
+  InzichtenLoopbaanswitchNaJe40eRoute: typeof InzichtenLoopbaanswitchNaJe40eRoute
+  InzichtenMentaleVermoeidheidEnEigenRegieRoute: typeof InzichtenMentaleVermoeidheidEnEigenRegieRoute
+  InzichtenOutplacementOfLoopbaancoachingRoute: typeof InzichtenOutplacementOfLoopbaancoachingRoute
+  InzichtenPassieTerugvindenInJeWerkRoute: typeof InzichtenPassieTerugvindenInJeWerkRoute
+  InzichtenPersoonlijkeEffectiviteitRoute: typeof InzichtenPersoonlijkeEffectiviteitRoute
+  InzichtenRichtingVindenInJeLoopbaanRoute: typeof InzichtenRichtingVindenInJeLoopbaanRoute
+  InzichtenSkillsgerichtWervenRoute: typeof InzichtenSkillsgerichtWervenRoute
+  InzichtenSolliciterenEnArbeidsmarktRoute: typeof InzichtenSolliciterenEnArbeidsmarktRoute
   InzichtenIndexRoute: typeof InzichtenIndexRoute
 }
 
@@ -439,6 +649,24 @@ const InzichtenRouteChildren: InzichtenRouteChildren = {
     InzichtenImpostersyndroomTwijfelAlsKrachtRoute,
   InzichtenJeEersteBaanRoute: InzichtenJeEersteBaanRoute,
   InzichtenJobCraftingRoute: InzichtenJobCraftingRoute,
+  InzichtenKostenVanEenVerkeerdeMatchRoute:
+    InzichtenKostenVanEenVerkeerdeMatchRoute,
+  InzichtenLoopbaangesprekMetMedewerkerRoute:
+    InzichtenLoopbaangesprekMetMedewerkerRoute,
+  InzichtenLoopbaanswitchNaJe40eRoute: InzichtenLoopbaanswitchNaJe40eRoute,
+  InzichtenMentaleVermoeidheidEnEigenRegieRoute:
+    InzichtenMentaleVermoeidheidEnEigenRegieRoute,
+  InzichtenOutplacementOfLoopbaancoachingRoute:
+    InzichtenOutplacementOfLoopbaancoachingRoute,
+  InzichtenPassieTerugvindenInJeWerkRoute:
+    InzichtenPassieTerugvindenInJeWerkRoute,
+  InzichtenPersoonlijkeEffectiviteitRoute:
+    InzichtenPersoonlijkeEffectiviteitRoute,
+  InzichtenRichtingVindenInJeLoopbaanRoute:
+    InzichtenRichtingVindenInJeLoopbaanRoute,
+  InzichtenSkillsgerichtWervenRoute: InzichtenSkillsgerichtWervenRoute,
+  InzichtenSolliciterenEnArbeidsmarktRoute:
+    InzichtenSolliciterenEnArbeidsmarktRoute,
   InzichtenIndexRoute: InzichtenIndexRoute,
 }
 
