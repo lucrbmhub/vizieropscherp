@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VoorWerkgeversRouteImport } from './routes/voor-werkgevers'
 import { Route as UwvTrajectRouteImport } from './routes/uwv-traject'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as OverOnsRouteImport } from './routes/over-ons'
 import { Route as LeiderschapRouteImport } from './routes/leiderschap'
 import { Route as KennismakenRouteImport } from './routes/kennismaken'
@@ -52,6 +53,11 @@ const VoorWerkgeversRoute = VoorWerkgeversRouteImport.update({
 const UwvTrajectRoute = UwvTrajectRouteImport.update({
   id: '/uwv-traject',
   path: '/uwv-traject',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OverOnsRoute = OverOnsRouteImport.update({
@@ -244,6 +250,7 @@ export interface FileRoutesByFullPath {
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
   '/over-ons': typeof OverOnsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
   '/inzichten/duurzaam-inzetbaar-blijven': typeof InzichtenDuurzaamInzetbaarBlijvenRoute
@@ -279,6 +286,7 @@ export interface FileRoutesByTo {
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
   '/over-ons': typeof OverOnsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
   '/inzichten/duurzaam-inzetbaar-blijven': typeof InzichtenDuurzaamInzetbaarBlijvenRoute
@@ -316,6 +324,7 @@ export interface FileRoutesById {
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
   '/over-ons': typeof OverOnsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
   '/inzichten/duurzaam-inzetbaar-blijven': typeof InzichtenDuurzaamInzetbaarBlijvenRoute
@@ -354,6 +363,7 @@ export interface FileRouteTypes {
     | '/kennismaken'
     | '/leiderschap'
     | '/over-ons'
+    | '/sitemap.xml'
     | '/uwv-traject'
     | '/voor-werkgevers'
     | '/inzichten/duurzaam-inzetbaar-blijven'
@@ -389,6 +399,7 @@ export interface FileRouteTypes {
     | '/kennismaken'
     | '/leiderschap'
     | '/over-ons'
+    | '/sitemap.xml'
     | '/uwv-traject'
     | '/voor-werkgevers'
     | '/inzichten/duurzaam-inzetbaar-blijven'
@@ -425,6 +436,7 @@ export interface FileRouteTypes {
     | '/kennismaken'
     | '/leiderschap'
     | '/over-ons'
+    | '/sitemap.xml'
     | '/uwv-traject'
     | '/voor-werkgevers'
     | '/inzichten/duurzaam-inzetbaar-blijven'
@@ -462,6 +474,7 @@ export interface RootRouteChildren {
   KennismakenRoute: typeof KennismakenRoute
   LeiderschapRoute: typeof LeiderschapRoute
   OverOnsRoute: typeof OverOnsRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   UwvTrajectRoute: typeof UwvTrajectRoute
   VoorWerkgeversRoute: typeof VoorWerkgeversRoute
 }
@@ -480,6 +493,13 @@ declare module '@tanstack/react-router' {
       path: '/uwv-traject'
       fullPath: '/uwv-traject'
       preLoaderRoute: typeof UwvTrajectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/over-ons': {
@@ -792,6 +812,7 @@ const rootRouteChildren: RootRouteChildren = {
   KennismakenRoute: KennismakenRoute,
   LeiderschapRoute: LeiderschapRoute,
   OverOnsRoute: OverOnsRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   UwvTrajectRoute: UwvTrajectRoute,
   VoorWerkgeversRoute: VoorWerkgeversRoute,
 }
