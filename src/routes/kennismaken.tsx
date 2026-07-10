@@ -1,7 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/kennismaken")({
-  head: () => ({ meta: [{ title: "Kennismaken | Plan een vrijblijvend gesprek | Vizier op Scherp" }] }),
+  head: () => ({
+    meta: [
+      { title: "Kennismaken | Plan een vrijblijvend gesprek | Vizier op Scherp" },
+      { name: "description", content: "Bellen, WhatsAppen, mailen of langskomen in Haarlem of Amsterdam. Plan een vrijblijvend kennismakingsgesprek met Vizier op Scherp." },
+      { property: "og:title", content: "Kennismaken | Vizier op Scherp" },
+      { property: "og:description", content: "Vertel wat er speelt, dan kijken we samen wat helpt. Een eerste gesprek is zo gebeurd." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://vizieropscherp.lovable.app/kennismaken" },
+    ],
+    links: [{ rel: "canonical", href: "https://vizieropscherp.lovable.app/kennismaken" }],
+  }),
   component: Page,
 });
 
