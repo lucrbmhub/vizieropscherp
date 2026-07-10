@@ -1,0 +1,371 @@
+/* ============================================================
+   Vizier op Scherp — site-restyle v2
+   Zelfde kleuren & teksten · moderne typografie · ruit-merktaal
+   Display: Bricolage Grotesque · Body/UI: Instrument Sans
+   ============================================================ */
+
+:root{
+  --petrol:#1F3D3B;
+  --petrol-deep:#16302E;
+  --paper:#FAF6EF;
+  --linnen:#F5EFE3;
+  --warm:#FBF1D7;
+  --goud:#F2C879;
+  --koraal:#E8714A;
+  --koraal-deep:#C85A36;
+  --on-koraal:#3A241A;
+  --on-koraal-sub:#57352A;
+  --on-goud:#4A3413;
+  --on-goud-sub:#5A4420;
+  --mint:#D8E5E2;
+  --mint-dof:#BFD0CB;
+  --ink:#1F3D3B;
+  --body-c:#4A5550;
+  --body-warm:#5A5442;
+  --muted:#7A7466;
+  --muted-2:#9A9284;
+  --gold-label:#A8834B;
+  --line:#E4DCC8;
+  --line-soft:#EDE5D4;
+  --f-display:'Bricolage Grotesque',system-ui,sans-serif;
+  --f-body:'Instrument Sans',system-ui,sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--f-body);font-size:16px;line-height:1.65;color:var(--body-c);background:var(--paper);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:500;color:var(--ink);line-height:1.12;letter-spacing:-0.015em;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:var(--koraal);text-decoration:none}
+a:hover{color:var(--koraal-deep)}
+ul,ol{margin:0;padding:0;list-style:none}
+address{font-style:normal}
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+
+/* ---------- Merktaal: ruit, punt, i-punt ---------- */
+.dia{display:inline-block;width:8px;height:8px;background:var(--koraal);transform:rotate(45deg);flex:none}
+.dia--gold{background:var(--goud)}
+.dia--petrol{background:var(--petrol)}
+.dia--light{background:var(--mint-dof)}
+
+/* i-punt: koraal ruitje vervangt de punt van de i (tekst blijft intact) */
+.idot{position:relative;display:inline-block;line-height:1em}
+.idot::before{content:"";position:absolute;left:50%;top:.02em;width:.19em;height:.26em;background:var(--idot-bg,var(--paper));transform:translateX(-50%)}
+.idot::after{content:"";position:absolute;left:50%;top:.10em;width:.16em;height:.16em;background:var(--koraal);transform:translateX(-50%) rotate(45deg)}
+.hero--petrol .idot::before{background:var(--petrol)}
+.hero--linnen .idot::before{background:var(--linnen)}
+
+/* gouden slotpunt na de belangrijkste kop */
+.enddot::after{content:"";display:inline-block;width:.15em;height:.15em;border-radius:50%;background:var(--goud);margin-left:.1em}
+
+/* eyebrow: ruit + getrackt label — alleen op sectieniveau; binnen kaarten/facet geen ruit */
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--koraal);margin-bottom:18px}
+.eyebrow::before{content:"";width:7px;height:7px;background:var(--koraal);transform:rotate(45deg);flex:none}
+.eyebrow--gold{color:var(--goud)}
+.eyebrow--gold::before{background:var(--goud)}
+.card .eyebrow::before,.facet-inner .eyebrow::before{display:none}
+
+/* ruit-divider */
+.dia-divider{display:flex;align-items:center;gap:12px;margin:0}
+.dia-divider::before,.dia-divider::after{content:"";flex:1;height:1px;background:var(--line)}
+.dia-divider span{width:8px;height:8px;background:var(--petrol);transform:rotate(45deg);flex:none}
+
+/* ---------- Typografische schaal ---------- */
+.h-hero{font-size:clamp(42px,5vw,68px);line-height:1.05;letter-spacing:-0.02em}
+.h-hero--xl{font-size:clamp(44px,5.6vw,76px)}
+.h-section{font-size:clamp(30px,3.4vw,42px);line-height:1.14}
+.h-card{font-size:22px;line-height:1.25}
+.lead{font-size:17.5px;line-height:1.7;max-width:58ch}
+.gold{color:var(--goud)}
+.mark-gold{background:linear-gradient(transparent 58%,var(--goud) 58%);padding:0 2px}
+.pull{font-family:var(--f-display);font-size:clamp(21px,2.2vw,26px);line-height:1.45;color:var(--ink);max-width:52ch;letter-spacing:-0.01em}
+
+/* ---------- Knoppen ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--f-body);font-weight:500;font-size:15px;line-height:1;padding:15px 26px;border-radius:10px;border:0;cursor:pointer;transition:filter .15s,border-color .15s,color .15s;white-space:nowrap}
+.btn-primary{background:var(--koraal);color:var(--on-koraal)}
+.btn-primary:hover{filter:brightness(.95);color:var(--on-koraal)}
+.btn-outline{border:1.5px solid var(--petrol);color:var(--petrol);background:transparent}
+.btn-outline:hover{border-color:var(--koraal);color:var(--koraal)}
+.btn-outline-light{border:1.5px solid #5E7972;color:var(--mint);background:transparent}
+.btn-outline-light:hover{border-color:var(--goud);color:var(--mint)}
+.btn-dark{background:var(--petrol);color:#F5EFE3}
+.btn-dark:hover{background:var(--petrol-deep);color:#F5EFE3}
+.btn-row{display:flex;flex-wrap:wrap;gap:14px}
+
+/* ---------- Header ---------- */
+.site-header{position:sticky;top:0;z-index:40;background:rgba(250,246,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-soft)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:68px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--ink)}
+.brand:hover{color:var(--ink)}
+.brand span{font-family:var(--f-display);font-weight:500;font-size:19px;letter-spacing:-0.01em}
+.main-nav{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.main-nav a{font-size:14.5px;color:#3D4A44;padding:4px 0;border-bottom:2px solid transparent}
+.main-nav a:hover{color:var(--ink)}
+.main-nav a.active{color:var(--ink);font-weight:500;border-bottom-color:var(--koraal)}
+.nav-cta{background:var(--koraal);color:var(--on-koraal)!important;font-weight:500;padding:10px 20px!important;border-radius:999px;border-bottom:0!important}
+.nav-cta:hover{filter:brightness(.95)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden}
+.hero--petrol{background:var(--petrol)}
+.hero--petrol h1{color:#F5EFE3}
+.hero--petrol .lead{color:var(--mint)}
+.hero--linnen{background:var(--linnen)}
+.hero--linnen .lead{color:var(--body-c)}
+.hero-pad{padding:84px 0 76px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.hero-copy{display:flex;flex-direction:column;gap:26px;align-items:flex-start}
+
+.badge{display:inline-flex;align-items:center;gap:9px;border:1px solid #56716B;border-radius:999px;padding:8px 16px;font-size:11.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--mint)}
+.badge--gold{border-color:rgba(242,200,121,.6);color:var(--goud)}
+.badge--dark{border-color:rgba(31,61,59,.28);color:var(--petrol);background:rgba(216,229,226,.4)}
+
+/* groot ruit-watermerk (logo-motief in de achtergrond) */
+.watermark{position:absolute;right:-150px;top:50%;width:460px;height:460px;transform:translateY(-50%) rotate(45deg);border:2px solid rgba(245,239,227,.09);pointer-events:none}
+.watermark::after{content:"";position:absolute;inset:64px;border:2px solid rgba(232,113,74,.16)}
+.watermark--light{border-color:rgba(31,61,59,.07)}
+.watermark--light::after{border-color:rgba(232,113,74,.16)}
+
+/* statistiekregel */
+.stats{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;font-size:14px;color:var(--mint-dof)}
+.stats b{font-family:var(--f-display);font-weight:600;font-size:18px;color:#F5EFE3}
+.stats .dia{width:1px;height:15px;background:currentColor;opacity:.4;transform:none}
+
+/* overlappende hero-media */
+.hero-media{position:relative;z-index:2;margin-bottom:-120px}
+.overlap-pad{padding-top:200px!important}
+
+/* fotobehandeling: duotone + facet-hoek + ruit-anker */
+.ph{position:relative;background:repeating-linear-gradient(45deg,#E9E2D2 0 14px,#F0EADB 14px 28px);clip-path:polygon(0 0,calc(100% - 48px) 0,100% 48px,100% 100%,0 100%)}
+.ph::before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(31,61,59,.60),rgba(31,61,59,.26) 55%,rgba(232,113,74,.18));pointer-events:none}
+.ph-label{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:ui-monospace,SFMono-Regular,monospace;font-size:12px;color:#F5EFE3;background:rgba(31,61,59,.68);padding:6px 12px;border-radius:6px;white-space:nowrap;z-index:1}
+.ph-anchor{position:absolute;left:22px;bottom:22px;width:12px;height:12px;background:var(--goud);transform:rotate(45deg);box-shadow:0 0 0 5px rgba(31,61,59,.35);z-index:1}
+
+/* zwevende kaart over de foto */
+.float-card{position:absolute;left:-36px;bottom:-56px;width:min(380px,88%);background:var(--warm);border-radius:14px;padding:22px 24px;box-shadow:0 12px 32px rgba(31,61,59,.22)}
+.float-card::before{content:"";position:absolute;top:-7px;left:24px;width:11px;height:11px;background:var(--koraal);transform:rotate(45deg);box-shadow:0 0 0 5px var(--warm)}
+.float-card .label{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-label)}
+.float-card h2,.float-card h3{font-size:20px;margin:6px 0 8px}
+.float-card p{font-size:13.5px;line-height:1.6;color:var(--body-warm)}
+
+/* ---------- Secties ---------- */
+.section{padding:96px 0}
+.section--linnen{background:var(--linnen)}
+.section--petrol{background:var(--petrol)}
+.section--petrol h2,.section--petrol h3{color:#F5EFE3}
+.section--petrol p{color:var(--mint)}
+.section-head{max-width:760px;margin-bottom:44px}
+.section-head p{margin-top:16px}
+.tight{padding-top:0!important}
+
+/* ---------- Rijen met hangende titel ---------- */
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:280px 1fr;gap:16px 32px;padding:26px 0;border-bottom:1px solid var(--line)}
+.row-title{display:flex;gap:12px;align-items:baseline;font-family:var(--f-display);font-weight:500;font-size:19px;color:var(--ink);letter-spacing:-0.01em}
+.row p{max-width:62ch}
+
+/* ---------- Kaarten ---------- */
+.card{background:var(--linnen);border-radius:16px;padding:32px}
+.card h3{font-size:21px;margin-bottom:12px}
+.card p+p{margin-top:12px}
+.card--paper{background:var(--paper)}
+.card--warm{background:var(--warm)}
+.card--warm p{color:var(--body-warm)}
+.card--petrol{background:var(--petrol)}
+.card--petrol h3{color:#F5EFE3}
+.card--petrol p{color:var(--mint)}
+.card--koraal{background:var(--koraal)}
+.card--koraal h3{color:var(--on-koraal)}
+.card--koraal p{color:var(--on-koraal-sub)}
+.card--goud{background:var(--goud)}
+.card--goud h3{color:var(--on-goud)}
+.card--goud p{color:var(--on-goud-sub)}
+.card--line{background:var(--paper);border:1px solid var(--line)}
+
+/* ruit-anker: ruitje hangt door de bovenrand */
+.card--anchor{position:relative}
+.card--anchor::before{content:"";position:absolute;top:-7px;left:30px;width:12px;height:12px;background:var(--koraal);transform:rotate(45deg);box-shadow:0 0 0 5px var(--ring,var(--linnen))}
+.ring-paper{--ring:var(--paper)}
+.ring-warm{--ring:var(--warm)}
+.ring-goud{--ring:var(--goud)}
+
+/* open kader: de rand opent zich (uit het logo-motief) */
+.card--open{position:relative;background:transparent;border:2px solid var(--petrol);border-radius:16px}
+.card--open::before{content:"";position:absolute;top:-2px;right:44px;width:46px;height:4px;background:var(--open-bg,var(--paper))}
+.card--open::after{content:"";position:absolute;top:-8px;right:60px;width:14px;height:14px;border-radius:50%;background:var(--koraal)}
+.open-linnen{--open-bg:var(--linnen)}
+
+/* kaartlabels */
+.card .label{display:block;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;color:var(--gold-label)}
+.card--petrol .label{color:var(--goud)}
+.card--koraal .label{color:var(--on-koraal)}
+.card--goud .label{color:var(--on-goud)}
+.card .foot{display:block;margin-top:20px;font-size:14px;font-weight:500;color:var(--gold-label)}
+.card--petrol .foot{color:var(--goud)}
+.card--koraal .foot{color:var(--on-koraal)}
+.card--goud .foot{color:var(--on-goud)}
+.card-badge{display:inline-block;background:rgba(250,246,239,.5);color:var(--on-koraal);font-size:12px;font-weight:600;padding:4px 12px;border-radius:999px;margin-bottom:12px}
+.card--goud .card-badge{background:rgba(250,246,239,.6);color:var(--on-goud)}
+
+.card .btn{white-space:normal}
+
+/* uitgelichte kaart (leadproduct) */
+.card--lift{box-shadow:0 16px 36px rgba(31,61,59,.16);transform:translateY(-10px)}
+
+/* ---------- Facet-CTA (gefacetteerde hoeken = ruitgeometrie) ---------- */
+.facet{background:var(--goud);padding:2px;clip-path:polygon(22px 0,calc(100% - 22px) 0,100% 22px,100% calc(100% - 22px),calc(100% - 22px) 100%,22px 100%,0 calc(100% - 22px),0 22px)}
+.facet-inner{background:var(--warm);clip-path:polygon(21px 0,calc(100% - 21px) 0,100% 21px,100% calc(100% - 21px),calc(100% - 21px) 100%,21px 100%,0 calc(100% - 21px),0 21px);padding:52px 60px;display:flex;align-items:center;justify-content:space-between;gap:48px;flex-wrap:wrap}
+.facet-inner h2{font-size:clamp(24px,2.6vw,31px)}
+.facet-inner p{margin-top:8px;max-width:52ch;color:var(--body-warm)}
+
+/* ---------- Stappen ---------- */
+.steps{display:grid;gap:32px}
+.steps--4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.steps--5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.steps>*{min-width:0}
+.step{position:relative;border-top:2px solid var(--petrol);padding-top:18px;display:flex;flex-direction:column;gap:10px}
+.step::before{content:"";position:absolute;top:-6px;left:0;width:10px;height:10px;background:var(--koraal);transform:rotate(45deg)}
+.step .num{font-family:var(--f-display);font-weight:600;font-size:15px;color:var(--gold-label)}
+.step h3{font-size:20px}
+.step p{font-size:14.5px}
+
+/* verticale tijdlijn: van ruit naar punt */
+.vrail{display:flex;gap:26px}
+.vrail-line{display:flex;flex-direction:column;align-items:center;width:14px;flex:none;padding:6px 0}
+.vrail-line .top{width:12px;height:12px;background:var(--koraal);transform:rotate(45deg);flex:none}
+.vrail-line .bar{width:2px;flex:1;background:var(--line);margin:8px 0}
+.vrail-line .end{width:10px;height:10px;border-radius:50%;background:var(--goud);flex:none}
+.section--petrol .vrail-line .bar{background:rgba(216,229,226,.35)}
+.vrail-items{display:flex;flex-direction:column;gap:36px;flex:1}
+.vrail-item{display:grid;grid-template-columns:260px 1fr;gap:12px 32px}
+.vrail-item h3{font-size:21px}
+.vrail-item h3 .num{color:var(--gold-label);font-size:16px;margin-right:10px;font-weight:600}
+.section--petrol .vrail-item h3{color:#F5EFE3}
+.section--petrol .vrail-item h3 .num{color:var(--goud)}
+
+/* ---------- Citaat met ruit-naar-punt rail ---------- */
+.quote{display:flex;gap:18px}
+.quote-rail{display:flex;flex-direction:column;align-items:center;width:12px;flex:none;padding:5px 0}
+.quote-rail .top{width:9px;height:9px;background:var(--koraal);transform:rotate(45deg);flex:none}
+.quote-rail .bar{width:2px;flex:1;background:var(--petrol);margin:6px 0}
+.quote-rail .end{width:7px;height:7px;border-radius:50%;background:var(--goud);flex:none}
+.section--petrol .quote-rail .bar{background:rgba(216,229,226,.4)}
+.quote blockquote{margin:0;font-family:var(--f-display);font-size:19px;line-height:1.55;color:var(--ink);letter-spacing:-0.01em}
+.section--petrol .quote blockquote{color:#F5EFE3}
+.quote cite{display:block;margin-top:10px;font-family:var(--f-body);font-style:normal;font-size:13.5px;color:var(--muted)}
+.section--petrol .quote cite{color:var(--mint-dof)}
+
+/* ---------- Opsommingen ---------- */
+.list-dia{display:flex;flex-direction:column;gap:11px}
+.list-dia li{display:flex;gap:12px;align-items:flex-start}
+.list-dia li::before{content:"";flex:none;width:8px;height:8px;background:var(--koraal);transform:rotate(45deg);margin-top:7px}
+.section--petrol .list-dia li{color:var(--mint)}
+
+/* kern-bullet: open ruit met gouden hart (voor checklists) */
+.list-core{display:flex;flex-direction:column;gap:11px}
+.list-core li{display:flex;gap:13px;align-items:flex-start;color:var(--ink)}
+.list-core .core{flex:none;position:relative;width:10px;height:10px;border:2px solid var(--petrol);transform:rotate(45deg);margin-top:5px}
+.list-core .core::after{content:"";position:absolute;left:50%;top:50%;width:4px;height:4px;border-radius:50%;background:var(--goud);transform:translate(-50%,-50%)}
+
+/* ---------- Statblokken op petrol ---------- */
+.bigstats{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.bigstat b{display:block;font-family:var(--f-display);font-weight:600;font-size:clamp(26px,2.6vw,34px);color:var(--goud);line-height:1.15;margin-bottom:6px;letter-spacing:-0.01em}
+.bigstat span{font-size:14px;color:var(--mint);line-height:1.55;display:block}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:780px;border-top:1px solid rgba(31,61,59,.16)}
+.faq details{border-bottom:1px solid rgba(31,61,59,.16)}
+.faq summary{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 0;cursor:pointer;font-family:var(--f-display);font-weight:500;font-size:19px;color:var(--ink);list-style:none;letter-spacing:-0.01em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;color:var(--koraal);font-family:var(--f-body);font-size:26px;font-weight:400;line-height:1;transition:transform .18s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .answer{padding:0 44px 22px 0;color:var(--body-c)}
+
+/* ---------- Chips & tags ---------- */
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid rgba(191,208,203,.45);border-radius:999px;padding:8px 16px;font-size:14px;color:var(--mint)}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:12px;color:var(--muted)}
+.tag--hl{background:var(--mint);border-color:var(--mint);color:var(--petrol);font-weight:500}
+
+/* ---------- Coaches ---------- */
+.coach{display:flex;gap:24px;align-items:flex-start}
+.avatar{flex:none;width:72px;height:72px;border-radius:50%;background:var(--petrol);color:#F5EFE3;display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-weight:500;font-size:24px;position:relative}
+.avatar::after{content:"";position:absolute;right:-2px;bottom:2px;width:10px;height:10px;background:var(--goud);transform:rotate(45deg);box-shadow:0 0 0 4px var(--linnen)}
+.coach h3{font-size:22px}
+.coach .role{display:block;font-size:14px;font-weight:500;color:var(--koraal);margin:4px 0 12px}
+.coach-quote{position:relative;font-family:var(--f-display);font-size:16.5px;color:var(--ink);border-left:2px solid var(--petrol);padding-left:16px;margin-bottom:12px;letter-spacing:-0.01em}
+.coach-quote::before{content:"";position:absolute;left:-5px;top:0;width:8px;height:8px;background:var(--koraal);transform:rotate(45deg)}
+.coach .bio{font-size:15px;margin-bottom:16px}
+.coach .li-link{display:inline-block;margin-top:14px;font-size:14px;font-weight:500}
+
+/* mini-coachkaart (homepage) */
+.coach-mini{text-align:center;padding:28px 20px}
+.coach-mini .avatar{margin:0 auto 14px}
+.coach-mini h3{font-size:17px;margin-bottom:4px}
+.coach-mini span{font-size:13.5px;color:var(--muted)}
+
+/* ---------- Formulier ---------- */
+.form{max-width:640px;display:flex;flex-direction:column;gap:20px}
+.field label{display:block;font-size:14px;font-weight:500;color:var(--ink);margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;font-family:var(--f-body);font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--mint-dof);border-radius:10px;padding:13px 14px;outline:none;transition:border-color .15s,box-shadow .15s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--koraal);box-shadow:0 0 0 3px rgba(232,113,74,.18)}
+.field textarea{resize:vertical;min-height:140px}
+.field .hint{font-size:13.5px;color:var(--muted);margin-top:7px}
+
+/* ---------- Keurmerk-badges ---------- */
+.seals{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+.seal{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:12px;padding:16px 24px;background:var(--paper)}
+.seal b{font-family:var(--f-display);font-weight:600;font-size:19px;color:var(--petrol);letter-spacing:.02em}
+.seal span{font-size:12.5px;color:var(--muted);max-width:22ch;line-height:1.4}
+
+/* ---------- Footer ---------- */
+.site-footer{background:var(--petrol);color:var(--mint-dof);padding:64px 0 28px;margin-top:0}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(216,229,226,.18)}
+.footer-grid h2{font-family:var(--f-body);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--goud);margin-bottom:16px}
+.footer-grid a{display:block;padding:4px 0;font-size:13.5px;color:var(--mint-dof)}
+.footer-grid a:hover{color:#F5EFE3}
+.footer-grid a.gold-link{color:var(--goud)}
+.footer-grid p,.footer-grid address{font-size:13.5px;line-height:1.65;color:var(--mint-dof)}
+.footer-grid address{margin-bottom:12px}
+.footer-grid address strong{display:block;font-weight:500;color:var(--mint)}
+.footer-brand{display:flex;align-items:center;gap:11px;margin-bottom:14px;color:#F5EFE3}
+.footer-brand span{font-family:var(--f-display);font-weight:500;font-size:18px;color:#F5EFE3}
+.footer-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px;font-size:12px;color:#8FA6A0}
+.footer-bottom a{color:#8FA6A0;border-bottom:1px solid #8FA6A0}
+.footer-bottom a:hover{color:#F5EFE3}
+
+/* ---------- Grids ---------- */
+.grid{display:grid;gap:26px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.grid>*{min-width:0}
+.g2-wide{grid-template-columns:1.35fr 1fr}
+.split{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:start}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1060px){
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .hero-media{margin-bottom:-80px}
+  .overlap-pad{padding-top:150px!important}
+  .steps--5{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .bigstats{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .split{grid-template-columns:1fr;gap:32px}
+}
+@media (max-width:860px){
+  .g3,.g4,.steps--4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .row{grid-template-columns:1fr}
+  .vrail-item{grid-template-columns:1fr}
+  .g2-wide{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  .container{padding:0 20px}
+  .section{padding:64px 0}
+  .g2,.g3,.g4,.steps--4,.steps--5,.bigstats,.footer-grid{grid-template-columns:1fr}
+  .facet-inner{padding:36px 28px}
+  .float-card{left:12px}
+  .coach{flex-direction:column}
+}
