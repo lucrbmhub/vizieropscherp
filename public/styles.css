@@ -379,7 +379,7 @@ address{font-style:normal}
   .footer-grid{gap:32px}
 }
 @media (max-width:620px){
-  .container{padding:0 20px}
+  .container{padding:0 24px}
   .section{padding:48px 0}
   .hero-pad{padding:40px 0 36px}
   .g2,.g3,.g4,.steps--4,.steps--5,.bigstats,.footer-grid{grid-template-columns:1fr}
