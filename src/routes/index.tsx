@@ -1,6 +1,68 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Loopbaancoaching | Amsterdam & Haarlem | Vizier op Scherp" },
+      { name: "description", content: "Regionaal netwerk voor loopbaancoaching in Amsterdam, Haarlem en omgeving. Persoonlijk voor de medewerker, georganiseerd voor HR." },
+      { property: "og:title", content: "Loopbaancoaching in Amsterdam & Haarlem | Vizier op Scherp" },
+      { property: "og:description", content: "Klein netwerk van gecertificeerde coaches, één aanspreekpunt, heldere afspraken over proces, prijs en privacy." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://vizieropscherp.lovable.app/" },
+    ],
+    links: [{ rel: "canonical", href: "https://vizieropscherp.lovable.app/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Vizier op Scherp",
+          url: "https://vizieropscherp.lovable.app/",
+          email: "hallo@vizieropscherp.nl",
+          telephone: "+31202146466",
+          areaServed: ["Amsterdam", "Haarlem"],
+          sameAs: ["https://www.linkedin.com/company/10002759/"],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Vizier op Scherp",
+          url: "https://vizieropscherp.lovable.app/",
+          email: "hallo@vizieropscherp.nl",
+          telephone: "+31202146466",
+          address: [
+            {
+              "@type": "PostalAddress",
+              streetAddress: "Klein Heiligland 84",
+              postalCode: "2011 EJ",
+              addressLocality: "Haarlem",
+              addressCountry: "NL",
+            },
+            {
+              "@type": "PostalAddress",
+              streetAddress: "IJsbaanpad 9",
+              postalCode: "1076 CV",
+              addressLocality: "Amsterdam",
+              addressCountry: "NL",
+            },
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Vizier op Scherp",
+          url: "https://vizieropscherp.lovable.app/",
+        }),
+      },
+    ],
+  }),
   component: Index,
 });
 
