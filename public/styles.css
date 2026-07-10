@@ -398,6 +398,7 @@ address{font-style:normal}
 
 /* ---------- Hamburger ---------- */
 .nav-toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;background:transparent;border:1px solid var(--line);border-radius:10px;cursor:pointer;padding:0;color:var(--ink);margin-left:auto}
+@media (max-width:900px){.nav-toggle{display:inline-flex}}
 .nav-toggle:hover{border-color:var(--koraal);color:var(--koraal)}
 .nav-toggle span{position:relative;display:block;width:20px;height:2px;background:currentColor}
 .nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:currentColor;transition:transform .2s}
