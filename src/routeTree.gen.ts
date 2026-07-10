@@ -17,6 +17,7 @@ import { Route as InzichtenRouteImport } from './routes/inzichten'
 import { Route as CoachingVoorMijRouteImport } from './routes/coaching-voor-mij'
 import { Route as CoachesRouteImport } from './routes/coaches'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as InzichtenIndexRouteImport } from './routes/inzichten.index'
 import { Route as InzichtenJobCraftingRouteImport } from './routes/inzichten.job-crafting'
 import { Route as InzichtenJeEersteBaanRouteImport } from './routes/inzichten.je-eerste-baan'
 import { Route as InzichtenImpostersyndroomTwijfelAlsKrachtRouteImport } from './routes/inzichten.impostersyndroom-twijfel-als-kracht'
@@ -67,6 +68,11 @@ const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const InzichtenIndexRoute = InzichtenIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => InzichtenRoute,
 } as any)
 const InzichtenJobCraftingRoute = InzichtenJobCraftingRouteImport.update({
   id: '/job-crafting',
@@ -145,12 +151,12 @@ export interface FileRoutesByFullPath {
   '/inzichten/impostersyndroom-twijfel-als-kracht': typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
   '/inzichten/je-eerste-baan': typeof InzichtenJeEersteBaanRoute
   '/inzichten/job-crafting': typeof InzichtenJobCraftingRoute
+  '/inzichten/': typeof InzichtenIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/coaches': typeof CoachesRoute
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
-  '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
   '/over-ons': typeof OverOnsRoute
   '/uwv-traject': typeof UwvTrajectRoute
@@ -165,6 +171,7 @@ export interface FileRoutesByTo {
   '/inzichten/impostersyndroom-twijfel-als-kracht': typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
   '/inzichten/je-eerste-baan': typeof InzichtenJeEersteBaanRoute
   '/inzichten/job-crafting': typeof InzichtenJobCraftingRoute
+  '/inzichten': typeof InzichtenIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -186,6 +193,7 @@ export interface FileRoutesById {
   '/inzichten/impostersyndroom-twijfel-als-kracht': typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
   '/inzichten/je-eerste-baan': typeof InzichtenJeEersteBaanRoute
   '/inzichten/job-crafting': typeof InzichtenJobCraftingRoute
+  '/inzichten/': typeof InzichtenIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -208,12 +216,12 @@ export interface FileRouteTypes {
     | '/inzichten/impostersyndroom-twijfel-als-kracht'
     | '/inzichten/je-eerste-baan'
     | '/inzichten/job-crafting'
+    | '/inzichten/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/coaches'
     | '/coaching-voor-mij'
-    | '/inzichten'
     | '/kennismaken'
     | '/over-ons'
     | '/uwv-traject'
@@ -228,6 +236,7 @@ export interface FileRouteTypes {
     | '/inzichten/impostersyndroom-twijfel-als-kracht'
     | '/inzichten/je-eerste-baan'
     | '/inzichten/job-crafting'
+    | '/inzichten'
   id:
     | '__root__'
     | '/'
@@ -248,6 +257,7 @@ export interface FileRouteTypes {
     | '/inzichten/impostersyndroom-twijfel-als-kracht'
     | '/inzichten/je-eerste-baan'
     | '/inzichten/job-crafting'
+    | '/inzichten/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -318,6 +328,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/inzichten/': {
+      id: '/inzichten/'
+      path: '/'
+      fullPath: '/inzichten/'
+      preLoaderRoute: typeof InzichtenIndexRouteImport
+      parentRoute: typeof InzichtenRoute
     }
     '/inzichten/job-crafting': {
       id: '/inzichten/job-crafting'
@@ -403,6 +420,7 @@ interface InzichtenRouteChildren {
   InzichtenImpostersyndroomTwijfelAlsKrachtRoute: typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
   InzichtenJeEersteBaanRoute: typeof InzichtenJeEersteBaanRoute
   InzichtenJobCraftingRoute: typeof InzichtenJobCraftingRoute
+  InzichtenIndexRoute: typeof InzichtenIndexRoute
 }
 
 const InzichtenRouteChildren: InzichtenRouteChildren = {
@@ -421,6 +439,7 @@ const InzichtenRouteChildren: InzichtenRouteChildren = {
     InzichtenImpostersyndroomTwijfelAlsKrachtRoute,
   InzichtenJeEersteBaanRoute: InzichtenJeEersteBaanRoute,
   InzichtenJobCraftingRoute: InzichtenJobCraftingRoute,
+  InzichtenIndexRoute: InzichtenIndexRoute,
 }
 
 const InzichtenRouteWithChildren = InzichtenRoute._addFileChildren(
@@ -440,3 +459,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
