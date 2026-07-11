@@ -352,7 +352,7 @@ address{font-style:normal}
   .hero-media{margin-bottom:-80px}
   .overlap-pad{padding-top:150px!important}
   .steps--5{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .bigstats{grid-template-columns:1fr 1fr}
+  .bigstats,.bigstats.bigstats--3{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
   .split{grid-template-columns:1fr;gap:32px}
 }
