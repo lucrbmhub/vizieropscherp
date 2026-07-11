@@ -270,6 +270,7 @@ address{font-style:normal}
 
 /* ---------- Statblokken op petrol ---------- */
 .bigstats{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.bigstats.bigstats--3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .bigstat b{display:block;font-family:var(--f-display);font-weight:600;font-size:clamp(26px,2.6vw,34px);color:var(--goud);line-height:1.15;margin-bottom:6px;letter-spacing:-0.01em}
 .bigstat span{font-size:14px;color:var(--mint);line-height:1.55;display:block}
 
@@ -351,7 +352,7 @@ address{font-style:normal}
   .hero-media{margin-bottom:-80px}
   .overlap-pad{padding-top:150px!important}
   .steps--5{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .bigstats{grid-template-columns:1fr 1fr}
+  .bigstats,.bigstats.bigstats--3{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
   .split{grid-template-columns:1fr;gap:32px}
 }
@@ -382,7 +383,7 @@ address{font-style:normal}
   .container{padding:0 20px}
   .section{padding:48px 0}
   .hero-pad{padding:40px 0 36px;padding-left:8px;padding-right:8px}
-  .g2,.g3,.g4,.steps--4,.steps--5,.bigstats,.footer-grid{grid-template-columns:1fr}
+  .g2,.g3,.g4,.steps--4,.steps--5,.bigstats,.bigstats.bigstats--3,.footer-grid{grid-template-columns:1fr}
   .facet-inner{padding:28px 24px}
   .float-card{position:static;width:100%;left:auto;bottom:auto;margin-top:20px}
   .watermark{display:none}
