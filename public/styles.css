@@ -383,7 +383,7 @@ address{font-style:normal}
   .container{padding:0 20px}
   .section{padding:48px 0}
   .hero-pad{padding:40px 0 36px;padding-left:8px;padding-right:8px}
-  .g2,.g3,.g4,.steps--4,.steps--5,.bigstats,.footer-grid{grid-template-columns:1fr}
+  .g2,.g3,.g4,.steps--4,.steps--5,.bigstats,.bigstats.bigstats--3,.footer-grid{grid-template-columns:1fr}
   .facet-inner{padding:28px 24px}
   .float-card{position:static;width:100%;left:auto;bottom:auto;margin-top:20px}
   .watermark{display:none}
