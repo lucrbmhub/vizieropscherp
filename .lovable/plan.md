@@ -1,37 +1,13 @@
-Het doel: de site is al basis-vindbaar (llms.txt, sitemap, robots, SSR). We gaan nu een stap verder zodat AI-assistenten de site écht goed kunnen verwerken.
+## Probleem
+Op `/coaches` heeft de sectie "Verschillende mensen, dezelfde zorg en kwaliteit" een inline style `grid-template-columns:repeat(3,minmax(0,1fr))`. Die inline style overschrijft de responsive media queries in `public/styles.css` (`@media` op 900px zet naar 2 kolommen, op ~640px naar 1 kolom). Op mobiel blijft het daardoor 3 kolommen tonen en lopen de teksten door elkaar.
 
-## Wat we gaan doen
+## Fix
+In `src/routes/coaches.tsx`, in de HTML-string, de inline style op de `.bigstats` div weghalen:
 
-1. **Uitgebreidere llms.txt**
-   - Vervang de korte one-liners per pagina door een duidelijke beschrijving (2-3 zinnen) zodat AI's snappen wat er op elke pagina staat zonder die eerst te hoeven scrapen.
-   - Behoud de bestaande structuur, maar maak 'm informatiever.
+- Was: `<div class="bigstats" style="grid-template-columns:repeat(3,minmax(0,1fr));">`
+- Wordt: `<div class="bigstats">`
 
-2. **Per-route meta-titel en beschrijving**
-   - Homepage heeft al goede meta via `__root.tsx`.
-   - Toevoegen aan alle hoofdroutes (`/voor-werkgevers`, `/coaching-voor-mij`, `/uwv-traject`, `/coaches`, `/over-ons`, `/leiderschap`, `/kennismaken`, `/inzichten`).
-   - Elk artikel onder `/inzichten/*` krijgt een eigen `<title>`, meta description, canonical en og:url.
-
-3. **JSON-LD gestructureerde data**
-   - Sitewide `Organization` + `WebSite` schema in `__root.tsx`.
-   - `Article` schema op alle blog-artikelen met titel, beschrijving, URL, datum (indien beschikbaar in HTML) en organisatie als publisher.
-   - `BreadcrumbList` op diepere pagina's zodat AI's de hiërarchie snappen.
-
-4. **Sitemap verfijnen**
-   - Controleer dat alle 24+ routes erin staan.
-   - Voeg `lastmod` toe waar mogelijk (statische datum is voldoende).
-   - Correcte prioriteiten: homepage 1.0, hoofdpagina's 0.9, artikelen 0.6.
-
-5. **Robots.txt en taal**
-   - `robots.txt` laat alles toe, sitemap verwijst correct.
-   - `<html lang="nl">` staat er al.
-
-## Wat we NIET doen
-
-- Geen nieuwe backend/database (geen Cloud nodig).
-- Geen content herschrijven; alleen meta/structuur toevoegen.
-- Geen nieuwe pagina's maken.
+De basisregel in `styles.css` gebruikt 4 kolommen als default. Om de desktop-layout van drie kolommen te behouden, voeg ik in `public/styles.css` een specifieke variant toe: `.bigstats--3{grid-template-columns:repeat(3,minmax(0,1fr))}` binnen dezelfde media-query-structuur zodat het op mobiel netjes naar 2 en dan 1 kolom valt. In de coaches-HTML wordt de class dan `bigstats bigstats--3`.
 
 ## Verificatie
-
-- Na de wijzigingen check ik of `/llms.txt`, `/sitemap.xml` en een aantal artikelen correct renderen (via `curl`).
-- Eventueel vraag ik daarna een nieuwe SEO-scan aan.
+Playwright screenshot op 390px breed van de coaches-pagina bij die sectie, om te bevestigen dat de drie blokken netjes onder elkaar staan.
