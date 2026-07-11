@@ -270,6 +270,7 @@ address{font-style:normal}
 
 /* ---------- Statblokken op petrol ---------- */
 .bigstats{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.bigstats.bigstats--3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .bigstat b{display:block;font-family:var(--f-display);font-weight:600;font-size:clamp(26px,2.6vw,34px);color:var(--goud);line-height:1.15;margin-bottom:6px;letter-spacing:-0.01em}
 .bigstat span{font-size:14px;color:var(--mint);line-height:1.55;display:block}
 
