@@ -22,3 +22,4 @@ const HTML = `<header class=\"site-header\">\n  <div class=\"container header-in
 function Page() {
   return <div dangerouslySetInnerHTML={{ __html: HTML }} />;
 }
+
