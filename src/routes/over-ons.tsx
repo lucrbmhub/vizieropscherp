@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import teamAsset from "@/assets/team-vizier-op-scherp.png.asset.json";
+
 
 export const Route = createFileRoute("/over-ons")({
   head: () => ({
