@@ -35,7 +35,10 @@ export default function CalEmbed() {
         const cal = await getCalApi({ namespace: CAL_NAMESPACE });
         cal("ui", {
           theme: "light",
-          cssVarsPerTheme: { light: { "cal-brand": "#1F3D3B" } },
+          cssVarsPerTheme: {
+            light: { "cal-brand": "#1F3D3B" },
+            dark: { "cal-brand": "#1F3D3B" },
+          },
           hideEventTypeDetails: false,
           layout: "month_view",
         });
