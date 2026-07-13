@@ -417,3 +417,14 @@ address{font-style:normal}
 .avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;border-radius:50%}
 .coach-mini .avatar{width:120px;height:120px}
 @media (max-width:620px){.coach-mini .avatar{width:96px;height:96px}}
+
+/* Cal.com embed op /kennismaken */
+.vos-cal-embed-wrapper{background:var(--linnen);border:1px solid var(--mint-dof);border-radius:16px;padding:28px}
+.vos-cal-embed{position:relative;width:100%;min-height:640px;border-radius:12px;overflow:hidden;background:#FFFFFF}
+@media (max-width:640px){.vos-cal-embed{min-height:760px}}
+.vos-cal-skeleton{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--mint);animation:vos-pulse 1.6s ease-in-out infinite}
+.vos-cal-skeleton__label{font-family:"Instrument Sans",sans-serif;color:var(--petrol);font-size:14px;letter-spacing:.02em}
+.vos-cal-fallback{display:flex;flex-direction:column;gap:16px;align-items:flex-start;padding:32px}
+.vos-cal-fallback p{font-family:"Instrument Sans",sans-serif;color:var(--petrol);margin:0}
+@keyframes vos-pulse{0%,100%{opacity:1}50%{opacity:.6}}
+@media (prefers-reduced-motion:reduce){.vos-cal-skeleton{animation:none}}
