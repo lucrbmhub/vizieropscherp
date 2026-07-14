@@ -12,12 +12,14 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as VoorWerkgeversRouteImport } from './routes/voor-werkgevers'
 import { Route as UwvTrajectRouteImport } from './routes/uwv-traject'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PrivacyverklaringRouteImport } from './routes/privacyverklaring'
 import { Route as OverOnsRouteImport } from './routes/over-ons'
 import { Route as LeiderschapRouteImport } from './routes/leiderschap'
 import { Route as KennismakenRouteImport } from './routes/kennismaken'
 import { Route as InzichtenRouteImport } from './routes/inzichten'
 import { Route as CoachingVoorMijRouteImport } from './routes/coaching-voor-mij'
 import { Route as CoachesRouteImport } from './routes/coaches'
+import { Route as AlgemeneVoorwaardenRouteImport } from './routes/algemene-voorwaarden'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as InzichtenIndexRouteImport } from './routes/inzichten.index'
 import { Route as InzichtenVierBasisbehoeftenInWerkRouteImport } from './routes/inzichten.vier-basisbehoeften-in-werk'
@@ -60,6 +62,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyverklaringRoute = PrivacyverklaringRouteImport.update({
+  id: '/privacyverklaring',
+  path: '/privacyverklaring',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OverOnsRoute = OverOnsRouteImport.update({
   id: '/over-ons',
   path: '/over-ons',
@@ -88,6 +95,11 @@ const CoachingVoorMijRoute = CoachingVoorMijRouteImport.update({
 const CoachesRoute = CoachesRouteImport.update({
   id: '/coaches',
   path: '/coaches',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlgemeneVoorwaardenRoute = AlgemeneVoorwaardenRouteImport.update({
+  id: '/algemene-voorwaarden',
+  path: '/algemene-voorwaarden',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -244,12 +256,14 @@ const InzichtenDuurzaamInzetbaarBlijvenRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
   '/coaches': typeof CoachesRoute
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
   '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
   '/over-ons': typeof OverOnsRoute
+  '/privacyverklaring': typeof PrivacyverklaringRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
@@ -281,11 +295,13 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
   '/coaches': typeof CoachesRoute
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
   '/over-ons': typeof OverOnsRoute
+  '/privacyverklaring': typeof PrivacyverklaringRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
@@ -318,12 +334,14 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
   '/coaches': typeof CoachesRoute
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
   '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
   '/over-ons': typeof OverOnsRoute
+  '/privacyverklaring': typeof PrivacyverklaringRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
@@ -357,12 +375,14 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/algemene-voorwaarden'
     | '/coaches'
     | '/coaching-voor-mij'
     | '/inzichten'
     | '/kennismaken'
     | '/leiderschap'
     | '/over-ons'
+    | '/privacyverklaring'
     | '/sitemap.xml'
     | '/uwv-traject'
     | '/voor-werkgevers'
@@ -394,11 +414,13 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/algemene-voorwaarden'
     | '/coaches'
     | '/coaching-voor-mij'
     | '/kennismaken'
     | '/leiderschap'
     | '/over-ons'
+    | '/privacyverklaring'
     | '/sitemap.xml'
     | '/uwv-traject'
     | '/voor-werkgevers'
@@ -430,12 +452,14 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/algemene-voorwaarden'
     | '/coaches'
     | '/coaching-voor-mij'
     | '/inzichten'
     | '/kennismaken'
     | '/leiderschap'
     | '/over-ons'
+    | '/privacyverklaring'
     | '/sitemap.xml'
     | '/uwv-traject'
     | '/voor-werkgevers'
@@ -468,12 +492,14 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AlgemeneVoorwaardenRoute: typeof AlgemeneVoorwaardenRoute
   CoachesRoute: typeof CoachesRoute
   CoachingVoorMijRoute: typeof CoachingVoorMijRoute
   InzichtenRoute: typeof InzichtenRouteWithChildren
   KennismakenRoute: typeof KennismakenRoute
   LeiderschapRoute: typeof LeiderschapRoute
   OverOnsRoute: typeof OverOnsRoute
+  PrivacyverklaringRoute: typeof PrivacyverklaringRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   UwvTrajectRoute: typeof UwvTrajectRoute
   VoorWerkgeversRoute: typeof VoorWerkgeversRoute
@@ -500,6 +526,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacyverklaring': {
+      id: '/privacyverklaring'
+      path: '/privacyverklaring'
+      fullPath: '/privacyverklaring'
+      preLoaderRoute: typeof PrivacyverklaringRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/over-ons': {
@@ -542,6 +575,13 @@ declare module '@tanstack/react-router' {
       path: '/coaches'
       fullPath: '/coaches'
       preLoaderRoute: typeof CoachesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/algemene-voorwaarden': {
+      id: '/algemene-voorwaarden'
+      path: '/algemene-voorwaarden'
+      fullPath: '/algemene-voorwaarden'
+      preLoaderRoute: typeof AlgemeneVoorwaardenRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -806,12 +846,14 @@ const InzichtenRouteWithChildren = InzichtenRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AlgemeneVoorwaardenRoute: AlgemeneVoorwaardenRoute,
   CoachesRoute: CoachesRoute,
   CoachingVoorMijRoute: CoachingVoorMijRoute,
   InzichtenRoute: InzichtenRouteWithChildren,
   KennismakenRoute: KennismakenRoute,
   LeiderschapRoute: LeiderschapRoute,
   OverOnsRoute: OverOnsRoute,
+  PrivacyverklaringRoute: PrivacyverklaringRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   UwvTrajectRoute: UwvTrajectRoute,
   VoorWerkgeversRoute: VoorWerkgeversRoute,
@@ -819,13 +861,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
