@@ -211,8 +211,6 @@ function Page() {
           <a className="btn btn-outline" href="/kennismaken">Neem contact op</a>
         </div>
       </div>
-      {/* prevent unused var warning */}
-      <span aria-hidden="true" style={{ display: "none" }} data-paper-idot={JSON.stringify(paperIdot)} />
     </LegalLayout>
   );
 }
