@@ -51,7 +51,6 @@ function A({ n, children }: { n: string; children: React.ReactNode }) {
 }
 
 function Page() {
-  const paperIdot = { ["--idot-bg" as never]: "var(--paper)" } as React.CSSProperties;
   return (
     <LegalLayout>
       <p className="eyebrow">Juridisch</p>

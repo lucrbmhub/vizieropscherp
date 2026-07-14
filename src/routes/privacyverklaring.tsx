@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import LegalLayout from "@/components/LegalLayout";
 
@@ -47,7 +48,7 @@ function Page() {
     <LegalLayout>
       <p className="eyebrow">Juridisch</p>
       <h1>
-        Pr<span className="idot" style={{ ["--idot-bg" as never]: "var(--paper)" } as React.CSSProperties}>i</span>vacyverklaring<span className="gold">.</span>
+        Pr<span className="idot" style={{ ["--idot-bg" as never]: "var(--paper)" } as CSSProperties}>i</span>vacyverklaring<span className="gold">.</span>
       </h1>
       <p className="legal-meta">Versie 1.1, juli 2026</p>
 
