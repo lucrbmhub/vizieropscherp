@@ -428,3 +428,50 @@ address{font-style:normal}
 .vos-cal-fallback p{font-family:"Instrument Sans",sans-serif;color:var(--petrol);margin:0}
 @keyframes vos-pulse{0%,100%{opacity:1}50%{opacity:.6}}
 @media (prefers-reduced-motion:reduce){.vos-cal-skeleton{animation:none}}
+
+/* ---------- Legal pages (sober) ---------- */
+.legal-wrap{max-width:760px;margin:0 auto;padding:80px 32px 96px}
+@media (max-width:640px){.legal-wrap{padding:64px 22px 72px}}
+.legal-wrap h1{font-size:clamp(38px,4.6vw,58px);line-height:1.08;letter-spacing:-0.02em;margin-bottom:10px}
+.legal-wrap .legal-meta{color:var(--muted);font-size:13.5px;margin:0 0 40px}
+.legal-wrap h2{font-family:var(--f-display);font-weight:500;color:var(--ink);font-size:clamp(22px,2.4vw,28px);line-height:1.2;margin:56px 0 16px;letter-spacing:-0.01em}
+.legal-wrap h3{font-family:var(--f-display);font-weight:500;color:var(--ink);font-size:19px;line-height:1.3;margin:32px 0 10px}
+.legal-wrap p{margin:0 0 14px;line-height:1.65;color:var(--body-c)}
+.legal-wrap a{color:var(--koraal)}
+.legal-wrap a:hover{color:var(--koraal-deep)}
+.legal-wrap ul.dia-list{list-style:none;padding:0;margin:0 0 18px}
+.legal-wrap ul.dia-list li{position:relative;padding-left:22px;margin:0 0 8px;line-height:1.65}
+.legal-wrap ul.dia-list li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:8px;background:var(--koraal);transform:rotate(45deg)}
+.legal-wrap .legal-table-wrap{overflow-x:auto;margin:16px 0 20px}
+.legal-wrap table.legal-table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px}
+.legal-wrap table.legal-table th,.legal-wrap table.legal-table td{border:1px solid var(--line);padding:12px 16px;text-align:left;vertical-align:top}
+.legal-wrap table.legal-table th{background:var(--linnen);color:var(--petrol);font-family:var(--f-display);font-weight:500}
+.legal-wrap .address-block{margin:0 0 14px;line-height:1.65}
+.legal-wrap .address-block > span{display:block}
+
+/* Facet CTA-blok voor legal */
+.legal-facet{margin:64px 0 0;background:var(--goud);padding:2px;clip-path:polygon(21px 0,100% 0,100% calc(100% - 21px),calc(100% - 21px) 100%,0 100%,0 21px)}
+.legal-facet-inner{background:var(--warm);padding:32px 36px;clip-path:polygon(19px 0,100% 0,100% calc(100% - 19px),calc(100% - 19px) 100%,0 100%,0 19px)}
+.legal-facet-inner h2{margin:0 0 10px;font-size:22px}
+.legal-facet-inner p{color:var(--body-warm);margin:0 0 18px}
+.legal-facet-inner .btn-outline{border-color:var(--petrol);color:var(--petrol)}
+
+/* Modelformulier-kader (herroeping) */
+.legal-form-actions{margin:24px 0 12px}
+.legal-form-card{background:var(--linnen);border:1px solid var(--line);border-radius:16px;padding:32px}
+@media (max-width:640px){.legal-form-card{padding:24px}}
+.legal-form-intro{color:var(--muted);font-size:13.5px;font-style:italic;margin:0 0 18px}
+.legal-form-card .address-block{margin:0 0 22px}
+.legal-form-field{margin:0 0 18px}
+.legal-form-field label{display:block;font-size:14.5px;color:var(--body-c);margin-bottom:6px}
+.legal-form-line{height:40px;border-bottom:1px solid #C9BFA6}
+
+/* Print */
+@media print{
+  .site-header,.site-footer,.legal-facet,.legal-form-actions{display:none!important}
+  body{background:#fff;color:#000}
+  .legal-wrap{max-width:100%;padding:0}
+  .legal-wrap h1,.legal-wrap h2,.legal-wrap h3,.legal-wrap p,.legal-wrap li{color:#000}
+  .legal-form-card{background:#fff;border-color:#000}
+  .legal-form-line{border-color:#000}
+}
