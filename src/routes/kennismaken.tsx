@@ -52,7 +52,9 @@ const HTML_BEFORE = `<header class="site-header">
     </div>
   </div>
 </section>
+`;
 
+const HTML_AFTER = `
 <!-- DE GESPREKKEN -->
 <section class="section section--linnen">
   <div class="container">
@@ -80,9 +82,8 @@ const HTML_BEFORE = `<header class="site-header">
     </div>
   </div>
 </section>
-`;
 
-const HTML_AFTER = `<!-- FORMULIER -->
+<!-- FORMULIER -->
 <section class="section" id="bericht-form">
   <div class="container">
     <div class="section-head">
