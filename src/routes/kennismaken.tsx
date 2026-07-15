@@ -53,39 +53,6 @@ const HTML_BEFORE = `<header class="site-header">
   </div>
 </section>
 
-<!-- EVEN CONTACT -->
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <p class="eyebrow">Even contact</p>
-      <h2 class="h-section">Hoe wil je iets laten weten?</h2>
-      <p>Bellen, appen of mailen, het mag allemaal. Je hoort snel van ons, meestal dezelfde of de volgende werkdag.</p>
-    </div>
-    <div class="grid g3">
-      <div class="card">
-        <svg width="44" height="44" viewBox="0 0 100 100" fill="none" aria-hidden="true" style="margin-bottom:16px;"><path d="M38 20 L62 44 L38 68 L14 44 Z" stroke="#1F3D3B" stroke-width="6" stroke-linejoin="round"></path><path d="M62 32 L86 56 L62 80 L38 56 Z" stroke="#E8714A" stroke-width="6" stroke-linejoin="round"></path></svg>
-        <h3>Bellen</h3>
-        <p>Op werkdagen bereikbaar. Krijg je ons niet te pakken, dan bellen we terug.</p>
-        <a href="tel:+31202146466" style="display:inline-block;margin-top:14px;font-family:'Bricolage Grotesque',sans-serif;font-size:19px;color:var(--ink);">020 214 64 66</a>
-      </div>
-      <div class="card">
-        <h3>WhatsApp</h3>
-        <p>Een kort berichtje is vaak het makkelijkst. We reageren op werkdagen.</p>
-        <a href="https://wa.me/31611221424" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:14px;font-family:'Bricolage Grotesque',sans-serif;font-size:19px;color:var(--ink);">Stuur een bericht</a>
-      </div>
-      <div class="card">
-        <h3>Mailen</h3>
-        <p>Een paar zinnen over wat er speelt is genoeg.</p>
-        <a href="mailto:hallo@vizieropscherp.nl" style="display:inline-block;margin-top:14px;font-family:'Bricolage Grotesque',sans-serif;font-size:18px;color:var(--ink);word-break:break-all;">hallo@vizieropscherp.nl</a>
-      </div>
-    </div>
-    <div class="card--open" style="margin-top:28px;padding:26px 32px;">
-      <h3 style="font-size:19px;margin-bottom:6px;">Of kom langs</h3>
-      <p style="font-size:15px;">Klein Heiligland 84, Haarlem&nbsp;&nbsp;·&nbsp;&nbsp;IJsbaanpad 9, Amsterdam-Zuid. Een gesprek kan ook online of bij jullie op kantoor.</p>
-    </div>
-  </div>
-</section>
-
 <!-- DE GESPREKKEN -->
 <section class="section section--linnen">
   <div class="container">
