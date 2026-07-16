@@ -171,8 +171,94 @@ const HTML_AFTER = `
 </footer>`;
 
 import CalEmbed from "@/components/CalEmbed";
+import { useEffect } from "react";
+import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Vul je naam in").max(200),
+  email: z.string().trim().email("Vul een geldig e-mailadres in").max(320),
+  phone: z.string().trim().max(30).optional(),
+  role: z.string().trim().max(100),
+  message: z.string().trim().max(5000).optional(),
+});
+
+function useContactForm() {
+  useEffect(() => {
+    const form = document.querySelector<HTMLFormElement>("#bericht-form form");
+    if (!form) return;
+
+    const statusEl = document.createElement("p");
+    statusEl.className = "hint";
+    statusEl.style.marginTop = "14px";
+    statusEl.setAttribute("role", "status");
+    form.appendChild(statusEl);
+
+    const setStatus = (msg: string, color: string) => {
+      statusEl.textContent = msg;
+      statusEl.style.color = color;
+    };
+
+    const submitBtn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+
+    const onSubmit = async (e: SubmitEvent) => {
+      e.preventDefault();
+      setStatus("", "");
+
+      const fd = new FormData(form);
+      const parsed = contactSchema.safeParse({
+        name: String(fd.get("name") ?? ""),
+        email: String(fd.get("email") ?? ""),
+        phone: String(fd.get("phone") ?? ""),
+        role: String(fd.get("role") ?? ""),
+        message: String(fd.get("message") ?? ""),
+      });
+
+      if (!parsed.success) {
+        setStatus(parsed.error.issues[0]?.message ?? "Controleer je gegevens", "#B4432A");
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = "0.7";
+      }
+
+      try {
+        const { error } = await supabase.from("contact_aanvragen" as never).insert({
+          name: parsed.data.name,
+          email: parsed.data.email,
+          phone: parsed.data.phone || null,
+          role: parsed.data.role,
+          message: parsed.data.message || null,
+        } as never);
+        if (error) throw error;
+        form.reset();
+        setStatus("Bedankt, we nemen zo snel mogelijk contact met je op.", "#1F3D3B");
+      } catch (err) {
+        console.error(err);
+        setStatus(
+          "Er ging iets mis. Probeer het nog eens of mail hallo@vizieropscherp.nl.",
+          "#B4432A",
+        );
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = "";
+        }
+      }
+    };
+
+    form.addEventListener("submit", onSubmit);
+    return () => {
+      form.removeEventListener("submit", onSubmit);
+      statusEl.remove();
+    };
+  }, []);
+}
 
 function Page() {
+  useContactForm();
   return (
     <>
       <div dangerouslySetInnerHTML={{ __html: HTML_BEFORE }} />
@@ -192,3 +278,4 @@ function Page() {
     </>
   );
 }
+
