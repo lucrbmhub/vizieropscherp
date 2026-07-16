@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import teamAsset from "@/assets/team-vizier-op-scherp.png.asset.json";
+const teamAsset = { url: "/assets/team-vizier-op-scherp.png" };
 
 
 export const Route = createFileRoute("/over-ons")({
