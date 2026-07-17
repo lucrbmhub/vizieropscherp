@@ -172,33 +172,30 @@ function useContactForm() {
         return;
       }
 
+      // Honeypot: bots die het verborgen veld invullen krijgen een "geslaagde"
+      // melding, maar er wordt niets opgeslagen.
+      if (String(fd.get("hp_website") ?? "").trim().length > 0) {
+        form.reset();
+        setStatus("Bedankt, we nemen zo snel mogelijk contact met je op.", "#1F3D3B");
+        return;
+      }
+
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.style.opacity = "0.7";
       }
 
       try {
-        const res = await fetch("/api/public/submit-form", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({
-            form: "contact",
-            name: parsed.data.name,
-            email: parsed.data.email,
-            phone: parsed.data.phone || null,
-            role: parsed.data.role,
-            message: parsed.data.message || null,
-            hp_website: String(fd.get("hp_website") ?? ""),
-          }),
+        // Let op: geen user_agent meesturen — die kolom bestaat niet in
+        // de productietabel contact_aanvragen.
+        const { error } = await supabase.from("contact_aanvragen").insert({
+          name: parsed.data.name,
+          email: parsed.data.email,
+          phone: parsed.data.phone || null,
+          role: parsed.data.role,
+          message: parsed.data.message || null,
         });
-        if (res.status === 429) {
-          setStatus(
-            "Er zijn te veel aanvragen vanaf dit adres. Probeer het over een paar minuten opnieuw of mail hallo@vizieropscherp.nl.",
-            "#B4432A",
-          );
-          return;
-        }
-        if (!res.ok) throw new Error("submit_failed");
+        if (error) throw error;
         form.reset();
         setStatus("Bedankt, we nemen zo snel mogelijk contact met je op.", "#1F3D3B");
       } catch (err) {
