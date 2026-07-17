@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import LegalLayout from "@/components/LegalLayout";
+import { SITE_URL } from "@/lib/site";
 
-const URL = "https://vizieropscherp.nl/algemene-voorwaarden";
+const URL = `${SITE_URL}/algemene-voorwaarden`;
 const DESC =
   "De algemene voorwaarden van Vizier op Scherp voor coaching, loopbaanbegeleiding, trainingen en coachingpool-jaarafspraken. Helder en zorgvuldig geformuleerd.";
 

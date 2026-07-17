@@ -1,8 +1,9 @@
 import type { CSSProperties } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import LegalLayout from "@/components/LegalLayout";
+import { SITE_URL } from "@/lib/site";
 
-const URL = "https://vizieropscherp.nl/privacyverklaring";
+const URL = `${SITE_URL}/privacyverklaring`;
 const DESC =
   "Lees hoe Vizier op Scherp omgaat met persoonsgegevens van deelnemers, opdrachtgevers en websitebezoekers. Helder, zorgvuldig en volgens de AVG.";
 
