@@ -20,19 +20,6 @@ export const Route = createFileRoute("/")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "Vizier op Scherp",
-          url: `${SITE_URL}/`,
-          email: "hallo@vizieropscherp.nl",
-          telephone: "+31202146466",
-          areaServed: ["Amsterdam", "Haarlem"],
-          sameAs: ["https://www.linkedin.com/company/10002759/"],
-        }),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
           "@type": "LocalBusiness",
           name: "Vizier op Scherp",
           url: `${SITE_URL}/`,
@@ -54,15 +41,6 @@ export const Route = createFileRoute("/")({
               addressCountry: "NL",
             },
           ],
-        }),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          name: "Vizier op Scherp",
-          url: `${SITE_URL}/`,
         }),
       },
     ],
