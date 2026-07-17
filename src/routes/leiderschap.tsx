@@ -10,7 +10,7 @@ export const Route = createFileRoute("/leiderschap")({
       { property: "og:description", content: "Lopende programma's op het gebied van leiderschap en talentontwikkeling: coaching voor startende managers en begeleiding van trainees." },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.lovable.app/leiderschap" }],
+    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/leiderschap" }],
   }),
   component: Page,
 });

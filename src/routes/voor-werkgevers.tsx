@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-const coachingWerkgeverImg = { url: "/assets/Coaching-werkgever_Haarlem-Amsterdam.jpg" };
+const coachingWerkgeverImg = { url: "https://vizieropscherp.nl/assets/Coaching-werkgever_Haarlem-Amsterdam.jpg" };
 
 
 export const Route = createFileRoute("/voor-werkgevers")({
@@ -10,10 +10,10 @@ export const Route = createFileRoute("/voor-werkgevers")({
       { property: "og:title", content: "Loopbaancoaching voor werkgevers & HR | Vizier op Scherp" },
       { property: "og:description", content: "Coachingpool, individuele trajecten en proactieve loopbaangesprekken. Georganiseerd voor HR, persoonlijk voor de medewerker." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://vizieropscherp.lovable.app/voor-werkgevers" },
-      { property: "og:image", content: "/assets/Coaching-werkgever_Haarlem-Amsterdam.jpg" },
+      { property: "og:url", content: "https://vizieropscherp.nl/voor-werkgevers" },
+      { property: "og:image", content: "https://vizieropscherp.nl/assets/Coaching-werkgever_Haarlem-Amsterdam.jpg" },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.lovable.app/voor-werkgevers" }],
+    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/voor-werkgevers" }],
   }),
   component: Page,
 });

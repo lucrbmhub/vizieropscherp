@@ -8,9 +8,9 @@ export const Route = createFileRoute("/coaching-voor-mij")({
       { property: "og:title", content: "Coaching voor mij | Vizier op Scherp" },
       { property: "og:description", content: "Doorverwezen of zoek je zelf coaching? Maak vrijblijvend kennis met een coach die bij je past." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://vizieropscherp.lovable.app/coaching-voor-mij" },
+      { property: "og:url", content: "https://vizieropscherp.nl/coaching-voor-mij" },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.lovable.app/coaching-voor-mij" }],
+    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/coaching-voor-mij" }],
   }),
   component: Page,
 });

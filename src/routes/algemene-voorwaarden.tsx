@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import LegalLayout from "@/components/LegalLayout";
 
-const URL = "https://vizieropscherp.lovable.app/algemene-voorwaarden";
+const URL = "https://vizieropscherp.nl/algemene-voorwaarden";
 const DESC =
   "De algemene voorwaarden van Vizier op Scherp voor coaching, loopbaanbegeleiding, trainingen en coachingpool-jaarafspraken. Helder en zorgvuldig geformuleerd.";
 
@@ -18,7 +18,7 @@ const JSONLD = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://vizieropscherp.lovable.app/" },
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://vizieropscherp.nl/" },
         { "@type": "ListItem", position: 2, name: "Algemene voorwaarden", item: URL },
       ],
     },

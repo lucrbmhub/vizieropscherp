@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import LegalLayout from "@/components/LegalLayout";
 
-const URL = "https://vizieropscherp.lovable.app/privacyverklaring";
+const URL = "https://vizieropscherp.nl/privacyverklaring";
 const DESC =
   "Lees hoe Vizier op Scherp omgaat met persoonsgegevens van deelnemers, opdrachtgevers en websitebezoekers. Helder, zorgvuldig en volgens de AVG.";
 
@@ -19,7 +19,7 @@ const JSONLD = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://vizieropscherp.lovable.app/" },
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://vizieropscherp.nl/" },
         { "@type": "ListItem", position: 2, name: "Privacyverklaring", item: URL },
       ],
     },

@@ -7,9 +7,9 @@ export const Route = createFileRoute("/inzichten/")({
       { name: "description", content: "Praktische inzichten voor wie nadenkt over een volgende stap, en voor HR-afdelingen die hun mensen op tijd willen begeleiden." },
       { property: "og:title", content: "Inzichten over werk en loopbaan | Vizier op Scherp" },
       { property: "og:description", content: "Praktische inzichten voor wie nadenkt over een volgende stap, en voor HR-afdelingen die hun mensen op tijd willen begeleiden." },
-      { property: "og:url", content: "https://vizieropscherp.lovable.app/inzichten" },
+      { property: "og:url", content: "https://vizieropscherp.nl/inzichten" },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.lovable.app/inzichten" }],
+    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/inzichten" }],
   }),
   component: Page,
 });
