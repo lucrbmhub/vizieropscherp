@@ -126,7 +126,6 @@ const HTML_AFTER = `
 import CalEmbed from "@/components/CalEmbed";
 import { useEffect } from "react";
 import { z } from "zod";
-import { supabase } from "@/integrations/supabase/client";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Vul je naam in").max(200),
@@ -178,14 +177,27 @@ function useContactForm() {
       }
 
       try {
-        const { error } = await supabase.from("contact_aanvragen" as never).insert({
-          name: parsed.data.name,
-          email: parsed.data.email,
-          phone: parsed.data.phone || null,
-          role: parsed.data.role,
-          message: parsed.data.message || null,
-        } as never);
-        if (error) throw error;
+        const res = await fetch("/api/public/submit-form", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            form: "contact",
+            name: parsed.data.name,
+            email: parsed.data.email,
+            phone: parsed.data.phone || null,
+            role: parsed.data.role,
+            message: parsed.data.message || null,
+            hp_website: String(fd.get("hp_website") ?? ""),
+          }),
+        });
+        if (res.status === 429) {
+          setStatus(
+            "Er zijn te veel aanvragen vanaf dit adres. Probeer het over een paar minuten opnieuw of mail hallo@vizieropscherp.nl.",
+            "#B4432A",
+          );
+          return;
+        }
+        if (!res.ok) throw new Error("submit_failed");
         form.reset();
         setStatus("Bedankt, we nemen zo snel mogelijk contact met je op.", "#1F3D3B");
       } catch (err) {
@@ -209,6 +221,7 @@ function useContactForm() {
     };
   }, []);
 }
+
 
 function Page() {
   useContactForm();
