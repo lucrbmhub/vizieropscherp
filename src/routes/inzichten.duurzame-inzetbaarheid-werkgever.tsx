@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SITE_URL } from "@/lib/site";
+
 
 export const Route = createFileRoute("/inzichten/duurzame-inzetbaarheid-werkgever")({
   head: () => ({
@@ -8,10 +10,10 @@ export const Route = createFileRoute("/inzichten/duurzame-inzetbaarheid-werkgeve
       { property: "og:title", content: "Duurzame inzetbaarheid: waarom het vitaliteitsprogramma vaak niet werkt, en wat wel | Vizier op Scherp" },
       { property: "og:description", content: "Een vitaliteitsprogramma voor iedereen raakt vaak niet de kern van duurzame inzetbaarheid. Met cijfers van TNO en UWV: waarom dat zo is, en wat voor werkgevers in de regio Amsterdam en Haarlem w\u00e9l werkt." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://vizieropscherp.nl/inzichten/duurzame-inzetbaarheid-werkgever" },
+      { property: "og:url", content: `${SITE_URL}/inzichten/duurzame-inzetbaarheid-werkgever` },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/inzichten/duurzame-inzetbaarheid-werkgever" }],
-    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Duurzame inzetbaarheid: waarom het vitaliteitsprogramma vaak niet werkt, en wat wel", "description": "Een vitaliteitsprogramma voor iedereen raakt vaak niet de kern van duurzame inzetbaarheid. Met cijfers van TNO en UWV: waarom dat zo is, en wat voor werkgevers in de regio Amsterdam en Haarlem w\\\\u00e9l werkt.", "url": "https://vizieropscherp.nl/inzichten/duurzame-inzetbaarheid-werkgever", "inLanguage": "nl-NL", "mainEntityOfPage": "https://vizieropscherp.nl/inzichten/duurzame-inzetbaarheid-werkgever", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "https://vizieropscherp.nl/#organization"}, "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://vizieropscherp.nl/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "https://vizieropscherp.nl/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Duurzame inzetbaarheid: waarom het vitaliteitsprogramma vaak niet werkt, en wat wel", "item": "https://vizieropscherp.nl/inzichten/duurzame-inzetbaarheid-werkgever"}]}]}` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/duurzame-inzetbaarheid-werkgever` }],
+    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Duurzame inzetbaarheid: waarom het vitaliteitsprogramma vaak niet werkt, en wat wel", "description": "Een vitaliteitsprogramma voor iedereen raakt vaak niet de kern van duurzame inzetbaarheid. Met cijfers van TNO en UWV: waarom dat zo is, en wat voor werkgevers in de regio Amsterdam en Haarlem w\\\\u00e9l werkt.", "url": "${SITE_URL}/inzichten/duurzame-inzetbaarheid-werkgever", "inLanguage": "nl-NL", "mainEntityOfPage": "${SITE_URL}/inzichten/duurzame-inzetbaarheid-werkgever", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "${SITE_URL}/#organization"}, "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "${SITE_URL}/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "${SITE_URL}/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Duurzame inzetbaarheid: waarom het vitaliteitsprogramma vaak niet werkt, en wat wel", "item": "${SITE_URL}/inzichten/duurzame-inzetbaarheid-werkgever"}]}]}` }],
   }),
   component: Page,
 });

@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SITE_URL } from "@/lib/site";
+
 
 export const Route = createFileRoute("/inzichten/richting-vinden-in-je-loopbaan")({
   head: () => ({
@@ -8,10 +10,10 @@ export const Route = createFileRoute("/inzichten/richting-vinden-in-je-loopbaan"
       { property: "og:title", content: "Richting vinden in je loopbaan: waarom je niet bij de vacaturesite moet beginnen | Vizier op Scherp" },
       { property: "og:description", content: "Weet je dat je iets anders wilt, maar niet wat? Richting vind je zelden op een vacaturesite, maar door te ontdekken wat je energie geeft en wat je drijft. Praktische handvatten van Vizier op Scherp, loopbaancoaching in de regio Amsterdam en Haarlem." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://vizieropscherp.nl/inzichten/richting-vinden-in-je-loopbaan" },
+      { property: "og:url", content: `${SITE_URL}/inzichten/richting-vinden-in-je-loopbaan` },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/inzichten/richting-vinden-in-je-loopbaan" }],
-    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Richting vinden in je loopbaan: waarom je niet bij de vacaturesite moet beginnen", "description": "Weet je dat je iets anders wilt, maar niet wat? Richting vind je zelden op een vacaturesite, maar door te ontdekken wat je energie geeft en wat je drijft. Praktische handvatten van Vizier op Scherp, loopbaancoaching in de regio Amsterdam en Haarlem.", "url": "https://vizieropscherp.nl/inzichten/richting-vinden-in-je-loopbaan", "inLanguage": "nl-NL", "mainEntityOfPage": "https://vizieropscherp.nl/inzichten/richting-vinden-in-je-loopbaan", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "https://vizieropscherp.nl/#organization"}, "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://vizieropscherp.nl/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "https://vizieropscherp.nl/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Richting vinden in je loopbaan: waarom je niet bij de vacaturesite moet beginnen", "item": "https://vizieropscherp.nl/inzichten/richting-vinden-in-je-loopbaan"}]}]}` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/richting-vinden-in-je-loopbaan` }],
+    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Richting vinden in je loopbaan: waarom je niet bij de vacaturesite moet beginnen", "description": "Weet je dat je iets anders wilt, maar niet wat? Richting vind je zelden op een vacaturesite, maar door te ontdekken wat je energie geeft en wat je drijft. Praktische handvatten van Vizier op Scherp, loopbaancoaching in de regio Amsterdam en Haarlem.", "url": "${SITE_URL}/inzichten/richting-vinden-in-je-loopbaan", "inLanguage": "nl-NL", "mainEntityOfPage": "${SITE_URL}/inzichten/richting-vinden-in-je-loopbaan", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "${SITE_URL}/#organization"}, "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "${SITE_URL}/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "${SITE_URL}/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Richting vinden in je loopbaan: waarom je niet bij de vacaturesite moet beginnen", "item": "${SITE_URL}/inzichten/richting-vinden-in-je-loopbaan"}]}]}` }],
   }),
   component: Page,
 });

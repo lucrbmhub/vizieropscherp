@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SITE_URL } from "@/lib/site";
+
 const teamAsset = { url: "/assets/team-vizier-op-scherp.png" };
 
 
@@ -10,9 +12,9 @@ export const Route = createFileRoute("/over-ons")({
       { property: "og:title", content: "Over Vizier op Scherp" },
       { property: "og:description", content: "Kwaliteit door focus. Eenvoud door organisatie. Eén aanspreekpunt en heldere afspraken." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://vizieropscherp.nl/over-ons" },
+      { property: "og:url", content: `${SITE_URL}/over-ons` },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/over-ons" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/over-ons` }],
   }),
   component: Page,
 });

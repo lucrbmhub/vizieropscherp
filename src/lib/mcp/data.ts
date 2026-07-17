@@ -1,4 +1,4 @@
-export const SITE_URL = "https://vizieropscherp.nl";
+import { SITE_URL } from "@/lib/site";
 
 export const ARTICLES: Array<{ slug: string; title: string; description: string }> = [
   { slug: "duurzaam-inzetbaar-blijven", title: "Duurzaam inzetbaar blijven in je werk", description: "Hoe blijf je duurzaam inzetbaar in je werk? De vier dingen die je vitaal, vaardig en gemotiveerd houden, plus een korte zelfcheck." },

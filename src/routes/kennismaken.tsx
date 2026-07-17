@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SITE_URL } from "@/lib/site";
+
 
 export const Route = createFileRoute("/kennismaken")({
   head: () => ({
@@ -8,9 +10,9 @@ export const Route = createFileRoute("/kennismaken")({
       { property: "og:title", content: "Kennismaken | Vizier op Scherp" },
       { property: "og:description", content: "Vertel wat er speelt, dan kijken we samen wat helpt. Een eerste gesprek is zo gebeurd." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://vizieropscherp.nl/kennismaken" },
+      { property: "og:url", content: `${SITE_URL}/kennismaken` },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/kennismaken" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/kennismaken` }],
   }),
   component: Page,
 });
@@ -278,4 +280,3 @@ function Page() {
     </>
   );
 }
-

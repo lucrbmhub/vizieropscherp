@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SITE_URL } from "@/lib/site";
+
 
 export const Route = createFileRoute("/inzichten/impostersyndroom-twijfel-als-kracht")({
   head: () => ({
@@ -8,10 +10,10 @@ export const Route = createFileRoute("/inzichten/impostersyndroom-twijfel-als-kr
       { property: "og:title", content: "Je voelt je een bedrieger? Dat zegt iets goeds over je | Vizier op Scherp" },
       { property: "og:description", content: "Het impostersyndroom, het gevoel dat je je succes niet verdient, treft juist mensen die hun werk serieus nemen. Waarom twijfel een kracht kan zijn en hoe je ermee leert omgaan. Loopbaancoaching in de regio Amsterdam en Haarlem." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://vizieropscherp.nl/inzichten/impostersyndroom-twijfel-als-kracht" },
+      { property: "og:url", content: `${SITE_URL}/inzichten/impostersyndroom-twijfel-als-kracht` },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/inzichten/impostersyndroom-twijfel-als-kracht" }],
-    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Je voelt je een bedrieger? Dat zegt iets goeds over je", "description": "Het impostersyndroom, het gevoel dat je je succes niet verdient, treft juist mensen die hun werk serieus nemen. Waarom twijfel een kracht kan zijn en hoe je ermee leert omgaan. Loopbaancoaching in de regio Amsterdam en Haarlem.", "url": "https://vizieropscherp.nl/inzichten/impostersyndroom-twijfel-als-kracht", "inLanguage": "nl-NL", "mainEntityOfPage": "https://vizieropscherp.nl/inzichten/impostersyndroom-twijfel-als-kracht", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "https://vizieropscherp.nl/#organization"}, "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://vizieropscherp.nl/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "https://vizieropscherp.nl/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Je voelt je een bedrieger? Dat zegt iets goeds over je", "item": "https://vizieropscherp.nl/inzichten/impostersyndroom-twijfel-als-kracht"}]}]}` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/impostersyndroom-twijfel-als-kracht` }],
+    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Je voelt je een bedrieger? Dat zegt iets goeds over je", "description": "Het impostersyndroom, het gevoel dat je je succes niet verdient, treft juist mensen die hun werk serieus nemen. Waarom twijfel een kracht kan zijn en hoe je ermee leert omgaan. Loopbaancoaching in de regio Amsterdam en Haarlem.", "url": "${SITE_URL}/inzichten/impostersyndroom-twijfel-als-kracht", "inLanguage": "nl-NL", "mainEntityOfPage": "${SITE_URL}/inzichten/impostersyndroom-twijfel-als-kracht", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "${SITE_URL}/#organization"}, "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "${SITE_URL}/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "${SITE_URL}/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Je voelt je een bedrieger? Dat zegt iets goeds over je", "item": "${SITE_URL}/inzichten/impostersyndroom-twijfel-als-kracht"}]}]}` }],
   }),
   component: Page,
 });

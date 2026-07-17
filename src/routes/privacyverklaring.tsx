@@ -20,7 +20,7 @@ const JSONLD = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://vizieropscherp.nl/" },
+        { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
         { "@type": "ListItem", position: 2, name: "Privacyverklaring", item: URL },
       ],
     },

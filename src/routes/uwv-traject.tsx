@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SITE_URL } from "@/lib/site";
+
 
 export const Route = createFileRoute("/uwv-traject")({
   head: () => ({
@@ -8,9 +10,9 @@ export const Route = createFileRoute("/uwv-traject")({
       { property: "og:title", content: "UWV-traject: Werkfit & Naar Werk | Vizier op Scherp" },
       { property: "og:description", content: "Weer stappen zetten richting werk met een vaste coach. Persoonlijk, geduldig en in jouw tempo." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://vizieropscherp.nl/uwv-traject" },
+      { property: "og:url", content: `${SITE_URL}/uwv-traject` },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/uwv-traject" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/uwv-traject` }],
   }),
   component: Page,
 });

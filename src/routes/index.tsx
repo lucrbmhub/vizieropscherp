@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SITE_URL } from "@/lib/site";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -8,9 +10,9 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Loopbaancoaching in Amsterdam & Haarlem | Vizier op Scherp" },
       { property: "og:description", content: "Klein netwerk van gecertificeerde coaches, één aanspreekpunt, heldere afspraken over proces, prijs en privacy." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://vizieropscherp.nl/" },
+      { property: "og:url", content: `${SITE_URL}/` },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
     scripts: [
       {
         type: "application/ld+json",
@@ -18,7 +20,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "Vizier op Scherp",
-          url: "https://vizieropscherp.nl/",
+          url: `${SITE_URL}/`,
           email: "hallo@vizieropscherp.nl",
           telephone: "+31202146466",
           areaServed: ["Amsterdam", "Haarlem"],
@@ -31,7 +33,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           name: "Vizier op Scherp",
-          url: "https://vizieropscherp.nl/",
+          url: `${SITE_URL}/`,
           email: "hallo@vizieropscherp.nl",
           telephone: "+31202146466",
           address: [
@@ -58,7 +60,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "Vizier op Scherp",
-          url: "https://vizieropscherp.nl/",
+          url: `${SITE_URL}/`,
         }),
       },
     ],
