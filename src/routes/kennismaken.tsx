@@ -79,10 +79,15 @@ const HTML_AFTER = `
       <p>Je naam, je mailadres en waar je het over wilt hebben. De rest bespreken we wel.</p>
     </div>
     <form class="form" novalidate>
+      <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+        <label for="hp-website">Website (niet invullen)</label>
+        <input id="hp-website" name="hp_website" type="text" tabindex="-1" autocomplete="off">
+      </div>
       <div class="field">
         <label for="name">Je naam</label>
         <input id="name" name="name" type="text" required maxlength="200" autocomplete="name">
       </div>
+
       <div class="field">
         <label for="email">Je e-mailadres</label>
         <input id="email" name="email" type="email" required maxlength="320" autocomplete="email">
