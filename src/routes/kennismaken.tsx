@@ -79,10 +79,15 @@ const HTML_AFTER = `
       <p>Je naam, je mailadres en waar je het over wilt hebben. De rest bespreken we wel.</p>
     </div>
     <form class="form" novalidate>
+      <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+        <label for="hp-website">Website (niet invullen)</label>
+        <input id="hp-website" name="hp_website" type="text" tabindex="-1" autocomplete="off">
+      </div>
       <div class="field">
         <label for="name">Je naam</label>
         <input id="name" name="name" type="text" required maxlength="200" autocomplete="name">
       </div>
+
       <div class="field">
         <label for="email">Je e-mailadres</label>
         <input id="email" name="email" type="email" required maxlength="320" autocomplete="email">
@@ -121,7 +126,6 @@ const HTML_AFTER = `
 import CalEmbed from "@/components/CalEmbed";
 import { useEffect } from "react";
 import { z } from "zod";
-import { supabase } from "@/integrations/supabase/client";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Vul je naam in").max(200),
@@ -173,14 +177,27 @@ function useContactForm() {
       }
 
       try {
-        const { error } = await supabase.from("contact_aanvragen" as never).insert({
-          name: parsed.data.name,
-          email: parsed.data.email,
-          phone: parsed.data.phone || null,
-          role: parsed.data.role,
-          message: parsed.data.message || null,
-        } as never);
-        if (error) throw error;
+        const res = await fetch("/api/public/submit-form", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            form: "contact",
+            name: parsed.data.name,
+            email: parsed.data.email,
+            phone: parsed.data.phone || null,
+            role: parsed.data.role,
+            message: parsed.data.message || null,
+            hp_website: String(fd.get("hp_website") ?? ""),
+          }),
+        });
+        if (res.status === 429) {
+          setStatus(
+            "Er zijn te veel aanvragen vanaf dit adres. Probeer het over een paar minuten opnieuw of mail hallo@vizieropscherp.nl.",
+            "#B4432A",
+          );
+          return;
+        }
+        if (!res.ok) throw new Error("submit_failed");
         form.reset();
         setStatus("Bedankt, we nemen zo snel mogelijk contact met je op.", "#1F3D3B");
       } catch (err) {
@@ -204,6 +221,7 @@ function useContactForm() {
     };
   }, []);
 }
+
 
 function Page() {
   useContactForm();

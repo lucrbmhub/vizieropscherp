@@ -14,6 +14,60 @@ export type Database = {
   }
   public: {
     Tables: {
+      contact_aanvragen: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          message: string | null
+          name: string
+          phone: string | null
+          role: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          message?: string | null
+          name: string
+          phone?: string | null
+          role?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string | null
+          name?: string
+          phone?: string | null
+          role?: string | null
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
+      form_rate_limits: {
+        Row: {
+          created_at: string
+          form_type: string
+          id: string
+          ip_hash: string
+        }
+        Insert: {
+          created_at?: string
+          form_type: string
+          id?: string
+          ip_hash: string
+        }
+        Update: {
+          created_at?: string
+          form_type?: string
+          id?: string
+          ip_hash?: string
+        }
+        Relationships: []
+      }
       workbook_leads: {
         Row: {
           consent: boolean
