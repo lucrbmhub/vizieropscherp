@@ -8,9 +8,9 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Loopbaancoaching in Amsterdam & Haarlem | Vizier op Scherp" },
       { property: "og:description", content: "Klein netwerk van gecertificeerde coaches, één aanspreekpunt, heldere afspraken over proces, prijs en privacy." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://vizieropscherp.lovable.app/" },
+      { property: "og:url", content: "https://vizieropscherp.nl/" },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "Vizier op Scherp",
-          url: "https://vizieropscherp.lovable.app/",
+          url: "https://vizieropscherp.nl/",
           email: "hallo@vizieropscherp.nl",
           telephone: "+31202146466",
           areaServed: ["Amsterdam", "Haarlem"],
@@ -31,7 +31,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           name: "Vizier op Scherp",
-          url: "https://vizieropscherp.lovable.app/",
+          url: "https://vizieropscherp.nl/",
           email: "hallo@vizieropscherp.nl",
           telephone: "+31202146466",
           address: [
@@ -58,7 +58,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "Vizier op Scherp",
-          url: "https://vizieropscherp.lovable.app/",
+          url: "https://vizieropscherp.nl/",
         }),
       },
     ],

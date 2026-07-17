@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vizieropscherp.lovable.app/sitemap.xml
+Sitemap: https://vizieropscherp.nl/sitemap.xml

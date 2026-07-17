@@ -8,9 +8,9 @@ export const Route = createFileRoute("/uwv-traject")({
       { property: "og:title", content: "UWV-traject: Werkfit & Naar Werk | Vizier op Scherp" },
       { property: "og:description", content: "Weer stappen zetten richting werk met een vaste coach. Persoonlijk, geduldig en in jouw tempo." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://vizieropscherp.lovable.app/uwv-traject" },
+      { property: "og:url", content: "https://vizieropscherp.nl/uwv-traject" },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.lovable.app/uwv-traject" }],
+    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/uwv-traject" }],
   }),
   component: Page,
 });

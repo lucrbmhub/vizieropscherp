@@ -8,9 +8,9 @@ export const Route = createFileRoute("/kennismaken")({
       { property: "og:title", content: "Kennismaken | Vizier op Scherp" },
       { property: "og:description", content: "Vertel wat er speelt, dan kijken we samen wat helpt. Een eerste gesprek is zo gebeurd." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://vizieropscherp.lovable.app/kennismaken" },
+      { property: "og:url", content: "https://vizieropscherp.nl/kennismaken" },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.lovable.app/kennismaken" }],
+    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/kennismaken" }],
   }),
   component: Page,
 });

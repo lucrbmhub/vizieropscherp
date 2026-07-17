@@ -10,9 +10,9 @@ export const Route = createFileRoute("/over-ons")({
       { property: "og:title", content: "Over Vizier op Scherp" },
       { property: "og:description", content: "Kwaliteit door focus. Eenvoud door organisatie. Eén aanspreekpunt en heldere afspraken." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://vizieropscherp.lovable.app/over-ons" },
+      { property: "og:url", content: "https://vizieropscherp.nl/over-ons" },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.lovable.app/over-ons" }],
+    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/over-ons" }],
   }),
   component: Page,
 });

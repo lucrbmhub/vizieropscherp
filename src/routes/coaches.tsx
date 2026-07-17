@@ -8,9 +8,9 @@ export const Route = createFileRoute("/coaches")({
       { property: "og:title", content: "Onze coaches | Vizier op Scherp" },
       { property: "og:description", content: "Zelah, Lianne, Maaike, Floor en Luc: ervaren loopbaancoaches met een eigen verhaal en aanpak." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://vizieropscherp.lovable.app/coaches" },
+      { property: "og:url", content: "https://vizieropscherp.nl/coaches" },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.lovable.app/coaches" }],
+    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/coaches" }],
   }),
   component: Page,
 });

@@ -104,10 +104,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@graph": [
             {
               "@type": "Organization",
-              "@id": "https://vizieropscherp.lovable.app/#organization",
+              "@id": "https://vizieropscherp.nl/#organization",
               name: "Vizier op Scherp",
-              url: "https://vizieropscherp.lovable.app/",
-              logo: "https://vizieropscherp.lovable.app/favicon.ico",
+              url: "https://vizieropscherp.nl/",
+              logo: "https://vizieropscherp.nl/favicon.ico",
               email: "hallo@vizieropscherp.nl",
               telephone: "+31202146466",
               areaServed: ["Amsterdam", "Haarlem", "Noord-Holland"],
@@ -119,11 +119,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             },
             {
               "@type": "WebSite",
-              "@id": "https://vizieropscherp.lovable.app/#website",
-              url: "https://vizieropscherp.lovable.app/",
+              "@id": "https://vizieropscherp.nl/#website",
+              url: "https://vizieropscherp.nl/",
               name: "Vizier op Scherp",
               inLanguage: "nl-NL",
-              publisher: { "@id": "https://vizieropscherp.lovable.app/#organization" },
+              publisher: { "@id": "https://vizieropscherp.nl/#organization" },
             },
           ],
         }),
