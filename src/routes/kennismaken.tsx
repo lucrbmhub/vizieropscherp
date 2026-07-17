@@ -19,7 +19,7 @@ export const Route = createFileRoute("/kennismaken")({
 
 const HTML_BEFORE = `<header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/" aria-label="Vizier op Scherp — naar the homepage">
+    <a class="brand" href="/" aria-label="Vizier op Scherp — naar de homepage">
       <svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true"><rect x="8" y="8" width="84" height="84" rx="10" fill="#1F3D3B"></rect><path d="M50 26 L74 50 L50 74 L26 50 Z" fill="none" stroke="#E8714A" stroke-width="6" stroke-linejoin="miter"></path><rect x="44" y="44" width="12" height="12" fill="#F2C879" transform="rotate(45 50 50)"></rect></svg>
       <span>Vizier op Scherp</span>
     </a>
@@ -45,12 +45,12 @@ const HTML_BEFORE = `<header class="site-header">
       <h1 class="h-hero">Laten we kennismaken<span class="gold">.</span></h1>
       <p class="lead">Vertel wat er speelt, voor jezelf of in de organisatie. Dan kijken we samen wat helpt. Een eerste gesprek is zo gebeurd, en vaak verrassend verhelderend.</p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="#bericht-form">Laat iets achter</a>
+        <a class="btn btn-primary" href="#bericht-form">Stuur een bericht</a>
         <a class="btn btn-outline" href="https://wa.me/31611221424" target="_blank" rel="noopener noreferrer">Of WhatsApp ons</a>
       </div>
       <p style="font-size:15px;white-space:pre-line;">Liever mailen of bellen?
-<a href="mailto:hallo@vizieropscherp.nl" style="font-weight:500;border-bottom:1px solid var(--koraal);">hallo@vizieropscherp.nl\u00a0
-020 214 64 66</a></p>
+<a href="mailto:hallo@vizieropscherp.nl" style="font-weight:500;border-bottom:1px solid var(--koraal);">hallo@vizieropscherp.nl</a>\u00a0
+<a href="tel:+31202146466" style="font-weight:500;border-bottom:1px solid var(--koraal);">020 214 64 66</a></p>
     </div>
   </div>
 </section>
@@ -69,7 +69,7 @@ const HTML_AFTER = `
       <article class="card card--petrol">
         <span class="label">Voor werkgevers &amp; HR</span>
         <h3>Verkennen wat past</h3>
-        <p>Je vertelt what er speelt in de organisatie, wij denken mee over de aanpak: van een gespreksronde tot een coachingpool. Daarna krijg je een concreet voorstel met heldere prijzen.</p>
+        <p>Je vertelt wat er speelt in de organisatie, wij denken mee over de aanpak: van een gespreksronde tot een coachingpool. Daarna krijg je een concreet voorstel met heldere prijzen.</p>
       </article>
       <article class="card card--goud">
         <span class="label">Voor jezelf</span>
@@ -90,7 +90,7 @@ const HTML_AFTER = `
   <div class="container">
     <div class="section-head">
       <p class="eyebrow">Of laat iets achter</p>
-      <h2 class="h-section">Laat iets achter</h2>
+      <h2 class="h-section">Stuur een bericht</h2>
       <p>Je naam, je mailadres en waar je het over wilt hebben. De rest bespreken we wel.</p>
     </div>
     <form class="form" novalidate>
@@ -135,7 +135,7 @@ const HTML_AFTER = `
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a class="footer-brand" href="/" aria-label="Vizier op Scherp — naar the homepage">
+        <a class="footer-brand" href="/" aria-label="Vizier op Scherp — naar de homepage">
           <svg width="30" height="30" viewBox="0 0 100 100" aria-hidden="true"><rect x="8" y="8" width="84" height="84" rx="10" fill="#F5EFE3"></rect><path d="M50 26 L74 50 L50 74 L26 50 Z" fill="none" stroke="#1F3D3B" stroke-width="6" stroke-linejoin="miter"></path><rect x="44" y="44" width="12" height="12" fill="#E8714A" transform="rotate(45 50 50)"></rect></svg>
           <span>Vizier op Scherp</span>
         </a>
@@ -268,8 +268,8 @@ function Page() {
         <div className="container">
           <div className="section-head">
             <p className="eyebrow">Direct inplannen</p>
-            <h2 className="h-section">Kies een moment dat u uitkomt.</h2>
-            <p>Twintig minuten, vrijblijvend. U kiest de tijd; we bellen of spreken af op een van onze locaties.</p>
+            <h2 className="h-section">Kies een moment dat jou uitkomt.</h2>
+            <p>Twintig minuten, vrijblijvend. Jij kiest de tijd; we bellen of spreken af op een van onze locaties.</p>
           </div>
           <CalEmbed />
           <div className="dia-divider" style={{ margin: "44px 0 8px" }} aria-hidden="true"><span /></div>

@@ -90,7 +90,7 @@ export default function CalEmbed() {
         {failed && (
           <div className="vos-cal-fallback">
             <p>
-              De agenda laadt nu even niet. Plan uw gesprek direct in via onderstaande knop,
+              De agenda laadt nu even niet. Plan je gesprek direct in via onderstaande knop,
               of gebruik het formulier hieronder.
             </p>
             <a
