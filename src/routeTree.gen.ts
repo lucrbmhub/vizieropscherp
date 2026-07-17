@@ -14,6 +14,7 @@ import { Route as UwvTrajectRouteImport } from './routes/uwv-traject'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyverklaringRouteImport } from './routes/privacyverklaring'
 import { Route as OverOnsRouteImport } from './routes/over-ons'
+import { Route as McpRouteImport } from './routes/mcp'
 import { Route as LeiderschapRouteImport } from './routes/leiderschap'
 import { Route as KennismakenRouteImport } from './routes/kennismaken'
 import { Route as InzichtenRouteImport } from './routes/inzichten'
@@ -46,6 +47,9 @@ import { Route as InzichtenErvarenTalentAlsKansRouteImport } from './routes/inzi
 import { Route as InzichtenEnergieEnMotivatieInWerkRouteImport } from './routes/inzichten.energie-en-motivatie-in-werk'
 import { Route as InzichtenDuurzameInzetbaarheidWerkgeverRouteImport } from './routes/inzichten.duurzame-inzetbaarheid-werkgever'
 import { Route as InzichtenDuurzaamInzetbaarBlijvenRouteImport } from './routes/inzichten.duurzaam-inzetbaar-blijven'
+import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
+import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
+import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[.mcp]/invoke-tool/$tool'
 
 const VoorWerkgeversRoute = VoorWerkgeversRouteImport.update({
   id: '/voor-werkgevers',
@@ -70,6 +74,11 @@ const PrivacyverklaringRoute = PrivacyverklaringRouteImport.update({
 const OverOnsRoute = OverOnsRouteImport.update({
   id: '/over-ons',
   path: '/over-ons',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const McpRoute = McpRouteImport.update({
+  id: '/mcp',
+  path: '/mcp',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LeiderschapRoute = LeiderschapRouteImport.update({
@@ -253,6 +262,24 @@ const InzichtenDuurzaamInzetbaarBlijvenRoute =
     path: '/duurzaam-inzetbaar-blijven',
     getParentRoute: () => InzichtenRoute,
   } as any)
+const Char91DotwellKnownChar93OauthProtectedResourceRoute =
+  Char91DotwellKnownChar93OauthProtectedResourceRouteImport.update({
+    id: '/.well-known/oauth-protected-resource',
+    path: '/.well-known/oauth-protected-resource',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Char91DotmcpChar93ListToolsRoute =
+  Char91DotmcpChar93ListToolsRouteImport.update({
+    id: '/.mcp/list-tools',
+    path: '/.mcp/list-tools',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Char91DotmcpChar93InvokeToolToolRoute =
+  Char91DotmcpChar93InvokeToolToolRouteImport.update({
+    id: '/.mcp/invoke-tool/$tool',
+    path: '/.mcp/invoke-tool/$tool',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -262,11 +289,14 @@ export interface FileRoutesByFullPath {
   '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
+  '/mcp': typeof McpRoute
   '/over-ons': typeof OverOnsRoute
   '/privacyverklaring': typeof PrivacyverklaringRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
+  '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/inzichten/duurzaam-inzetbaar-blijven': typeof InzichtenDuurzaamInzetbaarBlijvenRoute
   '/inzichten/duurzame-inzetbaarheid-werkgever': typeof InzichtenDuurzameInzetbaarheidWerkgeverRoute
   '/inzichten/energie-en-motivatie-in-werk': typeof InzichtenEnergieEnMotivatieInWerkRoute
@@ -292,6 +322,7 @@ export interface FileRoutesByFullPath {
   '/inzichten/vastzitten-in-een-goede-baan': typeof InzichtenVastzittenInEenGoedeBaanRoute
   '/inzichten/vier-basisbehoeften-in-werk': typeof InzichtenVierBasisbehoeftenInWerkRoute
   '/inzichten/': typeof InzichtenIndexRoute
+  '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -300,11 +331,14 @@ export interface FileRoutesByTo {
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
+  '/mcp': typeof McpRoute
   '/over-ons': typeof OverOnsRoute
   '/privacyverklaring': typeof PrivacyverklaringRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
+  '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/inzichten/duurzaam-inzetbaar-blijven': typeof InzichtenDuurzaamInzetbaarBlijvenRoute
   '/inzichten/duurzame-inzetbaarheid-werkgever': typeof InzichtenDuurzameInzetbaarheidWerkgeverRoute
   '/inzichten/energie-en-motivatie-in-werk': typeof InzichtenEnergieEnMotivatieInWerkRoute
@@ -330,6 +364,7 @@ export interface FileRoutesByTo {
   '/inzichten/vastzitten-in-een-goede-baan': typeof InzichtenVastzittenInEenGoedeBaanRoute
   '/inzichten/vier-basisbehoeften-in-werk': typeof InzichtenVierBasisbehoeftenInWerkRoute
   '/inzichten': typeof InzichtenIndexRoute
+  '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -340,11 +375,14 @@ export interface FileRoutesById {
   '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
+  '/mcp': typeof McpRoute
   '/over-ons': typeof OverOnsRoute
   '/privacyverklaring': typeof PrivacyverklaringRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
+  '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/inzichten/duurzaam-inzetbaar-blijven': typeof InzichtenDuurzaamInzetbaarBlijvenRoute
   '/inzichten/duurzame-inzetbaarheid-werkgever': typeof InzichtenDuurzameInzetbaarheidWerkgeverRoute
   '/inzichten/energie-en-motivatie-in-werk': typeof InzichtenEnergieEnMotivatieInWerkRoute
@@ -370,6 +408,7 @@ export interface FileRoutesById {
   '/inzichten/vastzitten-in-een-goede-baan': typeof InzichtenVastzittenInEenGoedeBaanRoute
   '/inzichten/vier-basisbehoeften-in-werk': typeof InzichtenVierBasisbehoeftenInWerkRoute
   '/inzichten/': typeof InzichtenIndexRoute
+  '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -381,11 +420,14 @@ export interface FileRouteTypes {
     | '/inzichten'
     | '/kennismaken'
     | '/leiderschap'
+    | '/mcp'
     | '/over-ons'
     | '/privacyverklaring'
     | '/sitemap.xml'
     | '/uwv-traject'
     | '/voor-werkgevers'
+    | '/.mcp/list-tools'
+    | '/.well-known/oauth-protected-resource'
     | '/inzichten/duurzaam-inzetbaar-blijven'
     | '/inzichten/duurzame-inzetbaarheid-werkgever'
     | '/inzichten/energie-en-motivatie-in-werk'
@@ -411,6 +453,7 @@ export interface FileRouteTypes {
     | '/inzichten/vastzitten-in-een-goede-baan'
     | '/inzichten/vier-basisbehoeften-in-werk'
     | '/inzichten/'
+    | '/.mcp/invoke-tool/$tool'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -419,11 +462,14 @@ export interface FileRouteTypes {
     | '/coaching-voor-mij'
     | '/kennismaken'
     | '/leiderschap'
+    | '/mcp'
     | '/over-ons'
     | '/privacyverklaring'
     | '/sitemap.xml'
     | '/uwv-traject'
     | '/voor-werkgevers'
+    | '/.mcp/list-tools'
+    | '/.well-known/oauth-protected-resource'
     | '/inzichten/duurzaam-inzetbaar-blijven'
     | '/inzichten/duurzame-inzetbaarheid-werkgever'
     | '/inzichten/energie-en-motivatie-in-werk'
@@ -449,6 +495,7 @@ export interface FileRouteTypes {
     | '/inzichten/vastzitten-in-een-goede-baan'
     | '/inzichten/vier-basisbehoeften-in-werk'
     | '/inzichten'
+    | '/.mcp/invoke-tool/$tool'
   id:
     | '__root__'
     | '/'
@@ -458,11 +505,14 @@ export interface FileRouteTypes {
     | '/inzichten'
     | '/kennismaken'
     | '/leiderschap'
+    | '/mcp'
     | '/over-ons'
     | '/privacyverklaring'
     | '/sitemap.xml'
     | '/uwv-traject'
     | '/voor-werkgevers'
+    | '/.mcp/list-tools'
+    | '/.well-known/oauth-protected-resource'
     | '/inzichten/duurzaam-inzetbaar-blijven'
     | '/inzichten/duurzame-inzetbaarheid-werkgever'
     | '/inzichten/energie-en-motivatie-in-werk'
@@ -488,6 +538,7 @@ export interface FileRouteTypes {
     | '/inzichten/vastzitten-in-een-goede-baan'
     | '/inzichten/vier-basisbehoeften-in-werk'
     | '/inzichten/'
+    | '/.mcp/invoke-tool/$tool'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -498,11 +549,15 @@ export interface RootRouteChildren {
   InzichtenRoute: typeof InzichtenRouteWithChildren
   KennismakenRoute: typeof KennismakenRoute
   LeiderschapRoute: typeof LeiderschapRoute
+  McpRoute: typeof McpRoute
   OverOnsRoute: typeof OverOnsRoute
   PrivacyverklaringRoute: typeof PrivacyverklaringRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   UwvTrajectRoute: typeof UwvTrajectRoute
   VoorWerkgeversRoute: typeof VoorWerkgeversRoute
+  Char91DotmcpChar93ListToolsRoute: typeof Char91DotmcpChar93ListToolsRoute
+  Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  Char91DotmcpChar93InvokeToolToolRoute: typeof Char91DotmcpChar93InvokeToolToolRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -540,6 +595,13 @@ declare module '@tanstack/react-router' {
       path: '/over-ons'
       fullPath: '/over-ons'
       preLoaderRoute: typeof OverOnsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mcp': {
+      id: '/mcp'
+      path: '/mcp'
+      fullPath: '/mcp'
+      preLoaderRoute: typeof McpRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/leiderschap': {
@@ -766,6 +828,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InzichtenDuurzaamInzetbaarBlijvenRouteImport
       parentRoute: typeof InzichtenRoute
     }
+    '/.well-known/oauth-protected-resource': {
+      id: '/.well-known/oauth-protected-resource'
+      path: '/.well-known/oauth-protected-resource'
+      fullPath: '/.well-known/oauth-protected-resource'
+      preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/.mcp/list-tools': {
+      id: '/.mcp/list-tools'
+      path: '/.mcp/list-tools'
+      fullPath: '/.mcp/list-tools'
+      preLoaderRoute: typeof Char91DotmcpChar93ListToolsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/.mcp/invoke-tool/$tool': {
+      id: '/.mcp/invoke-tool/$tool'
+      path: '/.mcp/invoke-tool/$tool'
+      fullPath: '/.mcp/invoke-tool/$tool'
+      preLoaderRoute: typeof Char91DotmcpChar93InvokeToolToolRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -852,11 +935,16 @@ const rootRouteChildren: RootRouteChildren = {
   InzichtenRoute: InzichtenRouteWithChildren,
   KennismakenRoute: KennismakenRoute,
   LeiderschapRoute: LeiderschapRoute,
+  McpRoute: McpRoute,
   OverOnsRoute: OverOnsRoute,
   PrivacyverklaringRoute: PrivacyverklaringRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   UwvTrajectRoute: UwvTrajectRoute,
   VoorWerkgeversRoute: VoorWerkgeversRoute,
+  Char91DotmcpChar93ListToolsRoute: Char91DotmcpChar93ListToolsRoute,
+  Char91DotwellKnownChar93OauthProtectedResourceRoute:
+    Char91DotwellKnownChar93OauthProtectedResourceRoute,
+  Char91DotmcpChar93InvokeToolToolRoute: Char91DotmcpChar93InvokeToolToolRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
