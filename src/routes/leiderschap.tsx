@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SITE_URL } from "@/lib/site";
+
 
 export const Route = createFileRoute("/leiderschap")({
   head: () => ({
@@ -10,7 +12,7 @@ export const Route = createFileRoute("/leiderschap")({
       { property: "og:description", content: "Lopende programma's op het gebied van leiderschap en talentontwikkeling: coaching voor startende managers en begeleiding van trainees." },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/leiderschap" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/leiderschap` }],
   }),
   component: Page,
 });

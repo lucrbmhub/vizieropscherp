@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { SITE_URL } from "@/lib/site";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -104,10 +105,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@graph": [
             {
               "@type": "Organization",
-              "@id": "https://vizieropscherp.nl/#organization",
+              "@id": `${SITE_URL}/#organization`,
               name: "Vizier op Scherp",
-              url: "https://vizieropscherp.nl/",
-              logo: "https://vizieropscherp.nl/favicon.ico",
+              url: `${SITE_URL}/`,
+              logo: `${SITE_URL}/favicon.ico`,
               email: "hallo@vizieropscherp.nl",
               telephone: "+31202146466",
               areaServed: ["Amsterdam", "Haarlem", "Noord-Holland"],
@@ -119,11 +120,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             },
             {
               "@type": "WebSite",
-              "@id": "https://vizieropscherp.nl/#website",
-              url: "https://vizieropscherp.nl/",
+              "@id": `${SITE_URL}/#website`,
+              url: `${SITE_URL}/`,
               name: "Vizier op Scherp",
               inLanguage: "nl-NL",
-              publisher: { "@id": "https://vizieropscherp.nl/#organization" },
+              publisher: { "@id": `${SITE_URL}/#organization` },
             },
           ],
         }),

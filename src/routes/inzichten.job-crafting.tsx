@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SITE_URL } from "@/lib/site";
+
 
 export const Route = createFileRoute("/inzichten/job-crafting")({
   head: () => ({
@@ -8,10 +10,10 @@ export const Route = createFileRoute("/inzichten/job-crafting")({
       { property: "og:title", content: "Job crafting: je baan verbouwen zonder te verhuizen | Vizier op Scherp" },
       { property: "og:description", content: "Je werk past niet meer helemaal, maar weggaan voelt te groot. Job crafting is de derde optie: kleine aanpassingen in je taken, je samenwerking en je kijk op het werk. Hoe het werkt en waar je begint. Loopbaancoaching in de regio Amsterdam en Haarlem." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://vizieropscherp.nl/inzichten/job-crafting" },
+      { property: "og:url", content: `${SITE_URL}/inzichten/job-crafting` },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/inzichten/job-crafting" }],
-    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Job crafting: je baan verbouwen zonder te verhuizen", "description": "Je werk past niet meer helemaal, maar weggaan voelt te groot. Job crafting is de derde optie: kleine aanpassingen in je taken, je samenwerking en je kijk op het werk. Hoe het werkt en waar je begint. Loopbaancoaching in de regio Amsterdam en Haarlem.", "url": "https://vizieropscherp.nl/inzichten/job-crafting", "inLanguage": "nl-NL", "mainEntityOfPage": "https://vizieropscherp.nl/inzichten/job-crafting", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "https://vizieropscherp.nl/#organization"}, "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://vizieropscherp.nl/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "https://vizieropscherp.nl/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Job crafting: je baan verbouwen zonder te verhuizen", "item": "https://vizieropscherp.nl/inzichten/job-crafting"}]}]}` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/job-crafting` }],
+    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Job crafting: je baan verbouwen zonder te verhuizen", "description": "Je werk past niet meer helemaal, maar weggaan voelt te groot. Job crafting is de derde optie: kleine aanpassingen in je taken, je samenwerking en je kijk op het werk. Hoe het werkt en waar je begint. Loopbaancoaching in de regio Amsterdam en Haarlem.", "url": "${SITE_URL}/inzichten/job-crafting", "inLanguage": "nl-NL", "mainEntityOfPage": "${SITE_URL}/inzichten/job-crafting", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "${SITE_URL}/#organization"}, "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "${SITE_URL}/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "${SITE_URL}/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Job crafting: je baan verbouwen zonder te verhuizen", "item": "${SITE_URL}/inzichten/job-crafting"}]}]}` }],
   }),
   component: Page,
 });

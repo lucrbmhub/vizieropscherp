@@ -1,5 +1,6 @@
 import { defineTool } from "@lovable.dev/mcp-js";
-import { ARTICLES, SITE_URL } from "../data";
+import { SITE_URL } from "@/lib/site";
+import { ARTICLES } from "../data";
 
 export default defineTool({
   name: "list_articles",

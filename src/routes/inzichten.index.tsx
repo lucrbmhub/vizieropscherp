@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SITE_URL } from "@/lib/site";
+
 
 export const Route = createFileRoute("/inzichten/")({
   head: () => ({
@@ -7,9 +9,9 @@ export const Route = createFileRoute("/inzichten/")({
       { name: "description", content: "Praktische inzichten voor wie nadenkt over een volgende stap, en voor HR-afdelingen die hun mensen op tijd willen begeleiden." },
       { property: "og:title", content: "Inzichten over werk en loopbaan | Vizier op Scherp" },
       { property: "og:description", content: "Praktische inzichten voor wie nadenkt over een volgende stap, en voor HR-afdelingen die hun mensen op tijd willen begeleiden." },
-      { property: "og:url", content: "https://vizieropscherp.nl/inzichten" },
+      { property: "og:url", content: `${SITE_URL}/inzichten` },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/inzichten" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/inzichten` }],
   }),
   component: Page,
 });

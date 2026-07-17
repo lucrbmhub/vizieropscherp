@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SITE_URL } from "@/lib/site";
+
 
 export const Route = createFileRoute("/inzichten/persoonlijke-effectiviteit")({
   head: () => ({
@@ -8,10 +10,10 @@ export const Route = createFileRoute("/inzichten/persoonlijke-effectiviteit")({
       { property: "og:title", content: "Persoonlijke effectiviteit: waarom je grootste zwakte vaak je sterkste kant is | Vizier op Scherp" },
       { property: "og:description", content: "Effectiever worden begint niet bij meer discipline, maar bij weten wat je wilt en waar je goed in bent. Over perfectionisme, keuzes maken en je sterke kanten op het juiste moment inzetten. Loopbaancoaching in de regio Amsterdam en Haarlem." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://vizieropscherp.nl/inzichten/persoonlijke-effectiviteit" },
+      { property: "og:url", content: `${SITE_URL}/inzichten/persoonlijke-effectiviteit` },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/inzichten/persoonlijke-effectiviteit" }],
-    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Persoonlijke effectiviteit: waarom je grootste zwakte vaak je sterkste kant is", "description": "Effectiever worden begint niet bij meer discipline, maar bij weten wat je wilt en waar je goed in bent. Over perfectionisme, keuzes maken en je sterke kanten op het juiste moment inzetten. Loopbaancoaching in de regio Amsterdam en Haarlem.", "url": "https://vizieropscherp.nl/inzichten/persoonlijke-effectiviteit", "inLanguage": "nl-NL", "mainEntityOfPage": "https://vizieropscherp.nl/inzichten/persoonlijke-effectiviteit", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "https://vizieropscherp.nl/#organization"}, "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://vizieropscherp.nl/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "https://vizieropscherp.nl/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Persoonlijke effectiviteit: waarom je grootste zwakte vaak je sterkste kant is", "item": "https://vizieropscherp.nl/inzichten/persoonlijke-effectiviteit"}]}]}` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/persoonlijke-effectiviteit` }],
+    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Persoonlijke effectiviteit: waarom je grootste zwakte vaak je sterkste kant is", "description": "Effectiever worden begint niet bij meer discipline, maar bij weten wat je wilt en waar je goed in bent. Over perfectionisme, keuzes maken en je sterke kanten op het juiste moment inzetten. Loopbaancoaching in de regio Amsterdam en Haarlem.", "url": "${SITE_URL}/inzichten/persoonlijke-effectiviteit", "inLanguage": "nl-NL", "mainEntityOfPage": "${SITE_URL}/inzichten/persoonlijke-effectiviteit", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "${SITE_URL}/#organization"}, "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "${SITE_URL}/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "${SITE_URL}/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Persoonlijke effectiviteit: waarom je grootste zwakte vaak je sterkste kant is", "item": "${SITE_URL}/inzichten/persoonlijke-effectiviteit"}]}]}` }],
   }),
   component: Page,
 });

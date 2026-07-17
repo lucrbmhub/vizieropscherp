@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SITE_URL } from "@/lib/site";
+
 
 export const Route = createFileRoute("/inzichten/loopbaangesprek-met-medewerker")({
   head: () => ({
@@ -8,10 +10,10 @@ export const Route = createFileRoute("/inzichten/loopbaangesprek-met-medewerker"
       { property: "og:title", content: "Het loopbaangesprek met uw medewerker: waarom het exitgesprek te laat is | Vizier op Scherp" },
       { property: "og:description", content: "Het beste loopbaangesprek voert u niet bij het exitgesprek, maar als er nog niets aan de hand is. Waarom een onafhankelijk loopbaangesprek talent behoudt en zichtbaar maakt, voor werkgevers in de regio Amsterdam en Haarlem." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://vizieropscherp.nl/inzichten/loopbaangesprek-met-medewerker" },
+      { property: "og:url", content: `${SITE_URL}/inzichten/loopbaangesprek-met-medewerker` },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/inzichten/loopbaangesprek-met-medewerker" }],
-    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Het loopbaangesprek met uw medewerker: waarom het exitgesprek te laat is", "description": "Het beste loopbaangesprek voert u niet bij het exitgesprek, maar als er nog niets aan de hand is. Waarom een onafhankelijk loopbaangesprek talent behoudt en zichtbaar maakt, voor werkgevers in de regio Amsterdam en Haarlem.", "url": "https://vizieropscherp.nl/inzichten/loopbaangesprek-met-medewerker", "inLanguage": "nl-NL", "mainEntityOfPage": "https://vizieropscherp.nl/inzichten/loopbaangesprek-met-medewerker", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "https://vizieropscherp.nl/#organization"}, "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://vizieropscherp.nl/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "https://vizieropscherp.nl/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Het loopbaangesprek met uw medewerker: waarom het exitgesprek te laat is", "item": "https://vizieropscherp.nl/inzichten/loopbaangesprek-met-medewerker"}]}]}` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/loopbaangesprek-met-medewerker` }],
+    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Het loopbaangesprek met uw medewerker: waarom het exitgesprek te laat is", "description": "Het beste loopbaangesprek voert u niet bij het exitgesprek, maar als er nog niets aan de hand is. Waarom een onafhankelijk loopbaangesprek talent behoudt en zichtbaar maakt, voor werkgevers in de regio Amsterdam en Haarlem.", "url": "${SITE_URL}/inzichten/loopbaangesprek-met-medewerker", "inLanguage": "nl-NL", "mainEntityOfPage": "${SITE_URL}/inzichten/loopbaangesprek-met-medewerker", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "${SITE_URL}/#organization"}, "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "${SITE_URL}/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "${SITE_URL}/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Het loopbaangesprek met uw medewerker: waarom het exitgesprek te laat is", "item": "${SITE_URL}/inzichten/loopbaangesprek-met-medewerker"}]}]}` }],
   }),
   component: Page,
 });

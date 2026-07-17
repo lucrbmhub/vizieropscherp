@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SITE_URL } from "@/lib/site";
+
 
 export const Route = createFileRoute("/inzichten/loopbaanswitch-na-je-40e")({
   head: () => ({
@@ -8,10 +10,10 @@ export const Route = createFileRoute("/inzichten/loopbaanswitch-na-je-40e")({
       { property: "og:title", content: "Een loopbaanswitch na je 40e of 50e: waarom het geen achterstand is | Vizier op Scherp" },
       { property: "og:description", content: "Denk je aan een carri\u00e8reswitch na je 40e of 50e, maar voel je je te oud? Waarom je ervaring juist je voorsprong is, hoe je omgaat met leeftijdsdiscriminatie, en met welke route een switch w\u00e9l lukt. Loopbaancoaching in de regio Amsterdam en Haarlem." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://vizieropscherp.nl/inzichten/loopbaanswitch-na-je-40e" },
+      { property: "og:url", content: `${SITE_URL}/inzichten/loopbaanswitch-na-je-40e` },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/inzichten/loopbaanswitch-na-je-40e" }],
-    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Een loopbaanswitch na je 40e of 50e: waarom het geen achterstand is", "description": "Denk je aan een carri\\\\u00e8reswitch na je 40e of 50e, maar voel je je te oud? Waarom je ervaring juist je voorsprong is, hoe je omgaat met leeftijdsdiscriminatie, en met welke route een switch w\\\\u00e9l lukt. Loopbaancoaching in de regio Amsterdam en Haarlem.", "url": "https://vizieropscherp.nl/inzichten/loopbaanswitch-na-je-40e", "inLanguage": "nl-NL", "mainEntityOfPage": "https://vizieropscherp.nl/inzichten/loopbaanswitch-na-je-40e", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "https://vizieropscherp.nl/#organization"}, "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://vizieropscherp.nl/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "https://vizieropscherp.nl/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Een loopbaanswitch na je 40e of 50e: waarom het geen achterstand is", "item": "https://vizieropscherp.nl/inzichten/loopbaanswitch-na-je-40e"}]}]}` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/loopbaanswitch-na-je-40e` }],
+    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Een loopbaanswitch na je 40e of 50e: waarom het geen achterstand is", "description": "Denk je aan een carri\\\\u00e8reswitch na je 40e of 50e, maar voel je je te oud? Waarom je ervaring juist je voorsprong is, hoe je omgaat met leeftijdsdiscriminatie, en met welke route een switch w\\\\u00e9l lukt. Loopbaancoaching in de regio Amsterdam en Haarlem.", "url": "${SITE_URL}/inzichten/loopbaanswitch-na-je-40e", "inLanguage": "nl-NL", "mainEntityOfPage": "${SITE_URL}/inzichten/loopbaanswitch-na-je-40e", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "${SITE_URL}/#organization"}, "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "${SITE_URL}/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "${SITE_URL}/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Een loopbaanswitch na je 40e of 50e: waarom het geen achterstand is", "item": "${SITE_URL}/inzichten/loopbaanswitch-na-je-40e"}]}]}` }],
   }),
   component: Page,
 });

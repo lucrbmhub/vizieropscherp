@@ -1,5 +1,6 @@
 import { defineTool } from "@lovable.dev/mcp-js";
-import { COACHES, SITE_URL } from "../data";
+import { SITE_URL } from "@/lib/site";
+import { COACHES } from "../data";
 
 export default defineTool({
   name: "list_coaches",

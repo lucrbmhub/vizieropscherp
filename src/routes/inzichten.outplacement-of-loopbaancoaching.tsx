@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SITE_URL } from "@/lib/site";
+
 
 export const Route = createFileRoute("/inzichten/outplacement-of-loopbaancoaching")({
   head: () => ({
@@ -8,10 +10,10 @@ export const Route = createFileRoute("/inzichten/outplacement-of-loopbaancoachin
       { property: "og:title", content: "Outplacement of loopbaancoaching: wat past wanneer? | Vizier op Scherp" },
       { property: "og:description", content: "Zoekt u outplacement voor een medewerker? Vaak is de vraag eigenlijk een andere. Het verschil tussen outplacement en loopbaancoaching, wanneer welke vorm past, en wat Vizier op Scherp wel en bewust niet doet. Voor werkgevers in de regio Amsterdam en Haarlem." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://vizieropscherp.nl/inzichten/outplacement-of-loopbaancoaching" },
+      { property: "og:url", content: `${SITE_URL}/inzichten/outplacement-of-loopbaancoaching` },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/inzichten/outplacement-of-loopbaancoaching" }],
-    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Outplacement of loopbaancoaching: wat past wanneer?", "description": "Zoekt u outplacement voor een medewerker? Vaak is de vraag eigenlijk een andere. Het verschil tussen outplacement en loopbaancoaching, wanneer welke vorm past, en wat Vizier op Scherp wel en bewust niet doet. Voor werkgevers in de regio Amsterdam en Haarlem.", "url": "https://vizieropscherp.nl/inzichten/outplacement-of-loopbaancoaching", "inLanguage": "nl-NL", "mainEntityOfPage": "https://vizieropscherp.nl/inzichten/outplacement-of-loopbaancoaching", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "https://vizieropscherp.nl/#organization"}, "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://vizieropscherp.nl/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "https://vizieropscherp.nl/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Outplacement of loopbaancoaching: wat past wanneer?", "item": "https://vizieropscherp.nl/inzichten/outplacement-of-loopbaancoaching"}]}]}` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/outplacement-of-loopbaancoaching` }],
+    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Outplacement of loopbaancoaching: wat past wanneer?", "description": "Zoekt u outplacement voor een medewerker? Vaak is de vraag eigenlijk een andere. Het verschil tussen outplacement en loopbaancoaching, wanneer welke vorm past, en wat Vizier op Scherp wel en bewust niet doet. Voor werkgevers in de regio Amsterdam en Haarlem.", "url": "${SITE_URL}/inzichten/outplacement-of-loopbaancoaching", "inLanguage": "nl-NL", "mainEntityOfPage": "${SITE_URL}/inzichten/outplacement-of-loopbaancoaching", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "${SITE_URL}/#organization"}, "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "${SITE_URL}/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "${SITE_URL}/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Outplacement of loopbaancoaching: wat past wanneer?", "item": "${SITE_URL}/inzichten/outplacement-of-loopbaancoaching"}]}]}` }],
   }),
   component: Page,
 });

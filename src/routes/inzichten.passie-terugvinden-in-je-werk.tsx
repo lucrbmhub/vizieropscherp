@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SITE_URL } from "@/lib/site";
+
 
 export const Route = createFileRoute("/inzichten/passie-terugvinden-in-je-werk")({
   head: () => ({
@@ -8,10 +10,10 @@ export const Route = createFileRoute("/inzichten/passie-terugvinden-in-je-werk")
       { property: "og:title", content: "De vonk terug na twintig jaar: waarom je je passie niet vindt, maar opbouwt | Vizier op Scherp" },
       { property: "og:description", content: "Je kent je vak, maar mist de creatieve vonk? Volg je passie is vaak het verkeerde advies. Hoe je bevlogenheid terugvindt met je ervaring als grondstof. Loopbaancoaching in de regio Amsterdam en Haarlem." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://vizieropscherp.nl/inzichten/passie-terugvinden-in-je-werk" },
+      { property: "og:url", content: `${SITE_URL}/inzichten/passie-terugvinden-in-je-werk` },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/inzichten/passie-terugvinden-in-je-werk" }],
-    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "De vonk terug na twintig jaar: waarom je je passie niet vindt, maar opbouwt", "description": "Je kent je vak, maar mist de creatieve vonk? Volg je passie is vaak het verkeerde advies. Hoe je bevlogenheid terugvindt met je ervaring als grondstof. Loopbaancoaching in de regio Amsterdam en Haarlem.", "url": "https://vizieropscherp.nl/inzichten/passie-terugvinden-in-je-werk", "inLanguage": "nl-NL", "mainEntityOfPage": "https://vizieropscherp.nl/inzichten/passie-terugvinden-in-je-werk", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "https://vizieropscherp.nl/#organization"}, "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://vizieropscherp.nl/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "https://vizieropscherp.nl/inzichten"}, {"@type": "ListItem", "position": 3, "name": "De vonk terug na twintig jaar: waarom je je passie niet vindt, maar opbouwt", "item": "https://vizieropscherp.nl/inzichten/passie-terugvinden-in-je-werk"}]}]}` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/passie-terugvinden-in-je-werk` }],
+    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "De vonk terug na twintig jaar: waarom je je passie niet vindt, maar opbouwt", "description": "Je kent je vak, maar mist de creatieve vonk? Volg je passie is vaak het verkeerde advies. Hoe je bevlogenheid terugvindt met je ervaring als grondstof. Loopbaancoaching in de regio Amsterdam en Haarlem.", "url": "${SITE_URL}/inzichten/passie-terugvinden-in-je-werk", "inLanguage": "nl-NL", "mainEntityOfPage": "${SITE_URL}/inzichten/passie-terugvinden-in-je-werk", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "${SITE_URL}/#organization"}, "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "${SITE_URL}/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "${SITE_URL}/inzichten"}, {"@type": "ListItem", "position": 3, "name": "De vonk terug na twintig jaar: waarom je je passie niet vindt, maar opbouwt", "item": "${SITE_URL}/inzichten/passie-terugvinden-in-je-werk"}]}]}` }],
   }),
   component: Page,
 });

@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SITE_URL } from "@/lib/site";
+
 
 export const Route = createFileRoute("/inzichten/vier-basisbehoeften-in-werk")({
   head: () => ({
@@ -8,10 +10,10 @@ export const Route = createFileRoute("/inzichten/vier-basisbehoeften-in-werk")({
       { property: "og:title", content: "Waarom \"leuk werk\" niet genoeg is: de vier basisbehoeften in werk | Vizier op Scherp" },
       { property: "og:description", content: "Leuke collega's, goede sfeer, en toch knaagt er iets. Of werk voldoening geeft hangt af van vier basisbehoeften: autonomie, verbondenheid, competentie en zingeving. Ontdek welke knop bij jou te laag staat. Loopbaancoaching in de regio Amsterdam en Haarlem." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://vizieropscherp.nl/inzichten/vier-basisbehoeften-in-werk" },
+      { property: "og:url", content: `${SITE_URL}/inzichten/vier-basisbehoeften-in-werk` },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/inzichten/vier-basisbehoeften-in-werk" }],
-    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Waarom \\"leuk werk\\" niet genoeg is: de vier basisbehoeften in werk", "description": "Leuke collega's, goede sfeer, en toch knaagt er iets. Of werk voldoening geeft hangt af van vier basisbehoeften: autonomie, verbondenheid, competentie en zingeving. Ontdek welke knop bij jou te laag staat. Loopbaancoaching in de regio Amsterdam en Haarlem.", "url": "https://vizieropscherp.nl/inzichten/vier-basisbehoeften-in-werk", "inLanguage": "nl-NL", "mainEntityOfPage": "https://vizieropscherp.nl/inzichten/vier-basisbehoeften-in-werk", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "https://vizieropscherp.nl/#organization"}, "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://vizieropscherp.nl/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "https://vizieropscherp.nl/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Waarom \\"leuk werk\\" niet genoeg is: de vier basisbehoeften in werk", "item": "https://vizieropscherp.nl/inzichten/vier-basisbehoeften-in-werk"}]}]}` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/vier-basisbehoeften-in-werk` }],
+    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Waarom \\"leuk werk\\" niet genoeg is: de vier basisbehoeften in werk", "description": "Leuke collega's, goede sfeer, en toch knaagt er iets. Of werk voldoening geeft hangt af van vier basisbehoeften: autonomie, verbondenheid, competentie en zingeving. Ontdek welke knop bij jou te laag staat. Loopbaancoaching in de regio Amsterdam en Haarlem.", "url": "${SITE_URL}/inzichten/vier-basisbehoeften-in-werk", "inLanguage": "nl-NL", "mainEntityOfPage": "${SITE_URL}/inzichten/vier-basisbehoeften-in-werk", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "${SITE_URL}/#organization"}, "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "${SITE_URL}/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "${SITE_URL}/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Waarom \\"leuk werk\\" niet genoeg is: de vier basisbehoeften in werk", "item": "${SITE_URL}/inzichten/vier-basisbehoeften-in-werk"}]}]}` }],
   }),
   component: Page,
 });
