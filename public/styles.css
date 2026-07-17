@@ -474,3 +474,7 @@ address{font-style:normal}
   .legal-form-card{background:#fff;border-color:#000}
   .legal-form-line{border-color:#000}
 }
+
+/* Skip link for keyboard/screen-reader users */
+.skip{position:absolute;left:-9999px;top:0;z-index:9999;background:var(--petrol);color:var(--linnen);padding:10px 16px;border-radius:8px;font-size:14px;text-decoration:none}
+.skip:focus{left:16px;top:16px;outline:2px solid var(--koraal);outline-offset:2px}
