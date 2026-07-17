@@ -84,27 +84,26 @@ export function WorkbookGate() {
       setError(parsed.error.issues[0]?.message ?? "Controleer je gegevens");
       return;
     }
+    // Honeypot: bots die het verborgen veld invullen krijgen een "geslaagde"
+    // download, maar er wordt niets opgeslagen.
+    if (hpWebsite.trim().length > 0) {
+      triggerDownload(target.href, filename);
+      setTarget(null);
+      return;
+    }
     setSubmitting(true);
     try {
-      const res = await fetch("/api/public/submit-form", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          form: "workbook",
-          name: parsed.data.name || null,
-          email: parsed.data.email,
-          workbook_slug: target.slug,
-          consent: parsed.data.consent,
-          hp_website: hpWebsite,
-        }),
+      const { error: dbError } = await supabase.from("workbook_leads").insert({
+        email: parsed.data.email,
+        name: parsed.data.name || null,
+        workbook_slug: target.slug,
+        consent: parsed.data.consent,
+        user_agent:
+          typeof navigator !== "undefined"
+            ? navigator.userAgent.slice(0, 500)
+            : null,
       });
-      if (res.status === 429) {
-        setError(
-          "Er zijn te veel aanvragen vanaf dit adres. Probeer het over een paar minuten opnieuw of mail hallo@vizieropscherp.nl.",
-        );
-        return;
-      }
-      if (!res.ok) throw new Error("submit_failed");
+      if (dbError) throw dbError;
       try {
         localStorage.setItem(STORAGE_KEY, parsed.data.email);
       } catch {}
