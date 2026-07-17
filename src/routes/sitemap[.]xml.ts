@@ -21,7 +21,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/uwv-traject", changefreq: "monthly", priority: "0.8" },
           { path: "/coaches", changefreq: "monthly", priority: "0.8" },
           { path: "/over-ons", changefreq: "monthly", priority: "0.7" },
-          { path: "/leiderschap", changefreq: "monthly", priority: "0.6" },
+          
           { path: "/kennismaken", changefreq: "monthly", priority: "0.8" },
           { path: "/inzichten", changefreq: "weekly", priority: "0.8" },
           { path: "/inzichten/het-tegenbod", changefreq: "yearly", priority: "0.6" },

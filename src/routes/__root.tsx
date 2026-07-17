@@ -87,14 +87,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Loopbaancoaching | Amsterdam & Haarlem | Vizier op Scherp" },
       { name: "twitter:description", content: "Regionaal netwerk voor loopbaancoaching in Amsterdam, Haarlem en omgeving. Voor werkgevers en hun medewerkers." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/ct3NhEEuxQhVXJa2EfZ5PETLH8a2/social-images/social-1783714203024-Loopbaan_social.webp" },
+      { property: "og:image", content: `${SITE_URL}/assets/social-share.webp` },
+      { name: "twitter:image", content: `${SITE_URL}/assets/social-share.webp` },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600&family=Instrument+Sans:wght@400;500;600&display=swap" },
       { rel: "stylesheet", href: "/styles.css" },
     ],
     scripts: [
