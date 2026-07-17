@@ -49,6 +49,7 @@ import { Route as InzichtenDuurzameInzetbaarheidWerkgeverRouteImport } from './r
 import { Route as InzichtenDuurzaamInzetbaarBlijvenRouteImport } from './routes/inzichten.duurzaam-inzetbaar-blijven'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
+import { Route as ApiPublicSubmitFormRouteImport } from './routes/api/public/submit-form'
 import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[.mcp]/invoke-tool/$tool'
 
 const VoorWerkgeversRoute = VoorWerkgeversRouteImport.update({
@@ -274,6 +275,11 @@ const Char91DotmcpChar93ListToolsRoute =
     path: '/.mcp/list-tools',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiPublicSubmitFormRoute = ApiPublicSubmitFormRouteImport.update({
+  id: '/api/public/submit-form',
+  path: '/api/public/submit-form',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const Char91DotmcpChar93InvokeToolToolRoute =
   Char91DotmcpChar93InvokeToolToolRouteImport.update({
     id: '/.mcp/invoke-tool/$tool',
@@ -323,6 +329,7 @@ export interface FileRoutesByFullPath {
   '/inzichten/vier-basisbehoeften-in-werk': typeof InzichtenVierBasisbehoeftenInWerkRoute
   '/inzichten/': typeof InzichtenIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/api/public/submit-form': typeof ApiPublicSubmitFormRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -365,6 +372,7 @@ export interface FileRoutesByTo {
   '/inzichten/vier-basisbehoeften-in-werk': typeof InzichtenVierBasisbehoeftenInWerkRoute
   '/inzichten': typeof InzichtenIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/api/public/submit-form': typeof ApiPublicSubmitFormRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -409,6 +417,7 @@ export interface FileRoutesById {
   '/inzichten/vier-basisbehoeften-in-werk': typeof InzichtenVierBasisbehoeftenInWerkRoute
   '/inzichten/': typeof InzichtenIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
+  '/api/public/submit-form': typeof ApiPublicSubmitFormRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -454,6 +463,7 @@ export interface FileRouteTypes {
     | '/inzichten/vier-basisbehoeften-in-werk'
     | '/inzichten/'
     | '/.mcp/invoke-tool/$tool'
+    | '/api/public/submit-form'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -496,6 +506,7 @@ export interface FileRouteTypes {
     | '/inzichten/vier-basisbehoeften-in-werk'
     | '/inzichten'
     | '/.mcp/invoke-tool/$tool'
+    | '/api/public/submit-form'
   id:
     | '__root__'
     | '/'
@@ -539,6 +550,7 @@ export interface FileRouteTypes {
     | '/inzichten/vier-basisbehoeften-in-werk'
     | '/inzichten/'
     | '/.mcp/invoke-tool/$tool'
+    | '/api/public/submit-form'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -558,6 +570,7 @@ export interface RootRouteChildren {
   Char91DotmcpChar93ListToolsRoute: typeof Char91DotmcpChar93ListToolsRoute
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   Char91DotmcpChar93InvokeToolToolRoute: typeof Char91DotmcpChar93InvokeToolToolRoute
+  ApiPublicSubmitFormRoute: typeof ApiPublicSubmitFormRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -842,6 +855,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char91DotmcpChar93ListToolsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/submit-form': {
+      id: '/api/public/submit-form'
+      path: '/api/public/submit-form'
+      fullPath: '/api/public/submit-form'
+      preLoaderRoute: typeof ApiPublicSubmitFormRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/.mcp/invoke-tool/$tool': {
       id: '/.mcp/invoke-tool/$tool'
       path: '/.mcp/invoke-tool/$tool'
@@ -945,6 +965,7 @@ const rootRouteChildren: RootRouteChildren = {
   Char91DotwellKnownChar93OauthProtectedResourceRoute:
     Char91DotwellKnownChar93OauthProtectedResourceRoute,
   Char91DotmcpChar93InvokeToolToolRoute: Char91DotmcpChar93InvokeToolToolRoute,
+  ApiPublicSubmitFormRoute: ApiPublicSubmitFormRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
