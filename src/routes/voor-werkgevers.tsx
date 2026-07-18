@@ -3,7 +3,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { SITE_URL } from "@/lib/site";
 
-const coachingWerkgeverImg = { url: `${SITE_URL}/assets/Coaching-werkgever_Haarlem-Amsterdam.jpg` };
+const coachingWerkgeverImg = { url: `${SITE_URL}/assets/coaching-werkgever-hero.webp` };
 
 
 export const Route = createFileRoute("/voor-werkgevers")({
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/voor-werkgevers")({
       { property: "og:description", content: "Coachingpool, individuele trajecten en proactieve loopbaangesprekken. Georganiseerd voor HR, persoonlijk voor de medewerker." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE_URL}/voor-werkgevers` },
-      { property: "og:image", content: `${SITE_URL}/assets/Coaching-werkgever_Haarlem-Amsterdam.jpg` },
+      { property: "og:image", content: `${SITE_URL}/assets/coaching-werkgever-hero.webp` },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/voor-werkgevers` }],
     scripts: [{ type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Wat kost loopbaancoaching voor onze organisatie?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Dat hangt af van de vorm: een gespreksronde, een individueel traject of een coachingpool als jaarafspraak. Na het kennismakingsgesprek ontvangt u een helder voorstel met vaste prijzen per vorm. Geen open einde, geen verrassingen achteraf.\"}}, {\"@type\": \"Question\", \"name\": \"Hoe snel kan een medewerker starten?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Na de intake stellen wij binnen vijf werkdagen een passende coach voor. De medewerker maakt eerst kennis; daarna kan het traject direct starten.\"}}, {\"@type\": \"Question\", \"name\": \"Wat krijgen wij teruggekoppeld over het traject?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Terugkoppeling gebeurt op procesniveau: aanwezigheid, voortgang in algemene zin en afronding. De inhoud van de gesprekken blijft vertrouwelijk tussen medewerker en coach. Die afspraak maken we vooraf expliciet met alle betrokkenen.\"}}, {\"@type\": \"Question\", \"name\": \"Wat als het niet klikt tussen medewerker en coach?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Dan stellen wij kosteloos een andere coach voor. De kennismaking vooraf is er juist om dit te ondervangen. Een goede klik is voorwaarde voor resultaat.\"}}, {\"@type\": \"Question\", \"name\": \"Waar vinden de gesprekken plaats?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Op onze locaties in Haarlem, Amsterdam of online. Wat het beste past bij de medewerker en de situatie.\"}}, {\"@type\": \"Question\", \"name\": \"Kunnen we klein beginnen voordat we een jaarafspraak maken?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Ja, dat raden we zelfs aan. Veel opdrachtgevers starten met een ronde proactieve loopbaangesprekken of een enkel traject, en groeien daarna door naar een coachingpool als jaarafspraak, in hun eigen tempo.\"}}]}" }],
