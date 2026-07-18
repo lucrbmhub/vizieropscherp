@@ -3,7 +3,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { SITE_URL } from "@/lib/site";
 
-const coachingWerkgeverImg = { url: `${SITE_URL}/assets/Coaching-werkgever_Haarlem-Amsterdam.jpg` };
+const coachingWerkgeverImg = { url: `${SITE_URL}/assets/coaching-werkgever-hero.webp` };
 
 
 export const Route = createFileRoute("/voor-werkgevers")({
