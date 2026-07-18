@@ -1,44 +1,89 @@
-## Wat er aan de hand is
+# Prompt: skill voor Vizier op Scherp blogartikelen
 
-`inzichten.hetzelfde-gevoel-een-andere-baan.tsx` gebruikt een compleet eigen HTML- en CSS-systeem dat afwijkt van de 24 andere blogs. Concrete visuele verschillen:
+Hieronder een kant-en-klare prompt die je in het andere Lovable-account plakt. Die instance schrijft er dan een skill van (via het skill-creator patroon) die telkens een blogartikel in exact het huidige format oplevert — hero, `ARTICLE_CSS`, `featured` blokken, `kernzin`, platte FAQ, `verder-kaart`-grid, `cta-strip`, plus JSON-LD (`BlogPosting` + `BreadcrumbList` + `FAQPage`), route-registratie in sitemap en MCP-index.
 
-| Onderdeel | Standaard-blogs | Nieuwe blog (nu) |
-|---|---|---|
-| Hero label | Goud pill-`badge` ("Voor medewerkers") + "← Inzichten" terug-link + `metaregel` met koraal ruit-dot | `eyebrow` met ruit "Inzichten · Voor medewerkers", geen terug-link, geen metaregel |
-| Body-klassen | `wrap-narrow`, `standfirst`, `body`, `intro` (muted) | `article-container`, `intro`, `hero-inner`, `section-eyebrow` boven elke H2 |
-| Uitgelicht blok | `.featured` — warm vlak met koraal ruit door bovenrand, ol/ul binnen | `.open-kader` — transparant petrol-kader met "opening" |
-| Lijstbullets | Standaard `<ul>` in `.featured` | Custom `.ruitlijst` met koraal ruit-bullet |
-| Kern-citaat | `<aside class="kernzin">` — petrol donker vlak met display-quote | Ontbreekt (alleen `.open-kader` als quote) |
-| FAQ | Platte `.faq-item` (h3 + p) direct in article, op papier | `<details>` accordeon in aparte `.faq-sectie` op linnen |
-| Verder lezen | 2-koloms `.verder-kaart` op linnen, "Lees verder →" | 3-koloms `.anker-kaart` met koraal ruit door bovenrand + `kaartlabel` |
-| CTA | `.cta-strip` met `.knop-petrol` + `.knop-outline` (twee knoppen) | `.facet-buiten/binnen` met alleen `.btn-primair` |
-| Slotpunt | `<span class="dot">` (goud) in H1 | `<span class="slotpunt">.</span>` |
+De prompt is zelfstandig: het andere account hoeft dit project niet te kunnen lezen. Alle regels, tokens en templates zitten erin.
 
-De pagina rendert daardoor als een ander merk-uiting binnen dezelfde site.
+---
 
-## Aanpak
+## Kopieer vanaf hier
 
-Herschrijf **alleen** het bestand `src/routes/inzichten.hetzelfde-gevoel-een-andere-baan.tsx` zodat het exact het patroon volgt van `inzichten.vastzitten-in-een-goede-baan.tsx` (referentie). Behouden: alle bestaande **tekstinhoud** (hero-lead, alle H2's + paragrafen, de 4 signalen, de "zorgvuldig"-noot, de 3 FAQ-vragen, de 3 "Verder lezen"-links, JSON-LD/meta).
+Maak een skill met de naam `vizier-op-scherp-blog` onder `.agents/skills/vizier-op-scherp-blog/` en pas hem toe met `skills--apply_draft`. De skill zorgt dat elk nieuw blogartikel voor Vizier op Scherp exact hetzelfde format en dezelfde huisstijl krijgt als de bestaande 25 artikelen onder `/inzichten/*`.
 
-### Concrete stappen in dat ene bestand
+### Wanneer de skill triggert
+Description moet matchen op: nieuwe blog / inzichtenartikel / "voeg artikel toe aan /inzichten" / retrofit van bestaande blogs / stijlcheck van een artikel.
 
-1. **`ARTICLE_CSS`** vervangen door de standaard CSS-string uit `vastzitten-in-een-goede-baan.tsx` (identiek overnemen — dit is de gedeelde blogstijl).
-2. **`HTML`** herstructureren:
-   - Hero: `<section class="hero"><div class="wrap-narrow">` met terug-link `← Inzichten`, `<span class="badge">Voor medewerkers</span>`, H1 (behoud kop, gebruik `<span class="dot">` op de slotpunt), `<p class="standfirst">` met de bestaande lead, en `<div class="metaregel">` met "Voor medewerkers · 5 min lezen".
-   - `<article><div class="wrap-narrow">` met `<p class="intro">` (huidige inleiding), daarna H2's met `<p class="body">`-paragrafen.
-   - Vervang `.ruitlijst` door standaard `<ul>` binnen een `.featured`-blok voor de 4 signalen (met `label` + H2 "Vier signalen dat er meer speelt dan de functie").
-   - Zet de bestaande open-kader-quote ("Een overstap verandert je omgeving…") om naar `<aside class="kernzin">` (donker petrol quote-blok).
-   - `.noot` behouden als eenvoudige alinea of omzetten naar `.featured` met label "Zorgvuldig" — kies `.featured` voor stijlconsistentie.
-   - FAQ als `.faq` met `.faq-item` (h3 + p), niet als `<details>`.
-   - Verder lezen: 2-koloms `.verder-grid` met `.verder-kaart` (2 kaarten conform standaard: houd "Vastzitten in een goede baan" en "Energie en motivatie in werk"; "Richting vinden" laten vervallen om bij 2 kaarten te blijven zoals de standaard, of alle 3 behouden — kies **alle 3** zodat er geen inhoud wegvalt; de grid schikt op mobiel prima).
-   - CTA: `.cta-strip` met `.knop-petrol` ("Maak kennis met een coach" → `/kennismaken`) en `.knop-outline` ("Bekijk onze coaches" → `/coaches`).
-3. Head/meta/JSON-LD blijft ongewijzigd (die zijn al goed).
-4. Retrofit-kaart in `inzichten.vastzitten-in-een-goede-baan.tsx` en `inzichten.richting-vinden-in-je-loopbaan.tsx` niet aanraken (die zitten al in standaard-stijl).
+### Wat de skill afdwingt
 
-### Wat er niet verandert
-- Geen tekstwijzigingen in kop, lead, paragrafen, signalen, FAQ-antwoorden, noot of CTA-copy.
-- Geen wijzigingen aan andere routes, `inzichten.index.tsx`, sitemap of MCP.
-- Geen nieuwe kleuren, componenten of assets.
+**1. Bestand & route**
+- Pad: `src/routes/inzichten.<slug>.tsx`, slug is kebab-case, ASCII, zonder stopwoorden weglaten als ze in de titel staan.
+- `createFileRoute('/inzichten/<slug>')` met `head()` die `title`, `description`, `canonical` (`https://vizieropscherp.nl/inzichten/<slug>`), `og:title/description/type=article`, `twitter:card=summary_large_image` zet. Geen `og:image` tenzij er een echte hero-afbeelding is.
+- Registreer de route in `src/routes/sitemap[.]xml.ts` en in `src/lib/mcp/data.ts` (`list_articles` + `get_article`).
 
-### Resultaat
-Het artikel oogt identiek aan de andere 24 blogs: dezelfde hero-badge, dezelfde `featured`/`kernzin`/`faq-item`/`verder-kaart`/`cta-strip`-blokken, dezelfde typografie en ritme.
+**2. Verplichte paginastructuur (in deze volgorde)**
+1. `<SiteHeader />`
+2. `<main id="content">` met:
+   - Hero op petrol (`background: var(--petrol)`), met:
+     - `terug`-link naar `/inzichten`
+     - `badge` — één van: "Voor medewerkers", "Voor werkgevers", "Voor HR", "Voor UWV-cliënten"
+     - H1 met **i-punt ruit** op de eerste losstaande "i" en **gouden slotpunt** (span om de eind-punt; nooit dubbele punt; bij `?`/`!` geen gouden punt)
+     - `metaregel` (leestijd + datum + auteur "Redactie Vizier op Scherp")
+     - één ruit-watermerk rechts (max 1)
+   - Intro-lead (max 58ch, 17.5px)
+   - Body met `featured` blokken voor uitgelichte alinea's, `kernzin` (petrol-dark aside) voor de kernquote, gewone `<p>` voor de rest
+   - Lijsten: koraal ruitje 8px, rotate 45° — nooit standaard bullets/streepjes; mix nooit varianten binnen één lijst
+   - FAQ **plat** (geen accordeon): `faq-item` met `<h3>` + `<p>`. Minimaal 3, maximaal 6 vragen
+   - "Verder lezen" 2-koloms grid met 3 `verder-kaart` links naar inhoudelijk verwante artikelen
+   - `cta-strip` met twee knoppen: primair koraal ("Plan een kennismaking" → `/kennismaken`) + outline petrol ("Bekijk aanpak" → contextafhankelijk: `/coaching-voor-mij`, `/voor-werkgevers` of `/uwv-traject`)
+3. `<SiteFooter />`
+
+**3. `ARTICLE_CSS`**
+Eén geëxporteerde constante bovenin het bestand, ingebed via `<style dangerouslySetInnerHTML={{__html: ARTICLE_CSS}} />` binnen `head()`. Gebruik exact het bestaande CSS-blok uit de andere 25 artikelen (hero petrol, badge, terug, metaregel, featured, kernzin, faq-item, verder-kaart-grid, cta-strip, mobiele nav). Balanceer accolades op 0 — verifieer met een count. Geen zwevende `}`.
+
+**4. JSON-LD (drie blokken, in `head()`)**
+- `BlogPosting` (headline, description, datePublished, dateModified, author=Organization "Vizier op Scherp", publisher met logo, mainEntityOfPage)
+- `BreadcrumbList`: Home → Inzichten → Artikeltitel
+- `FAQPage` met exact dezelfde vragen/antwoorden als in de body-FAQ
+
+**5. Huisstijl-regels (harde constraints, nooit afwijken)**
+- Kleuren alleen uit het tokenpalet: petrol `#1F3D3B`, papier `#FAF6EF`, linnen `#F5EFE3`, warm `#FBF1D7`, goud `#F2C879`, koraal `#E8714A`. Nooit `#000` of `#fff`. Nooit nieuwe tinten.
+- Fonts: `Bricolage Grotesque` (koppen 400/500/600) + `Instrument Sans` (body). Nooit Inter/Lora/systeemfont.
+- Geen emoji, geen iconenbibliotheken (ruit-motief is de iconografie).
+- Geen em-dashes in body-tekst. Verboden woorden: transformeer, next level, gamechanger, empowerment, doorbraak, holistische reis.
+- Coach-toon: **je-vorm** in blogs. Werkgevers-CTA in u-vorm alleen als het artikel expliciet HR-doelgroep is.
+- Certificering (letterlijk): "onze coaches zijn gecertificeerd en aangesloten bij een erkende beroepsvereniging of kwaliteitsregister, zoals Noloc, NOBCO of een vergelijkbaar register".
+- Coach-aantal altijd "5 tot 10 coaches", nooit "8-12".
+- Geen prijzen, geen klantnamen zonder toestemming (schoolbestuur-formulering gebruiken).
+
+**6. Retrofit-stap (verplicht bij nieuw artikel)**
+- Voeg een `verder-kaart` naar het nieuwe artikel toe in minstens 2 thematisch verwante bestaande artikelen.
+- Voeg een kaart toe aan `src/routes/inzichten.index.tsx` in het juiste thema-blok. Als het nieuwe artikel bovenaan komt: verplaats de `card--anchor ring-paper` klassen (het oranje ruitje) naar die eerste kaart.
+
+**7. Bestanden die bijgewerkt moeten worden per nieuw artikel**
+- `src/routes/inzichten.<slug>.tsx` (nieuw)
+- `src/routes/inzichten.index.tsx` (kaart + evt. thema-chip)
+- `src/routes/sitemap[.]xml.ts`
+- `src/lib/mcp/data.ts`
+- 2 bestaande `src/routes/inzichten.*.tsx` (retrofit-links)
+
+**8. Verificatie na schrijven**
+- Tel `{` en `}` in `ARTICLE_CSS` — moeten gelijk zijn.
+- Grep het bestand op verboden woorden en op `#000`/`#fff`.
+- Check dat H1 exact één i-punt-ruit en één gouden slotpunt heeft (of geen slotpunt bij `?`/`!`).
+- Check dat FAQ-vragen in body en in `FAQPage` JSON-LD identiek zijn.
+
+### Bundel in de skill
+- `SKILL.md` met bovenstaande regels
+- `references/article-template.tsx` — volledig kopieerbaar route-bestand met placeholders `{{SLUG}}`, `{{TITLE}}`, `{{BADGE}}`, `{{INTRO}}`, `{{BODY_BLOCKS}}`, `{{FAQ}}`, `{{VERDER_KAARTEN}}`, `{{CTA_HREF}}`
+- `references/article-css.css` — de exacte `ARTICLE_CSS` string
+- `references/jsonld.ts` — helper die de drie JSON-LD blokken bouwt
+- `references/style-tokens.md` — het complete kleur/typografie/motief-token-overzicht (kopieer §2 t/m §5 uit de Vizier stijlgids letterlijk)
+- `references/checklist.md` — de verificatiestappen uit punt 8
+
+Rond af met `skills--apply_draft .agents/skills/vizier-op-scherp-blog`.
+
+---
+
+## Tot hier kopiëren
+
+Wil je dat ik hem nog inkort, of extra secties (bijv. voorbeeld-artikel als volledige referentie) meegeef?
