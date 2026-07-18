@@ -40,6 +40,7 @@ import { Route as InzichtenKostenVanEenVerkeerdeMatchRouteImport } from './route
 import { Route as InzichtenJobCraftingRouteImport } from './routes/inzichten.job-crafting'
 import { Route as InzichtenJeEersteBaanRouteImport } from './routes/inzichten.je-eerste-baan'
 import { Route as InzichtenImpostersyndroomTwijfelAlsKrachtRouteImport } from './routes/inzichten.impostersyndroom-twijfel-als-kracht'
+import { Route as InzichtenHetzelfdeGevoelEenAndereBaanRouteImport } from './routes/inzichten.hetzelfde-gevoel-een-andere-baan'
 import { Route as InzichtenHetTegenbodRouteImport } from './routes/inzichten.het-tegenbod'
 import { Route as InzichtenGoedeLoopbaancoachKiezenRouteImport } from './routes/inzichten.goede-loopbaancoach-kiezen'
 import { Route as InzichtenGeneratiesOpDeWerkvloerRouteImport } from './routes/inzichten.generaties-op-de-werkvloer'
@@ -222,6 +223,12 @@ const InzichtenImpostersyndroomTwijfelAlsKrachtRoute =
     path: '/impostersyndroom-twijfel-als-kracht',
     getParentRoute: () => InzichtenRoute,
   } as any)
+const InzichtenHetzelfdeGevoelEenAndereBaanRoute =
+  InzichtenHetzelfdeGevoelEenAndereBaanRouteImport.update({
+    id: '/hetzelfde-gevoel-een-andere-baan',
+    path: '/hetzelfde-gevoel-een-andere-baan',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
 const InzichtenHetTegenbodRoute = InzichtenHetTegenbodRouteImport.update({
   id: '/het-tegenbod',
   path: '/het-tegenbod',
@@ -310,6 +317,7 @@ export interface FileRoutesByFullPath {
   '/inzichten/generaties-op-de-werkvloer': typeof InzichtenGeneratiesOpDeWerkvloerRoute
   '/inzichten/goede-loopbaancoach-kiezen': typeof InzichtenGoedeLoopbaancoachKiezenRoute
   '/inzichten/het-tegenbod': typeof InzichtenHetTegenbodRoute
+  '/inzichten/hetzelfde-gevoel-een-andere-baan': typeof InzichtenHetzelfdeGevoelEenAndereBaanRoute
   '/inzichten/impostersyndroom-twijfel-als-kracht': typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
   '/inzichten/je-eerste-baan': typeof InzichtenJeEersteBaanRoute
   '/inzichten/job-crafting': typeof InzichtenJobCraftingRoute
@@ -353,6 +361,7 @@ export interface FileRoutesByTo {
   '/inzichten/generaties-op-de-werkvloer': typeof InzichtenGeneratiesOpDeWerkvloerRoute
   '/inzichten/goede-loopbaancoach-kiezen': typeof InzichtenGoedeLoopbaancoachKiezenRoute
   '/inzichten/het-tegenbod': typeof InzichtenHetTegenbodRoute
+  '/inzichten/hetzelfde-gevoel-een-andere-baan': typeof InzichtenHetzelfdeGevoelEenAndereBaanRoute
   '/inzichten/impostersyndroom-twijfel-als-kracht': typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
   '/inzichten/je-eerste-baan': typeof InzichtenJeEersteBaanRoute
   '/inzichten/job-crafting': typeof InzichtenJobCraftingRoute
@@ -398,6 +407,7 @@ export interface FileRoutesById {
   '/inzichten/generaties-op-de-werkvloer': typeof InzichtenGeneratiesOpDeWerkvloerRoute
   '/inzichten/goede-loopbaancoach-kiezen': typeof InzichtenGoedeLoopbaancoachKiezenRoute
   '/inzichten/het-tegenbod': typeof InzichtenHetTegenbodRoute
+  '/inzichten/hetzelfde-gevoel-een-andere-baan': typeof InzichtenHetzelfdeGevoelEenAndereBaanRoute
   '/inzichten/impostersyndroom-twijfel-als-kracht': typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
   '/inzichten/je-eerste-baan': typeof InzichtenJeEersteBaanRoute
   '/inzichten/job-crafting': typeof InzichtenJobCraftingRoute
@@ -444,6 +454,7 @@ export interface FileRouteTypes {
     | '/inzichten/generaties-op-de-werkvloer'
     | '/inzichten/goede-loopbaancoach-kiezen'
     | '/inzichten/het-tegenbod'
+    | '/inzichten/hetzelfde-gevoel-een-andere-baan'
     | '/inzichten/impostersyndroom-twijfel-als-kracht'
     | '/inzichten/je-eerste-baan'
     | '/inzichten/job-crafting'
@@ -487,6 +498,7 @@ export interface FileRouteTypes {
     | '/inzichten/generaties-op-de-werkvloer'
     | '/inzichten/goede-loopbaancoach-kiezen'
     | '/inzichten/het-tegenbod'
+    | '/inzichten/hetzelfde-gevoel-een-andere-baan'
     | '/inzichten/impostersyndroom-twijfel-als-kracht'
     | '/inzichten/je-eerste-baan'
     | '/inzichten/job-crafting'
@@ -531,6 +543,7 @@ export interface FileRouteTypes {
     | '/inzichten/generaties-op-de-werkvloer'
     | '/inzichten/goede-loopbaancoach-kiezen'
     | '/inzichten/het-tegenbod'
+    | '/inzichten/hetzelfde-gevoel-een-andere-baan'
     | '/inzichten/impostersyndroom-twijfel-als-kracht'
     | '/inzichten/je-eerste-baan'
     | '/inzichten/job-crafting'
@@ -792,6 +805,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InzichtenImpostersyndroomTwijfelAlsKrachtRouteImport
       parentRoute: typeof InzichtenRoute
     }
+    '/inzichten/hetzelfde-gevoel-een-andere-baan': {
+      id: '/inzichten/hetzelfde-gevoel-een-andere-baan'
+      path: '/hetzelfde-gevoel-een-andere-baan'
+      fullPath: '/inzichten/hetzelfde-gevoel-een-andere-baan'
+      preLoaderRoute: typeof InzichtenHetzelfdeGevoelEenAndereBaanRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
     '/inzichten/het-tegenbod': {
       id: '/inzichten/het-tegenbod'
       path: '/het-tegenbod'
@@ -880,6 +900,7 @@ interface InzichtenRouteChildren {
   InzichtenGeneratiesOpDeWerkvloerRoute: typeof InzichtenGeneratiesOpDeWerkvloerRoute
   InzichtenGoedeLoopbaancoachKiezenRoute: typeof InzichtenGoedeLoopbaancoachKiezenRoute
   InzichtenHetTegenbodRoute: typeof InzichtenHetTegenbodRoute
+  InzichtenHetzelfdeGevoelEenAndereBaanRoute: typeof InzichtenHetzelfdeGevoelEenAndereBaanRoute
   InzichtenImpostersyndroomTwijfelAlsKrachtRoute: typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
   InzichtenJeEersteBaanRoute: typeof InzichtenJeEersteBaanRoute
   InzichtenJobCraftingRoute: typeof InzichtenJobCraftingRoute
@@ -912,6 +933,8 @@ const InzichtenRouteChildren: InzichtenRouteChildren = {
   InzichtenGoedeLoopbaancoachKiezenRoute:
     InzichtenGoedeLoopbaancoachKiezenRoute,
   InzichtenHetTegenbodRoute: InzichtenHetTegenbodRoute,
+  InzichtenHetzelfdeGevoelEenAndereBaanRoute:
+    InzichtenHetzelfdeGevoelEenAndereBaanRoute,
   InzichtenImpostersyndroomTwijfelAlsKrachtRoute:
     InzichtenImpostersyndroomTwijfelAlsKrachtRoute,
   InzichtenJeEersteBaanRoute: InzichtenJeEersteBaanRoute,

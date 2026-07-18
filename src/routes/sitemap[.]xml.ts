@@ -37,6 +37,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/inzichten/energie-en-motivatie-in-werk", changefreq: "yearly", priority: "0.6" },
           { path: "/inzichten/richting-vinden-in-je-loopbaan", changefreq: "yearly", priority: "0.6" },
           { path: "/inzichten/vastzitten-in-een-goede-baan", changefreq: "yearly", priority: "0.6" },
+          { path: "/inzichten/hetzelfde-gevoel-een-andere-baan", changefreq: "yearly", priority: "0.6" },
           { path: "/inzichten/impostersyndroom-twijfel-als-kracht", changefreq: "yearly", priority: "0.6" },
           { path: "/inzichten/mentale-vermoeidheid-en-eigen-regie", changefreq: "yearly", priority: "0.6" },
           { path: "/inzichten/je-eerste-baan", changefreq: "yearly", priority: "0.6" },
