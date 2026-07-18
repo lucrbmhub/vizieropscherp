@@ -235,8 +235,6 @@ function Page() {
             <p>Twintig minuten, vrijblijvend. Jij kiest de tijd; we bellen of spreken af op een van onze locaties.</p>
           </div>
           <CalEmbed />
-          <div className="dia-divider" style={{ margin: "44px 0 8px" }} aria-hidden="true"><span /></div>
-          <p style={{ textAlign: "center", fontSize: 14, color: "var(--petrol)", opacity: 0.7, margin: 0 }}>of</p>
         </div>
       </section>
       <div dangerouslySetInnerHTML={{ __html: HTML_AFTER }} />
