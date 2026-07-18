@@ -1,38 +1,44 @@
-## Wat ik weet
+## Wat er aan de hand is
 
-- **Server-endpoint werkt.** Een directe POST naar `/api/public/submit-form` op de dev-server geeft `200 {"ok":true}`.
-- **Tabellen bestaan** en bevatten data: `workbook_leads` (6), `contact_aanvragen` (6), `form_rate_limits` (8). Laatste succesvolle inserts om 17:01 vandaag; daarna alleen mijn testcall om 18:11.
-- **Rate-limit is niet geraakt** (max 1 hit per IP in laatste 10 min).
-- **Route is geregistreerd** in `routeTree.gen.ts`.
-- **Publiceerde site** (`vizieropscherp.nl` / `www.vizieropscherp.nl`) wijst naar een WordPress-site, niet naar deze Lovable-app. Er is bovendien "No published build" op de Lovable-domeinen. Als je op de custom domain test, kán de Lovable-code sowieso niet draaien.
+`inzichten.hetzelfde-gevoel-een-andere-baan.tsx` gebruikt een compleet eigen HTML- en CSS-systeem dat afwijkt van de 24 andere blogs. Concrete visuele verschillen:
 
-## Vermoedelijke oorzaak (nog niet bevestigd)
+| Onderdeel | Standaard-blogs | Nieuwe blog (nu) |
+|---|---|---|
+| Hero label | Goud pill-`badge` ("Voor medewerkers") + "← Inzichten" terug-link + `metaregel` met koraal ruit-dot | `eyebrow` met ruit "Inzichten · Voor medewerkers", geen terug-link, geen metaregel |
+| Body-klassen | `wrap-narrow`, `standfirst`, `body`, `intro` (muted) | `article-container`, `intro`, `hero-inner`, `section-eyebrow` boven elke H2 |
+| Uitgelicht blok | `.featured` — warm vlak met koraal ruit door bovenrand, ol/ul binnen | `.open-kader` — transparant petrol-kader met "opening" |
+| Lijstbullets | Standaard `<ul>` in `.featured` | Custom `.ruitlijst` met koraal ruit-bullet |
+| Kern-citaat | `<aside class="kernzin">` — petrol donker vlak met display-quote | Ontbreekt (alleen `.open-kader` als quote) |
+| FAQ | Platte `.faq-item` (h3 + p) direct in article, op papier | `<details>` accordeon in aparte `.faq-sectie` op linnen |
+| Verder lezen | 2-koloms `.verder-kaart` op linnen, "Lees verder →" | 3-koloms `.anker-kaart` met koraal ruit door bovenrand + `kaartlabel` |
+| CTA | `.cta-strip` met `.knop-petrol` + `.knop-outline` (twee knoppen) | `.facet-buiten/binnen` met alleen `.btn-primair` |
+| Slotpunt | `<span class="dot">` (goud) in H1 | `<span class="slotpunt">.</span>` |
 
-Op de **preview** hoort alles te werken. De meest waarschijnlijke faalpunten (nog niet gereproduceerd) zijn client-side:
+De pagina rendert daardoor als een ander merk-uiting binnen dezelfde site.
 
-1. Werkboek-popup: sinds de recente omzetting naar shadcn `Dialog` in `WorkbookGate.tsx` kan een hydratiefout of niet-opgevangen exception voorkomen dat de dialoog opent of dat het submit-formulier werkt.
-2. Contactformulier op `/kennismaken`: `useContactForm` hangt een `submit`-listener via `document.querySelector` — als iets in de HTML-string (of een selector-conflict door meerdere `<form>`-elementen op de pagina) de vindbaarheid breekt, wordt de listener niet gekoppeld en submit de browser gewoon niets (er staat geen `action`).
-3. Ergens tussenin een JS-runtime-error die de mount van `<WorkbookGate />` / `<Page />` afbreekt, waardoor beide formulieren tegelijk stil vallen — dat verklaart "de werkboekdownload én het contactformulier".
+## Aanpak
 
-Zonder de fout te zien in jouw browser (console + netwerk) kan ik niet met zekerheid zeggen welk van deze drie het is.
+Herschrijf **alleen** het bestand `src/routes/inzichten.hetzelfde-gevoel-een-andere-baan.tsx` zodat het exact het patroon volgt van `inzichten.vastzitten-in-een-goede-baan.tsx` (referentie). Behouden: alle bestaande **tekstinhoud** (hero-lead, alle H2's + paragrafen, de 4 signalen, de "zorgvuldig"-noot, de 3 FAQ-vragen, de 3 "Verder lezen"-links, JSON-LD/meta).
 
-## Plan
+### Concrete stappen in dat ene bestand
 
-1. **Reproduceren** in de live preview: openen `/coaching-voor-mij`, klikken op "Download het werkboek" (verwacht: modal opent, submit levert `200`), en `/kennismaken` submit doen. Console-errors en de netwerkcall naar `/api/public/submit-form` uitlezen (status, response body).
-2. **Diagnose** op basis van wat de reproductie oplevert:
-   - Modal opent niet → error in `WorkbookGate` click-handler / Dialog. Kijk naar de `document`-level click-listener en of `data-workbook` correct wordt opgepakt (bijv. onbedoeld `preventDefault` in een andere handler).
-   - Modal opent, submit blijft hangen → fetch-fout of validatie; fix schema/veldnaam.
-   - Contactformulier reageert niet op submit → `document.querySelector("#bericht-form form")` treft niet, of listener wordt afgemount door React strict-mode dubbele render. Vervang de imperatieve `useEffect` + `dangerouslySetInnerHTML`-listener door een `ref`-gebaseerde binding op één stabiel formulier, of vervang het formulier door een echte React-component die `onSubmit` gebruikt.
-   - JS-error blokkeert mount → fix de root-cause (meestal een import/typo of null-deref).
-3. **Fix + verifiëren**: na de aanpassing opnieuw in de preview klikken en de netwerkcall `200` zien; in `workbook_leads` / `contact_aanvragen` verschijnt een nieuwe rij.
-4. **Optioneel** (los van deze bug): omdat `vizieropscherp.nl` momenteel naar een WordPress-site wijst en er geen "published build" is, zullen de formulieren op de custom domain sowieso niet werken totdat de Lovable-app gepubliceerd wordt en de DNS naar Lovable wijst. Dat kan ik apart oppakken.
+1. **`ARTICLE_CSS`** vervangen door de standaard CSS-string uit `vastzitten-in-een-goede-baan.tsx` (identiek overnemen — dit is de gedeelde blogstijl).
+2. **`HTML`** herstructureren:
+   - Hero: `<section class="hero"><div class="wrap-narrow">` met terug-link `← Inzichten`, `<span class="badge">Voor medewerkers</span>`, H1 (behoud kop, gebruik `<span class="dot">` op de slotpunt), `<p class="standfirst">` met de bestaande lead, en `<div class="metaregel">` met "Voor medewerkers · 5 min lezen".
+   - `<article><div class="wrap-narrow">` met `<p class="intro">` (huidige inleiding), daarna H2's met `<p class="body">`-paragrafen.
+   - Vervang `.ruitlijst` door standaard `<ul>` binnen een `.featured`-blok voor de 4 signalen (met `label` + H2 "Vier signalen dat er meer speelt dan de functie").
+   - Zet de bestaande open-kader-quote ("Een overstap verandert je omgeving…") om naar `<aside class="kernzin">` (donker petrol quote-blok).
+   - `.noot` behouden als eenvoudige alinea of omzetten naar `.featured` met label "Zorgvuldig" — kies `.featured` voor stijlconsistentie.
+   - FAQ als `.faq` met `.faq-item` (h3 + p), niet als `<details>`.
+   - Verder lezen: 2-koloms `.verder-grid` met `.verder-kaart` (2 kaarten conform standaard: houd "Vastzitten in een goede baan" en "Energie en motivatie in werk"; "Richting vinden" laten vervallen om bij 2 kaarten te blijven zoals de standaard, of alle 3 behouden — kies **alle 3** zodat er geen inhoud wegvalt; de grid schikt op mobiel prima).
+   - CTA: `.cta-strip` met `.knop-petrol` ("Maak kennis met een coach" → `/kennismaken`) en `.knop-outline` ("Bekijk onze coaches" → `/coaches`).
+3. Head/meta/JSON-LD blijft ongewijzigd (die zijn al goed).
+4. Retrofit-kaart in `inzichten.vastzitten-in-een-goede-baan.tsx` en `inzichten.richting-vinden-in-je-loopbaan.tsx` niet aanraken (die zitten al in standaard-stijl).
 
-## Wat ik van jou nodig heb
+### Wat er niet verandert
+- Geen tekstwijzigingen in kop, lead, paragrafen, signalen, FAQ-antwoorden, noot of CTA-copy.
+- Geen wijzigingen aan andere routes, `inzichten.index.tsx`, sitemap of MCP.
+- Geen nieuwe kleuren, componenten of assets.
 
-Zodat ik gericht kan reproduceren en fixen, één korte check: **waar** test je de formulieren precies, en **wat** zie je gebeuren?
-
-- Op de Lovable-preview (`id-preview--…lovable.app`) of op `vizieropscherp.nl`?
-- Werkboek: opent de popup wel, of gebeurt er niks bij de klik? En bij "Download het werkboek"-knop: krijg je een foutmelding, of blijft hij hangen op "Even geduld…"?
-- Contactformulier: krijg je een rode foutmelding onderin, blijft de knop hangen, of doet Versturen niks?
-
-Met dat antwoord voer ik de reproductie uit, wijs de fout precies aan, en pas de fix toe.
+### Resultaat
+Het artikel oogt identiek aan de andere 24 blogs: dezelfde hero-badge, dezelfde `featured`/`kernzin`/`faq-item`/`verder-kaart`/`cta-strip`-blokken, dezelfde typografie en ritme.
