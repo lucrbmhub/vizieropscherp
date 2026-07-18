@@ -176,7 +176,7 @@ function useContactForm() {
       // melding, maar er wordt niets opgeslagen.
       if (String(fd.get("hp_website") ?? "").trim().length > 0) {
         form.reset();
-        setStatus("Bedankt, we nemen zo snel mogelijk contact met je op.", "#1F3D3B");
+        setStatus("Je bericht is verstuurd, we nemen zo snel mogelijk contact met je op.", "#1F3D3B");
         return;
       }
 
