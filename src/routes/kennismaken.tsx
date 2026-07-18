@@ -197,7 +197,7 @@ function useContactForm() {
         });
         if (error) throw error;
         form.reset();
-        setStatus("Bedankt, we nemen zo snel mogelijk contact met je op.", "#1F3D3B");
+        setStatus("Je bericht is verstuurd, we nemen zo snel mogelijk contact met je op.", "#1F3D3B");
       } catch (err) {
         console.error(err);
         setStatus(
