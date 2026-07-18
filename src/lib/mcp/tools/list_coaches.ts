@@ -9,7 +9,7 @@ export default defineTool({
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
-    const payload = { coaches: COACHES, url: `${SITE_URL}/coaches` };
+    const payload = { coaches: COACHES, url: `${SITE_URL}/over-ons#coaches` };
     return {
       content: [{ type: "text", text: JSON.stringify(payload, null, 2) }],
       structuredContent: payload,
