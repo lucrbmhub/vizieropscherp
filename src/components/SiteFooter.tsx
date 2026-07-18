@@ -23,7 +23,7 @@ export default function SiteFooter() {
           </div>
           <div>
             <h2>Bureau</h2>
-            <a href="/coaches">Onze coaches</a>
+            <a href="/over-ons#coaches">Onze coaches</a>
             <a href="/over-ons">Over ons</a>
             <a href="/kennismaken">Kennismaken</a>
             <a className="gold-link" href="/inzichten">Inzichten</a>

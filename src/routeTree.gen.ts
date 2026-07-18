@@ -19,7 +19,6 @@ import { Route as LeiderschapRouteImport } from './routes/leiderschap'
 import { Route as KennismakenRouteImport } from './routes/kennismaken'
 import { Route as InzichtenRouteImport } from './routes/inzichten'
 import { Route as CoachingVoorMijRouteImport } from './routes/coaching-voor-mij'
-import { Route as CoachesRouteImport } from './routes/coaches'
 import { Route as AlgemeneVoorwaardenRouteImport } from './routes/algemene-voorwaarden'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as InzichtenIndexRouteImport } from './routes/inzichten.index'
@@ -101,11 +100,6 @@ const InzichtenRoute = InzichtenRouteImport.update({
 const CoachingVoorMijRoute = CoachingVoorMijRouteImport.update({
   id: '/coaching-voor-mij',
   path: '/coaching-voor-mij',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CoachesRoute = CoachesRouteImport.update({
-  id: '/coaches',
-  path: '/coaches',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AlgemeneVoorwaardenRoute = AlgemeneVoorwaardenRouteImport.update({
@@ -297,7 +291,6 @@ const Char91DotmcpChar93InvokeToolToolRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
-  '/coaches': typeof CoachesRoute
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
   '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
@@ -342,7 +335,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
-  '/coaches': typeof CoachesRoute
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
@@ -387,7 +379,6 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
-  '/coaches': typeof CoachesRoute
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
   '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
@@ -434,7 +425,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/algemene-voorwaarden'
-    | '/coaches'
     | '/coaching-voor-mij'
     | '/inzichten'
     | '/kennismaken'
@@ -479,7 +469,6 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/algemene-voorwaarden'
-    | '/coaches'
     | '/coaching-voor-mij'
     | '/kennismaken'
     | '/leiderschap'
@@ -523,7 +512,6 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/algemene-voorwaarden'
-    | '/coaches'
     | '/coaching-voor-mij'
     | '/inzichten'
     | '/kennismaken'
@@ -569,7 +557,6 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AlgemeneVoorwaardenRoute: typeof AlgemeneVoorwaardenRoute
-  CoachesRoute: typeof CoachesRoute
   CoachingVoorMijRoute: typeof CoachingVoorMijRoute
   InzichtenRoute: typeof InzichtenRouteWithChildren
   KennismakenRoute: typeof KennismakenRoute
@@ -656,13 +643,6 @@ declare module '@tanstack/react-router' {
       path: '/coaching-voor-mij'
       fullPath: '/coaching-voor-mij'
       preLoaderRoute: typeof CoachingVoorMijRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/coaches': {
-      id: '/coaches'
-      path: '/coaches'
-      fullPath: '/coaches'
-      preLoaderRoute: typeof CoachesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/algemene-voorwaarden': {
@@ -973,7 +953,6 @@ const InzichtenRouteWithChildren = InzichtenRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AlgemeneVoorwaardenRoute: AlgemeneVoorwaardenRoute,
-  CoachesRoute: CoachesRoute,
   CoachingVoorMijRoute: CoachingVoorMijRoute,
   InzichtenRoute: InzichtenRouteWithChildren,
   KennismakenRoute: KennismakenRoute,
