@@ -3,7 +3,6 @@ import { useState } from "react";
 type Active =
   | "voor-werkgevers"
   | "coaching-voor-mij"
-  | "uwv-traject"
   | "over-ons"
   | "inzichten"
   | "kennismaken"
@@ -12,7 +11,6 @@ type Active =
 const LINKS: Array<{ href: string; label: string; key: Active; cta?: boolean }> = [
   { href: "/voor-werkgevers", label: "Voor werkgevers & HR", key: "voor-werkgevers" },
   { href: "/coaching-voor-mij", label: "Coaching voor mij", key: "coaching-voor-mij" },
-  { href: "/uwv-traject", label: "UWV-traject", key: "uwv-traject" },
   { href: "/over-ons", label: "Over ons", key: "over-ons" },
   { href: "/inzichten", label: "Inzichten", key: "inzichten" },
   { href: "/kennismaken", label: "Kennismaken", key: "kennismaken", cta: true },

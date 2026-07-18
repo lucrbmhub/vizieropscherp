@@ -25,7 +25,7 @@ const HTML = "<main id=\"main\">\n\n<!-- HERO -->\n<section class=\"hero hero--l
 function Page() {
   return (
     <>
-      <SiteHeader active="uwv-traject" />
+      <SiteHeader />
       <div dangerouslySetInnerHTML={{ __html: HTML }} />
       <SiteFooter />
     </>
