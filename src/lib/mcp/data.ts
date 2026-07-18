@@ -24,6 +24,7 @@ export const ARTICLES: Array<{ slug: string; title: string; description: string 
   { slug: "starters-behouden", title: "De helft van de starters is binnen twee jaar weg: wat het eerste jaar vraagt", description: "Waarom het lek niet bij de werving zit maar in de eerste maanden." },
   { slug: "van-werven-naar-behouden", title: "Van werven naar behouden: waarom medewerkers vertrekken om stilstand, niet om salaris", description: "Wat werkgevers kunnen doen, onderbouwd met UWV- en CBS-cijfers." },
   { slug: "vastzitten-in-een-goede-baan", title: "Vastzitten in een goede baan: de gouden kooi", description: "Waarom juist een goede baan je kan vastzetten, en hoe je de deur weer opent." },
+  { slug: "hetzelfde-gevoel-een-andere-baan", title: "Hetzelfde gevoel, een andere baan: waarom een overstap het patroon niet altijd oplost", description: "Weer dezelfde onvrede in een nieuwe baan? Vaak verhuist het patroon mee. Hoe je herkent wat er echt speelt." },
   { slug: "vier-basisbehoeften-in-werk", title: "De vier basisbehoeften in werk", description: "Of werk voldoening geeft hangt af van vier basisbehoeften: autonomie, verbondenheid, competentie en zingeving." },
 ];
 
