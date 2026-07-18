@@ -527,3 +527,6 @@ address{font-style:normal}
 /* Skip link for keyboard/screen-reader users */
 .skip{position:absolute;left:-9999px;top:0;z-index:9999;background:var(--petrol);color:var(--linnen);padding:10px 16px;border-radius:8px;font-size:14px;text-decoration:none}
 .skip:focus{left:16px;top:16px;outline:2px solid var(--koraal);outline-offset:2px}
+
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+section[id]{scroll-margin-top:90px}
