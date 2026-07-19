@@ -27,7 +27,9 @@ function Page() {
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: ARTICLE_CSS }} />
+      <SiteHeader active="inzichten" />
       <div dangerouslySetInnerHTML={{ __html: HTML }} />
+      <SiteFooter />
     </>
   );
 }
