@@ -5,12 +5,7 @@ export default function SiteFooter() {
         <div className="footer-grid">
           <div>
             <a className="footer-brand" href="/" aria-label="Vizier op Scherp — naar de homepage">
-              <svg width="30" height="30" viewBox="0 0 100 100" aria-hidden="true">
-                <rect x="8" y="8" width="84" height="84" rx="10" fill="#F5EFE3" />
-                <path d="M50 26 L74 50 L50 74 L26 50 Z" fill="none" stroke="#1F3D3B" strokeWidth="6" strokeLinejoin="miter" />
-                <rect x="44" y="44" width="12" height="12" fill="#E8714A" transform="rotate(45 50 50)" />
-              </svg>
-              <span>Vizier op Scherp</span>
+              <img src="/assets/vizier-logo-creme.png" alt="Vizier op Scherp" style={{ height: 30, width: "auto", display: "block" }} />
             </a>
             <p>Regionaal netwerk voor loopbaancoaching, voor werkgevers en hun medewerkers in Amsterdam, Haarlem en omgeving. Persoonlijk, professioneel en gericht op concrete stappen in werk.</p>
           </div>
