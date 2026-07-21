@@ -56,9 +56,9 @@ const HTML = `<main id="main">
         <h2 class="h-section">Van persoonlijke praktijk naar netwerkbureau</h2>
       </div>
       <div style="display:flex;flex-direction:column;gap:20px;max-width:68ch;">
-        <p>Vizier op Scherp is in 2016 ontstaan als persoonlijke coachpraktijk, gebouwd op een warme en ontwikkelgerichte visie op loopbaanbegeleiding: zorgvuldig luisteren, aandacht voor zelfkennis, en begeleiding met een duidelijke methodische opbouw.</p>
+        <p>Vizier op Scherp is in 2016 gestart door onze oprichter Twan Fenger. Een persoonlijke coachpraktijk, gebouwd op een warme en ontwikkelgerichte visie op loopbaanbegeleiding: zorgvuldig luisteren, aandacht voor zelfkennis, en begeleiding met een duidelijke methodische opbouw.</p>
         <p>In de loop van de jaren is daar iets bijgekomen: de vraag van werkgevers. Organisaties die hun medewerkers goed willen begeleiden bij loopbaanvragen, motivatie en duurzame inzetbaarheid, maar daar zelf de tijd, capaciteit of neutrale positie niet voor hebben. Voor hen zijn we uitgegroeid tot wat we nu zijn: <strong style="font-weight:500;color:var(--ink);">een regionaal netwerkbureau dat loopbaancoaching organiseert voor werkgevers en hun medewerkers.</strong></p>
-        <p>Wat in die groei bewust is gebleven: de persoonlijke aanpak, echte kennismakingen, betrokken coaches en kwalitatieve begeleiding.</p>
+        <p>In 2026 heeft Luc Buurman het bedrijf van Twan overgenomen. Wat in deze groei en ontwikkelingen bewust is gebleven: de persoonlijke aanpak, echte kennismakingen, betrokken coaches en kwalitatieve begeleiding.</p>
       </div>
     </div>
   </div>
