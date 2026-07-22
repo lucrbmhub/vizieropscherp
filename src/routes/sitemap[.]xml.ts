@@ -49,6 +49,13 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/inzichten/generaties-op-de-werkvloer", changefreq: "yearly", priority: "0.6" },
           { path: "/inzichten/kosten-van-een-verkeerde-match", changefreq: "yearly", priority: "0.6" },
           { path: "/inzichten/loopbaangesprek-met-medewerker", changefreq: "yearly", priority: "0.6" },
+          { path: "/inzichten/weten-maar-niet-doen", changefreq: "yearly", priority: "0.6" },
+          { path: "/inzichten/innerlijke-criticus", changefreq: "yearly", priority: "0.6" },
+          { path: "/inzichten/belemmerende-overtuigingen-werk", changefreq: "yearly", priority: "0.6" },
+          { path: "/inzichten/grenzen-stellen-op-werk", changefreq: "yearly", priority: "0.6" },
+          { path: "/inzichten/niet-kunnen-kiezen-loopbaan", changefreq: "yearly", priority: "0.6" },
+          { path: "/inzichten/medewerker-zit-vast", changefreq: "yearly", priority: "0.6" },
+          { path: "/inzichten/inzicht-verandert-gedrag-niet", changefreq: "yearly", priority: "0.6" },
         ];
 
         const urls = entries.map((e) =>
