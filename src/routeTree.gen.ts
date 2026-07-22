@@ -22,6 +22,7 @@ import { Route as CoachingVoorMijRouteImport } from './routes/coaching-voor-mij'
 import { Route as AlgemeneVoorwaardenRouteImport } from './routes/algemene-voorwaarden'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as InzichtenIndexRouteImport } from './routes/inzichten.index'
+import { Route as InzichtenWetenMaarNietDoenRouteImport } from './routes/inzichten.weten-maar-niet-doen'
 import { Route as InzichtenVierBasisbehoeftenInWerkRouteImport } from './routes/inzichten.vier-basisbehoeften-in-werk'
 import { Route as InzichtenVastzittenInEenGoedeBaanRouteImport } from './routes/inzichten.vastzitten-in-een-goede-baan'
 import { Route as InzichtenVanWervenNaarBehoudenRouteImport } from './routes/inzichten.van-werven-naar-behouden'
@@ -38,6 +39,7 @@ import { Route as InzichtenLoopbaangesprekMetMedewerkerRouteImport } from './rou
 import { Route as InzichtenKostenVanEenVerkeerdeMatchRouteImport } from './routes/inzichten.kosten-van-een-verkeerde-match'
 import { Route as InzichtenJobCraftingRouteImport } from './routes/inzichten.job-crafting'
 import { Route as InzichtenJeEersteBaanRouteImport } from './routes/inzichten.je-eerste-baan'
+import { Route as InzichtenInnerlijkeCriticusRouteImport } from './routes/inzichten.innerlijke-criticus'
 import { Route as InzichtenImpostersyndroomTwijfelAlsKrachtRouteImport } from './routes/inzichten.impostersyndroom-twijfel-als-kracht'
 import { Route as InzichtenHetzelfdeGevoelEenAndereBaanRouteImport } from './routes/inzichten.hetzelfde-gevoel-een-andere-baan'
 import { Route as InzichtenHetTegenbodRouteImport } from './routes/inzichten.het-tegenbod'
@@ -117,6 +119,12 @@ const InzichtenIndexRoute = InzichtenIndexRouteImport.update({
   path: '/',
   getParentRoute: () => InzichtenRoute,
 } as any)
+const InzichtenWetenMaarNietDoenRoute =
+  InzichtenWetenMaarNietDoenRouteImport.update({
+    id: '/weten-maar-niet-doen',
+    path: '/weten-maar-niet-doen',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
 const InzichtenVierBasisbehoeftenInWerkRoute =
   InzichtenVierBasisbehoeftenInWerkRouteImport.update({
     id: '/vier-basisbehoeften-in-werk',
@@ -211,6 +219,12 @@ const InzichtenJeEersteBaanRoute = InzichtenJeEersteBaanRouteImport.update({
   path: '/je-eerste-baan',
   getParentRoute: () => InzichtenRoute,
 } as any)
+const InzichtenInnerlijkeCriticusRoute =
+  InzichtenInnerlijkeCriticusRouteImport.update({
+    id: '/innerlijke-criticus',
+    path: '/innerlijke-criticus',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
 const InzichtenImpostersyndroomTwijfelAlsKrachtRoute =
   InzichtenImpostersyndroomTwijfelAlsKrachtRouteImport.update({
     id: '/impostersyndroom-twijfel-als-kracht',
@@ -312,6 +326,7 @@ export interface FileRoutesByFullPath {
   '/inzichten/het-tegenbod': typeof InzichtenHetTegenbodRoute
   '/inzichten/hetzelfde-gevoel-een-andere-baan': typeof InzichtenHetzelfdeGevoelEenAndereBaanRoute
   '/inzichten/impostersyndroom-twijfel-als-kracht': typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
+  '/inzichten/innerlijke-criticus': typeof InzichtenInnerlijkeCriticusRoute
   '/inzichten/je-eerste-baan': typeof InzichtenJeEersteBaanRoute
   '/inzichten/job-crafting': typeof InzichtenJobCraftingRoute
   '/inzichten/kosten-van-een-verkeerde-match': typeof InzichtenKostenVanEenVerkeerdeMatchRoute
@@ -328,6 +343,7 @@ export interface FileRoutesByFullPath {
   '/inzichten/van-werven-naar-behouden': typeof InzichtenVanWervenNaarBehoudenRoute
   '/inzichten/vastzitten-in-een-goede-baan': typeof InzichtenVastzittenInEenGoedeBaanRoute
   '/inzichten/vier-basisbehoeften-in-werk': typeof InzichtenVierBasisbehoeftenInWerkRoute
+  '/inzichten/weten-maar-niet-doen': typeof InzichtenWetenMaarNietDoenRoute
   '/inzichten/': typeof InzichtenIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
   '/api/public/submit-form': typeof ApiPublicSubmitFormRoute
@@ -355,6 +371,7 @@ export interface FileRoutesByTo {
   '/inzichten/het-tegenbod': typeof InzichtenHetTegenbodRoute
   '/inzichten/hetzelfde-gevoel-een-andere-baan': typeof InzichtenHetzelfdeGevoelEenAndereBaanRoute
   '/inzichten/impostersyndroom-twijfel-als-kracht': typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
+  '/inzichten/innerlijke-criticus': typeof InzichtenInnerlijkeCriticusRoute
   '/inzichten/je-eerste-baan': typeof InzichtenJeEersteBaanRoute
   '/inzichten/job-crafting': typeof InzichtenJobCraftingRoute
   '/inzichten/kosten-van-een-verkeerde-match': typeof InzichtenKostenVanEenVerkeerdeMatchRoute
@@ -371,6 +388,7 @@ export interface FileRoutesByTo {
   '/inzichten/van-werven-naar-behouden': typeof InzichtenVanWervenNaarBehoudenRoute
   '/inzichten/vastzitten-in-een-goede-baan': typeof InzichtenVastzittenInEenGoedeBaanRoute
   '/inzichten/vier-basisbehoeften-in-werk': typeof InzichtenVierBasisbehoeftenInWerkRoute
+  '/inzichten/weten-maar-niet-doen': typeof InzichtenWetenMaarNietDoenRoute
   '/inzichten': typeof InzichtenIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
   '/api/public/submit-form': typeof ApiPublicSubmitFormRoute
@@ -400,6 +418,7 @@ export interface FileRoutesById {
   '/inzichten/het-tegenbod': typeof InzichtenHetTegenbodRoute
   '/inzichten/hetzelfde-gevoel-een-andere-baan': typeof InzichtenHetzelfdeGevoelEenAndereBaanRoute
   '/inzichten/impostersyndroom-twijfel-als-kracht': typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
+  '/inzichten/innerlijke-criticus': typeof InzichtenInnerlijkeCriticusRoute
   '/inzichten/je-eerste-baan': typeof InzichtenJeEersteBaanRoute
   '/inzichten/job-crafting': typeof InzichtenJobCraftingRoute
   '/inzichten/kosten-van-een-verkeerde-match': typeof InzichtenKostenVanEenVerkeerdeMatchRoute
@@ -416,6 +435,7 @@ export interface FileRoutesById {
   '/inzichten/van-werven-naar-behouden': typeof InzichtenVanWervenNaarBehoudenRoute
   '/inzichten/vastzitten-in-een-goede-baan': typeof InzichtenVastzittenInEenGoedeBaanRoute
   '/inzichten/vier-basisbehoeften-in-werk': typeof InzichtenVierBasisbehoeftenInWerkRoute
+  '/inzichten/weten-maar-niet-doen': typeof InzichtenWetenMaarNietDoenRoute
   '/inzichten/': typeof InzichtenIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
   '/api/public/submit-form': typeof ApiPublicSubmitFormRoute
@@ -446,6 +466,7 @@ export interface FileRouteTypes {
     | '/inzichten/het-tegenbod'
     | '/inzichten/hetzelfde-gevoel-een-andere-baan'
     | '/inzichten/impostersyndroom-twijfel-als-kracht'
+    | '/inzichten/innerlijke-criticus'
     | '/inzichten/je-eerste-baan'
     | '/inzichten/job-crafting'
     | '/inzichten/kosten-van-een-verkeerde-match'
@@ -462,6 +483,7 @@ export interface FileRouteTypes {
     | '/inzichten/van-werven-naar-behouden'
     | '/inzichten/vastzitten-in-een-goede-baan'
     | '/inzichten/vier-basisbehoeften-in-werk'
+    | '/inzichten/weten-maar-niet-doen'
     | '/inzichten/'
     | '/.mcp/invoke-tool/$tool'
     | '/api/public/submit-form'
@@ -489,6 +511,7 @@ export interface FileRouteTypes {
     | '/inzichten/het-tegenbod'
     | '/inzichten/hetzelfde-gevoel-een-andere-baan'
     | '/inzichten/impostersyndroom-twijfel-als-kracht'
+    | '/inzichten/innerlijke-criticus'
     | '/inzichten/je-eerste-baan'
     | '/inzichten/job-crafting'
     | '/inzichten/kosten-van-een-verkeerde-match'
@@ -505,6 +528,7 @@ export interface FileRouteTypes {
     | '/inzichten/van-werven-naar-behouden'
     | '/inzichten/vastzitten-in-een-goede-baan'
     | '/inzichten/vier-basisbehoeften-in-werk'
+    | '/inzichten/weten-maar-niet-doen'
     | '/inzichten'
     | '/.mcp/invoke-tool/$tool'
     | '/api/public/submit-form'
@@ -533,6 +557,7 @@ export interface FileRouteTypes {
     | '/inzichten/het-tegenbod'
     | '/inzichten/hetzelfde-gevoel-een-andere-baan'
     | '/inzichten/impostersyndroom-twijfel-als-kracht'
+    | '/inzichten/innerlijke-criticus'
     | '/inzichten/je-eerste-baan'
     | '/inzichten/job-crafting'
     | '/inzichten/kosten-van-een-verkeerde-match'
@@ -549,6 +574,7 @@ export interface FileRouteTypes {
     | '/inzichten/van-werven-naar-behouden'
     | '/inzichten/vastzitten-in-een-goede-baan'
     | '/inzichten/vier-basisbehoeften-in-werk'
+    | '/inzichten/weten-maar-niet-doen'
     | '/inzichten/'
     | '/.mcp/invoke-tool/$tool'
     | '/api/public/submit-form'
@@ -666,6 +692,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InzichtenIndexRouteImport
       parentRoute: typeof InzichtenRoute
     }
+    '/inzichten/weten-maar-niet-doen': {
+      id: '/inzichten/weten-maar-niet-doen'
+      path: '/weten-maar-niet-doen'
+      fullPath: '/inzichten/weten-maar-niet-doen'
+      preLoaderRoute: typeof InzichtenWetenMaarNietDoenRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
     '/inzichten/vier-basisbehoeften-in-werk': {
       id: '/inzichten/vier-basisbehoeften-in-werk'
       path: '/vier-basisbehoeften-in-werk'
@@ -778,6 +811,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InzichtenJeEersteBaanRouteImport
       parentRoute: typeof InzichtenRoute
     }
+    '/inzichten/innerlijke-criticus': {
+      id: '/inzichten/innerlijke-criticus'
+      path: '/innerlijke-criticus'
+      fullPath: '/inzichten/innerlijke-criticus'
+      preLoaderRoute: typeof InzichtenInnerlijkeCriticusRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
     '/inzichten/impostersyndroom-twijfel-als-kracht': {
       id: '/inzichten/impostersyndroom-twijfel-als-kracht'
       path: '/impostersyndroom-twijfel-als-kracht'
@@ -882,6 +922,7 @@ interface InzichtenRouteChildren {
   InzichtenHetTegenbodRoute: typeof InzichtenHetTegenbodRoute
   InzichtenHetzelfdeGevoelEenAndereBaanRoute: typeof InzichtenHetzelfdeGevoelEenAndereBaanRoute
   InzichtenImpostersyndroomTwijfelAlsKrachtRoute: typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
+  InzichtenInnerlijkeCriticusRoute: typeof InzichtenInnerlijkeCriticusRoute
   InzichtenJeEersteBaanRoute: typeof InzichtenJeEersteBaanRoute
   InzichtenJobCraftingRoute: typeof InzichtenJobCraftingRoute
   InzichtenKostenVanEenVerkeerdeMatchRoute: typeof InzichtenKostenVanEenVerkeerdeMatchRoute
@@ -898,6 +939,7 @@ interface InzichtenRouteChildren {
   InzichtenVanWervenNaarBehoudenRoute: typeof InzichtenVanWervenNaarBehoudenRoute
   InzichtenVastzittenInEenGoedeBaanRoute: typeof InzichtenVastzittenInEenGoedeBaanRoute
   InzichtenVierBasisbehoeftenInWerkRoute: typeof InzichtenVierBasisbehoeftenInWerkRoute
+  InzichtenWetenMaarNietDoenRoute: typeof InzichtenWetenMaarNietDoenRoute
   InzichtenIndexRoute: typeof InzichtenIndexRoute
 }
 
@@ -917,6 +959,7 @@ const InzichtenRouteChildren: InzichtenRouteChildren = {
     InzichtenHetzelfdeGevoelEenAndereBaanRoute,
   InzichtenImpostersyndroomTwijfelAlsKrachtRoute:
     InzichtenImpostersyndroomTwijfelAlsKrachtRoute,
+  InzichtenInnerlijkeCriticusRoute: InzichtenInnerlijkeCriticusRoute,
   InzichtenJeEersteBaanRoute: InzichtenJeEersteBaanRoute,
   InzichtenJobCraftingRoute: InzichtenJobCraftingRoute,
   InzichtenKostenVanEenVerkeerdeMatchRoute:
@@ -943,6 +986,7 @@ const InzichtenRouteChildren: InzichtenRouteChildren = {
     InzichtenVastzittenInEenGoedeBaanRoute,
   InzichtenVierBasisbehoeftenInWerkRoute:
     InzichtenVierBasisbehoeftenInWerkRoute,
+  InzichtenWetenMaarNietDoenRoute: InzichtenWetenMaarNietDoenRoute,
   InzichtenIndexRoute: InzichtenIndexRoute,
 }
 
