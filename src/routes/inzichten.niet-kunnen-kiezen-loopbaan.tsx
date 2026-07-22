@@ -4,51 +4,51 @@ import SiteFooter from "@/components/SiteFooter";
 import { SITE_URL } from "@/lib/site";
 
 
-export const Route = createFileRoute("/inzichten/weten-maar-niet-doen")({
+export const Route = createFileRoute("/inzichten/niet-kunnen-kiezen-loopbaan")({
   head: () => ({
     meta: [
-      { title: "Je weet wat je moet doen. Waarom doe je het niet? | Vizier op Scherp" },
-      { name: "description", content: "Je weet allang wat je wilt veranderen in je werk, maar je doet het niet. Wat er meestal onder die stilstand zit, en wat wel beweging geeft." },
-      { property: "og:title", content: "Je weet wat je zou moeten doen. Waarom doe je het dan niet?" },
-      { property: "og:description", content: "Je weet allang wat je wilt veranderen in je werk, maar je doet het niet. Wat er meestal onder die stilstand zit, en wat wel beweging geeft." },
+      { title: "Niet kunnen kiezen in je loopbaan | Vizier op Scherp" },
+      { name: "description", content: "Nog een test, nog een gesprek, nog een lijstje, en je weet het nog steeds niet. Waarom loopbaankeuzestress zelden een informatieprobleem is." },
+      { property: "og:title", content: "Niet kunnen kiezen in je loopbaan: waarom meer informatie niet helpt" },
+      { property: "og:description", content: "Nog een test, nog een gesprek, nog een lijstje, en je weet het nog steeds niet. Waarom loopbaankeuzestress zelden een informatieprobleem is." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: `${SITE_URL}/inzichten/weten-maar-niet-doen` },
+      { property: "og:url", content: `${SITE_URL}/inzichten/niet-kunnen-kiezen-loopbaan` },
       { property: "og:image", content: `${SITE_URL}/assets/social-share.webp` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/weten-maar-niet-doen` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/niet-kunnen-kiezen-loopbaan` }],
     scripts: [{ type: "application/ld+json", children: `{
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Je weet wat je zou moeten doen. Waarom doe je het dan niet?",
-  "description": "Je weet allang wat je wilt veranderen in je werk, maar je doet het niet. Wat er meestal onder die stilstand zit, en wat wel beweging geeft.",
+  "headline": "Niet kunnen kiezen in je loopbaan: waarom meer informatie niet helpt",
+  "description": "Nog een test, nog een gesprek, nog een lijstje, en je weet het nog steeds niet. Waarom loopbaankeuzestress zelden een informatieprobleem is.",
   "inLanguage": "nl",
   "datePublished": "2026-07-18",
   "dateModified": "2026-07-18",
   "author": {"@type": "Organization", "name": "Vizier op Scherp", "url": "${SITE_URL}"},
   "publisher": {"@type": "Organization", "name": "Vizier op Scherp", "url": "${SITE_URL}"},
-  "mainEntityOfPage": {"@type": "WebPage", "@id": "${SITE_URL}/inzichten/weten-maar-niet-doen"}
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "${SITE_URL}/inzichten/niet-kunnen-kiezen-loopbaan"}
 }` }, { type: "application/ld+json", children: `{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is dit gewoon uitstelgedrag?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Het lijkt erop, maar er is een verschil. Uitstelgedrag gaat meestal over taken die je niet leuk vindt. Dit gaat over een stap die je juist belangrijk vindt en die toch niet komt. Dan speelt er vrijwel altijd iets onder de oppervlakte: iets dat je beschermt of niet wilt verliezen. Dat vraagt om onderzoek, niet om een strakkere planning."}
+      "name": "Hoe weet ik of ik er klaar voor ben om te kiezen?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Wachten op zekerheid is meestal wachten op iets dat niet komt; bij echte loopbaankeuzes hoort twijfel. Een betere toets: weet je wat voor jou het zwaarst weegt? Zolang dat vaag is, voelt geen enkele optie goed. Zodra je waarden helder zijn, hoeft de twijfel niet weg te zijn om toch te kunnen kiezen."}
     },
     {
       "@type": "Question",
-      "name": "Waarom lukt het anderen wel?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Dat weet je niet zeker; je ziet bij anderen alleen de buitenkant. Maar belangrijker: wat iemand anders tegenhoudt of juist niet, zegt niets over jou. Ieder mens bewaakt iets anders. De vergelijking met anderen maakt de kloof vooral groter, terwijl de vraag wat er bij jou onder zit je verder brengt."}
+      "name": "Wat als ik de verkeerde keuze maak?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Die angst is begrijpelijk, maar loopbaankeuzes zijn zelden zo definitief als ze voelen. Vrijwel elke stap is bij te sturen, en van een keuze die anders uitpakt, leer je meer over wat je wilt dan van jaren twijfelen. De echte vraag is wat niet kiezen je kost: die rekening loopt stilletjes op, elke maand opnieuw."}
     },
     {
       "@type": "Question",
-      "name": "Wat als ik het al jaren uitstel?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Dan is er blijkbaar iets sterks dat je op je plek houdt, en dat is de moeite van het onderzoeken waard. Jaren uitstel betekent niet dat het te laat is; het betekent dat gewoon doen voor jou niet de goede route is. Met een coach kijk je eerst wat de stilstand beschermt, en dan pas welke stap erbij past."}
+      "name": "Helpt een loopbaantest?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Als startpunt kan een test woorden geven aan wat je al vaag voelt, en dat is nuttig. Maar een test kiest niet voor je, en bij aanhoudende twijfel zit het probleem zelden in een gebrek aan testuitslagen. Botsen er waarden of speelt er angst voor spijt, dan helpt onderzoeken meer dan meten. Daar kijk je met een coach samen naar."}
     }
   ]
-}` }, { type: "application/ld+json", children: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"${SITE_URL}/"},{"@type":"ListItem","position":2,"name":"Inzichten","item":"${SITE_URL}/inzichten"},{"@type":"ListItem","position":3,"name":"Je weet wat je zou moeten doen. Waarom doe je het dan niet?","item":"${SITE_URL}/inzichten/weten-maar-niet-doen"}]}` }],
+}` }, { type: "application/ld+json", children: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"${SITE_URL}/"},{"@type":"ListItem","position":2,"name":"Inzichten","item":"${SITE_URL}/inzichten"},{"@type":"ListItem","position":3,"name":"Niet kunnen kiezen in je loopbaan: waarom meer informatie niet helpt","item":"${SITE_URL}/inzichten/niet-kunnen-kiezen-loopbaan"}]}` }],
   }),
   component: Page,
 });
@@ -141,8 +141,8 @@ const HTML = `<main id="main">
   <div class="watermark" aria-hidden="true"></div>
   <div class="hero-inner">
     <p class="eyebrow">Inzichten · Voor medewerkers</p>
-    <h1>Je weet wat je zou moeten doen. Waarom doe je het dan niet?</h1>
-    <p class="lead">Het gesprek aangaan, die opleiding starten, eindelijk iets zeggen over je rol. Je weet het al maanden. En toch gebeurt het niet.</p>
+    <h1>Niet kunnen kiezen in je loopbaan: waarom meer informatie niet helpt<span class="slotpunt">.</span></h1>
+    <p class="lead">Nog een loopbaantest gedaan, nog twee koffiegesprekken gepland, het lijstje met voors en tegens voor de derde keer herschreven. En je weet het nog steeds niet.</p>
     <p class="meta">5 min lezen · Patronen herkennen en veranderen</p>
   </div>
 </header>
@@ -150,32 +150,32 @@ const HTML = `<main id="main">
 <article class="article">
   <div class="article-container">
 
-    <p class="intro">Iedereen kent de kloof tussen weten en doen. Bij kleine dingen is hij onschuldig: de sportschool, de belastingaangifte. Maar bij je loopbaan kan die kloof jaren duren. Je weet precies welk gesprek je zou moeten voeren of welke stap je zou moeten zetten, en elke maand dat het niet gebeurt, wordt het zwaarder. Niet omdat je lui bent. Daar ligt het vrijwel nooit aan.</p>
+    <p class="intro">Als kiezen niet lukt, is de logische reactie: meer uitzoeken. Nog een gesprek, nog een test, nog een nachtje slapen. Soms helpt dat. Maar als de twijfel maanden aanhoudt terwijl de stapel informatie groeit, is er iets anders aan de hand. Dan is het geen kennisprobleem meer, en lost meer kennis het dus ook niet op.</p>
 
-    <p class="section-eyebrow">De kloof</p>
-    <h2>Waarom "gewoon doen" niet werkt</h2>
-    <p>Het advies dat je van je omgeving krijgt, is meestal een variant van hetzelfde: gewoon doen. Gewoon dat gesprek plannen, gewoon solliciteren, gewoon beginnen. Goedbedoeld, maar het mist het punt. Als het een kwestie van discipline was, had je het allang gedaan. Je regelt tenslotte de rest van je leven ook: deadlines, huishouden, afspraken. Dit ene ding blijft liggen, en juist dat is informatie.</p>
-    <p>Stilstand op een punt dat belangrijk voor je is, is zelden een gebrek aan wilskracht. Meestal bewaakt de stilstand iets. Een paar voorbeelden van wat er onder kan zitten:</p>
-    <ul class="ruitlijst">
-      <li><strong>Je beschermt iets.</strong> Je zekerheid, je opgebouwde positie, of het beeld dat collega's van je hebben. De stap zetten betekent dat op het spel zetten.</li>
-      <li><strong>Je wilt iets niet verliezen.</strong> Het team waar je op gesteld bent, de routine die houvast geeft, de versie van jezelf die alles onder controle heeft.</li>
-      <li><strong>Je wilt ergens niet aan.</strong> Het gesprek dat pijnlijk kan worden, de kans op een nee, of de conclusie die je misschien moet trekken als je echt gaat kijken.</li>
-    </ul>
-    <p>Zolang dat onbenoemd blijft, wint de stilstand het van elk voornemen. Niet omdat je zwak bent, maar omdat een deel van jou een goede reden heeft om niet in beweging te komen. Dat deel verdient eerst aandacht, geen strengere planning.</p>
+    <p class="section-eyebrow">De vergelijkfuik</p>
+    <h2>Waarom meer informatie de twijfel voedt</h2>
+    <p>Opties vergelijken werkt alleen als je een maat hebt om mee te meten. Zonder die maat wordt elke nieuwe informatie extra ruis: optie A heeft betere voorwaarden, optie B meer vrijheid, optie C een leuker team, en niets ervan geeft de doorslag omdat je niet hebt bepaald wat voor jou het zwaarst weegt. Zo ontstaat de fuik: hoe meer je uitzoekt, hoe meer er te wegen valt, hoe verder de keuze wegdrijft.</p>
+    <p>Ondertussen voelt al dat uitzoeken wel productief. Je bent er tenslotte druk mee. Maar niet kiezen is ook een keuze, meestal voor de status quo, alleen dan zonder dat je er ooit bewust ja tegen hebt gezegd. Dat is het sluipende verlies van lang twijfelen: de maanden gaan door, en de keuze die je niet maakt, wordt intussen voor je gemaakt.</p>
 
     <div class="open-kader">
-      <p>Stilstand is zelden een gebrek aan wilskracht. Meestal bewaakt hij iets dat je nog niet hebt uitgesproken.</p>
+      <p>Aanhoudende twijfel is zelden een informatieprobleem. Meestal is het een waardenprobleem.</p>
     </div>
 
-    <p class="section-eyebrow">Beweging</p>
-    <h2>Wat wel beweging geeft</h2>
-    <p>De uitweg begint niet met harder duwen, maar met een andere vraag. Niet: waarom doe ik het niet. Wel: wat zou ik kwijtraken als ik het wel deed? Die vraag klinkt vreemd, want de stap is toch juist wat je wilt. Maar wie hem eerlijk beantwoordt, vindt bijna altijd iets. En zodra dat op tafel ligt, kun je er iets mee: soms blijkt de angst kleiner dan gedacht, soms blijkt hij terecht en vraagt de stap om een andere vorm.</p>
-    <p>Daarna helpt klein beginnen. Niet meteen de ontslagbrief of het grote gesprek, maar een verkennende koffie, een eerste zin tegen je leidinggevende, een middag waarin je op papier zet wat je eigenlijk wilt. Beweging voedt beweging.</p>
-    <p>En houd de uitkomst open. Soms is de conclusie na al dat wikken helemaal niet dat je moet vertrekken, maar dat je blijft en je werk anders inricht: een ander takenpakket, een uitgesproken wens, een grens die je eerder niet stelde. Sterker worden waar je zit is een even goede afloop als een nieuwe stap.</p>
+    <p class="section-eyebrow">Onder de twijfel</p>
+    <h2>Wat er meestal onder zit</h2>
+    <p>Wie de twijfel zelf onderzoekt in plaats van de opties, vindt vrijwel altijd een van deze vier:</p>
+    <ul class="ruitlijst">
+      <li><strong>Twee waarden botsen.</strong> Zekerheid tegenover ontwikkeling, ambitie tegenover tijd voor thuis. De opties zijn niet het probleem; ze staan voor twee dingen die je allebei wilt.</li>
+      <li><strong>Angst voor spijt.</strong> Niet de keuze zelf is eng, maar het idee dat je er later op terugkijkt en het jezelf kwalijk neemt.</li>
+      <li><strong>De keuze voelt definitief.</strong> Alsof dit de laatste afslag is en elke deur die je sluit, voorgoed dicht blijft. Dat klopt bijna nooit, maar het voelt wel zo.</li>
+      <li><strong>Andermans stem weegt stiekem mee.</strong> Wat je partner verstandig vindt, wat je ouders altijd zeiden, wat collega's zouden denken. Onder al die stemmen raakt je eigen voorkeur zoek.</li>
+    </ul>
+    <p>Herken je er één, dan weet je meteen waarom die extra test niets oploste: tests meten opties, niet waarden, angsten of stemmen van anderen.</p>
 
-    <p class="section-eyebrow">Samen kijken</p>
-    <h2>Waar coaching het verschil maakt</h2>
-    <p>Dit soort knopen ontwar je lastig alleen, juist omdat je er zelf middenin staat. Een coach stelt de vragen waar je in je eentje omheen loopt, helpt benoemen wat de stilstand beschermt en houdt je erbij als het oefenen spannend wordt. Je hoeft vooraf niet te weten wat je wilt; dat je al zo lang weet wat er zou moeten gebeuren, is meer dan genoeg om mee te beginnen.</p>
+    <p class="section-eyebrow">Kiezen</p>
+    <h2>Kiezen zonder garantie</h2>
+    <p>De perfecte keuze bestaat niet, en wachten tot hij zich aandient, is de langste omweg. Wat wel kan: de volgorde omdraaien. Eerst helder krijgen wat voor jou het zwaarst weegt, en pas daarna de opties langs die maat leggen. Vaak valt de keuze dan verrassend snel, niet omdat de opties veranderden, maar omdat jij een meetlat hebt.</p>
+    <p>En verklein de inzet waar het kan. Veel loopbaankeuzes zijn te testen voordat je springt: een dag meelopen, een project in de nieuwe richting, een gesprek met iemand die de stap al maakte. Ook goed om te weten: blijven is een volwaardige uitkomst, mits het een keuze wordt in plaats van een uitstel. Wie na eerlijk wegen besluit te blijven, ervaart dezelfde baan anders dan wie er per ongeluk bleef hangen.</p>
 
   </div>
 </article>
@@ -185,16 +185,16 @@ const HTML = `<main id="main">
     <p class="section-eyebrow" style="margin-top:0">Veelgestelde vragen</p>
     <h2>Wat mensen hierover vragen</h2>
     <details>
-      <summary>Is dit gewoon uitstelgedrag?</summary>
-      <p>Het lijkt erop, maar er is een verschil. Uitstelgedrag gaat meestal over taken die je niet leuk vindt. Dit gaat over een stap die je juist belangrijk vindt en die toch niet komt. Dan speelt er vrijwel altijd iets onder de oppervlakte: iets dat je beschermt of niet wilt verliezen. Dat vraagt om onderzoek, niet om een strakkere planning.</p>
+      <summary>Hoe weet ik of ik er klaar voor ben om te kiezen?</summary>
+      <p>Wachten op zekerheid is meestal wachten op iets dat niet komt; bij echte loopbaankeuzes hoort twijfel. Een betere toets: weet je wat voor jou het zwaarst weegt? Zolang dat vaag is, voelt geen enkele optie goed. Zodra je waarden helder zijn, hoeft de twijfel niet weg te zijn om toch te kunnen kiezen.</p>
     </details>
     <details>
-      <summary>Waarom lukt het anderen wel?</summary>
-      <p>Dat weet je niet zeker; je ziet bij anderen alleen de buitenkant. Maar belangrijker: wat iemand anders tegenhoudt of juist niet, zegt niets over jou. Ieder mens bewaakt iets anders. De vergelijking met anderen maakt de kloof vooral groter, terwijl de vraag wat er bij jou onder zit je verder brengt.</p>
+      <summary>Wat als ik de verkeerde keuze maak?</summary>
+      <p>Die angst is begrijpelijk, maar loopbaankeuzes zijn zelden zo definitief als ze voelen. Vrijwel elke stap is bij te sturen, en van een keuze die anders uitpakt, leer je meer over wat je wilt dan van jaren twijfelen. De echte vraag is wat niet kiezen je kost: die rekening loopt stilletjes op, elke maand opnieuw.</p>
     </details>
     <details>
-      <summary>Wat als ik het al jaren uitstel?</summary>
-      <p>Dan is er blijkbaar iets sterks dat je op je plek houdt, en dat is de moeite van het onderzoeken waard. Jaren uitstel betekent niet dat het te laat is; het betekent dat gewoon doen voor jou niet de goede route is. Met een coach kijk je eerst wat de stilstand beschermt, en dan pas welke stap erbij past.</p>
+      <summary>Helpt een loopbaantest?</summary>
+      <p>Als startpunt kan een test woorden geven aan wat je al vaag voelt, en dat is nuttig. Maar een test kiest niet voor je, en bij aanhoudende twijfel zit het probleem zelden in een gebrek aan testuitslagen. Botsen er waarden of speelt er angst voor spijt, dan helpt onderzoeken meer dan meten. Daar kijk je met een coach samen naar.</p>
     </details>
   </div>
 </section>
@@ -204,22 +204,22 @@ const HTML = `<main id="main">
     <p class="section-eyebrow" style="margin-top:0">Verder lezen</p>
     <h2>Ook interessant voor jou</h2>
     <div class="kaarten">
-      <a class="anker-kaart" href="/inzichten/hetzelfde-gevoel-een-andere-baan">
+      <a class="anker-kaart" href="/inzichten/weten-maar-niet-doen">
         <span class="kaartlabel">Voor medewerkers</span>
-        <h3>Hetzelfde gevoel, een andere baan</h3>
-        <p>Weer dezelfde onvrede in een nieuwe baan? Vaak verhuist het patroon mee. Hoe je herkent wat er echt speelt.</p>
-        <span class="lees">Lees verder →</span>
-      </a>
-      <a class="anker-kaart" href="/inzichten/niet-kunnen-kiezen-loopbaan">
-        <span class="kaartlabel">Voor medewerkers</span>
-        <h3>Niet kunnen kiezen in je loopbaan</h3>
-        <p>Nog een test, nog een lijstje, en je weet het nog steeds niet. Waarom keuzestress zelden een informatieprobleem is.</p>
+        <h3>Je weet wat je zou moeten doen</h3>
+        <p>Waarom doe je het dan niet? Wat er onder stilstand zit, en wat wel beweging geeft.</p>
         <span class="lees">Lees verder →</span>
       </a>
       <a class="anker-kaart" href="/inzichten/belemmerende-overtuigingen-werk">
         <span class="kaartlabel">Voor medewerkers</span>
         <h3>De overtuiging die je loopbaan stuurt</h3>
         <p>Overtuigingen die je meekreeg sturen je keuzes, tot je ze herkent.</p>
+        <span class="lees">Lees verder →</span>
+      </a>
+      <a class="anker-kaart" href="/inzichten/richting-vinden-in-je-loopbaan">
+        <span class="kaartlabel">Voor medewerkers</span>
+        <h3>Richting vinden in je loopbaan</h3>
+        <p>Waarom je niet bij de vacaturesite moet beginnen, maar bij wat je energie geeft en wat je drijft.</p>
         <span class="lees">Lees verder →</span>
       </a>
     </div>
@@ -230,7 +230,7 @@ const HTML = `<main id="main">
   <div class="container">
     <div class="facet-buiten">
       <div class="facet-binnen">
-        <h2>Weet je het al langer, maar kom je niet in beweging?</h2>
+        <h2>Blijf je hangen in het wikken en wegen?</h2>
         <p>Een eerste gesprek is vrijblijvend en verplicht je tot niets. Je vertelt wat er speelt, wij stellen een coach voor die bij je past, en daarna beslis jij.</p>
         <p class="werkgever">Goed om te weten: veel werkgevers vergoeden een loopbaantraject vanuit het ontwikkelbudget. Vraag ernaar bij HR, we denken graag mee over hoe je dat aankaart.</p>
         <a class="btn-primair" href="/kennismaken">Plan een vrijblijvende kennismaking</a>

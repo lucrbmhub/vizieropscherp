@@ -33,22 +33,27 @@ import { Route as InzichtenRichtingVindenInJeLoopbaanRouteImport } from './route
 import { Route as InzichtenPersoonlijkeEffectiviteitRouteImport } from './routes/inzichten.persoonlijke-effectiviteit'
 import { Route as InzichtenPassieTerugvindenInJeWerkRouteImport } from './routes/inzichten.passie-terugvinden-in-je-werk'
 import { Route as InzichtenOutplacementOfLoopbaancoachingRouteImport } from './routes/inzichten.outplacement-of-loopbaancoaching'
+import { Route as InzichtenNietKunnenKiezenLoopbaanRouteImport } from './routes/inzichten.niet-kunnen-kiezen-loopbaan'
 import { Route as InzichtenMentaleVermoeidheidEnEigenRegieRouteImport } from './routes/inzichten.mentale-vermoeidheid-en-eigen-regie'
+import { Route as InzichtenMedewerkerZitVastRouteImport } from './routes/inzichten.medewerker-zit-vast'
 import { Route as InzichtenLoopbaanswitchNaJe40eRouteImport } from './routes/inzichten.loopbaanswitch-na-je-40e'
 import { Route as InzichtenLoopbaangesprekMetMedewerkerRouteImport } from './routes/inzichten.loopbaangesprek-met-medewerker'
 import { Route as InzichtenKostenVanEenVerkeerdeMatchRouteImport } from './routes/inzichten.kosten-van-een-verkeerde-match'
 import { Route as InzichtenJobCraftingRouteImport } from './routes/inzichten.job-crafting'
 import { Route as InzichtenJeEersteBaanRouteImport } from './routes/inzichten.je-eerste-baan'
+import { Route as InzichtenInzichtVerandertGedragNietRouteImport } from './routes/inzichten.inzicht-verandert-gedrag-niet'
 import { Route as InzichtenInnerlijkeCriticusRouteImport } from './routes/inzichten.innerlijke-criticus'
 import { Route as InzichtenImpostersyndroomTwijfelAlsKrachtRouteImport } from './routes/inzichten.impostersyndroom-twijfel-als-kracht'
 import { Route as InzichtenHetzelfdeGevoelEenAndereBaanRouteImport } from './routes/inzichten.hetzelfde-gevoel-een-andere-baan'
 import { Route as InzichtenHetTegenbodRouteImport } from './routes/inzichten.het-tegenbod'
+import { Route as InzichtenGrenzenStellenOpWerkRouteImport } from './routes/inzichten.grenzen-stellen-op-werk'
 import { Route as InzichtenGoedeLoopbaancoachKiezenRouteImport } from './routes/inzichten.goede-loopbaancoach-kiezen'
 import { Route as InzichtenGeneratiesOpDeWerkvloerRouteImport } from './routes/inzichten.generaties-op-de-werkvloer'
 import { Route as InzichtenErvarenTalentAlsKansRouteImport } from './routes/inzichten.ervaren-talent-als-kans'
 import { Route as InzichtenEnergieEnMotivatieInWerkRouteImport } from './routes/inzichten.energie-en-motivatie-in-werk'
 import { Route as InzichtenDuurzameInzetbaarheidWerkgeverRouteImport } from './routes/inzichten.duurzame-inzetbaarheid-werkgever'
 import { Route as InzichtenDuurzaamInzetbaarBlijvenRouteImport } from './routes/inzichten.duurzaam-inzetbaar-blijven'
+import { Route as InzichtenBelemmerendeOvertuigingenWerkRouteImport } from './routes/inzichten.belemmerende-overtuigingen-werk'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
 import { Route as ApiPublicSubmitFormRouteImport } from './routes/api/public/submit-form'
@@ -185,10 +190,22 @@ const InzichtenOutplacementOfLoopbaancoachingRoute =
     path: '/outplacement-of-loopbaancoaching',
     getParentRoute: () => InzichtenRoute,
   } as any)
+const InzichtenNietKunnenKiezenLoopbaanRoute =
+  InzichtenNietKunnenKiezenLoopbaanRouteImport.update({
+    id: '/niet-kunnen-kiezen-loopbaan',
+    path: '/niet-kunnen-kiezen-loopbaan',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
 const InzichtenMentaleVermoeidheidEnEigenRegieRoute =
   InzichtenMentaleVermoeidheidEnEigenRegieRouteImport.update({
     id: '/mentale-vermoeidheid-en-eigen-regie',
     path: '/mentale-vermoeidheid-en-eigen-regie',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
+const InzichtenMedewerkerZitVastRoute =
+  InzichtenMedewerkerZitVastRouteImport.update({
+    id: '/medewerker-zit-vast',
+    path: '/medewerker-zit-vast',
     getParentRoute: () => InzichtenRoute,
   } as any)
 const InzichtenLoopbaanswitchNaJe40eRoute =
@@ -219,6 +236,12 @@ const InzichtenJeEersteBaanRoute = InzichtenJeEersteBaanRouteImport.update({
   path: '/je-eerste-baan',
   getParentRoute: () => InzichtenRoute,
 } as any)
+const InzichtenInzichtVerandertGedragNietRoute =
+  InzichtenInzichtVerandertGedragNietRouteImport.update({
+    id: '/inzicht-verandert-gedrag-niet',
+    path: '/inzicht-verandert-gedrag-niet',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
 const InzichtenInnerlijkeCriticusRoute =
   InzichtenInnerlijkeCriticusRouteImport.update({
     id: '/innerlijke-criticus',
@@ -242,6 +265,12 @@ const InzichtenHetTegenbodRoute = InzichtenHetTegenbodRouteImport.update({
   path: '/het-tegenbod',
   getParentRoute: () => InzichtenRoute,
 } as any)
+const InzichtenGrenzenStellenOpWerkRoute =
+  InzichtenGrenzenStellenOpWerkRouteImport.update({
+    id: '/grenzen-stellen-op-werk',
+    path: '/grenzen-stellen-op-werk',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
 const InzichtenGoedeLoopbaancoachKiezenRoute =
   InzichtenGoedeLoopbaancoachKiezenRouteImport.update({
     id: '/goede-loopbaancoach-kiezen',
@@ -276,6 +305,12 @@ const InzichtenDuurzaamInzetbaarBlijvenRoute =
   InzichtenDuurzaamInzetbaarBlijvenRouteImport.update({
     id: '/duurzaam-inzetbaar-blijven',
     path: '/duurzaam-inzetbaar-blijven',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
+const InzichtenBelemmerendeOvertuigingenWerkRoute =
+  InzichtenBelemmerendeOvertuigingenWerkRouteImport.update({
+    id: '/belemmerende-overtuigingen-werk',
+    path: '/belemmerende-overtuigingen-werk',
     getParentRoute: () => InzichtenRoute,
   } as any)
 const Char91DotwellKnownChar93OauthProtectedResourceRoute =
@@ -317,22 +352,27 @@ export interface FileRoutesByFullPath {
   '/voor-werkgevers': typeof VoorWerkgeversRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  '/inzichten/belemmerende-overtuigingen-werk': typeof InzichtenBelemmerendeOvertuigingenWerkRoute
   '/inzichten/duurzaam-inzetbaar-blijven': typeof InzichtenDuurzaamInzetbaarBlijvenRoute
   '/inzichten/duurzame-inzetbaarheid-werkgever': typeof InzichtenDuurzameInzetbaarheidWerkgeverRoute
   '/inzichten/energie-en-motivatie-in-werk': typeof InzichtenEnergieEnMotivatieInWerkRoute
   '/inzichten/ervaren-talent-als-kans': typeof InzichtenErvarenTalentAlsKansRoute
   '/inzichten/generaties-op-de-werkvloer': typeof InzichtenGeneratiesOpDeWerkvloerRoute
   '/inzichten/goede-loopbaancoach-kiezen': typeof InzichtenGoedeLoopbaancoachKiezenRoute
+  '/inzichten/grenzen-stellen-op-werk': typeof InzichtenGrenzenStellenOpWerkRoute
   '/inzichten/het-tegenbod': typeof InzichtenHetTegenbodRoute
   '/inzichten/hetzelfde-gevoel-een-andere-baan': typeof InzichtenHetzelfdeGevoelEenAndereBaanRoute
   '/inzichten/impostersyndroom-twijfel-als-kracht': typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
   '/inzichten/innerlijke-criticus': typeof InzichtenInnerlijkeCriticusRoute
+  '/inzichten/inzicht-verandert-gedrag-niet': typeof InzichtenInzichtVerandertGedragNietRoute
   '/inzichten/je-eerste-baan': typeof InzichtenJeEersteBaanRoute
   '/inzichten/job-crafting': typeof InzichtenJobCraftingRoute
   '/inzichten/kosten-van-een-verkeerde-match': typeof InzichtenKostenVanEenVerkeerdeMatchRoute
   '/inzichten/loopbaangesprek-met-medewerker': typeof InzichtenLoopbaangesprekMetMedewerkerRoute
   '/inzichten/loopbaanswitch-na-je-40e': typeof InzichtenLoopbaanswitchNaJe40eRoute
+  '/inzichten/medewerker-zit-vast': typeof InzichtenMedewerkerZitVastRoute
   '/inzichten/mentale-vermoeidheid-en-eigen-regie': typeof InzichtenMentaleVermoeidheidEnEigenRegieRoute
+  '/inzichten/niet-kunnen-kiezen-loopbaan': typeof InzichtenNietKunnenKiezenLoopbaanRoute
   '/inzichten/outplacement-of-loopbaancoaching': typeof InzichtenOutplacementOfLoopbaancoachingRoute
   '/inzichten/passie-terugvinden-in-je-werk': typeof InzichtenPassieTerugvindenInJeWerkRoute
   '/inzichten/persoonlijke-effectiviteit': typeof InzichtenPersoonlijkeEffectiviteitRoute
@@ -362,22 +402,27 @@ export interface FileRoutesByTo {
   '/voor-werkgevers': typeof VoorWerkgeversRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  '/inzichten/belemmerende-overtuigingen-werk': typeof InzichtenBelemmerendeOvertuigingenWerkRoute
   '/inzichten/duurzaam-inzetbaar-blijven': typeof InzichtenDuurzaamInzetbaarBlijvenRoute
   '/inzichten/duurzame-inzetbaarheid-werkgever': typeof InzichtenDuurzameInzetbaarheidWerkgeverRoute
   '/inzichten/energie-en-motivatie-in-werk': typeof InzichtenEnergieEnMotivatieInWerkRoute
   '/inzichten/ervaren-talent-als-kans': typeof InzichtenErvarenTalentAlsKansRoute
   '/inzichten/generaties-op-de-werkvloer': typeof InzichtenGeneratiesOpDeWerkvloerRoute
   '/inzichten/goede-loopbaancoach-kiezen': typeof InzichtenGoedeLoopbaancoachKiezenRoute
+  '/inzichten/grenzen-stellen-op-werk': typeof InzichtenGrenzenStellenOpWerkRoute
   '/inzichten/het-tegenbod': typeof InzichtenHetTegenbodRoute
   '/inzichten/hetzelfde-gevoel-een-andere-baan': typeof InzichtenHetzelfdeGevoelEenAndereBaanRoute
   '/inzichten/impostersyndroom-twijfel-als-kracht': typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
   '/inzichten/innerlijke-criticus': typeof InzichtenInnerlijkeCriticusRoute
+  '/inzichten/inzicht-verandert-gedrag-niet': typeof InzichtenInzichtVerandertGedragNietRoute
   '/inzichten/je-eerste-baan': typeof InzichtenJeEersteBaanRoute
   '/inzichten/job-crafting': typeof InzichtenJobCraftingRoute
   '/inzichten/kosten-van-een-verkeerde-match': typeof InzichtenKostenVanEenVerkeerdeMatchRoute
   '/inzichten/loopbaangesprek-met-medewerker': typeof InzichtenLoopbaangesprekMetMedewerkerRoute
   '/inzichten/loopbaanswitch-na-je-40e': typeof InzichtenLoopbaanswitchNaJe40eRoute
+  '/inzichten/medewerker-zit-vast': typeof InzichtenMedewerkerZitVastRoute
   '/inzichten/mentale-vermoeidheid-en-eigen-regie': typeof InzichtenMentaleVermoeidheidEnEigenRegieRoute
+  '/inzichten/niet-kunnen-kiezen-loopbaan': typeof InzichtenNietKunnenKiezenLoopbaanRoute
   '/inzichten/outplacement-of-loopbaancoaching': typeof InzichtenOutplacementOfLoopbaancoachingRoute
   '/inzichten/passie-terugvinden-in-je-werk': typeof InzichtenPassieTerugvindenInJeWerkRoute
   '/inzichten/persoonlijke-effectiviteit': typeof InzichtenPersoonlijkeEffectiviteitRoute
@@ -409,22 +454,27 @@ export interface FileRoutesById {
   '/voor-werkgevers': typeof VoorWerkgeversRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  '/inzichten/belemmerende-overtuigingen-werk': typeof InzichtenBelemmerendeOvertuigingenWerkRoute
   '/inzichten/duurzaam-inzetbaar-blijven': typeof InzichtenDuurzaamInzetbaarBlijvenRoute
   '/inzichten/duurzame-inzetbaarheid-werkgever': typeof InzichtenDuurzameInzetbaarheidWerkgeverRoute
   '/inzichten/energie-en-motivatie-in-werk': typeof InzichtenEnergieEnMotivatieInWerkRoute
   '/inzichten/ervaren-talent-als-kans': typeof InzichtenErvarenTalentAlsKansRoute
   '/inzichten/generaties-op-de-werkvloer': typeof InzichtenGeneratiesOpDeWerkvloerRoute
   '/inzichten/goede-loopbaancoach-kiezen': typeof InzichtenGoedeLoopbaancoachKiezenRoute
+  '/inzichten/grenzen-stellen-op-werk': typeof InzichtenGrenzenStellenOpWerkRoute
   '/inzichten/het-tegenbod': typeof InzichtenHetTegenbodRoute
   '/inzichten/hetzelfde-gevoel-een-andere-baan': typeof InzichtenHetzelfdeGevoelEenAndereBaanRoute
   '/inzichten/impostersyndroom-twijfel-als-kracht': typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
   '/inzichten/innerlijke-criticus': typeof InzichtenInnerlijkeCriticusRoute
+  '/inzichten/inzicht-verandert-gedrag-niet': typeof InzichtenInzichtVerandertGedragNietRoute
   '/inzichten/je-eerste-baan': typeof InzichtenJeEersteBaanRoute
   '/inzichten/job-crafting': typeof InzichtenJobCraftingRoute
   '/inzichten/kosten-van-een-verkeerde-match': typeof InzichtenKostenVanEenVerkeerdeMatchRoute
   '/inzichten/loopbaangesprek-met-medewerker': typeof InzichtenLoopbaangesprekMetMedewerkerRoute
   '/inzichten/loopbaanswitch-na-je-40e': typeof InzichtenLoopbaanswitchNaJe40eRoute
+  '/inzichten/medewerker-zit-vast': typeof InzichtenMedewerkerZitVastRoute
   '/inzichten/mentale-vermoeidheid-en-eigen-regie': typeof InzichtenMentaleVermoeidheidEnEigenRegieRoute
+  '/inzichten/niet-kunnen-kiezen-loopbaan': typeof InzichtenNietKunnenKiezenLoopbaanRoute
   '/inzichten/outplacement-of-loopbaancoaching': typeof InzichtenOutplacementOfLoopbaancoachingRoute
   '/inzichten/passie-terugvinden-in-je-werk': typeof InzichtenPassieTerugvindenInJeWerkRoute
   '/inzichten/persoonlijke-effectiviteit': typeof InzichtenPersoonlijkeEffectiviteitRoute
@@ -457,22 +507,27 @@ export interface FileRouteTypes {
     | '/voor-werkgevers'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
+    | '/inzichten/belemmerende-overtuigingen-werk'
     | '/inzichten/duurzaam-inzetbaar-blijven'
     | '/inzichten/duurzame-inzetbaarheid-werkgever'
     | '/inzichten/energie-en-motivatie-in-werk'
     | '/inzichten/ervaren-talent-als-kans'
     | '/inzichten/generaties-op-de-werkvloer'
     | '/inzichten/goede-loopbaancoach-kiezen'
+    | '/inzichten/grenzen-stellen-op-werk'
     | '/inzichten/het-tegenbod'
     | '/inzichten/hetzelfde-gevoel-een-andere-baan'
     | '/inzichten/impostersyndroom-twijfel-als-kracht'
     | '/inzichten/innerlijke-criticus'
+    | '/inzichten/inzicht-verandert-gedrag-niet'
     | '/inzichten/je-eerste-baan'
     | '/inzichten/job-crafting'
     | '/inzichten/kosten-van-een-verkeerde-match'
     | '/inzichten/loopbaangesprek-met-medewerker'
     | '/inzichten/loopbaanswitch-na-je-40e'
+    | '/inzichten/medewerker-zit-vast'
     | '/inzichten/mentale-vermoeidheid-en-eigen-regie'
+    | '/inzichten/niet-kunnen-kiezen-loopbaan'
     | '/inzichten/outplacement-of-loopbaancoaching'
     | '/inzichten/passie-terugvinden-in-je-werk'
     | '/inzichten/persoonlijke-effectiviteit'
@@ -502,22 +557,27 @@ export interface FileRouteTypes {
     | '/voor-werkgevers'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
+    | '/inzichten/belemmerende-overtuigingen-werk'
     | '/inzichten/duurzaam-inzetbaar-blijven'
     | '/inzichten/duurzame-inzetbaarheid-werkgever'
     | '/inzichten/energie-en-motivatie-in-werk'
     | '/inzichten/ervaren-talent-als-kans'
     | '/inzichten/generaties-op-de-werkvloer'
     | '/inzichten/goede-loopbaancoach-kiezen'
+    | '/inzichten/grenzen-stellen-op-werk'
     | '/inzichten/het-tegenbod'
     | '/inzichten/hetzelfde-gevoel-een-andere-baan'
     | '/inzichten/impostersyndroom-twijfel-als-kracht'
     | '/inzichten/innerlijke-criticus'
+    | '/inzichten/inzicht-verandert-gedrag-niet'
     | '/inzichten/je-eerste-baan'
     | '/inzichten/job-crafting'
     | '/inzichten/kosten-van-een-verkeerde-match'
     | '/inzichten/loopbaangesprek-met-medewerker'
     | '/inzichten/loopbaanswitch-na-je-40e'
+    | '/inzichten/medewerker-zit-vast'
     | '/inzichten/mentale-vermoeidheid-en-eigen-regie'
+    | '/inzichten/niet-kunnen-kiezen-loopbaan'
     | '/inzichten/outplacement-of-loopbaancoaching'
     | '/inzichten/passie-terugvinden-in-je-werk'
     | '/inzichten/persoonlijke-effectiviteit'
@@ -548,22 +608,27 @@ export interface FileRouteTypes {
     | '/voor-werkgevers'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
+    | '/inzichten/belemmerende-overtuigingen-werk'
     | '/inzichten/duurzaam-inzetbaar-blijven'
     | '/inzichten/duurzame-inzetbaarheid-werkgever'
     | '/inzichten/energie-en-motivatie-in-werk'
     | '/inzichten/ervaren-talent-als-kans'
     | '/inzichten/generaties-op-de-werkvloer'
     | '/inzichten/goede-loopbaancoach-kiezen'
+    | '/inzichten/grenzen-stellen-op-werk'
     | '/inzichten/het-tegenbod'
     | '/inzichten/hetzelfde-gevoel-een-andere-baan'
     | '/inzichten/impostersyndroom-twijfel-als-kracht'
     | '/inzichten/innerlijke-criticus'
+    | '/inzichten/inzicht-verandert-gedrag-niet'
     | '/inzichten/je-eerste-baan'
     | '/inzichten/job-crafting'
     | '/inzichten/kosten-van-een-verkeerde-match'
     | '/inzichten/loopbaangesprek-met-medewerker'
     | '/inzichten/loopbaanswitch-na-je-40e'
+    | '/inzichten/medewerker-zit-vast'
     | '/inzichten/mentale-vermoeidheid-en-eigen-regie'
+    | '/inzichten/niet-kunnen-kiezen-loopbaan'
     | '/inzichten/outplacement-of-loopbaancoaching'
     | '/inzichten/passie-terugvinden-in-je-werk'
     | '/inzichten/persoonlijke-effectiviteit'
@@ -769,11 +834,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InzichtenOutplacementOfLoopbaancoachingRouteImport
       parentRoute: typeof InzichtenRoute
     }
+    '/inzichten/niet-kunnen-kiezen-loopbaan': {
+      id: '/inzichten/niet-kunnen-kiezen-loopbaan'
+      path: '/niet-kunnen-kiezen-loopbaan'
+      fullPath: '/inzichten/niet-kunnen-kiezen-loopbaan'
+      preLoaderRoute: typeof InzichtenNietKunnenKiezenLoopbaanRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
     '/inzichten/mentale-vermoeidheid-en-eigen-regie': {
       id: '/inzichten/mentale-vermoeidheid-en-eigen-regie'
       path: '/mentale-vermoeidheid-en-eigen-regie'
       fullPath: '/inzichten/mentale-vermoeidheid-en-eigen-regie'
       preLoaderRoute: typeof InzichtenMentaleVermoeidheidEnEigenRegieRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/medewerker-zit-vast': {
+      id: '/inzichten/medewerker-zit-vast'
+      path: '/medewerker-zit-vast'
+      fullPath: '/inzichten/medewerker-zit-vast'
+      preLoaderRoute: typeof InzichtenMedewerkerZitVastRouteImport
       parentRoute: typeof InzichtenRoute
     }
     '/inzichten/loopbaanswitch-na-je-40e': {
@@ -811,6 +890,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InzichtenJeEersteBaanRouteImport
       parentRoute: typeof InzichtenRoute
     }
+    '/inzichten/inzicht-verandert-gedrag-niet': {
+      id: '/inzichten/inzicht-verandert-gedrag-niet'
+      path: '/inzicht-verandert-gedrag-niet'
+      fullPath: '/inzichten/inzicht-verandert-gedrag-niet'
+      preLoaderRoute: typeof InzichtenInzichtVerandertGedragNietRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
     '/inzichten/innerlijke-criticus': {
       id: '/inzichten/innerlijke-criticus'
       path: '/innerlijke-criticus'
@@ -837,6 +923,13 @@ declare module '@tanstack/react-router' {
       path: '/het-tegenbod'
       fullPath: '/inzichten/het-tegenbod'
       preLoaderRoute: typeof InzichtenHetTegenbodRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/grenzen-stellen-op-werk': {
+      id: '/inzichten/grenzen-stellen-op-werk'
+      path: '/grenzen-stellen-op-werk'
+      fullPath: '/inzichten/grenzen-stellen-op-werk'
+      preLoaderRoute: typeof InzichtenGrenzenStellenOpWerkRouteImport
       parentRoute: typeof InzichtenRoute
     }
     '/inzichten/goede-loopbaancoach-kiezen': {
@@ -881,6 +974,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InzichtenDuurzaamInzetbaarBlijvenRouteImport
       parentRoute: typeof InzichtenRoute
     }
+    '/inzichten/belemmerende-overtuigingen-werk': {
+      id: '/inzichten/belemmerende-overtuigingen-werk'
+      path: '/belemmerende-overtuigingen-werk'
+      fullPath: '/inzichten/belemmerende-overtuigingen-werk'
+      preLoaderRoute: typeof InzichtenBelemmerendeOvertuigingenWerkRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
     '/.well-known/oauth-protected-resource': {
       id: '/.well-known/oauth-protected-resource'
       path: '/.well-known/oauth-protected-resource'
@@ -913,22 +1013,27 @@ declare module '@tanstack/react-router' {
 }
 
 interface InzichtenRouteChildren {
+  InzichtenBelemmerendeOvertuigingenWerkRoute: typeof InzichtenBelemmerendeOvertuigingenWerkRoute
   InzichtenDuurzaamInzetbaarBlijvenRoute: typeof InzichtenDuurzaamInzetbaarBlijvenRoute
   InzichtenDuurzameInzetbaarheidWerkgeverRoute: typeof InzichtenDuurzameInzetbaarheidWerkgeverRoute
   InzichtenEnergieEnMotivatieInWerkRoute: typeof InzichtenEnergieEnMotivatieInWerkRoute
   InzichtenErvarenTalentAlsKansRoute: typeof InzichtenErvarenTalentAlsKansRoute
   InzichtenGeneratiesOpDeWerkvloerRoute: typeof InzichtenGeneratiesOpDeWerkvloerRoute
   InzichtenGoedeLoopbaancoachKiezenRoute: typeof InzichtenGoedeLoopbaancoachKiezenRoute
+  InzichtenGrenzenStellenOpWerkRoute: typeof InzichtenGrenzenStellenOpWerkRoute
   InzichtenHetTegenbodRoute: typeof InzichtenHetTegenbodRoute
   InzichtenHetzelfdeGevoelEenAndereBaanRoute: typeof InzichtenHetzelfdeGevoelEenAndereBaanRoute
   InzichtenImpostersyndroomTwijfelAlsKrachtRoute: typeof InzichtenImpostersyndroomTwijfelAlsKrachtRoute
   InzichtenInnerlijkeCriticusRoute: typeof InzichtenInnerlijkeCriticusRoute
+  InzichtenInzichtVerandertGedragNietRoute: typeof InzichtenInzichtVerandertGedragNietRoute
   InzichtenJeEersteBaanRoute: typeof InzichtenJeEersteBaanRoute
   InzichtenJobCraftingRoute: typeof InzichtenJobCraftingRoute
   InzichtenKostenVanEenVerkeerdeMatchRoute: typeof InzichtenKostenVanEenVerkeerdeMatchRoute
   InzichtenLoopbaangesprekMetMedewerkerRoute: typeof InzichtenLoopbaangesprekMetMedewerkerRoute
   InzichtenLoopbaanswitchNaJe40eRoute: typeof InzichtenLoopbaanswitchNaJe40eRoute
+  InzichtenMedewerkerZitVastRoute: typeof InzichtenMedewerkerZitVastRoute
   InzichtenMentaleVermoeidheidEnEigenRegieRoute: typeof InzichtenMentaleVermoeidheidEnEigenRegieRoute
+  InzichtenNietKunnenKiezenLoopbaanRoute: typeof InzichtenNietKunnenKiezenLoopbaanRoute
   InzichtenOutplacementOfLoopbaancoachingRoute: typeof InzichtenOutplacementOfLoopbaancoachingRoute
   InzichtenPassieTerugvindenInJeWerkRoute: typeof InzichtenPassieTerugvindenInJeWerkRoute
   InzichtenPersoonlijkeEffectiviteitRoute: typeof InzichtenPersoonlijkeEffectiviteitRoute
@@ -944,6 +1049,8 @@ interface InzichtenRouteChildren {
 }
 
 const InzichtenRouteChildren: InzichtenRouteChildren = {
+  InzichtenBelemmerendeOvertuigingenWerkRoute:
+    InzichtenBelemmerendeOvertuigingenWerkRoute,
   InzichtenDuurzaamInzetbaarBlijvenRoute:
     InzichtenDuurzaamInzetbaarBlijvenRoute,
   InzichtenDuurzameInzetbaarheidWerkgeverRoute:
@@ -954,12 +1061,15 @@ const InzichtenRouteChildren: InzichtenRouteChildren = {
   InzichtenGeneratiesOpDeWerkvloerRoute: InzichtenGeneratiesOpDeWerkvloerRoute,
   InzichtenGoedeLoopbaancoachKiezenRoute:
     InzichtenGoedeLoopbaancoachKiezenRoute,
+  InzichtenGrenzenStellenOpWerkRoute: InzichtenGrenzenStellenOpWerkRoute,
   InzichtenHetTegenbodRoute: InzichtenHetTegenbodRoute,
   InzichtenHetzelfdeGevoelEenAndereBaanRoute:
     InzichtenHetzelfdeGevoelEenAndereBaanRoute,
   InzichtenImpostersyndroomTwijfelAlsKrachtRoute:
     InzichtenImpostersyndroomTwijfelAlsKrachtRoute,
   InzichtenInnerlijkeCriticusRoute: InzichtenInnerlijkeCriticusRoute,
+  InzichtenInzichtVerandertGedragNietRoute:
+    InzichtenInzichtVerandertGedragNietRoute,
   InzichtenJeEersteBaanRoute: InzichtenJeEersteBaanRoute,
   InzichtenJobCraftingRoute: InzichtenJobCraftingRoute,
   InzichtenKostenVanEenVerkeerdeMatchRoute:
@@ -967,8 +1077,11 @@ const InzichtenRouteChildren: InzichtenRouteChildren = {
   InzichtenLoopbaangesprekMetMedewerkerRoute:
     InzichtenLoopbaangesprekMetMedewerkerRoute,
   InzichtenLoopbaanswitchNaJe40eRoute: InzichtenLoopbaanswitchNaJe40eRoute,
+  InzichtenMedewerkerZitVastRoute: InzichtenMedewerkerZitVastRoute,
   InzichtenMentaleVermoeidheidEnEigenRegieRoute:
     InzichtenMentaleVermoeidheidEnEigenRegieRoute,
+  InzichtenNietKunnenKiezenLoopbaanRoute:
+    InzichtenNietKunnenKiezenLoopbaanRoute,
   InzichtenOutplacementOfLoopbaancoachingRoute:
     InzichtenOutplacementOfLoopbaancoachingRoute,
   InzichtenPassieTerugvindenInJeWerkRoute:

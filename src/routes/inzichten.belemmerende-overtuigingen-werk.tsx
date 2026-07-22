@@ -4,51 +4,51 @@ import SiteFooter from "@/components/SiteFooter";
 import { SITE_URL } from "@/lib/site";
 
 
-export const Route = createFileRoute("/inzichten/weten-maar-niet-doen")({
+export const Route = createFileRoute("/inzichten/belemmerende-overtuigingen-werk")({
   head: () => ({
     meta: [
-      { title: "Je weet wat je moet doen. Waarom doe je het niet? | Vizier op Scherp" },
-      { name: "description", content: "Je weet allang wat je wilt veranderen in je werk, maar je doet het niet. Wat er meestal onder die stilstand zit, en wat wel beweging geeft." },
-      { property: "og:title", content: "Je weet wat je zou moeten doen. Waarom doe je het dan niet?" },
-      { property: "og:description", content: "Je weet allang wat je wilt veranderen in je werk, maar je doet het niet. Wat er meestal onder die stilstand zit, en wat wel beweging geeft." },
+      { title: "De overtuiging die je loopbaan stuurt | Vizier op Scherp" },
+      { name: "description", content: "Hard werken hoort, klagen doe je niet, kiezen is verliezen. Overtuigingen die je meekreeg sturen je loopbaan, tot je ze herkent." },
+      { property: "og:title", content: "De overtuiging die je loopbaan stuurt, en die je nooit zelf hebt gekozen" },
+      { property: "og:description", content: "Hard werken hoort, klagen doe je niet, kiezen is verliezen. Overtuigingen die je meekreeg sturen je loopbaan, tot je ze herkent." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: `${SITE_URL}/inzichten/weten-maar-niet-doen` },
+      { property: "og:url", content: `${SITE_URL}/inzichten/belemmerende-overtuigingen-werk` },
       { property: "og:image", content: `${SITE_URL}/assets/social-share.webp` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/weten-maar-niet-doen` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/belemmerende-overtuigingen-werk` }],
     scripts: [{ type: "application/ld+json", children: `{
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Je weet wat je zou moeten doen. Waarom doe je het dan niet?",
-  "description": "Je weet allang wat je wilt veranderen in je werk, maar je doet het niet. Wat er meestal onder die stilstand zit, en wat wel beweging geeft.",
+  "headline": "De overtuiging die je loopbaan stuurt, en die je nooit zelf hebt gekozen",
+  "description": "Hard werken hoort, klagen doe je niet, kiezen is verliezen. Overtuigingen die je meekreeg sturen je loopbaan, tot je ze herkent.",
   "inLanguage": "nl",
   "datePublished": "2026-07-18",
   "dateModified": "2026-07-18",
   "author": {"@type": "Organization", "name": "Vizier op Scherp", "url": "${SITE_URL}"},
   "publisher": {"@type": "Organization", "name": "Vizier op Scherp", "url": "${SITE_URL}"},
-  "mainEntityOfPage": {"@type": "WebPage", "@id": "${SITE_URL}/inzichten/weten-maar-niet-doen"}
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "${SITE_URL}/inzichten/belemmerende-overtuigingen-werk"}
 }` }, { type: "application/ld+json", children: `{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is dit gewoon uitstelgedrag?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Het lijkt erop, maar er is een verschil. Uitstelgedrag gaat meestal over taken die je niet leuk vindt. Dit gaat over een stap die je juist belangrijk vindt en die toch niet komt. Dan speelt er vrijwel altijd iets onder de oppervlakte: iets dat je beschermt of niet wilt verliezen. Dat vraagt om onderzoek, niet om een strakkere planning."}
+      "name": "Hoe herken ik zo’n overtuiging bij mezelf?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Kijk naar de plekken waar je gedrag en je wens al lang niet meer op één lijn liggen: iets willen en het steeds niet doen. Daar zit vrijwel altijd een regel onder. En let op zinnen met "hoort", "moet" of "doe je niet". Overtuigingen vermommen zich als gezond verstand; de toets is of je hetzelfde advies aan een goede vriend zou geven."}
     },
     {
       "@type": "Question",
-      "name": "Waarom lukt het anderen wel?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Dat weet je niet zeker; je ziet bij anderen alleen de buitenkant. Maar belangrijker: wat iemand anders tegenhoudt of juist niet, zegt niets over jou. Ieder mens bewaakt iets anders. De vergelijking met anderen maakt de kloof vooral groter, terwijl de vraag wat er bij jou onder zit je verder brengt."}
+      "name": "Zijn overtuigingen dan slecht?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Nee. Overtuigingen zijn ooit ontstaan omdat ze werkten; ze gaven houvast in de omgeving waarin je ze leerde. Sommige passen nog steeds bij je en mag je koesteren. Het probleem is niet de overtuiging zelf, maar dat hij ongezien meestuurt. Zodra je hem kent, kun je kiezen: houden omdat hij klopt, of loslaten omdat hij knelt."}
     },
     {
       "@type": "Question",
-      "name": "Wat als ik het al jaren uitstel?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Dan is er blijkbaar iets sterks dat je op je plek houdt, en dat is de moeite van het onderzoeken waard. Jaren uitstel betekent niet dat het te laat is; het betekent dat gewoon doen voor jou niet de goede route is. Met een coach kijk je eerst wat de stilstand beschermt, en dan pas welke stap erbij past."}
+      "name": "Kan ik dit zelf veranderen, zonder coach?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Herkennen kun je zeker zelf; dit artikel is daarvoor een begin. Het lastige zit in de blinde vlek: juist omdat een overtuiging als waarheid voelt, zie je hem bij jezelf het slechtst. Een coach hoort de regels in je verhaal die jij allang niet meer opmerkt, en helpt je toetsen wat je ermee wilt. Dat gaat sneller en dieper dan alleen."}
     }
   ]
-}` }, { type: "application/ld+json", children: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"${SITE_URL}/"},{"@type":"ListItem","position":2,"name":"Inzichten","item":"${SITE_URL}/inzichten"},{"@type":"ListItem","position":3,"name":"Je weet wat je zou moeten doen. Waarom doe je het dan niet?","item":"${SITE_URL}/inzichten/weten-maar-niet-doen"}]}` }],
+}` }, { type: "application/ld+json", children: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"${SITE_URL}/"},{"@type":"ListItem","position":2,"name":"Inzichten","item":"${SITE_URL}/inzichten"},{"@type":"ListItem","position":3,"name":"De overtuiging die je loopbaan stuurt, en die je nooit zelf hebt gekozen","item":"${SITE_URL}/inzichten/belemmerende-overtuigingen-werk"}]}` }],
   }),
   component: Page,
 });
@@ -141,8 +141,8 @@ const HTML = `<main id="main">
   <div class="watermark" aria-hidden="true"></div>
   <div class="hero-inner">
     <p class="eyebrow">Inzichten · Voor medewerkers</p>
-    <h1>Je weet wat je zou moeten doen. Waarom doe je het dan niet?</h1>
-    <p class="lead">Het gesprek aangaan, die opleiding starten, eindelijk iets zeggen over je rol. Je weet het al maanden. En toch gebeurt het niet.</p>
+    <h1>De overtuiging die je loopbaan stuurt, en die je nooit zelf hebt gekozen<span class="slotpunt">.</span></h1>
+    <p class="lead">Hard werken hoort. Klagen doe je niet. Wat je begint, maak je af. Herken je er eentje?</p>
     <p class="meta">5 min lezen · Patronen herkennen en veranderen</p>
   </div>
 </header>
@@ -150,32 +150,32 @@ const HTML = `<main id="main">
 <article class="article">
   <div class="article-container">
 
-    <p class="intro">Iedereen kent de kloof tussen weten en doen. Bij kleine dingen is hij onschuldig: de sportschool, de belastingaangifte. Maar bij je loopbaan kan die kloof jaren duren. Je weet precies welk gesprek je zou moeten voeren of welke stap je zou moeten zetten, en elke maand dat het niet gebeurt, wordt het zwaarder. Niet omdat je lui bent. Daar ligt het vrijwel nooit aan.</p>
+    <p class="intro">Over de grote loopbaankeuzes denken we lang na. Maar onder die keuzes ligt een laag waar we zelden naar kijken: de overtuigingen over werk die we ooit meekregen, thuis, op school, in een eerste baan. Ze voelen niet als meningen maar als waarheden, en juist daarom sturen ze zo krachtig mee. Vaak al jaren, zonder dat je het doorhebt.</p>
 
-    <p class="section-eyebrow">De kloof</p>
-    <h2>Waarom "gewoon doen" niet werkt</h2>
-    <p>Het advies dat je van je omgeving krijgt, is meestal een variant van hetzelfde: gewoon doen. Gewoon dat gesprek plannen, gewoon solliciteren, gewoon beginnen. Goedbedoeld, maar het mist het punt. Als het een kwestie van discipline was, had je het allang gedaan. Je regelt tenslotte de rest van je leven ook: deadlines, huishouden, afspraken. Dit ene ding blijft liggen, en juist dat is informatie.</p>
-    <p>Stilstand op een punt dat belangrijk voor je is, is zelden een gebrek aan wilskracht. Meestal bewaakt de stilstand iets. Een paar voorbeelden van wat er onder kan zitten:</p>
+    <p class="section-eyebrow">Voorbeelden</p>
+    <h2>Vier overtuigingen die je misschien herkent</h2>
+    <p>Iedereen draagt zijn eigen set mee, maar sommige komen we in de praktijk steeds weer tegen:</p>
     <ul class="ruitlijst">
-      <li><strong>Je beschermt iets.</strong> Je zekerheid, je opgebouwde positie, of het beeld dat collega's van je hebben. De stap zetten betekent dat op het spel zetten.</li>
-      <li><strong>Je wilt iets niet verliezen.</strong> Het team waar je op gesteld bent, de routine die houvast geeft, de versie van jezelf die alles onder controle heeft.</li>
-      <li><strong>Je wilt ergens niet aan.</strong> Het gesprek dat pijnlijk kan worden, de kans op een nee, of de conclusie die je misschien moet trekken als je echt gaat kijken.</li>
+      <li><strong>"Eerst bewijzen, dan pas vragen."</strong> Je wacht met vragen om ruimte, salaris of een andere rol tot je het onomstotelijk hebt verdiend. Alleen: dat moment komt nooit, want de lat schuift mee.</li>
+      <li><strong>"Zekerheid geef je niet op."</strong> Een vast contract, een goed pensioen, dat laat je niet los. Elke gedachte aan iets anders wordt meteen afgekapt als onverantwoord, nog voor je hem hebt onderzocht.</li>
+      <li><strong>"Wat je begint, maak je af."</strong> Stoppen voelt als falen. Dus blijf je in een studie, functie of richting waarvan je allang weet dat hij niet meer past, omdat volhouden nu eenmaal een deugd is.</li>
+      <li><strong>"Doe maar gewoon."</strong> Ambitie uitspreken voelt als naast je schoenen lopen. Dus praat je je wensen klein, ook tegen jezelf, en verbaas je je erover dat anderen wel die stap zetten.</li>
     </ul>
-    <p>Zolang dat onbenoemd blijft, wint de stilstand het van elk voornemen. Niet omdat je zwak bent, maar omdat een deel van jou een goede reden heeft om niet in beweging te komen. Dat deel verdient eerst aandacht, geen strengere planning.</p>
+    <p>Let op wat deze zinnen gemeen hebben: ze klinken allemaal verstandig. Dat is precies hun kracht. Een overtuiging die onzin klinkt, laat je makkelijk los. Een overtuiging die klinkt als gezond verstand, blijft ongezien zijn werk doen.</p>
 
     <div class="open-kader">
-      <p>Stilstand is zelden een gebrek aan wilskracht. Meestal bewaakt hij iets dat je nog niet hebt uitgesproken.</p>
+      <p>Een overtuiging voelt niet als een keuze. Dat is precies wat hem zo krachtig maakt.</p>
     </div>
 
-    <p class="section-eyebrow">Beweging</p>
-    <h2>Wat wel beweging geeft</h2>
-    <p>De uitweg begint niet met harder duwen, maar met een andere vraag. Niet: waarom doe ik het niet. Wel: wat zou ik kwijtraken als ik het wel deed? Die vraag klinkt vreemd, want de stap is toch juist wat je wilt. Maar wie hem eerlijk beantwoordt, vindt bijna altijd iets. En zodra dat op tafel ligt, kun je er iets mee: soms blijkt de angst kleiner dan gedacht, soms blijkt hij terecht en vraagt de stap om een andere vorm.</p>
-    <p>Daarna helpt klein beginnen. Niet meteen de ontslagbrief of het grote gesprek, maar een verkennende koffie, een eerste zin tegen je leidinggevende, een middag waarin je op papier zet wat je eigenlijk wilt. Beweging voedt beweging.</p>
-    <p>En houd de uitkomst open. Soms is de conclusie na al dat wikken helemaal niet dat je moet vertrekken, maar dat je blijft en je werk anders inricht: een ander takenpakket, een uitgesproken wens, een grens die je eerder niet stelde. Sterker worden waar je zit is een even goede afloop als een nieuwe stap.</p>
+    <p class="section-eyebrow">Herkennen</p>
+    <h2>Hoe je ze op het spoor komt</h2>
+    <p>Overtuigingen herken je zelden rechtstreeks; je ziet ze aan hun sporen. Twee vragen helpen. De eerste: waar botst mijn gedrag met wat ik eigenlijk wil? Als je al jaren ruimte wilt vragen en het nooit doet, zit daar vrijwel zeker een regel onder. De tweede: zou ik dit advies aan een goede vriend geven? Als je een vriend van harte zou aanraden om die overstap te onderzoeken, terwijl je het jezelf verbiedt, dan hanteer je voor jezelf een andere wet. Die wet is de overtuiging.</p>
+    <p>Ook de herkomst kan verhelderen. Veel werkregels stammen uit een tijd of omgeving waarin ze klopten: een gezin waar zekerheid schaars was, een sector waar je fouten werden afgestraft. De regel was toen logisch. De vraag is alleen of hij nu, in jouw leven, nog steeds klopt.</p>
 
-    <p class="section-eyebrow">Samen kijken</p>
-    <h2>Waar coaching het verschil maakt</h2>
-    <p>Dit soort knopen ontwar je lastig alleen, juist omdat je er zelf middenin staat. Een coach stelt de vragen waar je in je eentje omheen loopt, helpt benoemen wat de stilstand beschermt en houdt je erbij als het oefenen spannend wordt. Je hoeft vooraf niet te weten wat je wilt; dat je al zo lang weet wat er zou moeten gebeuren, is meer dan genoeg om mee te beginnen.</p>
+    <p class="section-eyebrow">Wegen</p>
+    <h2>Van regel naar keuze</h2>
+    <p>Het doel is niet om al je overtuigingen overboord te zetten. Sommige kloppen nog steeds en passen bij wie je bent; afmaken waar je aan begint kan een waarde zijn waar je achter staat. Het doel is dat je ze kunt wegen in plaats van gehoorzamen. Een regel die je bewust omarmt, is een keuze. Dezelfde regel die je nooit hebt bevraagd, is een beperking.</p>
+    <p>In een coachtraject is dit vaak het kantelpunt: het moment waarop iemand een zin uitspreekt die al twintig jaar meereist en hem voor het eerst van een afstand bekijkt. Wat daarna volgt, verschilt. Soms een andere stap, soms juist meer rust in de huidige rol, omdat het knagende gevoel eindelijk een naam heeft. Beide zijn winst; het verschil is dat jij voortaan stuurt, en niet de regel.</p>
 
   </div>
 </article>
@@ -185,16 +185,16 @@ const HTML = `<main id="main">
     <p class="section-eyebrow" style="margin-top:0">Veelgestelde vragen</p>
     <h2>Wat mensen hierover vragen</h2>
     <details>
-      <summary>Is dit gewoon uitstelgedrag?</summary>
-      <p>Het lijkt erop, maar er is een verschil. Uitstelgedrag gaat meestal over taken die je niet leuk vindt. Dit gaat over een stap die je juist belangrijk vindt en die toch niet komt. Dan speelt er vrijwel altijd iets onder de oppervlakte: iets dat je beschermt of niet wilt verliezen. Dat vraagt om onderzoek, niet om een strakkere planning.</p>
+      <summary>Hoe herken ik zo’n overtuiging bij mezelf?</summary>
+      <p>Kijk naar de plekken waar je gedrag en je wens al lang niet meer op één lijn liggen: iets willen en het steeds niet doen. Daar zit vrijwel altijd een regel onder. En let op zinnen met "hoort", "moet" of "doe je niet". Overtuigingen vermommen zich als gezond verstand; de toets is of je hetzelfde advies aan een goede vriend zou geven.</p>
     </details>
     <details>
-      <summary>Waarom lukt het anderen wel?</summary>
-      <p>Dat weet je niet zeker; je ziet bij anderen alleen de buitenkant. Maar belangrijker: wat iemand anders tegenhoudt of juist niet, zegt niets over jou. Ieder mens bewaakt iets anders. De vergelijking met anderen maakt de kloof vooral groter, terwijl de vraag wat er bij jou onder zit je verder brengt.</p>
+      <summary>Zijn overtuigingen dan slecht?</summary>
+      <p>Nee. Overtuigingen zijn ooit ontstaan omdat ze werkten; ze gaven houvast in de omgeving waarin je ze leerde. Sommige passen nog steeds bij je en mag je koesteren. Het probleem is niet de overtuiging zelf, maar dat hij ongezien meestuurt. Zodra je hem kent, kun je kiezen: houden omdat hij klopt, of loslaten omdat hij knelt.</p>
     </details>
     <details>
-      <summary>Wat als ik het al jaren uitstel?</summary>
-      <p>Dan is er blijkbaar iets sterks dat je op je plek houdt, en dat is de moeite van het onderzoeken waard. Jaren uitstel betekent niet dat het te laat is; het betekent dat gewoon doen voor jou niet de goede route is. Met een coach kijk je eerst wat de stilstand beschermt, en dan pas welke stap erbij past.</p>
+      <summary>Kan ik dit zelf veranderen, zonder coach?</summary>
+      <p>Herkennen kun je zeker zelf; dit artikel is daarvoor een begin. Het lastige zit in de blinde vlek: juist omdat een overtuiging als waarheid voelt, zie je hem bij jezelf het slechtst. Een coach hoort de regels in je verhaal die jij allang niet meer opmerkt, en helpt je toetsen wat je ermee wilt. Dat gaat sneller en dieper dan alleen.</p>
     </details>
   </div>
 </section>
@@ -204,22 +204,22 @@ const HTML = `<main id="main">
     <p class="section-eyebrow" style="margin-top:0">Verder lezen</p>
     <h2>Ook interessant voor jou</h2>
     <div class="kaarten">
-      <a class="anker-kaart" href="/inzichten/hetzelfde-gevoel-een-andere-baan">
+      <a class="anker-kaart" href="/inzichten/weten-maar-niet-doen">
         <span class="kaartlabel">Voor medewerkers</span>
-        <h3>Hetzelfde gevoel, een andere baan</h3>
-        <p>Weer dezelfde onvrede in een nieuwe baan? Vaak verhuist het patroon mee. Hoe je herkent wat er echt speelt.</p>
+        <h3>Je weet wat je zou moeten doen</h3>
+        <p>Waarom doe je het dan niet? Wat er onder stilstand zit, en wat wel beweging geeft.</p>
         <span class="lees">Lees verder →</span>
       </a>
-      <a class="anker-kaart" href="/inzichten/niet-kunnen-kiezen-loopbaan">
+      <a class="anker-kaart" href="/inzichten/richting-vinden-in-je-loopbaan">
         <span class="kaartlabel">Voor medewerkers</span>
-        <h3>Niet kunnen kiezen in je loopbaan</h3>
-        <p>Nog een test, nog een lijstje, en je weet het nog steeds niet. Waarom keuzestress zelden een informatieprobleem is.</p>
+        <h3>Richting vinden in je loopbaan</h3>
+        <p>Waarom je niet bij de vacaturesite moet beginnen, maar bij wat je energie geeft en wat je drijft.</p>
         <span class="lees">Lees verder →</span>
       </a>
-      <a class="anker-kaart" href="/inzichten/belemmerende-overtuigingen-werk">
+      <a class="anker-kaart" href="/inzichten/innerlijke-criticus">
         <span class="kaartlabel">Voor medewerkers</span>
-        <h3>De overtuiging die je loopbaan stuurt</h3>
-        <p>Overtuigingen die je meekreeg sturen je keuzes, tot je ze herkent.</p>
+        <h3>Het kritische stemmetje dat zegt dat het nooit genoeg is</h3>
+        <p>Waar die strenge stem vandaan komt en hoe je er anders mee leert omgaan.</p>
         <span class="lees">Lees verder →</span>
       </a>
     </div>
@@ -230,7 +230,7 @@ const HTML = `<main id="main">
   <div class="container">
     <div class="facet-buiten">
       <div class="facet-binnen">
-        <h2>Weet je het al langer, maar kom je niet in beweging?</h2>
+        <h2>Benieuwd welke regels bij jou meesturen?</h2>
         <p>Een eerste gesprek is vrijblijvend en verplicht je tot niets. Je vertelt wat er speelt, wij stellen een coach voor die bij je past, en daarna beslis jij.</p>
         <p class="werkgever">Goed om te weten: veel werkgevers vergoeden een loopbaantraject vanuit het ontwikkelbudget. Vraag ernaar bij HR, we denken graag mee over hoe je dat aankaart.</p>
         <a class="btn-primair" href="/kennismaken">Plan een vrijblijvende kennismaking</a>

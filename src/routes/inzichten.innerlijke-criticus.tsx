@@ -17,7 +17,38 @@ export const Route = createFileRoute("/inzichten/innerlijke-criticus")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/innerlijke-criticus` }],
-    scripts: [{ type: "application/ld+json", children: `{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"Het kritische stemmetje dat zegt dat het nooit genoeg is","description":"Die strenge stem die zegt dat het beter moet? Die verdwijnt niet door harder te werken. Waar hij vandaan komt en hoe je er anders mee omgaat.","inLanguage":"nl","datePublished":"2026-07-18","dateModified":"2026-07-18","author":{"@type":"Organization","name":"Vizier op Scherp","url":"${SITE_URL}"},"publisher":{"@type":"Organization","name":"Vizier op Scherp","url":"${SITE_URL}"},"mainEntityOfPage":{"@type":"WebPage","@id":"${SITE_URL}/inzichten/innerlijke-criticus"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"${SITE_URL}/"},{"@type":"ListItem","position":2,"name":"Inzichten","item":"${SITE_URL}/inzichten"},{"@type":"ListItem","position":3,"name":"Het kritische stemmetje dat zegt dat het nooit genoeg is","item":"${SITE_URL}/inzichten/innerlijke-criticus"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is streng voor jezelf zijn niet juist goed?","acceptedAnswer":{"@type":"Answer","text":"Een gezonde lat is waardevol: die hoort bij vakmanschap. Het verschil zit in de toon en de rekening. Een gezonde lat zegt wat beter kan en is klaar. De innerlijke criticus rekent af, telt successen niet mee en verbindt je waarde als mens aan je prestatie. Dat tweede maakt werk zwaarder zonder het beter te maken."}},{"@type":"Question","name":"Gaat die stem ooit helemaal weg?","acceptedAnswer":{"@type":"Answer","text":"Waarschijnlijk niet, en dat hoeft ook niet. Het doel is niet stilte, maar een andere verhouding: de stem horen, herkennen en zelf bepalen wat je ermee doet. De meeste mensen merken dat de stem zachter en minder frequent wordt zodra ze er niet meer automatisch naar handelen. Hij verliest zijn macht, niet per se zijn stem."}},{"@type":"Question","name":"Wanneer is professionele hulp passender dan coaching?","acceptedAnswer":{"@type":"Answer","text":"Als de strengheid samengaat met aanhoudende somberheid, uitputting of angst die ook buiten je werk doorloopt, bespreek dat dan eerst met je huisarts. Coaching werkt aan je verhouding tot werk en aan patronen daarin; bij klachten die je hele leven raken, verdien je zorg die daarbij past. Die twee kunnen elkaar daarna prima aanvullen."}}]}]}` }],
+    scripts: [{ type: "application/ld+json", children: `{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Het kritische stemmetje dat zegt dat het nooit genoeg is",
+  "description": "Die strenge stem die zegt dat het beter moet? Die verdwijnt niet door harder te werken. Waar hij vandaan komt en hoe je er anders mee omgaat.",
+  "inLanguage": "nl",
+  "datePublished": "2026-07-18",
+  "dateModified": "2026-07-18",
+  "author": {"@type": "Organization", "name": "Vizier op Scherp", "url": "${SITE_URL}"},
+  "publisher": {"@type": "Organization", "name": "Vizier op Scherp", "url": "${SITE_URL}"},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "${SITE_URL}/inzichten/innerlijke-criticus"}
+}` }, { type: "application/ld+json", children: `{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is streng voor jezelf zijn niet juist goed?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Een gezonde lat is waardevol: die hoort bij vakmanschap. Het verschil zit in de toon en de rekening. Een gezonde lat zegt wat beter kan en is klaar. De innerlijke criticus rekent af, telt successen niet mee en verbindt je waarde als mens aan je prestatie. Dat tweede maakt werk zwaarder zonder het beter te maken."}
+    },
+    {
+      "@type": "Question",
+      "name": "Gaat die stem ooit helemaal weg?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Waarschijnlijk niet, en dat hoeft ook niet. Het doel is niet stilte, maar een andere verhouding: de stem horen, herkennen en zelf bepalen wat je ermee doet. De meeste mensen merken dat de stem zachter en minder frequent wordt zodra ze er niet meer automatisch naar handelen. Hij verliest zijn macht, niet per se zijn stem."}
+    },
+    {
+      "@type": "Question",
+      "name": "Wanneer is professionele hulp passender dan coaching?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Als de strengheid samengaat met aanhoudende somberheid, uitputting of angst die ook buiten je werk doorloopt, bespreek dat dan eerst met je huisarts. Coaching werkt aan je verhouding tot werk en aan patronen daarin; bij klachten die je hele leven raken, verdien je zorg die daarbij past. Die twee kunnen elkaar daarna prima aanvullen."}
+    }
+  ]
+}` }, { type: "application/ld+json", children: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"${SITE_URL}/"},{"@type":"ListItem","position":2,"name":"Inzichten","item":"${SITE_URL}/inzichten"},{"@type":"ListItem","position":3,"name":"Het kritische stemmetje dat zegt dat het nooit genoeg is","item":"${SITE_URL}/inzichten/innerlijke-criticus"}]}` }],
   }),
   component: Page,
 });

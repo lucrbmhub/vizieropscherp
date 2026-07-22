@@ -4,51 +4,51 @@ import SiteFooter from "@/components/SiteFooter";
 import { SITE_URL } from "@/lib/site";
 
 
-export const Route = createFileRoute("/inzichten/weten-maar-niet-doen")({
+export const Route = createFileRoute("/inzichten/grenzen-stellen-op-werk")({
   head: () => ({
     meta: [
-      { title: "Je weet wat je moet doen. Waarom doe je het niet? | Vizier op Scherp" },
-      { name: "description", content: "Je weet allang wat je wilt veranderen in je werk, maar je doet het niet. Wat er meestal onder die stilstand zit, en wat wel beweging geeft." },
-      { property: "og:title", content: "Je weet wat je zou moeten doen. Waarom doe je het dan niet?" },
-      { property: "og:description", content: "Je weet allang wat je wilt veranderen in je werk, maar je doet het niet. Wat er meestal onder die stilstand zit, en wat wel beweging geeft." },
+      { title: "Altijd degene op wie iedereen kan bouwen | Vizier op Scherp" },
+      { name: "description", content: "Betrouwbaar zijn is een kracht, tot het een patroon wordt waarin je jezelf steeds overslaat. Hoe dat werkt en waar je kunt beginnen." },
+      { property: "og:title", content: "Altijd degene op wie iedereen kan bouwen: waar dat patroon je brengt" },
+      { property: "og:description", content: "Betrouwbaar zijn is een kracht, tot het een patroon wordt waarin je jezelf steeds overslaat. Hoe dat werkt en waar je kunt beginnen." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: `${SITE_URL}/inzichten/weten-maar-niet-doen` },
+      { property: "og:url", content: `${SITE_URL}/inzichten/grenzen-stellen-op-werk` },
       { property: "og:image", content: `${SITE_URL}/assets/social-share.webp` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/weten-maar-niet-doen` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/grenzen-stellen-op-werk` }],
     scripts: [{ type: "application/ld+json", children: `{
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Je weet wat je zou moeten doen. Waarom doe je het dan niet?",
-  "description": "Je weet allang wat je wilt veranderen in je werk, maar je doet het niet. Wat er meestal onder die stilstand zit, en wat wel beweging geeft.",
+  "headline": "Altijd degene op wie iedereen kan bouwen: waar dat patroon je brengt",
+  "description": "Betrouwbaar zijn is een kracht, tot het een patroon wordt waarin je jezelf steeds overslaat. Hoe dat werkt en waar je kunt beginnen.",
   "inLanguage": "nl",
   "datePublished": "2026-07-18",
   "dateModified": "2026-07-18",
   "author": {"@type": "Organization", "name": "Vizier op Scherp", "url": "${SITE_URL}"},
   "publisher": {"@type": "Organization", "name": "Vizier op Scherp", "url": "${SITE_URL}"},
-  "mainEntityOfPage": {"@type": "WebPage", "@id": "${SITE_URL}/inzichten/weten-maar-niet-doen"}
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "${SITE_URL}/inzichten/grenzen-stellen-op-werk"}
 }` }, { type: "application/ld+json", children: `{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is dit gewoon uitstelgedrag?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Het lijkt erop, maar er is een verschil. Uitstelgedrag gaat meestal over taken die je niet leuk vindt. Dit gaat over een stap die je juist belangrijk vindt en die toch niet komt. Dan speelt er vrijwel altijd iets onder de oppervlakte: iets dat je beschermt of niet wilt verliezen. Dat vraagt om onderzoek, niet om een strakkere planning."}
+      "name": "Is grenzen stellen niet gewoon een vaardigheid die je kunt leren?",
+      "acceptedAnswer": {"@type": "Answer", "text": "De techniek wel, en die ken je waarschijnlijk al: je zegt moeiteloos nee tegen dingen die er niet toe doen. Dat het juist op belangrijke momenten niet lukt, komt doordat het ja daar iets beschermt: je plek, je beeld van jezelf, de relatie. Zolang dat buiten beeld blijft, verliest elke aangeleerde techniek het van de reflex."}
     },
     {
       "@type": "Question",
-      "name": "Waarom lukt het anderen wel?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Dat weet je niet zeker; je ziet bij anderen alleen de buitenkant. Maar belangrijker: wat iemand anders tegenhoudt of juist niet, zegt niets over jou. Ieder mens bewaakt iets anders. De vergelijking met anderen maakt de kloof vooral groter, terwijl de vraag wat er bij jou onder zit je verder brengt."}
+      "name": "Waarom voelt nee zeggen zo vervelend, zelfs bij redelijke verzoeken?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Omdat het bij dit patroon niet als een praktische afweging voelt maar als een oordeel over jezelf. Ergens is helpen verbonden geraakt met erbij horen of van waarde zijn. Een nee voelt dan als tekortschieten, hoe redelijk het ook is. Dat is geen zwakte; het is een aangeleerd verband, en wat aangeleerd is, kan ook anders."}
     },
     {
       "@type": "Question",
-      "name": "Wat als ik het al jaren uitstel?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Dan is er blijkbaar iets sterks dat je op je plek houdt, en dat is de moeite van het onderzoeken waard. Jaren uitstel betekent niet dat het te laat is; het betekent dat gewoon doen voor jou niet de goede route is. Met een coach kijk je eerst wat de stilstand beschermt, en dan pas welke stap erbij past."}
+      "name": "Wat als mijn team echt op mij leunt en het misgaat zonder mij?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Dat kan tijdelijk kloppen, en het is tegelijk een deel van het patroon: het is zo gegroeid omdat jij alles opving. Structureel onmisbaar zijn is geen compliment maar een risico, ook voor je team. Werk dat afhangt van één persoon die nooit nee zegt, is kwetsbaar. Verdelen is uiteindelijk in ieders belang, inclusief dat van jou."}
     }
   ]
-}` }, { type: "application/ld+json", children: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"${SITE_URL}/"},{"@type":"ListItem","position":2,"name":"Inzichten","item":"${SITE_URL}/inzichten"},{"@type":"ListItem","position":3,"name":"Je weet wat je zou moeten doen. Waarom doe je het dan niet?","item":"${SITE_URL}/inzichten/weten-maar-niet-doen"}]}` }],
+}` }, { type: "application/ld+json", children: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"${SITE_URL}/"},{"@type":"ListItem","position":2,"name":"Inzichten","item":"${SITE_URL}/inzichten"},{"@type":"ListItem","position":3,"name":"Altijd degene op wie iedereen kan bouwen: waar dat patroon je brengt","item":"${SITE_URL}/inzichten/grenzen-stellen-op-werk"}]}` }],
   }),
   component: Page,
 });
@@ -141,8 +141,8 @@ const HTML = `<main id="main">
   <div class="watermark" aria-hidden="true"></div>
   <div class="hero-inner">
     <p class="eyebrow">Inzichten · Voor medewerkers</p>
-    <h1>Je weet wat je zou moeten doen. Waarom doe je het dan niet?</h1>
-    <p class="lead">Het gesprek aangaan, die opleiding starten, eindelijk iets zeggen over je rol. Je weet het al maanden. En toch gebeurt het niet.</p>
+    <h1>Altijd degene op wie iedereen kan bouwen: waar dat patroon je brengt<span class="slotpunt">.</span></h1>
+    <p class="lead">Als er iets geregeld moet worden, kijken ze naar jou. Meestal terecht. En meestal zeg je ja.</p>
     <p class="meta">5 min lezen · Patronen herkennen en veranderen</p>
   </div>
 </header>
@@ -150,32 +150,36 @@ const HTML = `<main id="main">
 <article class="article">
   <div class="article-container">
 
-    <p class="intro">Iedereen kent de kloof tussen weten en doen. Bij kleine dingen is hij onschuldig: de sportschool, de belastingaangifte. Maar bij je loopbaan kan die kloof jaren duren. Je weet precies welk gesprek je zou moeten voeren of welke stap je zou moeten zetten, en elke maand dat het niet gebeurt, wordt het zwaarder. Niet omdat je lui bent. Daar ligt het vrijwel nooit aan.</p>
+    <p class="intro">In elk team is er iemand op wie je kunt bouwen. Degene die het oppakt als het spannend wordt, die nooit een bal laat vallen, die je altijd even iets kunt vragen. Het is een prachtige eigenschap, en waarschijnlijk heeft hij je veel gebracht: vertrouwen, waardering, verantwoordelijkheid. Maar er zit een kantelpunt in. Ergens wordt de kwaliteit een rol, en de rol een patroon waarin jij structureel als laatste aan de beurt komt.</p>
 
-    <p class="section-eyebrow">De kloof</p>
-    <h2>Waarom "gewoon doen" niet werkt</h2>
-    <p>Het advies dat je van je omgeving krijgt, is meestal een variant van hetzelfde: gewoon doen. Gewoon dat gesprek plannen, gewoon solliciteren, gewoon beginnen. Goedbedoeld, maar het mist het punt. Als het een kwestie van discipline was, had je het allang gedaan. Je regelt tenslotte de rest van je leven ook: deadlines, huishouden, afspraken. Dit ene ding blijft liggen, en juist dat is informatie.</p>
-    <p>Stilstand op een punt dat belangrijk voor je is, is zelden een gebrek aan wilskracht. Meestal bewaakt de stilstand iets. Een paar voorbeelden van wat er onder kan zitten:</p>
+    <p class="section-eyebrow">Het patroon</p>
+    <h2>De kracht en de prijs</h2>
+    <p>Het patroon sluipt erin, juist omdat elk los ja redelijk is. Die ene klus erbij, die collega even helpen, die vraag tussendoor: allemaal te overzien. Pas opgeteld zie je wat er gebeurt. Een paar signalen dat de balans is doorgeslagen:</p>
     <ul class="ruitlijst">
-      <li><strong>Je beschermt iets.</strong> Je zekerheid, je opgebouwde positie, of het beeld dat collega's van je hebben. De stap zetten betekent dat op het spel zetten.</li>
-      <li><strong>Je wilt iets niet verliezen.</strong> Het team waar je op gesteld bent, de routine die houvast geeft, de versie van jezelf die alles onder controle heeft.</li>
-      <li><strong>Je wilt ergens niet aan.</strong> Het gesprek dat pijnlijk kan worden, de kans op een nee, of de conclusie die je misschien moet trekken als je echt gaat kijken.</li>
+      <li><strong>Je agenda vult zich met andermans prioriteiten.</strong> Aan het eind van de week is jouw eigen werk het enige dat is blijven liggen.</li>
+      <li><strong>"Even iets vragen" landt standaard bij jou.</strong> Niet omdat het jouw taak is, maar omdat iedereen weet dat jij het regelt.</li>
+      <li><strong>Je eigen ontwikkeling schuift al maanden door.</strong> Die opleiding, dat project waar je van groeit: straks, als het rustiger is. Het wordt nooit rustiger.</li>
+      <li><strong>Nee zeggen voelt niet als een keuze maar als tekortschieten.</strong> Alleen al de gedachte geeft een knoop in je maag.</li>
     </ul>
-    <p>Zolang dat onbenoemd blijft, wint de stilstand het van elk voornemen. Niet omdat je zwak bent, maar omdat een deel van jou een goede reden heeft om niet in beweging te komen. Dat deel verdient eerst aandacht, geen strengere planning.</p>
+    <p>En ergens, zachtjes, groeit er iets van wrok. Op collega's die wel gewoon nee zeggen, op je leidinggevende die het niet ziet, op jezelf. Dat is misschien wel het duurste onderdeel van het patroon: het tast precies het plezier aan waarmee je ooit zo gul begon.</p>
 
     <div class="open-kader">
-      <p>Stilstand is zelden een gebrek aan wilskracht. Meestal bewaakt hij iets dat je nog niet hebt uitgesproken.</p>
+      <p>Nee zeggen voelt niet als een keuze maar als tekortschieten. Daar begint het patroon, niet bij je agenda.</p>
     </div>
 
-    <p class="section-eyebrow">Beweging</p>
-    <h2>Wat wel beweging geeft</h2>
-    <p>De uitweg begint niet met harder duwen, maar met een andere vraag. Niet: waarom doe ik het niet. Wel: wat zou ik kwijtraken als ik het wel deed? Die vraag klinkt vreemd, want de stap is toch juist wat je wilt. Maar wie hem eerlijk beantwoordt, vindt bijna altijd iets. En zodra dat op tafel ligt, kun je er iets mee: soms blijkt de angst kleiner dan gedacht, soms blijkt hij terecht en vraagt de stap om een andere vorm.</p>
-    <p>Daarna helpt klein beginnen. Niet meteen de ontslagbrief of het grote gesprek, maar een verkennende koffie, een eerste zin tegen je leidinggevende, een middag waarin je op papier zet wat je eigenlijk wilt. Beweging voedt beweging.</p>
-    <p>En houd de uitkomst open. Soms is de conclusie na al dat wikken helemaal niet dat je moet vertrekken, maar dat je blijft en je werk anders inricht: een ander takenpakket, een uitgesproken wens, een grens die je eerder niet stelde. Sterker worden waar je zit is een even goede afloop als een nieuwe stap.</p>
+    <p class="section-eyebrow">Onder de oppervlakte</p>
+    <h2>Waarom een cursus assertiviteit niet genoeg is</h2>
+    <p>Het standaardadvies bij dit patroon is een vaardigheidstraining: leren nee zeggen, beter prioriteren. Nuttig, maar het werkt zelden blijvend, en de reden is eenvoudig: je weet allang hoe je nee moet zeggen. Je doet het bij dingen die er niet toe doen moeiteloos. Het lukt alleen niet op de plekken waar het ertoe doet, en dat komt omdat het ja iets beschermt.</p>
+    <p>Wat precies, verschilt per persoon. Voor de één is het de plek in het team: zolang je onmisbaar bent, hoor je erbij. Voor de ander de angst om teleur te stellen, of de overtuiging dat je waarde samenvalt met wat je voor anderen doet. Zolang dat onaangeraakt blijft, wint het bij elk verzoek van elke aangeleerde techniek. Vandaar dat de eerste stap niet oefenen is, maar begrijpen: wat gebeurt er bij mij in die halve seconde tussen de vraag en mijn ja?</p>
 
-    <p class="section-eyebrow">Samen kijken</p>
-    <h2>Waar coaching het verschil maakt</h2>
-    <p>Dit soort knopen ontwar je lastig alleen, juist omdat je er zelf middenin staat. Een coach stelt de vragen waar je in je eentje omheen loopt, helpt benoemen wat de stilstand beschermt en houdt je erbij als het oefenen spannend wordt. Je hoeft vooraf niet te weten wat je wilt; dat je al zo lang weet wat er zou moeten gebeuren, is meer dan genoeg om mee te beginnen.</p>
+    <p class="section-eyebrow">Beginnen</p>
+    <h2>Waar je kunt beginnen</h2>
+    <p>Klein en concreet. Kies één terugkerend verzoek en bouw een pauze in: "ik kom er vanmiddag op terug." Geen nee, alleen ruimte. In die ruimte kun je opmerken wat er gebeurt: de aandrang om meteen te redden, de angst voor de reactie. Dat opmerken is het echte werk; het maakt van een reflex weer een keuze.</p>
+    <p>En voer het gesprek met je leidinggevende, niet als klacht maar als agendapunt: dit doe ik allemaal, dit blijft daardoor liggen, wat spreken we af? Vaak heeft die geen idee, juist omdat jij het altijd geruisloos oplost. De uitkomst van dit alles hoeft geen andere baan te zijn. Meestal is het een andere rol in dezelfde baan: nog steeds degene op wie je kunt bouwen, maar nu inclusief jezelf.</p>
+
+    <div class="noot">
+      <strong>Zorgvuldig:</strong> merk je dat vermoeidheid, somberheid of spanning aanhouden, ook buiten je werk? Neem dat serieus en bespreek het met je huisarts. Coaching is waardevol, maar geen vervanging van zorg als die nodig is.
+    </div>
 
   </div>
 </article>
@@ -185,16 +189,16 @@ const HTML = `<main id="main">
     <p class="section-eyebrow" style="margin-top:0">Veelgestelde vragen</p>
     <h2>Wat mensen hierover vragen</h2>
     <details>
-      <summary>Is dit gewoon uitstelgedrag?</summary>
-      <p>Het lijkt erop, maar er is een verschil. Uitstelgedrag gaat meestal over taken die je niet leuk vindt. Dit gaat over een stap die je juist belangrijk vindt en die toch niet komt. Dan speelt er vrijwel altijd iets onder de oppervlakte: iets dat je beschermt of niet wilt verliezen. Dat vraagt om onderzoek, niet om een strakkere planning.</p>
+      <summary>Is grenzen stellen niet gewoon een vaardigheid die je kunt leren?</summary>
+      <p>De techniek wel, en die ken je waarschijnlijk al: je zegt moeiteloos nee tegen dingen die er niet toe doen. Dat het juist op belangrijke momenten niet lukt, komt doordat het ja daar iets beschermt: je plek, je beeld van jezelf, de relatie. Zolang dat buiten beeld blijft, verliest elke aangeleerde techniek het van de reflex.</p>
     </details>
     <details>
-      <summary>Waarom lukt het anderen wel?</summary>
-      <p>Dat weet je niet zeker; je ziet bij anderen alleen de buitenkant. Maar belangrijker: wat iemand anders tegenhoudt of juist niet, zegt niets over jou. Ieder mens bewaakt iets anders. De vergelijking met anderen maakt de kloof vooral groter, terwijl de vraag wat er bij jou onder zit je verder brengt.</p>
+      <summary>Waarom voelt nee zeggen zo vervelend, zelfs bij redelijke verzoeken?</summary>
+      <p>Omdat het bij dit patroon niet als een praktische afweging voelt maar als een oordeel over jezelf. Ergens is helpen verbonden geraakt met erbij horen of van waarde zijn. Een nee voelt dan als tekortschieten, hoe redelijk het ook is. Dat is geen zwakte; het is een aangeleerd verband, en wat aangeleerd is, kan ook anders.</p>
     </details>
     <details>
-      <summary>Wat als ik het al jaren uitstel?</summary>
-      <p>Dan is er blijkbaar iets sterks dat je op je plek houdt, en dat is de moeite van het onderzoeken waard. Jaren uitstel betekent niet dat het te laat is; het betekent dat gewoon doen voor jou niet de goede route is. Met een coach kijk je eerst wat de stilstand beschermt, en dan pas welke stap erbij past.</p>
+      <summary>Wat als mijn team echt op mij leunt en het misgaat zonder mij?</summary>
+      <p>Dat kan tijdelijk kloppen, en het is tegelijk een deel van het patroon: het is zo gegroeid omdat jij alles opving. Structureel onmisbaar zijn is geen compliment maar een risico, ook voor je team. Werk dat afhangt van één persoon die nooit nee zegt, is kwetsbaar. Verdelen is uiteindelijk in ieders belang, inclusief dat van jou.</p>
     </details>
   </div>
 </section>
@@ -204,22 +208,22 @@ const HTML = `<main id="main">
     <p class="section-eyebrow" style="margin-top:0">Verder lezen</p>
     <h2>Ook interessant voor jou</h2>
     <div class="kaarten">
-      <a class="anker-kaart" href="/inzichten/hetzelfde-gevoel-een-andere-baan">
+      <a class="anker-kaart" href="/inzichten/energie-en-motivatie-in-werk">
         <span class="kaartlabel">Voor medewerkers</span>
-        <h3>Hetzelfde gevoel, een andere baan</h3>
-        <p>Weer dezelfde onvrede in een nieuwe baan? Vaak verhuist het patroon mee. Hoe je herkent wat er echt speelt.</p>
+        <h3>Het verschil tussen moe zijn en leeglopen</h3>
+        <p>Geen energie meer voor je werk? Wat je eraan kunt doen voordat het groter wordt.</p>
         <span class="lees">Lees verder →</span>
       </a>
-      <a class="anker-kaart" href="/inzichten/niet-kunnen-kiezen-loopbaan">
+      <a class="anker-kaart" href="/inzichten/innerlijke-criticus">
         <span class="kaartlabel">Voor medewerkers</span>
-        <h3>Niet kunnen kiezen in je loopbaan</h3>
-        <p>Nog een test, nog een lijstje, en je weet het nog steeds niet. Waarom keuzestress zelden een informatieprobleem is.</p>
+        <h3>Het kritische stemmetje dat zegt dat het nooit genoeg is</h3>
+        <p>Waar die strenge stem vandaan komt en hoe je er anders mee leert omgaan.</p>
         <span class="lees">Lees verder →</span>
       </a>
-      <a class="anker-kaart" href="/inzichten/belemmerende-overtuigingen-werk">
+      <a class="anker-kaart" href="/inzichten/weten-maar-niet-doen">
         <span class="kaartlabel">Voor medewerkers</span>
-        <h3>De overtuiging die je loopbaan stuurt</h3>
-        <p>Overtuigingen die je meekreeg sturen je keuzes, tot je ze herkent.</p>
+        <h3>Je weet wat je zou moeten doen</h3>
+        <p>Waarom doe je het dan niet? Wat er onder stilstand zit, en wat wel beweging geeft.</p>
         <span class="lees">Lees verder →</span>
       </a>
     </div>
@@ -230,7 +234,7 @@ const HTML = `<main id="main">
   <div class="container">
     <div class="facet-buiten">
       <div class="facet-binnen">
-        <h2>Weet je het al langer, maar kom je niet in beweging?</h2>
+        <h2>Altijd degene die het oplost, en zelden aan de beurt?</h2>
         <p>Een eerste gesprek is vrijblijvend en verplicht je tot niets. Je vertelt wat er speelt, wij stellen een coach voor die bij je past, en daarna beslis jij.</p>
         <p class="werkgever">Goed om te weten: veel werkgevers vergoeden een loopbaantraject vanuit het ontwikkelbudget. Vraag ernaar bij HR, we denken graag mee over hoe je dat aankaart.</p>
         <a class="btn-primair" href="/kennismaken">Plan een vrijblijvende kennismaking</a>
