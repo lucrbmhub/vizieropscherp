@@ -97,6 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "icon", href: "/favicon.ico?v=2", sizes: "any" },
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg?v=2" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png?v=2" },
       { rel: "stylesheet", href: appCss },
       { rel: "stylesheet", href: "/styles.css" },
@@ -112,7 +113,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               "@id": `${SITE_URL}/#organization`,
               name: "Vizier op Scherp",
               url: `${SITE_URL}/`,
-              logo: `${SITE_URL}/favicon.svg`,
+              logo: `${SITE_URL}/apple-touch-icon.png`,
               email: "hallo@vizieropscherp.nl",
               telephone: "+31202146466",
               areaServed: ["Amsterdam", "Haarlem", "Noord-Holland"],
