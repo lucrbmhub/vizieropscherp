@@ -140,7 +140,7 @@ const HTML = `<main id="main">
 <header class="hero">
   <div class="watermark" aria-hidden="true"></div>
   <div class="hero-inner">
-    <p class="eyebrow">Inzichten · Voor medewerkers</p>
+    <p class="eyebrow">Sterker in je huidige rol</p>
     <h1>Altijd degene op wie iedereen kan bouwen: waar dat patroon je brengt<span class="slotpunt">.</span></h1>
     <p class="lead">Als er iets geregeld moet worden, kijken ze naar jou. Meestal terecht. En meestal zeg je ja.</p>
     <p class="meta">5 min lezen · Patronen herkennen en veranderen</p>

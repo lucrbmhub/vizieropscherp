@@ -140,7 +140,7 @@ const HTML = `<main id="main">
 <header class="hero">
   <div class="watermark" aria-hidden="true"></div>
   <div class="hero-inner">
-    <p class="eyebrow">Inzichten · Voor werkgevers & HR</p>
+    <p class="eyebrow">Voor werkgevers & HR</p>
     <h1>Waarom inzicht alleen gedrag niet verandert, en wat dat betekent voor uw ontwikkelaanpak<span class="slotpunt">.</span></h1>
     <p class="lead">De training was goed, de evaluaties waren positief, de voornemens concreet. Drie maanden later is alles bij het oude.</p>
     <p class="meta">6 min lezen · Patronen herkennen en veranderen</p>
