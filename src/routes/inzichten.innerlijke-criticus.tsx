@@ -140,7 +140,7 @@ const HTML = `<main id="main">
 <header class="hero">
   <div class="watermark" aria-hidden="true"></div>
   <div class="hero-inner">
-    <p class="eyebrow">Inzichten · Voor medewerkers</p>
+    <p class="eyebrow">Sterker in je huidige rol</p>
     <h1>Het kritische stemmetje dat zegt dat het nooit genoeg is<span class="slotpunt">.</span></h1>
     <p class="lead">Je haalt een mooi resultaat binnen en nog voor iemand iets heeft gezegd, hoor je het al: had beter gekund.</p>
     <p class="meta">5 min lezen · Patronen herkennen en veranderen</p>
