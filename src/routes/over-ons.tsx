@@ -176,7 +176,7 @@ const HTML = `<main id="main">
           <h3>Luc Buurman</h3>
           <span class="role">Loopbaancoach, trainer &amp; eigenaar</span>
           <p class="coach-quote">&ldquo;Krijg scherp waar je talenten liggen en wat je belangrijk vindt. Dan kun je gerichte keuzes maken.&rdquo;</p>
-          <p class="bio">Luc kent vanuit zijn achtergrond als recruitment consultant de werkgeverskant van binnenuit. Hij begeleidt vooral eind-twintigers, dertigers en jonge professionals die richting zoeken en scherper willen weten waar ze voor staan. Open, nuchter, zo luchtig als mogelijk en zo serieus als nodig.</p>
+          <p class="bio">Luc kent vanuit zijn achtergrond als recruitment consultant de werkgeverskant van binnenuit. Hij begeleidt vooral eind-twintigers, dertigers en andere professionals die richting zoeken en scherper willen weten waar ze voor staan. Open, nuchter, zo luchtig als mogelijk en zo serieus als nodig.</p>
           <div class="tags">
             <span class="tag tag--hl">Noloc RL</span>
             <span class="tag">Zakelijke dienstverlening</span>
