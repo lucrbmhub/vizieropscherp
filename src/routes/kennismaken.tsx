@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, socialImageMeta } from "@/lib/site";
 
 
 export const Route = createFileRoute("/kennismaken")({
@@ -13,6 +13,7 @@ export const Route = createFileRoute("/kennismaken")({
       { property: "og:description", content: "Vertel wat er speelt, dan kijken we samen wat helpt. Een eerste gesprek is zo gebeurd." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE_URL}/kennismaken` },
+      ...socialImageMeta,
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/kennismaken` }],
   }),

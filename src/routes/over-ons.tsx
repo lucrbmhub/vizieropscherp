@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, socialImageMeta } from "@/lib/site";
 
 const COACHES_JSONLD = {
   "@context": "https://schema.org",
@@ -23,6 +23,7 @@ export const Route = createFileRoute("/over-ons")({
       { property: "og:description", content: "Kwaliteit door focus. Eenvoud door organisatie. Eén aanspreekpunt, heldere afspraken en een klein team van vijf coaches." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE_URL}/over-ons` },
+      ...socialImageMeta,
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/over-ons` }],
     scripts: [

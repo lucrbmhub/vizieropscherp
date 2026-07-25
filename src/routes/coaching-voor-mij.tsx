@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, socialImageMeta } from "@/lib/site";
 
 
 export const Route = createFileRoute("/coaching-voor-mij")({
@@ -13,6 +13,7 @@ export const Route = createFileRoute("/coaching-voor-mij")({
       { property: "og:description", content: "Doorverwezen of zoek je zelf coaching? Maak vrijblijvend kennis met een coach die bij je past." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE_URL}/coaching-voor-mij` },
+      ...socialImageMeta,
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/coaching-voor-mij` }],
     scripts: [{ type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Moet ik al weten wat ik wil voordat ik begin?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Nee, juist niet. De meeste mensen beginnen met twijfel of een vaag gevoel dat het anders moet. Samen met je coach breng je eerst rust en overzicht aan, en ontdek je daarna wat je kunt en wilt. De richting komt onderweg.\"}}, {\"@type\": \"Question\", \"name\": \"Wat vertellen jullie mijn werkgever?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Alleen of het traject loopt: aanwezigheid, voortgang in algemene zin en afronding. De inhoud van jullie gesprekken blijft tussen jou en je coach. Die afspraak leggen we bij de start vast, voor jou en voor je werkgever.\"}}, {\"@type\": \"Question\", \"name\": \"Hoe lang duurt een traject?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Dat verschilt per persoon en per vraag. De meeste trajecten lopen enkele maanden, met gesprekken om de twee à drie weken, zodat je tussendoor kunt oefenen met wat je bespreekt. Hoeveel gesprekken je nodig hebt en in welk tempo, stem je af met je coach. Je zit nergens aan vast.\"}}, {\"@type\": \"Question\", \"name\": \"Wat als het niet klikt met mijn coach?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Dan stellen we iemand anders voor. Zonder gedoe en zonder dat je je hoeft te verantwoorden. Daarom begint elk traject met een vrijblijvende kennismaking: een goede klik is de basis van alles wat daarna komt.\"}}, {\"@type\": \"Question\", \"name\": \"Waar vinden de gesprekken plaats?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"In Haarlem, in Amsterdam-Zuid, online, of op een plek die voor jou goed werkt. Dat stem je gewoon af met je coach.\"}}, {\"@type\": \"Question\", \"name\": \"Wat kost een traject?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Vaak betaalt je werkgever. Vraag ernaar bij HR, veel organisaties hebben hier budget voor. Betaal je zelf, dan krijg je vooraf een heldere prijsafspraak, zodat je precies weet waar je aan toe bent.\"}}]}" }],

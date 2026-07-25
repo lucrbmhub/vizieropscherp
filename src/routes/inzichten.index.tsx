@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, socialImageMeta } from "@/lib/site";
 
 export const Route = createFileRoute("/inzichten/")({
   head: () => ({
@@ -12,6 +12,7 @@ export const Route = createFileRoute("/inzichten/")({
       { property: "og:title", content: "Inzichten over werk en loopbaan | Vizier op Scherp" },
       { property: "og:description", content: "Praktische inzichten voor wie nadenkt over een volgende stap, en voor HR-afdelingen die hun mensen op tijd willen begeleiden." },
       { property: "og:url", content: `${SITE_URL}/inzichten` },
+      ...socialImageMeta,
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/inzichten` }],
   }),

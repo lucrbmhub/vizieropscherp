@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, socialImageMeta } from "@/lib/site";
 
 
 export const Route = createFileRoute("/uwv-traject")({
@@ -13,6 +13,7 @@ export const Route = createFileRoute("/uwv-traject")({
       { property: "og:description", content: "Weer stappen zetten richting werk met een vaste coach. Persoonlijk, geduldig en in jouw tempo." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE_URL}/uwv-traject` },
+      ...socialImageMeta,
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/uwv-traject` }],
     scripts: [{ type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Kost het traject mij iets?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Nee. UWV vergoedt het traject volledig. Voor jou zijn er geen kosten.\"}}, {\"@type\": \"Question\", \"name\": \"Mag ik zelf kiezen wie mij begeleidt?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Ja. Je kiest zelf bij welk bureau je het traject volgt. Wil je met ons werken, geef dat dan aan bij je contactpersoon bij UWV, of neem eerst contact met ons op, dan leggen we rustig uit hoe het werkt.\"}}, {\"@type\": \"Question\", \"name\": \"Wat als ik nog niet zoveel aankan?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Dat is precies waar het traject voor is. We beginnen waar jij staat en bouwen stap voor stap op, in een tempo dat bij je past. Je hoeft niets te forceren.\"}}, {\"@type\": \"Question\", \"name\": \"Hoe lang duurt een traject?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Dat verschilt per persoon en hangt af van de afspraken met UWV. Je coach neemt dit bij de start rustig met je door, zodat je precies weet waar je aan toe bent.\"}}, {\"@type\": \"Question\", \"name\": \"Hoe meld ik me aan?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Bespreek met je contactpersoon bij UWV dat je begeleiding wilt via Vizier op Scherp. Of neem eerst contact met ons op. We denken graag met je mee, ook over hoe de aanmelding werkt.\"}}]}" }],

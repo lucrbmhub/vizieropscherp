@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, socialImageMeta } from "@/lib/site";
 
 
 export const Route = createFileRoute("/")({
@@ -13,6 +13,7 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Klein netwerk van gecertificeerde coaches, één aanspreekpunt, heldere afspraken over proces, prijs en privacy." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE_URL}/` },
+      ...socialImageMeta,
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/` }],
     scripts: [
