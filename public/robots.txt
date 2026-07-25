@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /*.pdf$
 
-Sitemap: https://vizieropscherp.nl/sitemap.xml
+Sitemap: https://www.vizieropscherp.nl/sitemap.xml
