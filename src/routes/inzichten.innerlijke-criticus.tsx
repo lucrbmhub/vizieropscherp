@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, socialImageMeta } from "@/lib/site";
 
 
 export const Route = createFileRoute("/inzichten/innerlijke-criticus")({
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/inzichten/innerlijke-criticus")({
       { property: "og:description", content: "Die strenge stem die zegt dat het beter moet? Die verdwijnt niet door harder te werken. Waar hij vandaan komt en hoe je er anders mee omgaat." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: `${SITE_URL}/inzichten/innerlijke-criticus` },
-      { property: "og:image", content: `${SITE_URL}/assets/social-share.webp` },
+      ...socialImageMeta,
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/innerlijke-criticus` }],
