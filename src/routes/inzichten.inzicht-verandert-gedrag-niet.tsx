@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { SITE_URL, socialImageMeta } from "@/lib/site";
+import { SITE_URL, articleSocialMeta } from "@/lib/site";
 
 
 export const Route = createFileRoute("/inzichten/inzicht-verandert-gedrag-niet")({
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/inzichten/inzicht-verandert-gedrag-niet")
       { property: "og:description", content: "Na de training is iedereen enthousiast, drie maanden later is alles bij het oude. Waarom inzicht alleen niet genoeg is, en wat wel beklijft." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: `${SITE_URL}/inzichten/inzicht-verandert-gedrag-niet` },
-      ...socialImageMeta,
+      ...articleSocialMeta("inzicht-verandert-gedrag-niet", "Waarom inzicht alleen gedrag niet verandert, en wat dat betekent voor uw ontwikkelaanpak"),
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/inzicht-verandert-gedrag-niet` }],

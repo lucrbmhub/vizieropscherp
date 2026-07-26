@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { SITE_URL, socialImageMeta } from "@/lib/site";
+import { SITE_URL, articleSocialMeta } from "@/lib/site";
 
 
 export const Route = createFileRoute("/inzichten/grenzen-stellen-op-werk")({
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/inzichten/grenzen-stellen-op-werk")({
       { property: "og:description", content: "Betrouwbaar zijn is een kracht, tot het een patroon wordt waarin je jezelf steeds overslaat. Hoe dat werkt en waar je kunt beginnen." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: `${SITE_URL}/inzichten/grenzen-stellen-op-werk` },
-      ...socialImageMeta,
+      ...articleSocialMeta("grenzen-stellen-op-werk", "Altijd degene op wie iedereen kan bouwen: waar dat patroon je brengt"),
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/grenzen-stellen-op-werk` }],

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { SITE_URL, socialImageMeta } from "@/lib/site";
+import { SITE_URL, articleSocialMeta } from "@/lib/site";
 
 
 export const Route = createFileRoute("/inzichten/niet-kunnen-kiezen-loopbaan")({
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/inzichten/niet-kunnen-kiezen-loopbaan")({
       { property: "og:description", content: "Nog een test, nog een gesprek, nog een lijstje, en je weet het nog steeds niet. Waarom loopbaankeuzestress zelden een informatieprobleem is." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: `${SITE_URL}/inzichten/niet-kunnen-kiezen-loopbaan` },
-      ...socialImageMeta,
+      ...articleSocialMeta("niet-kunnen-kiezen-loopbaan", "Niet kunnen kiezen in je loopbaan: waarom meer informatie niet helpt"),
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/niet-kunnen-kiezen-loopbaan` }],

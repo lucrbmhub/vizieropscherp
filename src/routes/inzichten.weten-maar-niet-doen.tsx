@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { SITE_URL, socialImageMeta } from "@/lib/site";
+import { SITE_URL, articleSocialMeta } from "@/lib/site";
 
 
 export const Route = createFileRoute("/inzichten/weten-maar-niet-doen")({
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/inzichten/weten-maar-niet-doen")({
       { property: "og:description", content: "Je weet allang wat je wilt veranderen in je werk, maar je doet het niet. Wat er meestal onder die stilstand zit, en wat wel beweging geeft." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: `${SITE_URL}/inzichten/weten-maar-niet-doen` },
-      ...socialImageMeta,
+      ...articleSocialMeta("weten-maar-niet-doen", "Je weet wat je zou moeten doen. Waarom doe je het dan niet?"),
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/weten-maar-niet-doen` }],
