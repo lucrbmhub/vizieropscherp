@@ -67,10 +67,10 @@ def prep_fonts() -> dict[str, Path]:
 def read_title(slug: str) -> str:
     p = ROUTES / f"inzichten.{slug}.tsx"
     text = p.read_text(encoding="utf-8")
-    m = re.search(r'property:\s*"og:title",\s*content:\s*"([^"]+)"', text)
+    m = re.search(r'property:\s*"og:title",\s*content:\s*"((?:[^"\\]|\\.)*)"', text)
     if not m:
         raise RuntimeError(f"No og:title in {p}")
-    title = m.group(1)
+    title = m.group(1).replace('\\"', '"').replace("\\\\", "\\")
     return title.replace(" | Vizier op Scherp", "").strip()
 
 
