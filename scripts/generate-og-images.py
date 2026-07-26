@@ -105,31 +105,15 @@ def fit_title(draw, text: str, font_path: Path, max_width: int, max_height: int,
     return font, lines, int(min_size * 1.12)
 
 
-def draw_logo(img: Image.Image, x: int, y: int, size: int = 44):
-    """Rounded petrol square with rotated koraal outline + goud dot; but the
-    background is already petrol, so use creme square with petrol outline
-    ruit inside — matches favicon on light bg. We'll instead render a small
-    creme rounded square with petrol ruit outline + koraal dot, as favicon does.
-    Actually since bg is petrol, use the logo variant matching header:
-    creme square + petrol ruit + koraal dot.
-    """
-    overlay = Image.new("RGBA", (size, size), (0, 0, 0, 0))
-    od = ImageDraw.Draw(overlay)
-    radius = int(size * 0.22)
-    od.rounded_rectangle([0, 0, size - 1, size - 1], radius=radius, fill=CREME)
-    # rotated ruit outline inside
-    ruit = Image.new("RGBA", (size, size), (0, 0, 0, 0))
-    rd = ImageDraw.Draw(ruit)
-    inset = int(size * 0.33)
-    rd.rectangle([inset, inset, size - inset, size - inset], outline=PETROL,
-                 width=max(2, int(size * 0.06)))
-    ruit = ruit.rotate(45, resample=Image.BICUBIC)
-    overlay.alpha_composite(ruit)
-    # center dot
-    r = max(2, int(size * 0.065))
-    cx = cy = size // 2
-    od.ellipse([cx - r, cy - r, cx + r, cy + r], fill=KORAAL)
-    img.alpha_composite(overlay, (x, y))
+LOGO_PATH = ROOT / "public" / "assets" / "vizier-logo-creme.png"
+
+
+def paste_wordmark(img: Image.Image, x: int, y: int, width: int = 320):
+    logo = Image.open(LOGO_PATH).convert("RGBA")
+    ratio = logo.height / logo.width
+    height = int(width * ratio)
+    logo = logo.resize((width, height), resample=Image.LANCZOS)
+    img.alpha_composite(logo, (x, y))
 
 
 def draw_watermark(img: Image.Image):
@@ -153,11 +137,8 @@ def render(slug: str, title: str, eyebrow: str, fonts: dict[str, Path]) -> Path:
 
     MARGIN = 72
 
-    # Logo + wordmark (top-left)
-    draw_logo(img, MARGIN, MARGIN, size=44)
-    wm_font = ImageFont.truetype(str(fonts["instrument-500"]), 22)
-    draw.text((MARGIN + 44 + 14, MARGIN + 9), "Vizier op Scherp",
-              font=wm_font, fill=CREME)
+    # Wordmark logo (top-left)
+    paste_wordmark(img, MARGIN, MARGIN, width=320)
 
     # Eyebrow (goud, uppercase, letter-spacing)
     eb_font = ImageFont.truetype(str(fonts["instrument-600"]), 20)
