@@ -137,11 +137,8 @@ def render(slug: str, title: str, eyebrow: str, fonts: dict[str, Path]) -> Path:
 
     MARGIN = 72
 
-    # Logo + wordmark (top-left)
-    draw_logo(img, MARGIN, MARGIN, size=44)
-    wm_font = ImageFont.truetype(str(fonts["instrument-500"]), 22)
-    draw.text((MARGIN + 44 + 14, MARGIN + 9), "Vizier op Scherp",
-              font=wm_font, fill=CREME)
+    # Wordmark logo (top-left)
+    paste_wordmark(img, MARGIN, MARGIN, width=320)
 
     # Eyebrow (goud, uppercase, letter-spacing)
     eb_font = ImageFont.truetype(str(fonts["instrument-600"]), 20)
