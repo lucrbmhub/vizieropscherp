@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { SITE_URL, socialImageMeta } from "@/lib/site";
+import { SITE_URL, articleSocialMeta } from "@/lib/site";
 
 
 export const Route = createFileRoute("/inzichten/medewerker-zit-vast")({
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/inzichten/medewerker-zit-vast")({
       { property: "og:description", content: "Soms lost een goed gesprek het niet op: dezelfde onvrede keert terug. Hoe u herkent dat er een patroon speelt, en wanneer doorverwijzen verstandig is." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: `${SITE_URL}/inzichten/medewerker-zit-vast` },
-      ...socialImageMeta,
+      ...articleSocialMeta("medewerker-zit-vast", "Wanneer een loopbaangesprek niet genoeg is: signalen dat er meer speelt"),
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/medewerker-zit-vast` }],

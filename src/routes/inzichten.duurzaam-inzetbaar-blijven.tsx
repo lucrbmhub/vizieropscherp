@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { SITE_URL, socialImageMeta } from "@/lib/site";
+import { SITE_URL, articleSocialMeta } from "@/lib/site";
 
 
 export const Route = createFileRoute("/inzichten/duurzaam-inzetbaar-blijven")({
@@ -13,10 +13,10 @@ export const Route = createFileRoute("/inzichten/duurzaam-inzetbaar-blijven")({
       { property: "og:description", content: "Hoe blijf je duurzaam inzetbaar in je werk? Ontdek de vier dingen die je vitaal, vaardig en gemotiveerd houden, plus een korte zelfcheck. Coaching in Amsterdam en Haarlem." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: `${SITE_URL}/inzichten/duurzaam-inzetbaar-blijven` },
-      ...socialImageMeta,
+      ...articleSocialMeta("duurzaam-inzetbaar-blijven", "Duurzaam inzetbaar blijven in je werk"),
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/inzichten/duurzaam-inzetbaar-blijven` }],
-    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Duurzaam inzetbaar blijven in je werk", "description": "Hoe blijf je duurzaam inzetbaar in je werk? Ontdek de vier dingen die je vitaal, vaardig en gemotiveerd houden, plus een korte zelfcheck. Coaching in Amsterdam en Haarlem.", "url": "${SITE_URL}/inzichten/duurzaam-inzetbaar-blijven", "inLanguage": "nl-NL", "mainEntityOfPage": "${SITE_URL}/inzichten/duurzaam-inzetbaar-blijven", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "${SITE_URL}/#organization"}, "image": "${SITE_URL}/assets/social-share.jpg", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "${SITE_URL}/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "${SITE_URL}/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Duurzaam inzetbaar blijven in je werk", "item": "${SITE_URL}/inzichten/duurzaam-inzetbaar-blijven"}]}]}` }],
+    scripts: [{ type: "application/ld+json", children: `{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Duurzaam inzetbaar blijven in je werk", "description": "Hoe blijf je duurzaam inzetbaar in je werk? Ontdek de vier dingen die je vitaal, vaardig en gemotiveerd houden, plus een korte zelfcheck. Coaching in Amsterdam en Haarlem.", "url": "${SITE_URL}/inzichten/duurzaam-inzetbaar-blijven", "inLanguage": "nl-NL", "mainEntityOfPage": "${SITE_URL}/inzichten/duurzaam-inzetbaar-blijven", "author": {"@type": "Organization", "name": "Vizier op Scherp"}, "publisher": {"@id": "${SITE_URL}/#organization"}, "image": "${SITE_URL}/assets/og/duurzaam-inzetbaar-blijven.png", "datePublished": "2026-07-10", "dateModified": "2026-07-10"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "${SITE_URL}/"}, {"@type": "ListItem", "position": 2, "name": "Inzichten", "item": "${SITE_URL}/inzichten"}, {"@type": "ListItem", "position": 3, "name": "Duurzaam inzetbaar blijven in je werk", "item": "${SITE_URL}/inzichten/duurzaam-inzetbaar-blijven"}]}]}` }],
   }),
   component: Page,
 });
