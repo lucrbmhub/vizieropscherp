@@ -1,4 +1,4 @@
-export const SITE_URL = "https://www.vizieropscherp.nl";
+export const SITE_URL = "https://vizieropscherp.nl";
 
 export const SOCIAL_IMAGE_URL = `${SITE_URL}/assets/social-share.jpg`;
 export const socialImageMeta = [
