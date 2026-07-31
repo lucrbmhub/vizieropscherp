@@ -1,0 +1,35 @@
+name: Supabase keep-alive
+
+on:
+  schedule:
+    - cron: "0 6 */2 * *"
+  workflow_dispatch: {}
+
+concurrency:
+  group: supabase-keepalive
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Ping Supabase REST API
+        env:
+          SUPABASE_URL: "https://xratufshchqotwzhbwkz.supabase.co"
+          SUPABASE_ANON_KEY: "sb_publishable_ERVbe8qjSLIr8BKkh2XdHg_kT8jK2qy"
+        run: |
+          set -euo pipefail
+          echo "Keep-alive ping op $(date -u)"
+          code=$(curl -sS -o /tmp/keepalive_resp.txt -w "%{http_code}" \
+            --max-time 30 \
+            -H "apikey: ${SUPABASE_ANON_KEY}" \
+            "${SUPABASE_URL}/rest/v1/contact_aanvragen?select=id&limit=1")
+          echo "HTTP-status: ${code}"
+          head -c 300 /tmp/keepalive_resp.txt || true; echo
+          if [ "${code}" -ge 200 ] && [ "${code}" -lt 500 ]; then
+            echo "OK - project bereikt en actief."
+          else
+            echo "FOUT - onverwachte status ${code}."
+            exit 1
+          fi
