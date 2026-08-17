@@ -1,0 +1,14 @@
+{
+  "name": "vizieropscherp-keepalive",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cloudflare Worker die de Supabase-database dagelijks pingt zodat het gratis project niet pauzeert.",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^3.90.0"
+  }
+}

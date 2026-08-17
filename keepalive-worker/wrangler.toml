@@ -1,0 +1,19 @@
+name = "vizieropscherp-keepalive"
+main = "src/index.js"
+compatibility_date = "2026-08-17"
+workers_dev = true
+
+# Cron Trigger: elke dag om 06:17 UTC.
+# Off-the-hour minuut en dagelijks = ruime marge op de 7-daagse pauzegrens.
+[triggers]
+crons = ["17 6 * * *"]
+
+# Publieke waarden. De anon/publishable sleutel staat sowieso al in de
+# client-side code van de site en is veilig om te delen: data wordt beschermd
+# door Row Level Security. Wijst naar het PRODUCTIE-Supabaseproject.
+#
+# Overstappen naar de Lovable-Supabase? Vervang dan beide waarden hieronder
+# door die van dat project (URL + anon key) en deploy opnieuw.
+[vars]
+SUPABASE_URL = "https://xratufshchqotwzhbwkz.supabase.co"
+SUPABASE_ANON_KEY = "sb_publishable_ERVbe8qjSLIr8BKkh2XdHg_kT8jK2qy"
