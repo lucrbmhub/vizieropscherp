@@ -35,7 +35,7 @@ export const Route = createFileRoute("/inzichten/belemmerende-overtuigingen-werk
     {
       "@type": "Question",
       "name": "Hoe herken ik zo’n overtuiging bij mezelf?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Kijk naar de plekken waar je gedrag en je wens al lang niet meer op één lijn liggen: iets willen en het steeds niet doen. Daar zit vrijwel altijd een regel onder. En let op zinnen met "hoort", "moet" of "doe je niet". Overtuigingen vermommen zich als gezond verstand; de toets is of je hetzelfde advies aan een goede vriend zou geven."}
+      "acceptedAnswer": {"@type": "Answer", "text": "Kijk naar de plekken waar je gedrag en je wens al lang niet meer op één lijn liggen: iets willen en het steeds niet doen. Daar zit vrijwel altijd een regel onder. En let op zinnen met “hoort”, “moet” of “doe je niet”. Overtuigingen vermommen zich als gezond verstand; de toets is of je hetzelfde advies aan een goede vriend zou geven."}
     },
     {
       "@type": "Question",
@@ -186,7 +186,7 @@ const HTML = `<main id="main">
     <h2>Wat mensen hierover vragen</h2>
     <details>
       <summary>Hoe herken ik zo’n overtuiging bij mezelf?</summary>
-      <p>Kijk naar de plekken waar je gedrag en je wens al lang niet meer op één lijn liggen: iets willen en het steeds niet doen. Daar zit vrijwel altijd een regel onder. En let op zinnen met "hoort", "moet" of "doe je niet". Overtuigingen vermommen zich als gezond verstand; de toets is of je hetzelfde advies aan een goede vriend zou geven.</p>
+      <p>Kijk naar de plekken waar je gedrag en je wens al lang niet meer op één lijn liggen: iets willen en het steeds niet doen. Daar zit vrijwel altijd een regel onder. En let op zinnen met “hoort”, “moet” of “doe je niet”. Overtuigingen vermommen zich als gezond verstand; de toets is of je hetzelfde advies aan een goede vriend zou geven.</p>
     </details>
     <details>
       <summary>Zijn overtuigingen dan slecht?</summary>
