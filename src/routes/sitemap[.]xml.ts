@@ -24,6 +24,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           
           { path: "/kennismaken", changefreq: "monthly", priority: "0.8" },
           { path: "/inzichten", changefreq: "weekly", priority: "0.8" },
+          { path: "/inzichten/waardering-die-aankomt", changefreq: "yearly", priority: "0.6" },
           { path: "/inzichten/het-tegenbod", changefreq: "yearly", priority: "0.6" },
           { path: "/inzichten/goede-loopbaancoach-kiezen", changefreq: "yearly", priority: "0.6" },
           { path: "/inzichten/job-crafting", changefreq: "yearly", priority: "0.6" },
