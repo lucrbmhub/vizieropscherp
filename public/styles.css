@@ -232,9 +232,8 @@ address{font-style:normal}
 .card--goud p{color:var(--on-goud-sub)}
 .card--line{background:var(--paper);border:1px solid var(--line)}
 
-/* ruit-anker: ruitje hangt door de bovenrand */
+/* card--anchor: behouden voor positionering, geen ruit meer */
 .card--anchor{position:relative}
-.card--anchor::before{content:"";position:absolute;top:-7px;left:30px;width:12px;height:12px;background:var(--koraal);transform:rotate(45deg);box-shadow:0 0 0 5px var(--ring,var(--linnen))}
 .ring-paper{--ring:var(--paper)}
 .ring-warm{--ring:var(--warm)}
 .ring-goud{--ring:var(--goud)}
