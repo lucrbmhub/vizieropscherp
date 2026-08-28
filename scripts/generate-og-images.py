@@ -20,7 +20,7 @@ FONTS_DIR = ROOT / "public" / "fonts"
 
 CATEGORIES = {
     "werkgevers": ("Voor werkgevers & HR", [
-        "van-werven-naar-behouden","medewerker-zit-vast","inzicht-verandert-gedrag-niet",
+        "van-werven-naar-behouden","waardering-die-aankomt","medewerker-zit-vast","inzicht-verandert-gedrag-niet",
         "duurzame-inzetbaarheid-werkgever","loopbaangesprek-met-medewerker",
         "skillsgericht-werven","kosten-van-een-verkeerde-match",
         "outplacement-of-loopbaancoaching","ervaren-talent-als-kans",

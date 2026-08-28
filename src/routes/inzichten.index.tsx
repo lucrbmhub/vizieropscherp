@@ -53,6 +53,10 @@ const ARTICLES: Article[] = [
     read: "6 min lezen" },
 
   // Grid — bestaande volgorde
+  { slug: "waardering-die-aankomt", category: "werkgevers", label: "Voor werkgevers & HR",
+    title: "Waarom uw waardering niet altijd aankomt",
+    desc: "Waardering uitspreken werkt, en toch glijdt een compliment soms van een medewerker af. Waarom lof afketst, en hoe u erkenning geeft die wél blijft hangen.",
+    read: "6 min lezen" },
   { slug: "hetzelfde-gevoel-een-andere-baan", category: "richting", label: "Voor medewerkers", highlight: true,
     title: "Hetzelfde gevoel, een andere baan: waarom een overstap het patroon niet altijd oplost",
     desc: "Weer dezelfde onvrede in een nieuwe baan? Vaak verhuist het patroon mee. Hoe je herkent wat er echt speelt, voordat je opnieuw overstapt.",

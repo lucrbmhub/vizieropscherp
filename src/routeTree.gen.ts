@@ -23,6 +23,7 @@ import { Route as AlgemeneVoorwaardenRouteImport } from './routes/algemene-voorw
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as InzichtenIndexRouteImport } from './routes/inzichten.index'
 import { Route as InzichtenWetenMaarNietDoenRouteImport } from './routes/inzichten.weten-maar-niet-doen'
+import { Route as InzichtenWaarderingDieAankomtRouteImport } from './routes/inzichten.waardering-die-aankomt'
 import { Route as InzichtenVierBasisbehoeftenInWerkRouteImport } from './routes/inzichten.vier-basisbehoeften-in-werk'
 import { Route as InzichtenVastzittenInEenGoedeBaanRouteImport } from './routes/inzichten.vastzitten-in-een-goede-baan'
 import { Route as InzichtenVanWervenNaarBehoudenRouteImport } from './routes/inzichten.van-werven-naar-behouden'
@@ -128,6 +129,12 @@ const InzichtenWetenMaarNietDoenRoute =
   InzichtenWetenMaarNietDoenRouteImport.update({
     id: '/weten-maar-niet-doen',
     path: '/weten-maar-niet-doen',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
+const InzichtenWaarderingDieAankomtRoute =
+  InzichtenWaarderingDieAankomtRouteImport.update({
+    id: '/waardering-die-aankomt',
+    path: '/waardering-die-aankomt',
     getParentRoute: () => InzichtenRoute,
   } as any)
 const InzichtenVierBasisbehoeftenInWerkRoute =
@@ -383,6 +390,7 @@ export interface FileRoutesByFullPath {
   '/inzichten/van-werven-naar-behouden': typeof InzichtenVanWervenNaarBehoudenRoute
   '/inzichten/vastzitten-in-een-goede-baan': typeof InzichtenVastzittenInEenGoedeBaanRoute
   '/inzichten/vier-basisbehoeften-in-werk': typeof InzichtenVierBasisbehoeftenInWerkRoute
+  '/inzichten/waardering-die-aankomt': typeof InzichtenWaarderingDieAankomtRoute
   '/inzichten/weten-maar-niet-doen': typeof InzichtenWetenMaarNietDoenRoute
   '/inzichten/': typeof InzichtenIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
@@ -433,6 +441,7 @@ export interface FileRoutesByTo {
   '/inzichten/van-werven-naar-behouden': typeof InzichtenVanWervenNaarBehoudenRoute
   '/inzichten/vastzitten-in-een-goede-baan': typeof InzichtenVastzittenInEenGoedeBaanRoute
   '/inzichten/vier-basisbehoeften-in-werk': typeof InzichtenVierBasisbehoeftenInWerkRoute
+  '/inzichten/waardering-die-aankomt': typeof InzichtenWaarderingDieAankomtRoute
   '/inzichten/weten-maar-niet-doen': typeof InzichtenWetenMaarNietDoenRoute
   '/inzichten': typeof InzichtenIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
@@ -485,6 +494,7 @@ export interface FileRoutesById {
   '/inzichten/van-werven-naar-behouden': typeof InzichtenVanWervenNaarBehoudenRoute
   '/inzichten/vastzitten-in-een-goede-baan': typeof InzichtenVastzittenInEenGoedeBaanRoute
   '/inzichten/vier-basisbehoeften-in-werk': typeof InzichtenVierBasisbehoeftenInWerkRoute
+  '/inzichten/waardering-die-aankomt': typeof InzichtenWaarderingDieAankomtRoute
   '/inzichten/weten-maar-niet-doen': typeof InzichtenWetenMaarNietDoenRoute
   '/inzichten/': typeof InzichtenIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
@@ -538,6 +548,7 @@ export interface FileRouteTypes {
     | '/inzichten/van-werven-naar-behouden'
     | '/inzichten/vastzitten-in-een-goede-baan'
     | '/inzichten/vier-basisbehoeften-in-werk'
+    | '/inzichten/waardering-die-aankomt'
     | '/inzichten/weten-maar-niet-doen'
     | '/inzichten/'
     | '/.mcp/invoke-tool/$tool'
@@ -588,6 +599,7 @@ export interface FileRouteTypes {
     | '/inzichten/van-werven-naar-behouden'
     | '/inzichten/vastzitten-in-een-goede-baan'
     | '/inzichten/vier-basisbehoeften-in-werk'
+    | '/inzichten/waardering-die-aankomt'
     | '/inzichten/weten-maar-niet-doen'
     | '/inzichten'
     | '/.mcp/invoke-tool/$tool'
@@ -639,6 +651,7 @@ export interface FileRouteTypes {
     | '/inzichten/van-werven-naar-behouden'
     | '/inzichten/vastzitten-in-een-goede-baan'
     | '/inzichten/vier-basisbehoeften-in-werk'
+    | '/inzichten/waardering-die-aankomt'
     | '/inzichten/weten-maar-niet-doen'
     | '/inzichten/'
     | '/.mcp/invoke-tool/$tool'
@@ -762,6 +775,13 @@ declare module '@tanstack/react-router' {
       path: '/weten-maar-niet-doen'
       fullPath: '/inzichten/weten-maar-niet-doen'
       preLoaderRoute: typeof InzichtenWetenMaarNietDoenRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
+    '/inzichten/waardering-die-aankomt': {
+      id: '/inzichten/waardering-die-aankomt'
+      path: '/waardering-die-aankomt'
+      fullPath: '/inzichten/waardering-die-aankomt'
+      preLoaderRoute: typeof InzichtenWaarderingDieAankomtRouteImport
       parentRoute: typeof InzichtenRoute
     }
     '/inzichten/vier-basisbehoeften-in-werk': {
@@ -1044,6 +1064,7 @@ interface InzichtenRouteChildren {
   InzichtenVanWervenNaarBehoudenRoute: typeof InzichtenVanWervenNaarBehoudenRoute
   InzichtenVastzittenInEenGoedeBaanRoute: typeof InzichtenVastzittenInEenGoedeBaanRoute
   InzichtenVierBasisbehoeftenInWerkRoute: typeof InzichtenVierBasisbehoeftenInWerkRoute
+  InzichtenWaarderingDieAankomtRoute: typeof InzichtenWaarderingDieAankomtRoute
   InzichtenWetenMaarNietDoenRoute: typeof InzichtenWetenMaarNietDoenRoute
   InzichtenIndexRoute: typeof InzichtenIndexRoute
 }
@@ -1099,6 +1120,7 @@ const InzichtenRouteChildren: InzichtenRouteChildren = {
     InzichtenVastzittenInEenGoedeBaanRoute,
   InzichtenVierBasisbehoeftenInWerkRoute:
     InzichtenVierBasisbehoeftenInWerkRoute,
+  InzichtenWaarderingDieAankomtRoute: InzichtenWaarderingDieAankomtRoute,
   InzichtenWetenMaarNietDoenRoute: InzichtenWetenMaarNietDoenRoute,
   InzichtenIndexRoute: InzichtenIndexRoute,
 }
