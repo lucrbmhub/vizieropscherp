@@ -28,9 +28,9 @@ const HTML = `<main id="main">
   <div class="watermark watermark--light"></div>
   <div class="container hero-pad">
     <div class="hero-copy" style="max-width:760px;">
-      <span class="badge badge--dark">Voor medewerkers en particulieren</span>
+      <span class="badge badge--dark">LOOPBAANCOACHING VOOR MEDEWERKERS EN PARTICULIEREN</span>
       <h1 class="h-hero">Even <span style="white-space:nowrap;">n<span class="idot">i</span>et</span> weten welke kant je op wilt, daar begint het vaak<span class="gold">.</span></h1>
-      <p class="lead">Misschien ben je doorverwezen door je werkgever. Misschien loop je er zelf al een tijdje mee rond. Hoe je hier ook komt: je hoeft het allemaal nog niet precies te weten of uit te leggen. Een loopbaantraject begint gewoon met een goed gesprek, en met een coach die bij je past.</p>
+      <p class="lead">Misschien ben je doorverwezen door je werkgever. Misschien loop je er zelf al een tijdje mee rond. Hoe je hier ook komt: je hoeft het allemaal nog niet precies te weten of uit te leggen. Een loopbaantraject begint gewoon met een goed gesprek, en met een loopbaancoach die bij je past.</p>
       <div class="btn-row">
         <a class="btn btn-primary" href="/kennismaken">Maak vrijblijvend kennis</a>
         <a class="btn btn-outline" href="/over-ons#coaches">Bekijk eerst onze coaches</a>
@@ -45,7 +45,7 @@ const HTML = `<main id="main">
     <div class="split">
       <div>
         <p class="eyebrow">Herken je dit?</p>
-        <h2 class="h-section">Vijf momenten waarop coaching helpt</h2>
+        <h2 class="h-section">Vijf momenten waarop loopbaancoaching helpt</h2>
         <p class="pull" style="margin-top:32px;font-size:20px;">Wat deze momenten gemeen hebben: je hoeft het niet alleen uit te zoeken. <span class="mark-gold">Samen kijken werkt beter.</span></p>
       </div>
       <div class="rows">
@@ -81,9 +81,9 @@ const HTML = `<main id="main">
       <div>
         <p class="eyebrow">Doorverwezen door je werkgever?</p>
         <h2 class="h-section">Dan kies jij alsnog zelf.</h2>
-        <p style="margin-top:16px;">Veel werkgevers geven je een lijstje met bureaus. Wat je daarvan moet weten: jij bepaalt met wie je in zee gaat, en zo hoort het ook. Bij ons werkt dat zo:</p>
+        <p style="margin-top:16px;">Veel werkgevers geven je een lijstje met loopbaanbureaus. Wat je daarvan moet weten: jij bepaalt met wie je in zee gaat, en zo hoort het ook. Bij ons werkt dat zo:</p>
         <ul class="list-core" style="margin:20px 0 28px;">
-          <li><span class="core"></span><span>Je maakt eerst kennis met je coach, voordat er iets vastligt</span></li>
+          <li><span class="core"></span><span>Je maakt eerst kennis met je loopbaancoach, voordat er iets vastligt</span></li>
           <li><span class="core"></span><span>Klikt het niet? Dan stellen we iemand anders voor</span></li>
           <li><span class="core"></span><span>Geen anonieme database: echte mensen, met een eigen verhaal en aanpak</span></li>
           <li><span class="core"></span><span>Begeleiding in jouw tempo, gericht op concrete stappen</span></li>
@@ -105,7 +105,7 @@ const HTML = `<main id="main">
     <div class="section-head">
       <p class="eyebrow">Hoe een traject eruitziet</p>
       <h2 class="h-section">Van onrust naar concrete stappen, in vier fasen</h2>
-      <p>Elk traject is anders, want elk mens is anders. Maar de opbouw is herkenbaar. Hoeveel gesprekken je nodig hebt en in welk tempo, stem je af met je coach.</p>
+      <p>Elk traject is anders, want elk mens is anders. Maar de opbouw is herkenbaar. Hoeveel gesprekken je nodig hebt en in welk tempo, stem je af met je loopbaancoach.</p>
     </div>
     <div class="steps steps--4">
       <div class="step">
