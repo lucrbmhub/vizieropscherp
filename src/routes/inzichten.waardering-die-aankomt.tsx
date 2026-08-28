@@ -141,6 +141,11 @@ const ARTICLE_CSS = `:root{
   }
   .hero-meta span{display:inline-flex;align-items:center;gap:10px}
   .hero-meta span::before{content:"";width:6px;height:6px;background:var(--goud);transform:rotate(45deg)}
+  .terug{
+    display:block;width:fit-content;margin:0 0 18px;
+    font-size:13.5px;color:var(--mint-dof);transition:color .15s ease;
+  }
+  .terug:hover{color:var(--goud)}
   .hero-watermerk{
     position:absolute;right:-140px;top:50%;transform:translateY(-50%) rotate(45deg);
     width:460px;height:460px;border:2px solid rgba(245,239,227,.09);z-index:1;pointer-events:none;
@@ -281,7 +286,8 @@ const HTML = `<main id="hoofd">
 <section class="hero" style="--idot-bg:var(--petrol)">
   <div class="hero-watermerk" aria-hidden="true"></div>
   <div class="container">
-    <span class="eyebrow eyebrow--op-petrol">Waardering op de werkvloer</span>
+    <a href="/inzichten" class="terug">&larr; Inzichten</a>
+    <span class="eyebrow eyebrow--op-petrol">Voor werkgevers & HR</span>
     <h1>Waarom uw waarder<span class="idot">i</span>ng niet altijd aankomt<span class="slotpunt">.</span></h1>
     <p class="lead">U ziet goed werk en u benoemt het. En toch lijkt het compliment soms van de medewerker af te glijden, alsof het niet helemaal binnenkomt. Dat is geen onwil en meestal ook geen valse bescheidenheid. Er speelt iets onder de oppervlakte dat bepaalt of waardering blijft hangen of niet.</p>
     <div class="hero-meta">
