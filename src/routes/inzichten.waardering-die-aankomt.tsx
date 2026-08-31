@@ -288,7 +288,7 @@ const HTML = `<main id="hoofd">
   <div class="container">
     <a href="/inzichten" class="terug">&larr; Inzichten</a>
     <span class="eyebrow eyebrow--op-petrol">Voor werkgevers & HR</span>
-    <h1>Waarom uw waarder<span class="idot">i</span>ng niet altijd aankomt<span class="slotpunt">.</span></h1>
+    <h1>Waarom uw <span style="white-space:nowrap">waarder<span class="idot">i</span>ng</span> niet altijd aankomt<span class="slotpunt">.</span></h1>
     <p class="lead">U ziet goed werk en u benoemt het. En toch lijkt het compliment soms van de medewerker af te glijden, alsof het niet helemaal binnenkomt. Dat is geen onwil en meestal ook geen valse bescheidenheid. Er speelt iets onder de oppervlakte dat bepaalt of waardering blijft hangen of niet.</p>
     <div class="hero-meta">
       <span>Leestijd 6 minuten</span>
