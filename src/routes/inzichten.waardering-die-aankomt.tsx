@@ -293,7 +293,7 @@ const HTML = `<main id="hoofd">
     <h2>Geven is niet hetzelfde als aankomen</h2>
     <div class="prose">
       <p>Dat waardering ertoe doet, is inmiddels goed onderbouwd. Medewerkers die zich gezien voelen, blijven langer, zijn betrokkener en presteren beter. Onderzoekers van de Universiteit van Oxford vonden dat tevreden medewerkers meetbaar productiever zijn dan ontevreden collega's.</p>
-      <p>En toch zit er een kloof tussen wat werkgevers geven en wat medewerkers ervaren. Onderzoek van Gallup en Workhuman signaleert dat leidinggevenden erkenning de afgelopen jaren juist belangrijker zijn gaan vinden, terwijl medewerkers dat verschil lang niet altijd merken. De waardering wordt uitgesproken. Ze komt alleen niet altijd aan.</p>
+      <p>En toch zit er een kloof tussen wat werkgevers geven en wat medewerkers ervaren. Onderzoek van Gallup signaleert dat leidinggevenden erkenning de afgelopen jaren juist belangrijker zijn gaan vinden, terwijl medewerkers dat verschil lang niet altijd merken. De waardering wordt uitgesproken. Ze komt alleen niet altijd aan.</p>
     </div>
   </div>
 </section>
