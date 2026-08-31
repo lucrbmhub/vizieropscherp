@@ -184,17 +184,6 @@ const ARTICLE_CSS = `:root{
     color:var(--linnen);letter-spacing:-0.01em;
   }
 
-  .featured-stat{
-    margin:44px auto 0;max-width:760px;text-align:center;
-    padding:40px 32px;border:2px solid rgba(245,239,227,.14);border-radius:16px;
-  }
-  .featured-stat .cijfer{
-    font-family:var(--font-display);font-weight:500;font-size:clamp(40px,6vw,60px);
-    color:var(--goud);line-height:1;letter-spacing:-0.02em;
-  }
-  .featured-stat .toelichting{
-    margin:16px auto 0;max-width:46ch;color:var(--mint);font-size:16px;
-  }
 
   .steps{list-style:none;margin:40px 0 0;padding:0;counter-reset:step;max-width:760px}
   .steps li{
@@ -326,10 +315,6 @@ const HTML = `<main id="hoofd">
       <p class="pull-tekst">Een compliment dat botst met het zelfbeeld voelt niet als steun, maar als iets dat gecorrigeerd moet worden.</p>
     </div>
 
-    <div class="featured-stat">
-      <div class="cijfer">2 op de 3</div>
-      <p class="toelichting">Naar schatting wuift een ruime meerderheid van de mensen een oprecht compliment weg in plaats van het aan te nemen.</p>
-    </div>
   </div>
 </section>
 
