@@ -315,11 +315,14 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
               <span className="eyebrow">{data.faq.eyebrow}</span>
               <h2 className="section-title" style={{ marginBottom: 30 }}>{data.faq.title}</h2>
               <div className="faq">
-                {data.faq.items.map((f) => (
-                  <details key={f.q}>
-                    <summary>{f.q}<span className="plus" aria-hidden="true"></span></summary>
-                    <p>{f.a}</p>
-                  </details>
+                {data.faq.items.map((f, i) => (
+                  <FaqItem
+                    key={f.q}
+                    question={f.q}
+                    answer={f.a}
+                    isOpen={openIndex === i}
+                    onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+                  />
                 ))}
               </div>
             </div>
