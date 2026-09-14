@@ -16,6 +16,7 @@ import { Route as PrivacyverklaringRouteImport } from './routes/privacyverklarin
 import { Route as OverOnsRouteImport } from './routes/over-ons'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as LoopbaancoachHaarlemRouteImport } from './routes/loopbaancoach-haarlem'
+import { Route as LoopbaancoachAmsterdamRouteImport } from './routes/loopbaancoach-amsterdam'
 import { Route as LeiderschapRouteImport } from './routes/leiderschap'
 import { Route as KennismakenRouteImport } from './routes/kennismaken'
 import { Route as InzichtenRouteImport } from './routes/inzichten'
@@ -94,6 +95,11 @@ const McpRoute = McpRouteImport.update({
 const LoopbaancoachHaarlemRoute = LoopbaancoachHaarlemRouteImport.update({
   id: '/loopbaancoach-haarlem',
   path: '/loopbaancoach-haarlem',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoopbaancoachAmsterdamRoute = LoopbaancoachAmsterdamRouteImport.update({
+  id: '/loopbaancoach-amsterdam',
+  path: '/loopbaancoach-amsterdam',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LeiderschapRoute = LeiderschapRouteImport.update({
@@ -357,6 +363,7 @@ export interface FileRoutesByFullPath {
   '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
+  '/loopbaancoach-amsterdam': typeof LoopbaancoachAmsterdamRoute
   '/loopbaancoach-haarlem': typeof LoopbaancoachHaarlemRoute
   '/mcp': typeof McpRoute
   '/over-ons': typeof OverOnsRoute
@@ -409,6 +416,7 @@ export interface FileRoutesByTo {
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
+  '/loopbaancoach-amsterdam': typeof LoopbaancoachAmsterdamRoute
   '/loopbaancoach-haarlem': typeof LoopbaancoachHaarlemRoute
   '/mcp': typeof McpRoute
   '/over-ons': typeof OverOnsRoute
@@ -463,6 +471,7 @@ export interface FileRoutesById {
   '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
+  '/loopbaancoach-amsterdam': typeof LoopbaancoachAmsterdamRoute
   '/loopbaancoach-haarlem': typeof LoopbaancoachHaarlemRoute
   '/mcp': typeof McpRoute
   '/over-ons': typeof OverOnsRoute
@@ -518,6 +527,7 @@ export interface FileRouteTypes {
     | '/inzichten'
     | '/kennismaken'
     | '/leiderschap'
+    | '/loopbaancoach-amsterdam'
     | '/loopbaancoach-haarlem'
     | '/mcp'
     | '/over-ons'
@@ -570,6 +580,7 @@ export interface FileRouteTypes {
     | '/coaching-voor-mij'
     | '/kennismaken'
     | '/leiderschap'
+    | '/loopbaancoach-amsterdam'
     | '/loopbaancoach-haarlem'
     | '/mcp'
     | '/over-ons'
@@ -623,6 +634,7 @@ export interface FileRouteTypes {
     | '/inzichten'
     | '/kennismaken'
     | '/leiderschap'
+    | '/loopbaancoach-amsterdam'
     | '/loopbaancoach-haarlem'
     | '/mcp'
     | '/over-ons'
@@ -677,6 +689,7 @@ export interface RootRouteChildren {
   InzichtenRoute: typeof InzichtenRouteWithChildren
   KennismakenRoute: typeof KennismakenRoute
   LeiderschapRoute: typeof LeiderschapRoute
+  LoopbaancoachAmsterdamRoute: typeof LoopbaancoachAmsterdamRoute
   LoopbaancoachHaarlemRoute: typeof LoopbaancoachHaarlemRoute
   McpRoute: typeof McpRoute
   OverOnsRoute: typeof OverOnsRoute
@@ -739,6 +752,13 @@ declare module '@tanstack/react-router' {
       path: '/loopbaancoach-haarlem'
       fullPath: '/loopbaancoach-haarlem'
       preLoaderRoute: typeof LoopbaancoachHaarlemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/loopbaancoach-amsterdam': {
+      id: '/loopbaancoach-amsterdam'
+      path: '/loopbaancoach-amsterdam'
+      fullPath: '/loopbaancoach-amsterdam'
+      preLoaderRoute: typeof LoopbaancoachAmsterdamRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/leiderschap': {
@@ -1156,6 +1176,7 @@ const rootRouteChildren: RootRouteChildren = {
   InzichtenRoute: InzichtenRouteWithChildren,
   KennismakenRoute: KennismakenRoute,
   LeiderschapRoute: LeiderschapRoute,
+  LoopbaancoachAmsterdamRoute: LoopbaancoachAmsterdamRoute,
   LoopbaancoachHaarlemRoute: LoopbaancoachHaarlemRoute,
   McpRoute: McpRoute,
   OverOnsRoute: OverOnsRoute,
