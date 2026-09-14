@@ -173,6 +173,7 @@ const CSS = `
 `;
 
 export default function CityLandingPage({ data }: { data: CityLandingData }) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
   return (
     <>
       <SiteHeader />
