@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 
@@ -148,15 +148,14 @@ const CSS = `
 .city .quote blockquote{margin:0;font-family:var(--font-display);font-size:19px;line-height:1.55;color:var(--vos-petrol)}
 .city .quote cite{display:block;font-style:normal;font-size:14.5px;color:var(--vos-muted);margin-top:12px;font-family:var(--font-body)}
 .city .faq{max-width:820px}
-.city .faq details{border-bottom:1px solid var(--vos-rand);padding:6px 0}
-.city .faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 0;font-family:var(--font-display);font-size:19px;color:var(--vos-petrol);font-weight:500}
-.city .faq summary::-webkit-details-marker{display:none}
-.city .faq summary .plus{position:relative;width:20px;height:20px;flex:0 0 auto;transition:transform .2s}
-.city .faq summary .plus::before,.city .faq summary .plus::after{content:"";position:absolute;background:var(--vos-koraal)}
-.city .faq summary .plus::before{left:9px;top:0;width:2px;height:20px}
-.city .faq summary .plus::after{top:9px;left:0;height:2px;width:20px}
-.city .faq details[open] summary .plus{transform:rotate(45deg)}
-.city .faq details p{margin:0 0 20px;color:var(--vos-body);max-width:70ch}
+.city .faq__item{border-bottom:1px solid var(--vos-rand);padding:6px 0}
+.city .faq__question{width:100%;background:none;border:none;text-align:left;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 0;font-family:var(--font-display);font-size:19px;color:var(--vos-petrol);font-weight:500;line-height:1.3}
+.city .faq__question .plus{position:relative;width:20px;height:20px;flex:0 0 auto;transition:transform .2s}
+.city .faq__question .plus::before,.city .faq__question .plus::after{content:"";position:absolute;background:var(--vos-koraal)}
+.city .faq__question .plus::before{left:9px;top:0;width:2px;height:20px}
+.city .faq__question .plus::after{top:9px;left:0;height:2px;width:20px}
+.city .faq__question[aria-expanded=true] .plus{transform:rotate(45deg)}
+.city .faq__answer p{margin:0 0 20px;color:var(--vos-body);max-width:70ch}
 .city .cta-wrap{position:relative;padding:2px;background:var(--vos-goud);clip-path:polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px)}
 .city .cta-inner{background:var(--vos-warm);clip-path:polygon(21px 0, 100% 0, 100% calc(100% - 21px), calc(100% - 21px) 100%, 0 100%, 0 21px);padding:56px 48px;text-align:center}
 .city .cta-inner h2{font-size:clamp(28px,3vw,40px);color:var(--vos-petrol);margin-bottom:14px;max-width:20ch;margin-inline:auto}
@@ -174,6 +173,7 @@ const CSS = `
 `;
 
 export default function CityLandingPage({ data }: { data: CityLandingData }) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
   return (
     <>
       <SiteHeader />
@@ -315,11 +315,14 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
               <span className="eyebrow">{data.faq.eyebrow}</span>
               <h2 className="section-title" style={{ marginBottom: 30 }}>{data.faq.title}</h2>
               <div className="faq">
-                {data.faq.items.map((f) => (
-                  <details key={f.q}>
-                    <summary>{f.q}<span className="plus" aria-hidden="true"></span></summary>
-                    <p>{f.a}</p>
-                  </details>
+                {data.faq.items.map((f, i) => (
+                  <FaqItem
+                    key={f.q}
+                    question={f.q}
+                    answer={f.a}
+                    isOpen={openIndex === i}
+                    onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+                  />
                 ))}
               </div>
             </div>
@@ -340,5 +343,29 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
       </div>
       <SiteFooter />
     </>
+  );
+}
+
+function FaqItem({
+  question,
+  answer,
+  isOpen,
+  onToggle,
+}: {
+  question: string;
+  answer: ReactNode;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <div className="faq__item">
+      <button className="faq__question" onClick={onToggle} aria-expanded={isOpen} type="button">
+        {question}
+        <span className="plus" aria-hidden="true"></span>
+      </button>
+      <div className="faq__answer" hidden={!isOpen}>
+        <p>{answer}</p>
+      </div>
+    </div>
   );
 }
