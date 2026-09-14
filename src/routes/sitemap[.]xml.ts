@@ -20,6 +20,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/coaching-voor-mij", changefreq: "monthly", priority: "0.9" },
           { path: "/uwv-traject", changefreq: "monthly", priority: "0.8" },
           { path: "/loopbaancoach-haarlem", changefreq: "monthly", priority: "0.9" },
+          { path: "/loopbaancoach-amsterdam", changefreq: "monthly", priority: "0.9" },
           
           { path: "/over-ons", changefreq: "monthly", priority: "0.7" },
           
