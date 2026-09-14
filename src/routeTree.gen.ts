@@ -15,6 +15,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyverklaringRouteImport } from './routes/privacyverklaring'
 import { Route as OverOnsRouteImport } from './routes/over-ons'
 import { Route as McpRouteImport } from './routes/mcp'
+import { Route as LoopbaancoachHaarlemRouteImport } from './routes/loopbaancoach-haarlem'
 import { Route as LeiderschapRouteImport } from './routes/leiderschap'
 import { Route as KennismakenRouteImport } from './routes/kennismaken'
 import { Route as InzichtenRouteImport } from './routes/inzichten'
@@ -88,6 +89,11 @@ const OverOnsRoute = OverOnsRouteImport.update({
 const McpRoute = McpRouteImport.update({
   id: '/mcp',
   path: '/mcp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoopbaancoachHaarlemRoute = LoopbaancoachHaarlemRouteImport.update({
+  id: '/loopbaancoach-haarlem',
+  path: '/loopbaancoach-haarlem',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LeiderschapRoute = LeiderschapRouteImport.update({
@@ -351,6 +357,7 @@ export interface FileRoutesByFullPath {
   '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
+  '/loopbaancoach-haarlem': typeof LoopbaancoachHaarlemRoute
   '/mcp': typeof McpRoute
   '/over-ons': typeof OverOnsRoute
   '/privacyverklaring': typeof PrivacyverklaringRoute
@@ -402,6 +409,7 @@ export interface FileRoutesByTo {
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
+  '/loopbaancoach-haarlem': typeof LoopbaancoachHaarlemRoute
   '/mcp': typeof McpRoute
   '/over-ons': typeof OverOnsRoute
   '/privacyverklaring': typeof PrivacyverklaringRoute
@@ -455,6 +463,7 @@ export interface FileRoutesById {
   '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
+  '/loopbaancoach-haarlem': typeof LoopbaancoachHaarlemRoute
   '/mcp': typeof McpRoute
   '/over-ons': typeof OverOnsRoute
   '/privacyverklaring': typeof PrivacyverklaringRoute
@@ -509,6 +518,7 @@ export interface FileRouteTypes {
     | '/inzichten'
     | '/kennismaken'
     | '/leiderschap'
+    | '/loopbaancoach-haarlem'
     | '/mcp'
     | '/over-ons'
     | '/privacyverklaring'
@@ -560,6 +570,7 @@ export interface FileRouteTypes {
     | '/coaching-voor-mij'
     | '/kennismaken'
     | '/leiderschap'
+    | '/loopbaancoach-haarlem'
     | '/mcp'
     | '/over-ons'
     | '/privacyverklaring'
@@ -612,6 +623,7 @@ export interface FileRouteTypes {
     | '/inzichten'
     | '/kennismaken'
     | '/leiderschap'
+    | '/loopbaancoach-haarlem'
     | '/mcp'
     | '/over-ons'
     | '/privacyverklaring'
@@ -665,6 +677,7 @@ export interface RootRouteChildren {
   InzichtenRoute: typeof InzichtenRouteWithChildren
   KennismakenRoute: typeof KennismakenRoute
   LeiderschapRoute: typeof LeiderschapRoute
+  LoopbaancoachHaarlemRoute: typeof LoopbaancoachHaarlemRoute
   McpRoute: typeof McpRoute
   OverOnsRoute: typeof OverOnsRoute
   PrivacyverklaringRoute: typeof PrivacyverklaringRoute
@@ -719,6 +732,13 @@ declare module '@tanstack/react-router' {
       path: '/mcp'
       fullPath: '/mcp'
       preLoaderRoute: typeof McpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/loopbaancoach-haarlem': {
+      id: '/loopbaancoach-haarlem'
+      path: '/loopbaancoach-haarlem'
+      fullPath: '/loopbaancoach-haarlem'
+      preLoaderRoute: typeof LoopbaancoachHaarlemRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/leiderschap': {
@@ -1136,6 +1156,7 @@ const rootRouteChildren: RootRouteChildren = {
   InzichtenRoute: InzichtenRouteWithChildren,
   KennismakenRoute: KennismakenRoute,
   LeiderschapRoute: LeiderschapRoute,
+  LoopbaancoachHaarlemRoute: LoopbaancoachHaarlemRoute,
   McpRoute: McpRoute,
   OverOnsRoute: OverOnsRoute,
   PrivacyverklaringRoute: PrivacyverklaringRoute,
