@@ -345,3 +345,27 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
     </>
   );
 }
+
+function FaqItem({
+  question,
+  answer,
+  isOpen,
+  onToggle,
+}: {
+  question: string;
+  answer: ReactNode;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <div className="faq__item">
+      <button className="faq__question" onClick={onToggle} aria-expanded={isOpen} type="button">
+        {question}
+        <span className="plus" aria-hidden="true"></span>
+      </button>
+      <div className="faq__answer" hidden={!isOpen}>
+        <p>{answer}</p>
+      </div>
+    </div>
+  );
+}
