@@ -151,6 +151,7 @@ const CSS = `
 .city .faq details{border-bottom:1px solid var(--vos-rand);padding:6px 0}
 .city .faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 0;font-family:var(--font-display);font-size:19px;color:var(--vos-petrol);font-weight:500}
 .city .faq summary::-webkit-details-marker{display:none}
+.city .faq summary::marker{display:none}
 .city .faq summary .plus{position:relative;width:20px;height:20px;flex:0 0 auto;transition:transform .2s}
 .city .faq summary .plus::before,.city .faq summary .plus::after{content:"";position:absolute;background:var(--vos-koraal)}
 .city .faq summary .plus::before{left:9px;top:0;width:2px;height:20px}
