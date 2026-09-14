@@ -1,9 +1,20 @@
-Voeg de vijfde kaart 'Nieuwe rol, oude aanpak' toe aan `/coaching-voor-mij`, als derde kaart in de sectie 'Vijf momenten waarop coaching helpt'.
+# Fix dubbele FAQ-plus op stadspagina’s
 
-1. Wijzig de H2 van de sectie van 'Vier momenten waarop coaching helpt' naar 'Vijf momenten waarop coaching helpt' in `src/routes/coaching-voor-mij.tsx`.
-2. Voeg een nieuwe `.row` kaart toe als derde item in de `.rows` container, tussen 'Doorgroeien of iets heel anders?' en 'Terug na een zware periode'. Gebruik exact de bestaande markup en classes (`<div class="row">` + `<div class="row-title">` + `<p>`).
-3. Tekst letterlijk overnemen:
-   - Titel: `Nieuwe rol, oude aanpak`
-   - Body: `Je hebt de stap gemaakt waar je naartoe werkte: meer verantwoordelijkheid, misschien voor het eerst een team. Maar wat je altijd goed deed, werkt in deze rol ineens niet vanzelf. Knopen doorhakken, loslaten wat je vroeger zelf oppakte, oude collega's aansturen. De rol krijgen bleek makkelijker dan de rol worden.`
-4. Behoud alle andere secties, teksten, SEO, metadata en styling ongewijzigd. De `.rows` layout is een enkele kolom, dus geen grid-aanpassing nodig.
-5. Controleren: TypeScript check (`bunx tsc --noEmit`) en preview van de `/coaching-voor-mij` pagina op desktop en mobiel.
+## Probleem
+Op `/loopbaancoach-haarlem` en `/loopbaancoach-amsterdam` toont het FAQ-accordeon twee plus-iconen naast elkaar: de custom `.plus` indicator én de native browser-marker van `<details>/<summary>`.
+
+## Oplossing
+Pas de scoped CSS in `src/components/CityLandingPage.tsx` aan zodat de native marker echt verdwijnt in alle browsers, inclusief WebKit/Safari op iOS:
+
+- Voeg `summary::marker { display: none; }` toe naast het bestaande `::-webkit-details-marker` verbergen.
+- Hergebruik dezelfde fix voor beide pagina’s (de FAQ leeft in de gedeelde `CityLandingPage`-component).
+
+## Stappen
+1. Wijzig de FAQ-CSS in `CityLandingPage.tsx`.
+2. Verifieer in de preview dat er per FAQ-item nog maar één plus staat.
+3. Controleer dat het accordeon nog open/dicht klikt op mobiel.
+4. Build controleren.
+
+## Niet in scope
+- Andere pagina’s of routes aanpassen.
+- De FAQ-interactie herschrijven; alleen de marker verbergen.
