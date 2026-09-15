@@ -121,7 +121,7 @@ export const Route = createFileRoute("/loopbaancoach-haarlem")({
 
 const data: CityLandingData = {
   hero: {
-    eyebrow: "Loopbaancoaching · Haarlem",
+    eyebrow: "Loopbaancoach · Haarlem",
     title: (
       <>
         Loopbaancoaching <span className="idot">i</span>n Haarlem, dichtbij en concreet
