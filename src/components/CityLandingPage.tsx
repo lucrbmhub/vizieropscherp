@@ -195,7 +195,7 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
               <div className="hero-media">
                 <div className="hero-media__frame">
                   <span className="hero-media__anchor" aria-hidden="true"></span>
-                  <img src={data.hero.image.src} alt={data.hero.image.alt} width={720} height={900} decoding="async" />
+                  <img src={data.hero.image.src} alt={data.hero.image.alt} width={720} height={900} fetchPriority="high" decoding="async" />
                 </div>
                 <div className="float-card">
                   <div className="label">{data.hero.floatCard.label}</div>
