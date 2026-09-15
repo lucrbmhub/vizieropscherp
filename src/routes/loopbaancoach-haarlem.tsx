@@ -106,7 +106,7 @@ export const Route = createFileRoute("/loopbaancoach-haarlem")({
                   name: "Hoe kies ik een coach?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Je maakt eerst kennis met je coach voordat er iets vastligt. Klikt het niet, dan stellen we iemand anders voor. Een goede klik is voor ons voorwaarde voor resultaat.",
+                    text: "Je maakt eerst kennis met je coach voordat er iets vastligt. Klikt het niet, dan stellen we iemand anders voor. Meer hierover lees je in een goede loopbaancoach kiezen.",
                   },
                 },
               ],
