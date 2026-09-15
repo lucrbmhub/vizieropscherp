@@ -106,7 +106,7 @@ export const Route = createFileRoute("/loopbaancoach-amsterdam")({
                   name: "Kan mijn werkgever het traject betalen?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Ja, dat komt vaak voor. Ook als je werkgever betaalt, blijft de inhoud van de gesprekken tussen jou en je coach. De werkgever hoort alleen of het traject loopt, nooit waarover het gaat.",
+                    text: "Ja, dat komt vaak voor. Ook als je werkgever betaalt, blijft de inhoud van de gesprekken tussen jou en je coach. Meer over kiezen lees je in een goede loopbaancoach kiezen.",
                   },
                 },
               ],
