@@ -4,7 +4,7 @@ import { SITE_URL, socialImageMeta } from "@/lib/site";
 
 const TITLE = "Loopbaancoach Amsterdam | Vizier op Scherp";
 const DESCRIPTION =
-  "Loopbaancoach in Amsterdam voor werk dat beter past. Vastgelopen of toe aan een volgende stap? Persoonlijke loopbaancoaching met gecertificeerde coaches, op locatie in Amsterdam-Zuid of online.";
+  "Loopbaancoach in Amsterdam voor werk dat beter past. Persoonlijke loopbaancoaching met gecertificeerde coaches, op locatie in Amsterdam-Zuid of online.";
 const OG_DESCRIPTION =
   "Vastgelopen in je werk of toe aan een volgende stap? Persoonlijke loopbaancoaching in Amsterdam, op locatie in Amsterdam-Zuid of online.";
 const URL = `${SITE_URL}/loopbaancoach-amsterdam`;
