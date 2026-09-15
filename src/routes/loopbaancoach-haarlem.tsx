@@ -71,10 +71,10 @@ export const Route = createFileRoute("/loopbaancoach-haarlem")({
               mainEntity: [
                 {
                   "@type": "Question",
-                  name: "Waar vinden de loopbaangesprekken in Haarlem plaats?",
+                  name: "Waar vinden de gesprekken in Haarlem plaats?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Op onze locatie aan het Klein Heiligland 84 in het centrum van Haarlem, of online. Wat het beste past bij jouw situatie.",
+                    text: "Op onze locatie aan het Klein Heiligland 84 in het centrum van Haarlem, of online. Wat het beste past bij jouw situatie en agenda.",
                   },
                 },
                 {
