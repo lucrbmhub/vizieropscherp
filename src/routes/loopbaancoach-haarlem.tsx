@@ -245,7 +245,12 @@ const data: CityLandingData = {
       },
       {
         q: "Kan ik ook terecht als ik buiten Haarlem woon?",
-        a: "De gesprekken zijn op onze locatie in Haarlem of online. Kom je uit Heemstede, Bloemendaal, Haarlemmermeer of Velsen, dan zit je in Haarlem dichtbij. Daarnaast hebben we een locatie in Amsterdam-Zuid.",
+        a: (
+          <>
+            De gesprekken zijn op onze locatie in Haarlem of online. Kom je uit Heemstede, Bloemendaal, Haarlemmermeer of Velsen, dan zit je in Haarlem dichtbij. Daarnaast hebben we{" "}
+            <a href="/loopbaancoach-amsterdam">een locatie in Amsterdam-Zuid</a>.
+          </>
+        ),
       },
       {
         q: "Wat kost een loopbaantraject?",
