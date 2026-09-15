@@ -178,7 +178,7 @@ const HTML = `<main id="main">
     <div class="grid g3">
       <div class="card card--paper card--anchor ring-paper">
         <h3>Waar en hoe</h3>
-        <p>Gesprekken vinden plaats in Haarlem (Klein Heiligland), in Amsterdam-Zuid (IJsbaanpad), online, of op een plek die voor jou goed werkt. Je spreekt af in een tempo dat bij je past, coaching is geen sprint.</p>
+        <p>Gesprekken vinden plaats in <a href="/loopbaancoach-haarlem">Haarlem</a> (Klein Heiligland), in <a href="/loopbaancoach-amsterdam">Amsterdam-Zuid</a> (IJsbaanpad), online, of op een plek die voor jou goed werkt. Je spreekt af in een tempo dat bij je past, coaching is geen sprint.</p>
       </div>
       <div class="card card--paper">
         <h3>Wie betaalt het traject?</h3>
