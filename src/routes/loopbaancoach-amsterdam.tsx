@@ -249,7 +249,12 @@ const data: CityLandingData = {
       },
       {
         q: "Kan ik ook terecht als ik buiten Amsterdam woon?",
-        a: "De gesprekken zijn op onze locatie in Amsterdam-Zuid of online. Kom je uit Amstelveen, Diemen, Ouder-Amstel, Zaanstad of Almere, dan zit je bij ons dichtbij. Daarnaast hebben we een locatie in Haarlem.",
+        a: (
+          <>
+            De gesprekken zijn op onze locatie in Amsterdam-Zuid of online. Kom je uit Amstelveen, Diemen, Ouder-Amstel, Zaanstad of Almere, dan zit je bij ons dichtbij. Daarnaast hebben we{" "}
+            <a href="/loopbaancoach-haarlem">een locatie in Haarlem</a>.
+          </>
+        ),
       },
       {
         q: "Wat kost een loopbaantraject?",
