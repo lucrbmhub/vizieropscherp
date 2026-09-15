@@ -95,7 +95,7 @@ export const Route = createFileRoute("/loopbaancoach-amsterdam")({
                 },
                 {
                   "@type": "Question",
-                  name: "Wat kost een loopbaantraject bij Vizier op Scherp?",
+                  name: "Wat kost een loopbaantraject?",
                   acceptedAnswer: {
                     "@type": "Answer",
                     text: "Dat hangt af van de vorm. Na een vrijblijvend kennismakingsgesprek ontvang je een helder voorstel met een vaste prijsafspraak. Geen open einde, geen verrassingen achteraf.",
