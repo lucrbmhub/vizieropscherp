@@ -79,7 +79,7 @@ export const Route = createFileRoute("/loopbaancoach-amsterdam")({
                 },
                 {
                   "@type": "Question",
-                  name: "Is de locatie in Amsterdam goed bereikbaar?",
+                  name: "Is de locatie goed bereikbaar?",
                   acceptedAnswer: {
                     "@type": "Answer",
                     text: "Ja. De locatie ligt in Amsterdam-Zuid bij het Olympisch Stadion. Metrostation Amstelveenseweg is op loopafstand en er is parkeergelegenheid in de buurt. Een gesprek online kan altijd.",
