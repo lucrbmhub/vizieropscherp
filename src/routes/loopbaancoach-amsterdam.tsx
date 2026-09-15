@@ -71,7 +71,7 @@ export const Route = createFileRoute("/loopbaancoach-amsterdam")({
               mainEntity: [
                 {
                   "@type": "Question",
-                  name: "Waar vinden de loopbaangesprekken in Amsterdam plaats?",
+                  name: "Waar vinden de gesprekken in Amsterdam plaats?",
                   acceptedAnswer: {
                     "@type": "Answer",
                     text: "Op onze locatie aan het IJsbaanpad 9 in Amsterdam-Zuid, bij het Olympisch Stadion, of online. Wat het beste past bij jouw situatie en agenda.",
