@@ -4,7 +4,7 @@ import { SITE_URL, socialImageMeta } from "@/lib/site";
 
 const TITLE = "Loopbaancoach Amsterdam | Vizier op Scherp";
 const DESCRIPTION =
-  "Loopbaancoach in Amsterdam voor werk dat beter past. Vastgelopen of toe aan een volgende stap? Persoonlijke loopbaancoaching met gecertificeerde coaches, op locatie in Amsterdam-Zuid of online.";
+  "Loopbaancoach in Amsterdam voor werk dat beter past. Persoonlijke loopbaancoaching met gecertificeerde coaches, op locatie in Amsterdam-Zuid of online.";
 const OG_DESCRIPTION =
   "Vastgelopen in je werk of toe aan een volgende stap? Persoonlijke loopbaancoaching in Amsterdam, op locatie in Amsterdam-Zuid of online.";
 const URL = `${SITE_URL}/loopbaancoach-amsterdam`;
@@ -71,7 +71,7 @@ export const Route = createFileRoute("/loopbaancoach-amsterdam")({
               mainEntity: [
                 {
                   "@type": "Question",
-                  name: "Waar vinden de loopbaangesprekken in Amsterdam plaats?",
+                  name: "Waar vinden de gesprekken in Amsterdam plaats?",
                   acceptedAnswer: {
                     "@type": "Answer",
                     text: "Op onze locatie aan het IJsbaanpad 9 in Amsterdam-Zuid, bij het Olympisch Stadion, of online. Wat het beste past bij jouw situatie en agenda.",
@@ -79,7 +79,7 @@ export const Route = createFileRoute("/loopbaancoach-amsterdam")({
                 },
                 {
                   "@type": "Question",
-                  name: "Is de locatie in Amsterdam goed bereikbaar?",
+                  name: "Is de locatie goed bereikbaar?",
                   acceptedAnswer: {
                     "@type": "Answer",
                     text: "Ja. De locatie ligt in Amsterdam-Zuid bij het Olympisch Stadion. Metrostation Amstelveenseweg is op loopafstand en er is parkeergelegenheid in de buurt. Een gesprek online kan altijd.",
@@ -95,7 +95,7 @@ export const Route = createFileRoute("/loopbaancoach-amsterdam")({
                 },
                 {
                   "@type": "Question",
-                  name: "Wat kost een loopbaantraject bij Vizier op Scherp?",
+                  name: "Wat kost een loopbaantraject?",
                   acceptedAnswer: {
                     "@type": "Answer",
                     text: "Dat hangt af van de vorm. Na een vrijblijvend kennismakingsgesprek ontvang je een helder voorstel met een vaste prijsafspraak. Geen open einde, geen verrassingen achteraf.",
@@ -106,7 +106,7 @@ export const Route = createFileRoute("/loopbaancoach-amsterdam")({
                   name: "Kan mijn werkgever het traject betalen?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Ja, dat komt vaak voor. Ook als je werkgever betaalt, blijft de inhoud van de gesprekken tussen jou en je coach. De werkgever hoort alleen of het traject loopt, nooit waarover het gaat.",
+                    text: "Ja, dat komt vaak voor. Ook als je werkgever betaalt, blijft de inhoud van de gesprekken tussen jou en je coach. Meer over kiezen lees je in een goede loopbaancoach kiezen.",
                   },
                 },
               ],
@@ -249,7 +249,12 @@ const data: CityLandingData = {
       },
       {
         q: "Kan ik ook terecht als ik buiten Amsterdam woon?",
-        a: "De gesprekken zijn op onze locatie in Amsterdam-Zuid of online. Kom je uit Amstelveen, Diemen, Ouder-Amstel, Zaanstad of Almere, dan zit je bij ons dichtbij. Daarnaast hebben we een locatie in Haarlem.",
+        a: (
+          <>
+            De gesprekken zijn op onze locatie in Amsterdam-Zuid of online. Kom je uit Amstelveen, Diemen, Ouder-Amstel, Zaanstad of Almere, dan zit je bij ons dichtbij. Daarnaast hebben we{" "}
+            <a href="/loopbaancoach-haarlem">een locatie in Haarlem</a>.
+          </>
+        ),
       },
       {
         q: "Wat kost een loopbaantraject?",

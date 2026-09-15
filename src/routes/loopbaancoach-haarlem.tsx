@@ -4,7 +4,7 @@ import { SITE_URL, socialImageMeta } from "@/lib/site";
 
 const TITLE = "Loopbaancoach Haarlem | Vizier op Scherp";
 const DESCRIPTION =
-  "Loopbaancoach in Haarlem voor werk dat beter past. Vastgelopen of toe aan een volgende stap? Persoonlijke loopbaancoaching met gecertificeerde coaches, op locatie in het centrum van Haarlem of online.";
+  "Loopbaancoach in Haarlem voor werk dat beter past. Persoonlijke loopbaancoaching met gecertificeerde coaches, op locatie in het centrum of online.";
 const OG_DESCRIPTION =
   "Vastgelopen in je werk of toe aan een volgende stap? Persoonlijke loopbaancoaching in Haarlem, op locatie in het centrum of online.";
 const URL = `${SITE_URL}/loopbaancoach-haarlem`;
@@ -71,10 +71,10 @@ export const Route = createFileRoute("/loopbaancoach-haarlem")({
               mainEntity: [
                 {
                   "@type": "Question",
-                  name: "Waar vinden de loopbaangesprekken in Haarlem plaats?",
+                  name: "Waar vinden de gesprekken in Haarlem plaats?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Op onze locatie aan het Klein Heiligland 84 in het centrum van Haarlem, of online. Wat het beste past bij jouw situatie.",
+                    text: "Op onze locatie aan het Klein Heiligland 84 in het centrum van Haarlem, of online. Wat het beste past bij jouw situatie en agenda.",
                   },
                 },
                 {
@@ -87,7 +87,7 @@ export const Route = createFileRoute("/loopbaancoach-haarlem")({
                 },
                 {
                   "@type": "Question",
-                  name: "Wat kost een loopbaantraject bij Vizier op Scherp?",
+                  name: "Wat kost een loopbaantraject?",
                   acceptedAnswer: {
                     "@type": "Answer",
                     text: "Dat hangt af van de vorm. Na een vrijblijvend kennismakingsgesprek ontvang je een helder voorstel met een vaste prijsafspraak. Geen open einde, geen verrassingen achteraf.",
@@ -106,7 +106,7 @@ export const Route = createFileRoute("/loopbaancoach-haarlem")({
                   name: "Hoe kies ik een coach?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Je maakt eerst kennis met je coach voordat er iets vastligt. Klikt het niet, dan stellen we iemand anders voor. Een goede klik is voor ons voorwaarde voor resultaat.",
+                    text: "Je maakt eerst kennis met je coach voordat er iets vastligt. Klikt het niet, dan stellen we iemand anders voor. Meer hierover lees je in een goede loopbaancoach kiezen.",
                   },
                 },
               ],
@@ -245,7 +245,12 @@ const data: CityLandingData = {
       },
       {
         q: "Kan ik ook terecht als ik buiten Haarlem woon?",
-        a: "De gesprekken zijn op onze locatie in Haarlem of online. Kom je uit Heemstede, Bloemendaal, Haarlemmermeer of Velsen, dan zit je in Haarlem dichtbij. Daarnaast hebben we een locatie in Amsterdam-Zuid.",
+        a: (
+          <>
+            De gesprekken zijn op onze locatie in Haarlem of online. Kom je uit Heemstede, Bloemendaal, Haarlemmermeer of Velsen, dan zit je in Haarlem dichtbij. Daarnaast hebben we{" "}
+            <a href="/loopbaancoach-amsterdam">een locatie in Amsterdam-Zuid</a>.
+          </>
+        ),
       },
       {
         q: "Wat kost een loopbaantraject?",
