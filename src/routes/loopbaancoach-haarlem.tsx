@@ -4,7 +4,7 @@ import { SITE_URL, socialImageMeta } from "@/lib/site";
 
 const TITLE = "Loopbaancoach Haarlem | Vizier op Scherp";
 const DESCRIPTION =
-  "Loopbaancoach in Haarlem voor werk dat beter past. Vastgelopen of toe aan een volgende stap? Persoonlijke loopbaancoaching met gecertificeerde coaches, op locatie in het centrum van Haarlem of online.";
+  "Loopbaancoach in Haarlem voor werk dat beter past. Persoonlijke loopbaancoaching met gecertificeerde coaches, op locatie in het centrum of online.";
 const OG_DESCRIPTION =
   "Vastgelopen in je werk of toe aan een volgende stap? Persoonlijke loopbaancoaching in Haarlem, op locatie in het centrum of online.";
 const URL = `${SITE_URL}/loopbaancoach-haarlem`;
