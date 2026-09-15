@@ -27,6 +27,8 @@ export default function SiteFooter() {
             <h2>Contact</h2>
             <address><strong>Haarlem</strong>Klein Heiligland 84, 2011 EJ Haarlem</address>
             <address><strong>Amsterdam</strong>IJsbaanpad 9, 1076 CV Amsterdam</address>
+            <a href="/loopbaancoach-haarlem">Loopbaancoach Haarlem</a>
+            <a href="/loopbaancoach-amsterdam">Loopbaancoach Amsterdam</a>
             <a href="mailto:hallo@vizieropscherp.nl">hallo@vizieropscherp.nl</a>
             <a href="tel:+31202146466">020 214 64 66</a>
           </div>
