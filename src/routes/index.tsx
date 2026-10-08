@@ -8,7 +8,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Loopbaancoaching | Amsterdam & Haarlem | Vizier op Scherp" },
-      { name: "description", content: "Regionaal netwerk voor loopbaancoaching in Amsterdam, Haarlem en omgeving. Persoonlijk voor de medewerker, georganiseerd voor HR." },
+      { name: "description", content: "Regionaal bureau voor loopbaancoaching in Amsterdam, Haarlem en omgeving. Persoonlijk voor de medewerker, georganiseerd voor HR." },
       { property: "og:title", content: "Loopbaancoaching in Amsterdam & Haarlem | Vizier op Scherp" },
       { property: "og:description", content: "Klein netwerk van gecertificeerde coaches, één aanspreekpunt, heldere afspraken over proces, prijs en privacy." },
       { property: "og:type", content: "website" },
