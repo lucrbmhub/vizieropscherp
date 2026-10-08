@@ -9,7 +9,7 @@ In de sectie "Waarom Vizier op Scherp" op beide stadspagina's staat boven elk ci
 1. **Cijferblokken:** het oranje ruitje én de donkergroene horizontale lijn boven elk cijfer verdwijnen. De cijfers en teksten schuiven op tot de rand, zodat er geen lege strook overblijft.
 2. **Stappen 1, 2 en 3:** de verticale lijn en de ruitjes ernaast verdwijnen. De stap-teksten schuiven naar de rand.
 3. **Het citaat** in dezelfde "Waarom Vizier op Scherp"-sectie blijft precies zoals het is (ruitje, lijntje en gouden puntje blijven staan).
-4. De kleine oranje ruitjes vóór de etiquetas ("WAAROM VIZIER OP SCHERP", "IN DRIE STAPPEN" en同类 over de hele site) blijven staan.
+4. De kleine oranje ruitjes vóór de etiquetas ("WAAROM VIZIER OP SCHERP", "IN DRIE STAPPEN" en dergelijke, over de hele site) blijven staan.
 
 Dit pakt beide pagina's tegelijk aan, omdat ze dezelfde pagina-opbouw delen. Veranderingen: geen enkele tekst, alleen deze decoraties en de bijbehorende witruimte.
 
