@@ -123,18 +123,14 @@ const CSS = `
 .city .steps-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
 .city .steps-grid h2{font-size:clamp(30px,3.4vw,42px);color:var(--vos-petrol);margin-bottom:16px;max-width:16ch}
 .city .trap{display:flex;flex-direction:column;margin-top:6px}
-.city .trap__step{position:relative;padding:0 0 26px 40px}
+.city .trap__step{position:relative;padding:0 0 26px 0}
 .city .trap__step:last-child{padding-bottom:0}
-.city .trap__step::before{content:"";position:absolute;left:5px;top:2px;width:12px;height:12px;background:var(--vos-koraal);transform:rotate(45deg)}
-.city .trap__step::after{content:"";position:absolute;left:10px;top:16px;bottom:-2px;width:2px;background:var(--vos-rand)}
-.city .trap__step:last-child::after{display:none}
 .city .trap__num{font-family:var(--font-display);font-size:13px;letter-spacing:.14em;color:var(--vos-goudlabel);text-transform:uppercase}
 .city .trap__step h3{font-size:19px;color:var(--vos-petrol);margin:4px 0}
 .city .trap__step p{margin:0;color:var(--vos-body);font-size:15.5px}
 .city .why-head{max-width:60ch;margin-bottom:36px}
 .city .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-bottom:40px}
-.city .stat{border-top:2px solid var(--vos-petrol);padding-top:16px;position:relative}
-.city .stat::before{content:"";position:absolute;top:-7px;left:0;width:10px;height:10px;background:var(--vos-koraal);transform:rotate(45deg)}
+.city .stat{position:relative}
 .city .stat__num{font-family:var(--font-display);font-weight:500;font-size:34px;color:var(--vos-petrol);line-height:1}
 .city .stat__label{font-size:14.5px;color:var(--vos-muted);margin-top:8px}
 .city .why-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
