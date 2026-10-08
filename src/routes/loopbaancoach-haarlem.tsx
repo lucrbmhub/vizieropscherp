@@ -124,7 +124,7 @@ const data: CityLandingData = {
     eyebrow: "Loopbaancoach · Haarlem",
     title: (
       <>
-        Loopbaancoaching <span className="idot">i</span>n Haarlem, dichtbij en concreet
+        Loopbaancoaching <span className="nowrap"><span className="idot">i</span>n</span> Haarlem, dichtbij en concreet
         <span className="slotpunt">.</span>
       </>
     ),
@@ -133,7 +133,6 @@ const data: CityLandingData = {
     primaryCta: { label: "Plan een kennismakingsgesprek", href: "/kennismaken" },
     secondaryCta: { label: "Voor werkgevers en HR", href: "/voor-werkgevers" },
     image: { src: "/assets/coaching-gesprek.jpg", alt: "Loopbaangesprek bij Vizier op Scherp in Haarlem" },
-    floatCard: { label: "In de regio", text: "Twee locaties: Haarlem en Amsterdam. Coaching op locatie of online." },
   },
   recognise: {
     eyebrow: "Herken je dit?",
