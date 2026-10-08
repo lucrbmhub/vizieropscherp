@@ -18,7 +18,7 @@ export const Route = createFileRoute("/over-ons")({
   head: () => ({
     meta: [
       { title: "Over ons | Vizier op Scherp" },
-      { name: "description", content: "Vizier op Scherp is een regionaal netwerk voor loopbaancoaching in Amsterdam en Haarlem. Maak kennis met ons verhaal, onze aanpak en onze vijf coaches." },
+      { name: "description", content: "Vizier op Scherp is een regionaal bureau voor loopbaancoaching in Amsterdam en Haarlem. Maak kennis met ons verhaal, onze aanpak en onze vijf coaches." },
       { property: "og:title", content: "Over Vizier op Scherp" },
       { property: "og:description", content: "Kwaliteit door focus. Eenvoud door organisatie. Eén aanspreekpunt, heldere afspraken en een klein team van vijf coaches." },
       { property: "og:type", content: "website" },
@@ -42,7 +42,7 @@ const HTML = `<main id="main">
     <div class="hero-copy" style="max-width:820px;">
       <span class="badge badge--dark">Over ons</span>
       <h1 class="h-hero"><span style="white-space:nowrap;">Profess<span class="idot">i</span>oneel</span> voor HR en menselijk voor de medewerker<span class="gold">.</span></h1>
-      <p class="lead">Die ene zin is onze lat, voor elke coach, elk traject en elke afspraak die we maken. Vizier op Scherp is een regionaal netwerk voor loopbaancoaching in Amsterdam, Haarlem en omgeving: klein genoeg om iedereen persoonlijk te kennen, georganiseerd genoeg om werkgevers volledig te ontzorgen.</p>
+      <p class="lead">Die ene zin is onze lat, voor elke coach, elk traject en elke afspraak die we maken. Vizier op Scherp is een regionaal bureau voor loopbaancoaching in Amsterdam, Haarlem en omgeving: klein genoeg om iedereen persoonlijk te kennen, georganiseerd genoeg om werkgevers volledig te ontzorgen.</p>
       <p style="margin-top:20px;font-size:14.5px;"><a href="#coaches" style="border-bottom:1px solid var(--koraal);">Direct naar onze coaches &darr;</a></p>
     </div>
   </div>
