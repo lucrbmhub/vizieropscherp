@@ -7,7 +7,7 @@ export default function SiteFooter() {
             <a className="footer-brand" href="/" aria-label="Vizier op Scherp — naar de homepage">
               <img src="/assets/vizier-logo-creme.png" alt="Vizier op Scherp" style={{ height: 30, width: "auto", display: "block" }} />
             </a>
-            <p>Regionaal netwerk voor loopbaancoaching, voor werkgevers en hun medewerkers in Amsterdam, Haarlem en omgeving. Persoonlijk, professioneel en gericht op concrete stappen in werk.</p>
+            <p>Regionaal bureau voor loopbaancoaching, voor werkgevers en hun medewerkers in Amsterdam, Haarlem en omgeving. Persoonlijk, professioneel en gericht op concrete stappen in werk.</p>
           </div>
           <div>
             <h2>Doelgroepen</h2>
