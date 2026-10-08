@@ -10,7 +10,7 @@ export type CityLandingData = {
     primaryCta: { label: string; href: string };
     secondaryCta: { label: string; href: string };
     image: { src: string; alt: string };
-    floatCard: { label: string; text: string };
+    floatCard?: { label: string; text: string };
   };
   recognise: {
     eyebrow: string;
@@ -79,6 +79,7 @@ const CSS = `
 .city .idot::before{content:"";position:absolute;left:50%;top:0;width:.19em;height:.27em;background:var(--vos-paper);transform:translateX(-50%)}
 .city .idot::after{content:"";position:absolute;left:50%;top:.075em;width:.17em;height:.17em;background:var(--vos-koraal);transform:translateX(-50%) rotate(45deg)}
 .city .slotpunt{color:var(--vos-goud)}
+.city .nowrap{white-space:nowrap}
 .city .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-body);font-weight:500;font-size:15px;padding:15px 26px;border-radius:10px;cursor:pointer;transition:.18s;border:none}
 .city .btn--primary{background:var(--vos-koraal);color:var(--vos-text-koraal)}
 .city .btn--primary:hover{filter:brightness(.95);color:var(--vos-text-koraal)}
@@ -197,10 +198,12 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
                   <span className="hero-media__anchor" aria-hidden="true"></span>
                   <img src={data.hero.image.src} alt={data.hero.image.alt} width={720} height={900} fetchPriority="high" decoding="async" />
                 </div>
-                <div className="float-card">
-                  <div className="label">{data.hero.floatCard.label}</div>
-                  <p>{data.hero.floatCard.text}</p>
-                </div>
+                {data.hero.floatCard && (
+                  <div className="float-card">
+                    <div className="label">{data.hero.floatCard.label}</div>
+                    <p>{data.hero.floatCard.text}</p>
+                  </div>
+                )}
               </div>
             </div>
           </section>

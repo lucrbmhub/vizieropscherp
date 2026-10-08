@@ -133,7 +133,6 @@ const data: CityLandingData = {
     primaryCta: { label: "Plan een kennismakingsgesprek", href: "/kennismaken" },
     secondaryCta: { label: "Voor werkgevers en HR", href: "/voor-werkgevers" },
     image: { src: "/assets/coaching-gesprek.jpg", alt: "Loopbaangesprek bij Vizier op Scherp in Amsterdam" },
-    floatCard: { label: "In de regio", text: "Twee locaties: Amsterdam-Zuid en Haarlem. Coaching op locatie of online." },
   },
   recognise: {
     eyebrow: "Herken je dit?",
