@@ -1,14 +1,17 @@
-import { useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 
 export type CityLandingData = {
+  citySlug: "haarlem" | "amsterdam";
   hero: {
     eyebrow: string;
     title: ReactNode;
     lead: string;
-    primaryCta: { label: string; href: string };
+    primaryCta: { label: string };
     secondaryCta: { label: string; href: string };
+    note?: string;
+    hrNote?: { text: string; linkLabel: string; href: string };
     image: { src: string; alt: string };
     floatCard?: { label: string; text: string };
   };
@@ -33,7 +36,7 @@ export type CityLandingData = {
     eyebrow: string;
     title: string;
     intro: string;
-    cta: { label: string; href: string };
+    cta: { label: string };
     listLabel: string;
     items: Array<{ num: string; title: string; text: string }>;
   };
@@ -49,9 +52,9 @@ export type CityLandingData = {
   faq: {
     eyebrow: string;
     title: string;
-    items: Array<{ q: string; a: ReactNode }>;
+    items: Array<{ q: string; a: ReactNode; text: string }>;
   };
-  cta: { title: string; text: string; button: { label: string; href: string } };
+  cta: { title: string; text: string; button: { label: string } };
 };
 
 const CSS = `
@@ -91,6 +94,9 @@ const CSS = `
 .city .hero h1{font-size:clamp(42px,5vw,68px);color:var(--vos-petrol);margin-bottom:22px}
 .city .hero__lead{font-size:17.5px;max-width:56ch;color:var(--vos-body);margin-bottom:30px}
 .city .hero__cta{display:flex;flex-wrap:wrap;gap:14px}
+.city .hero__note{font-size:14.5px;color:var(--vos-muted);margin:14px 0 0}
+.city .hero__hr-note{font-size:14.5px;color:var(--vos-muted);margin:6px 0 0}
+.city .hero__hr-note a{color:var(--vos-koraal);text-decoration:underline}
 .city .hero-media{position:relative;overflow:visible}
 .city .hero-media__frame{position:relative;overflow:hidden;aspect-ratio:4/5;clip-path:polygon(0 0, calc(100% - 48px) 0, 100% 48px, 100% 100%, 0 100%)}
 .city .hero-media__frame img{width:100%;height:100%;object-fit:cover}
@@ -129,7 +135,7 @@ const CSS = `
 .city .trap__step h3{font-size:19px;color:var(--vos-petrol);margin:4px 0}
 .city .trap__step p{margin:0;color:var(--vos-body);font-size:15.5px}
 .city .why-head{max-width:60ch;margin-bottom:36px}
-.city .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-bottom:40px}
+.city .stats{display:grid;grid-template-columns:repeat(3,1fr);align-items:start;gap:22px;margin-bottom:40px}
 .city .stat{position:relative}
 .city .stat__num{font-family:var(--font-display);font-weight:500;font-size:34px;color:var(--vos-petrol);line-height:1}
 .city .stat__label{font-size:14.5px;color:var(--vos-muted);margin-top:8px}
@@ -147,37 +153,68 @@ const CSS = `
 .city .faq{max-width:820px}
 .city .faq__item{border-bottom:1px solid var(--vos-rand);padding:6px 0}
 .city .faq__question{width:100%;background:none;border:none;text-align:left;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 0;font-family:var(--font-display);font-size:19px;color:var(--vos-petrol);font-weight:500;line-height:1.3}
+.city .faq__question{list-style:none}
+.city .faq__question::-webkit-details-marker{display:none}
+.city .faq__question::marker{content:""}
+.city .faq__question::after{content:none}
 .city .faq__question .plus{position:relative;width:20px;height:20px;flex:0 0 auto;transition:transform .2s}
 .city .faq__question .plus::before,.city .faq__question .plus::after{content:"";position:absolute;background:var(--vos-koraal)}
 .city .faq__question .plus::before{left:9px;top:0;width:2px;height:20px}
 .city .faq__question .plus::after{top:9px;left:0;height:2px;width:20px}
-.city .faq__question[aria-expanded=true] .plus{transform:rotate(45deg)}
+.city .faq__item[open] .plus{transform:rotate(45deg)}
 .city .faq__answer p{margin:0 0 20px;color:var(--vos-body);max-width:70ch}
 .city .cta-wrap{position:relative;padding:2px;background:var(--vos-goud);clip-path:polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px)}
 .city .cta-inner{background:var(--vos-warm);clip-path:polygon(21px 0, 100% 0, 100% calc(100% - 21px), calc(100% - 21px) 100%, 0 100%, 0 21px);padding:56px 48px;text-align:center}
 .city .cta-inner h2{font-size:clamp(28px,3vw,40px);color:var(--vos-petrol);margin-bottom:14px;max-width:20ch;margin-inline:auto}
 .city .cta-inner p{color:var(--vos-body-warm);max-width:52ch;margin:0 auto 26px}
+.city .mobile-bar{display:none;visibility:hidden}
 @media (max-width:900px){
   .city .hero__grid,.city .feature__grid,.city .two,.city .steps-grid,.city .stats,.city .why-cards{grid-template-columns:1fr}
   .city .hero-media{margin-top:36px}
   .city .float-card{left:12px;bottom:16px}
-  .city .stats{grid-template-columns:1fr 1fr;gap:26px}
+  .city .stats{grid-template-columns:1fr;gap:26px}
   .city .section{padding:64px 0}
   .city .container{padding:0 20px}
   .city .cta-inner{padding:40px 24px}
+  .city .mobile-bar{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:fixed;bottom:0;left:0;right:0;z-index:50;background:var(--vos-paper);border-top:1px solid var(--vos-rand);padding:12px 20px calc(12px + env(safe-area-inset-bottom));opacity:0;transition:opacity .18s}
+  .city .mobile-bar--visible{visibility:visible;opacity:1}
+  .city .mobile-bar .btn{padding:13px 10px;min-width:0}
 }
 @media (prefers-reduced-motion:reduce){.city *{transition:none!important;animation:none!important}}
 `;
 
 export default function CityLandingPage({ data }: { data: CityLandingData }) {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const slotRef = useRef<HTMLElement>(null);
+  const [heroPassed, setHeroPassed] = useState(false);
+  const [slotReached, setSlotReached] = useState(true);
+  const planLink = (place: "hero" | "stappen" | "slot" | "balk") =>
+    `/kennismaken?locatie=${data.citySlug}&knop=${place}#plannen`;
+
+  useEffect(() => {
+    const hero = heroRef.current;
+    const slot = slotRef.current;
+    if (!hero || !slot) return;
+    const heroObserver = new IntersectionObserver(([entry]) => {
+      if (entry) setHeroPassed(!entry.isIntersecting && entry.boundingClientRect.bottom <= 0);
+    });
+    const slotObserver = new IntersectionObserver(([entry]) => {
+      if (entry) setSlotReached(entry.isIntersecting || entry.boundingClientRect.top <= 0);
+    });
+    heroObserver.observe(hero);
+    slotObserver.observe(slot);
+    return () => {
+      heroObserver.disconnect();
+      slotObserver.disconnect();
+    };
+  }, []);
   return (
     <>
       <SiteHeader />
       <style>{CSS}</style>
       <div className="city">
         <main id="main">
-          <section className="hero section--paper">
+          <section ref={heroRef} className="hero section--paper">
             <span className="hero__wm" aria-hidden="true"></span>
             <div className="container hero__grid">
               <div>
@@ -185,9 +222,13 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
                 <h1>{data.hero.title}</h1>
                 <p className="hero__lead">{data.hero.lead}</p>
                 <div className="hero__cta">
-                  <a className="btn btn--primary" href={data.hero.primaryCta.href}>{data.hero.primaryCta.label}</a>
+                  <a className="btn btn--primary" href={planLink("hero")}>{data.hero.primaryCta.label}</a>
                   <a className="btn btn--outline" href={data.hero.secondaryCta.href}>{data.hero.secondaryCta.label}</a>
                 </div>
+                {data.hero.note && <p className="hero__note">{data.hero.note}</p>}
+                {data.hero.hrNote && (
+                  <p className="hero__hr-note">{data.hero.hrNote.text}{" "}<a href={data.hero.hrNote.href}>{data.hero.hrNote.linkLabel}</a></p>
+                )}
               </div>
               <div className="hero-media">
                 <div className="hero-media__frame">
@@ -257,7 +298,7 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
                   <h2>{data.steps.title}</h2>
                   <p>{data.steps.intro}</p>
                   <p style={{ marginTop: 24 }}>
-                    <a className="btn btn--primary" href={data.steps.cta.href}>{data.steps.cta.label}</a>
+                    <a className="btn btn--primary" href={planLink("stappen")}>{data.steps.cta.label}</a>
                   </p>
                 </div>
                 <div>
@@ -314,31 +355,33 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
               <span className="eyebrow">{data.faq.eyebrow}</span>
               <h2 className="section-title" style={{ marginBottom: 30 }}>{data.faq.title}</h2>
               <div className="faq">
-                {data.faq.items.map((f, i) => (
+                {data.faq.items.map((f) => (
                   <FaqItem
                     key={f.q}
                     question={f.q}
                     answer={f.a}
-                    isOpen={openIndex === i}
-                    onToggle={() => setOpenIndex(openIndex === i ? null : i)}
                   />
                 ))}
               </div>
             </div>
           </section>
 
-          <section className="section section--linnen">
+          <section ref={slotRef} className="section section--linnen">
             <div className="container">
               <div className="cta-wrap">
                 <div className="cta-inner">
                   <h2>{data.cta.title}</h2>
                   <p>{data.cta.text}</p>
-                  <a className="btn btn--primary" href={data.cta.button.href}>{data.cta.button.label}</a>
+                  <a className="btn btn--primary" href={planLink("slot")}>{data.cta.button.label}</a>
                 </div>
               </div>
             </div>
           </section>
         </main>
+        <div className={`mobile-bar${heroPassed && !slotReached ? " mobile-bar--visible" : ""}`}>
+          <a className="btn btn--primary" href={planLink("balk")}>Plan een gesprek</a>
+          <a className="btn btn--outline" href="tel:+31202146466">Bel ons</a>
+        </div>
       </div>
       <SiteFooter />
     </>
@@ -348,23 +391,19 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
 function FaqItem({
   question,
   answer,
-  isOpen,
-  onToggle,
 }: {
   question: string;
   answer: ReactNode;
-  isOpen: boolean;
-  onToggle: () => void;
 }) {
   return (
-    <div className="faq__item">
-      <button className="faq__question" onClick={onToggle} aria-expanded={isOpen} type="button">
+    <details className="faq__item">
+      <summary className="faq__question">
         {question}
         <span className="plus" aria-hidden="true"></span>
-      </button>
-      <div className="faq__answer" hidden={!isOpen}>
+      </summary>
+      <div className="faq__answer">
         <p>{answer}</p>
       </div>
-    </div>
+    </details>
   );
 }
