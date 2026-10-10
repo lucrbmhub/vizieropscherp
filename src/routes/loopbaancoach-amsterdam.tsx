@@ -123,8 +123,8 @@ const data: CityLandingData = {
       },
     ],
     quote:
-      "“Het traject opende mijn ogen en gaf mij richting. Ik kan goed zorgen voor anderen. Nu stel ik mezelf elke dag de vraag: en wat wil ik.”",
-    cite: "Romy Rutten, Officemanager",
+      "“Al jaren was ik toe aan iets anders. Maar wat? … Ik wilde werk wat energie geeft en heb het gevonden. Er zit weer muziek in mijn werkleven.”",
+    cite: "Chris Hartman, Coach",
   },
   faq: {
     eyebrow: "Veelgestelde vragen",

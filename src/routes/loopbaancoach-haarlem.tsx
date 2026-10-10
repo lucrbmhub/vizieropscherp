@@ -123,7 +123,7 @@ const data: CityLandingData = {
       },
     ],
     quote:
-      "“Ik besloot te kiezen voor mezelf en het te doen. In het gesprek met mijn Vizier op Scherp loopbaancoach werd al snel duidelijk dat dit een 1e goede stap was. Kiezen voor mezelf.”",
+      "“Het traject opende mijn ogen en gaf mij richting. Ik kan goed zorgen voor anderen. Nu stel ik mezelf elke dag de vraag: en wat wil ik.”",
     cite: "Romy Rutten, Officemanager",
   },
   faq: {
