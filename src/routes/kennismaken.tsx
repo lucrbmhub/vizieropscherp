@@ -77,7 +77,7 @@ const HTML_AFTER = `
     <div class="section-head">
       <p class="eyebrow">Of laat iets achter</p>
       <h2 class="h-section">Stuur een bericht</h2>
-      <p>Je naam, je mailadres en waar je het over wilt hebben. De rest bespreken we wel.</p>
+      <p>Je naam, je mailadres en waar je het over wilt hebben.</p>
     </div>
     <form class="form" novalidate>
       <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
