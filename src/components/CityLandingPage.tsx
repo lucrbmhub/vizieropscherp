@@ -189,7 +189,7 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
   const [heroPassed, setHeroPassed] = useState(false);
   const [slotReached, setSlotReached] = useState(true);
   const planLink = (place: "hero" | "stappen" | "slot" | "balk") =>
-    `/kennismaken?locatie=${data.citySlug}&knop=${place}#plannen`;
+    `/kennismaken?locatie=${data.citySlug}&knop=${place}`;
 
   useEffect(() => {
     const hero = heroRef.current;

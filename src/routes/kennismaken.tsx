@@ -124,7 +124,6 @@ const HTML_AFTER = `
 
 `;
 
-import CalEmbed from "@/components/CalEmbed";
 import { useEffect } from "react";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
@@ -228,16 +227,6 @@ function Page() {
     <>
       <SiteHeader active="kennismaken" />
       <div dangerouslySetInnerHTML={{ __html: HTML_BEFORE }} />
-      <section className="section">
-        <div className="container">
-          <div className="section-head">
-            <p className="eyebrow">Direct inplannen</p>
-            <h2 className="h-section">Kies een moment dat jou uitkomt.</h2>
-            <p>Twintig minuten, vrijblijvend. Jij kiest de tijd; we bellen of spreken af op een van onze locaties.</p>
-          </div>
-          <CalEmbed />
-        </div>
-      </section>
       <div dangerouslySetInnerHTML={{ __html: HTML_AFTER }} />
       <SiteFooter />
 
