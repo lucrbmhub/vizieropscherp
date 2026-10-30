@@ -1,6 +1,7 @@
 import { SITE_URL } from "@/lib/site";
 
 export const ARTICLES: Array<{ slug: string; title: string; description: string }> = [
+  { slug: "zenuwstelsel-tot-rust-brengen", title: "Je zenuwstelsel tot rust brengen op je werk: wat adem wel en niet oplost", description: "Hoe je zenuwstelsel werkt, een ademoefening om mee te doen en wanneer adem niet genoeg is." },
   { slug: "duurzaam-inzetbaar-blijven", title: "Duurzaam inzetbaar blijven in je werk", description: "Hoe blijf je duurzaam inzetbaar in je werk? De vier dingen die je vitaal, vaardig en gemotiveerd houden, plus een korte zelfcheck." },
   { slug: "duurzame-inzetbaarheid-werkgever", title: "Duurzame inzetbaarheid: waarom het vitaliteitsprogramma vaak niet werkt, en wat wel", description: "Een vitaliteitsprogramma voor iedereen raakt vaak niet de kern. Met cijfers van TNO en UWV: wat voor werkgevers wél werkt." },
   { slug: "energie-en-motivatie-in-werk", title: "Energie en motivatie in werk: het verschil tussen moe zijn en leeglopen", description: "Het verschil tussen moe zijn en leeglopen, en wat je er zelf aan kunt doen." },

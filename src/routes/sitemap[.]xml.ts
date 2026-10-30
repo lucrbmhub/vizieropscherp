@@ -38,6 +38,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/inzichten/persoonlijke-effectiviteit", changefreq: "yearly", priority: "0.6" },
           { path: "/inzichten/passie-terugvinden-in-je-werk", changefreq: "yearly", priority: "0.6" },
           { path: "/inzichten/energie-en-motivatie-in-werk", changefreq: "yearly", priority: "0.6" },
+          { path: "/inzichten/zenuwstelsel-tot-rust-brengen", changefreq: "yearly", priority: "0.6" },
           { path: "/inzichten/richting-vinden-in-je-loopbaan", changefreq: "yearly", priority: "0.6" },
           { path: "/inzichten/vastzitten-in-een-goede-baan", changefreq: "yearly", priority: "0.6" },
           { path: "/inzichten/hetzelfde-gevoel-een-andere-baan", changefreq: "yearly", priority: "0.6" },

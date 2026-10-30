@@ -32,6 +32,7 @@ CATEGORIES = {
         "grenzen-stellen-op-werk","innerlijke-criticus","impostersyndroom-twijfel-als-kracht",
         "persoonlijke-effectiviteit","je-eerste-baan","passie-terugvinden-in-je-werk",
         "duurzaam-inzetbaar-blijven","weten-maar-niet-doen","belemmerende-overtuigingen-werk",
+        "zenuwstelsel-tot-rust-brengen",
     ]),
     "richting": ("Een nieuwe richting", [
         "hetzelfde-gevoel-een-andere-baan","richting-vinden-in-je-loopbaan",
