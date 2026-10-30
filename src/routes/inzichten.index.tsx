@@ -43,7 +43,7 @@ const TAB_LABEL: Record<TabKey, string> = {
 
 const TAB_ORDER: TabKey[] = ["alle", "werkgevers", "sterker", "richting"];
 
-// Alle 32 artikelen (volgorde = weergavevolgorde in "Meer inzichten").
+// Alle 33 artikelen (volgorde = weergavevolgorde in "Meer inzichten").
 // "van-werven-naar-behouden" telt mee in werkgevers (13) maar wordt in het
 // uitgelicht-blok getoond, niet in de grid (featured: true).
 const ARTICLES: Article[] = [
@@ -51,6 +51,10 @@ const ARTICLES: Article[] = [
     title: "Van werven naar behouden: waarom medewerkers vertrekken om stilstand, niet om salaris",
     desc: "Medewerkers verlaten hun werkgever zelden om meer salaris. Gebrek aan ontwikkeling en doorgroei is de voornaamste reden.",
     read: "6 min lezen" },
+  { slug: "zenuwstelsel-tot-rust-brengen", category: "sterker", label: "Voor medewerkers",
+    title: "Je zenuwstelsel tot rust brengen op je werk: wat adem wel en niet oplost",
+    desc: "Je hoofd staat na werktijd nog aan? Hoe je zenuwstelsel werkt, een ademoefening om mee te doen en herstel dat aantoonbaar helpt. En wanneer adem niet genoeg is.",
+    read: "7 min lezen" },
 
   // Grid — bestaande volgorde
   { slug: "waardering-die-aankomt", category: "werkgevers", label: "Voor werkgevers & HR",
