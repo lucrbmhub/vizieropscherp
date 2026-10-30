@@ -59,6 +59,7 @@ import { Route as InzichtenVastzittenInEenGoedeBaanRouteImport } from './routes/
 import { Route as InzichtenVierBasisbehoeftenInWerkRouteImport } from './routes/inzichten.vier-basisbehoeften-in-werk'
 import { Route as InzichtenWaarderingDieAankomtRouteImport } from './routes/inzichten.waardering-die-aankomt'
 import { Route as InzichtenWetenMaarNietDoenRouteImport } from './routes/inzichten.weten-maar-niet-doen'
+import { Route as InzichtenZenuwstelselTotRustBrengenRouteImport } from './routes/inzichten.zenuwstelsel-tot-rust-brengen'
 import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[.mcp]/invoke-tool/$tool'
 import { Route as ApiPublicSubmitFormRouteImport } from './routes/api/public/submit-form'
 
@@ -344,6 +345,12 @@ const InzichtenWetenMaarNietDoenRoute =
     path: '/weten-maar-niet-doen',
     getParentRoute: () => InzichtenRoute,
   } as any)
+const InzichtenZenuwstelselTotRustBrengenRoute =
+  InzichtenZenuwstelselTotRustBrengenRouteImport.update({
+    id: '/zenuwstelsel-tot-rust-brengen',
+    path: '/zenuwstelsel-tot-rust-brengen',
+    getParentRoute: () => InzichtenRoute,
+  } as any)
 const Char91DotmcpChar93InvokeToolToolRoute =
   Char91DotmcpChar93InvokeToolToolRouteImport.update({
     id: '/.mcp/invoke-tool/$tool',
@@ -406,6 +413,7 @@ export interface FileRoutesByFullPath {
   '/inzichten/vier-basisbehoeften-in-werk': typeof InzichtenVierBasisbehoeftenInWerkRoute
   '/inzichten/waardering-die-aankomt': typeof InzichtenWaarderingDieAankomtRoute
   '/inzichten/weten-maar-niet-doen': typeof InzichtenWetenMaarNietDoenRoute
+  '/inzichten/zenuwstelsel-tot-rust-brengen': typeof InzichtenZenuwstelselTotRustBrengenRoute
   '/inzichten/': typeof InzichtenIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
   '/api/public/submit-form': typeof ApiPublicSubmitFormRoute
@@ -459,6 +467,7 @@ export interface FileRoutesByTo {
   '/inzichten/vier-basisbehoeften-in-werk': typeof InzichtenVierBasisbehoeftenInWerkRoute
   '/inzichten/waardering-die-aankomt': typeof InzichtenWaarderingDieAankomtRoute
   '/inzichten/weten-maar-niet-doen': typeof InzichtenWetenMaarNietDoenRoute
+  '/inzichten/zenuwstelsel-tot-rust-brengen': typeof InzichtenZenuwstelselTotRustBrengenRoute
   '/inzichten': typeof InzichtenIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
   '/api/public/submit-form': typeof ApiPublicSubmitFormRoute
@@ -514,6 +523,7 @@ export interface FileRoutesById {
   '/inzichten/vier-basisbehoeften-in-werk': typeof InzichtenVierBasisbehoeftenInWerkRoute
   '/inzichten/waardering-die-aankomt': typeof InzichtenWaarderingDieAankomtRoute
   '/inzichten/weten-maar-niet-doen': typeof InzichtenWetenMaarNietDoenRoute
+  '/inzichten/zenuwstelsel-tot-rust-brengen': typeof InzichtenZenuwstelselTotRustBrengenRoute
   '/inzichten/': typeof InzichtenIndexRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
   '/api/public/submit-form': typeof ApiPublicSubmitFormRoute
@@ -570,6 +580,7 @@ export interface FileRouteTypes {
     | '/inzichten/vier-basisbehoeften-in-werk'
     | '/inzichten/waardering-die-aankomt'
     | '/inzichten/weten-maar-niet-doen'
+    | '/inzichten/zenuwstelsel-tot-rust-brengen'
     | '/inzichten/'
     | '/.mcp/invoke-tool/$tool'
     | '/api/public/submit-form'
@@ -623,6 +634,7 @@ export interface FileRouteTypes {
     | '/inzichten/vier-basisbehoeften-in-werk'
     | '/inzichten/waardering-die-aankomt'
     | '/inzichten/weten-maar-niet-doen'
+    | '/inzichten/zenuwstelsel-tot-rust-brengen'
     | '/inzichten'
     | '/.mcp/invoke-tool/$tool'
     | '/api/public/submit-form'
@@ -677,6 +689,7 @@ export interface FileRouteTypes {
     | '/inzichten/vier-basisbehoeften-in-werk'
     | '/inzichten/waardering-die-aankomt'
     | '/inzichten/weten-maar-niet-doen'
+    | '/inzichten/zenuwstelsel-tot-rust-brengen'
     | '/inzichten/'
     | '/.mcp/invoke-tool/$tool'
     | '/api/public/submit-form'
@@ -1055,6 +1068,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InzichtenWetenMaarNietDoenRouteImport
       parentRoute: typeof InzichtenRoute
     }
+    '/inzichten/zenuwstelsel-tot-rust-brengen': {
+      id: '/inzichten/zenuwstelsel-tot-rust-brengen'
+      path: '/zenuwstelsel-tot-rust-brengen'
+      fullPath: '/inzichten/zenuwstelsel-tot-rust-brengen'
+      preLoaderRoute: typeof InzichtenZenuwstelselTotRustBrengenRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
     '/.mcp/invoke-tool/$tool': {
       id: '/.mcp/invoke-tool/$tool'
       path: '/.mcp/invoke-tool/$tool'
@@ -1106,6 +1126,7 @@ interface InzichtenRouteChildren {
   InzichtenVierBasisbehoeftenInWerkRoute: typeof InzichtenVierBasisbehoeftenInWerkRoute
   InzichtenWaarderingDieAankomtRoute: typeof InzichtenWaarderingDieAankomtRoute
   InzichtenWetenMaarNietDoenRoute: typeof InzichtenWetenMaarNietDoenRoute
+  InzichtenZenuwstelselTotRustBrengenRoute: typeof InzichtenZenuwstelselTotRustBrengenRoute
   InzichtenIndexRoute: typeof InzichtenIndexRoute
 }
 
@@ -1162,6 +1183,8 @@ const InzichtenRouteChildren: InzichtenRouteChildren = {
     InzichtenVierBasisbehoeftenInWerkRoute,
   InzichtenWaarderingDieAankomtRoute: InzichtenWaarderingDieAankomtRoute,
   InzichtenWetenMaarNietDoenRoute: InzichtenWetenMaarNietDoenRoute,
+  InzichtenZenuwstelselTotRustBrengenRoute:
+    InzichtenZenuwstelselTotRustBrengenRoute,
   InzichtenIndexRoute: InzichtenIndexRoute,
 }
 
