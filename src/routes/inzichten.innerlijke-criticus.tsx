@@ -177,10 +177,6 @@ const HTML = `<main id="main">
     <p>Dat begint met herkennen. Alleen al opmerken "daar is hij weer" schept afstand tussen jou en het oordeel. Daarna kun je toetsen: klopt dit, of is dit de standaardreactie? Zou ik dit tegen een collega zeggen die hetzelfde had gedaan? Vrijwel niemand hanteert voor anderen de maat die de criticus voor jou hanteert, en dat verschil is leerzaam.</p>
     <p>Uiteindelijk gaat het om een mildere maat vinden die wél realistisch is. Niet de lat afschaffen, maar hem laten passen bij wat het werk vraagt in plaats van bij wat de angst eist. Mensen die dat leren, merken meestal dat de kwaliteit van hun werk gelijk blijft en dat werken lichter wordt. De strengheid bleek niet de motor te zijn; die was jij zelf al die tijd.</p>
 
-    <div class="noot">
-      <strong>Zorgvuldig:</strong> merk je dat vermoeidheid, somberheid of spanning aanhouden, ook buiten je werk? Neem dat serieus en bespreek het met je huisarts. Coaching is waardevol, maar geen vervanging van zorg als die nodig is.
-    </div>
-
   </div>
 </article>
 
