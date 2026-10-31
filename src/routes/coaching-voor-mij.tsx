@@ -109,22 +109,22 @@ const HTML = `<main id="main">
     </div>
     <div class="steps steps--4">
       <div class="step">
-        <span class="num">01</span>
+        <span class="num">1</span>
         <h3>Rust en overzicht</h3>
         <p>Eerst even landen. Wat speelt er, in je hoofd en in je lijf? Waar zit de onrust precies? Je hoeft nog niets op te lossen, alleen helder krijgen waar je staat.</p>
       </div>
       <div class="step">
-        <span class="num">02</span>
+        <span class="num">2</span>
         <h3>Zicht op wat je kunt en wilt</h3>
         <p>Je onderzoekt je talenten, je waarden en waar je energie van krijgt. Vaak weet je meer dan je denkt. Het is alleen nog nooit op een rij gezet.</p>
       </div>
       <div class="step">
-        <span class="num">03</span>
+        <span class="num">3</span>
         <h3>Richting kiezen</h3>
         <p>Met dat inzicht bepaal je je richting: in je huidige werk, in een andere rol, of ergens anders. Geen overhaaste keuzes, wel een keuze die van jou is.</p>
       </div>
       <div class="step">
-        <span class="num">04</span>
+        <span class="num">4</span>
         <h3>Concrete stappen zetten</h3>
         <p>Gesprekken voeren, solliciteren, netwerken, ander gedrag oefenen. Je coach blijft erbij tot je stappen in de praktijk staan, niet alleen op papier.</p>
       </div>

@@ -339,35 +339,35 @@ const HTML = `<main id="hoofd">
 
     <ol class="steps">
       <li>
-        <div class="node"><span class="nummer">01</span><span class="ruit" aria-hidden="true"></span></div>
+        <div class="node"><span class="nummer">1</span><span class="ruit" aria-hidden="true"></span></div>
         <div>
           <h3>Maak het concreet</h3>
           <p>Goed gedaan glijdt eraf; een compliment dat het specifieke gedrag benoemt, blijft hangen. Zeg wat u zag: welke keuze, welke aanpak, welk moment. Hoe concreter, hoe moeilijker weg te wuiven.</p>
         </div>
       </li>
       <li>
-        <div class="node"><span class="nummer">02</span><span class="ruit" aria-hidden="true"></span></div>
+        <div class="node"><span class="nummer">2</span><span class="ruit" aria-hidden="true"></span></div>
         <div>
           <h3>Benoem het effect</h3>
           <p>Koppel het gedrag aan wat het opleverde voor de klant, het team of het resultaat. Zo weet de medewerker niet alleen dát het goed was, maar ook waaróm het ertoe deed.</p>
         </div>
       </li>
       <li>
-        <div class="node"><span class="nummer">03</span><span class="ruit" aria-hidden="true"></span></div>
+        <div class="node"><span class="nummer">3</span><span class="ruit" aria-hidden="true"></span></div>
         <div>
           <h3>Waardeer ook de aanpak</h3>
           <p>Wie alleen resultaten prijst, leert mensen op veilig te spelen. Erken ook de inzet, het oordeel en de zorgvuldigheid onderweg, juist als het resultaat nog niet binnen is.</p>
         </div>
       </li>
       <li>
-        <div class="node"><span class="nummer">04</span><span class="ruit" aria-hidden="true"></span></div>
+        <div class="node"><span class="nummer">4</span><span class="ruit" aria-hidden="true"></span></div>
         <div>
           <h3>Geef het op tijd en apart</h3>
           <p>Waardering verliest kracht als ze weken later komt, of als ze wordt weggestopt vlak vóór een punt van kritiek. Die maar wist het compliment uit. Houd de twee gescheiden: waardering nu, verbeterpunt op een ander moment.</p>
         </div>
       </li>
       <li>
-        <div class="node"><span class="nummer">05</span><span class="ruit" aria-hidden="true"></span></div>
+        <div class="node"><span class="nummer">5</span><span class="ruit" aria-hidden="true"></span></div>
         <div>
           <h3>Herhaal het</h3>
           <p>Een zelfbeeld verandert niet na één compliment, maar door herhaalde ervaring. Consequente, gemeende waardering doet op termijn wat een losse opmerking niet kan: ze verschuift langzaam hoe iemand naar het eigen werk kijkt.</p>
