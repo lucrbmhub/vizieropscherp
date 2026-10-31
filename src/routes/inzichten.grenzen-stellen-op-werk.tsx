@@ -177,9 +177,6 @@ const HTML = `<main id="main">
     <p>Klein en concreet. Kies één terugkerend verzoek en bouw een pauze in: "ik kom er vanmiddag op terug." Geen nee, alleen ruimte. In die ruimte kun je opmerken wat er gebeurt: de aandrang om meteen te redden, de angst voor de reactie. Dat opmerken is het echte werk; het maakt van een reflex weer een keuze.</p>
     <p>En voer het gesprek met je leidinggevende, niet als klacht maar als agendapunt: dit doe ik allemaal, dit blijft daardoor liggen, wat spreken we af? Vaak heeft die geen idee, juist omdat jij het altijd geruisloos oplost. De uitkomst van dit alles hoeft geen andere baan te zijn. Meestal is het een andere rol in dezelfde baan: nog steeds degene op wie je kunt bouwen, maar nu inclusief jezelf.</p>
 
-    <div class="noot">
-      <strong>Zorgvuldig:</strong> merk je dat vermoeidheid, somberheid of spanning aanhouden, ook buiten je werk? Neem dat serieus en bespreek het met je huisarts. Coaching is waardevol, maar geen vervanging van zorg als die nodig is.
-    </div>
 
   </div>
 </article>
