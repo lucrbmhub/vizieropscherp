@@ -519,3 +519,12 @@ address{font-style:normal}
 
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 section[id]{scroll-margin-top:90px}
+
+/* Cal.com-agenda op /kennismaken */
+.vos-cal{position:relative;width:100%;min-height:640px;height:720px;background:#FFFFFF;border:1px solid var(--line, rgba(0,0,0,.08));border-radius:12px;overflow:hidden}
+.vos-cal-skeleton{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--mint, var(--linnen));animation:vos-pulse 1.6s ease-in-out infinite}
+.vos-cal-skeleton__label{color:var(--petrol);font-size:14px;letter-spacing:.02em}
+.vos-cal-fallback{display:flex;flex-direction:column;gap:16px;align-items:flex-start;padding:32px}
+.vos-cal-fallback p{color:var(--petrol);margin:0}
+@keyframes vos-pulse{0%,100%{opacity:1}50%{opacity:.6}}
+@media (prefers-reduced-motion:reduce){.vos-cal-skeleton{animation:none}}
