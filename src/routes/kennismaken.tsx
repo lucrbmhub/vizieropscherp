@@ -233,7 +233,6 @@ function Page() {
           <div className="section-head">
             <p className="eyebrow">Direct inplannen</p>
             <h2 className="h-section">Kies een moment dat jou uitkomt.</h2>
-            <p>Twintig minuten, vrijblijvend. Jij kiest de tijd; we bellen of spreken af op een van onze locaties.</p>
           </div>
           <CalEmbed />
         </div>
