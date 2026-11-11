@@ -4,11 +4,6 @@ import SiteFooter from "@/components/SiteFooter";
 
 export type CityLandingData = {
   citySlug: "haarlem" | "amsterdam";
-  facts: Array<{ label: string; text: string }>;
-  coaches: {
-    title: string;
-    items: Array<{ name: string; role: string; label?: string; quote: string; photo: string }>;
-  };
   hero: {
     eyebrow: string;
     title: ReactNode;
@@ -50,6 +45,7 @@ export type CityLandingData = {
     title: string;
     intro: string;
     stats: Array<{ num: string; label: string }>;
+    cards: Array<{ title: string; text: string }>;
     quote: string;
     cite: string;
   };
@@ -147,20 +143,6 @@ const CSS = `
 .city .why-card{background:var(--vos-paper);border:1px solid var(--vos-rand);border-radius:15px;padding:28px 26px}
 .city .why-card h3{font-size:20px;color:var(--vos-petrol);margin-bottom:8px}
 .city .why-card p{margin:0;color:var(--vos-body);font-size:15.5px}
-.city .facts{padding:0 0 64px}
-.city .facts__list{display:grid;grid-template-columns:repeat(3,1fr);gap:22px 32px;margin:0;padding:28px 0 0;border-top:1px solid var(--vos-rand)}
-.city .facts__item{margin:0}
-.city .facts__item dt{font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:var(--vos-goudlabel);margin-bottom:6px}
-.city .facts__item dd{margin:0;font-size:15px;color:var(--vos-body);line-height:1.5}
-.city .coaches-title{font-size:22px;color:var(--vos-petrol);margin-bottom:20px}
-.city .coach-cards{display:grid;grid-template-columns:repeat(var(--cols,3),1fr);gap:24px}
-.city .coach-card{display:flex;flex-direction:column;gap:10px}
-.city .coach-card__photo{width:72px;height:72px;border-radius:50%;object-fit:cover}
-.city .coach-card h4{font-family:var(--font-display);font-weight:500;font-size:19px;color:var(--vos-petrol);margin:0;line-height:1.2}
-.city .coach-card__role{font-size:14px;color:var(--vos-muted)}
-.city .coach-card__label{align-self:flex-start;font-size:11px;text-transform:uppercase;letter-spacing:.14em;font-weight:600;color:var(--vos-petrol);background:var(--vos-warm);border-radius:999px;padding:4px 10px}
-.city .coach-card__quote{margin:0;font-size:15px;color:var(--vos-body);font-style:italic;flex:1}
-.city .coach-card a{font-weight:500}
 .city .quote{display:grid;grid-template-columns:auto 1fr;gap:22px;max-width:760px;margin:40px auto 0}
 .city .quote__rail{width:9px;display:flex;flex-direction:column;align-items:center;padding-top:6px}
 .city .quote__rail i{width:9px;height:9px;background:var(--vos-koraal);transform:rotate(45deg)}
@@ -187,7 +169,7 @@ const CSS = `
 .city .cta-inner p{color:var(--vos-body-warm);max-width:52ch;margin:0 auto 26px}
 .city .mobile-bar{display:none;visibility:hidden}
 @media (max-width:900px){
-  .city .hero__grid,.city .feature__grid,.city .two,.city .steps-grid,.city .stats,.city .why-cards,.city .facts__list,.city .coach-cards{grid-template-columns:1fr}
+  .city .hero__grid,.city .feature__grid,.city .two,.city .steps-grid,.city .stats,.city .why-cards{grid-template-columns:1fr}
   .city .hero-media{margin-top:36px}
   .city .float-card{left:12px;bottom:16px}
   .city .stats{grid-template-columns:1fr;gap:26px}
@@ -260,19 +242,6 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
                   </div>
                 )}
               </div>
-            </div>
-          </section>
-
-          <section className="facts section--paper" aria-label="Kort overzicht">
-            <div className="container">
-              <dl className="facts__list">
-                {data.facts.map((f) => (
-                  <div className="facts__item" key={f.label}>
-                    <dt>{f.label}</dt>
-                    <dd>{f.text}</dd>
-                  </div>
-                ))}
-              </dl>
             </div>
           </section>
 
@@ -363,16 +332,11 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
                   </div>
                 ))}
               </div>
-              <h3 className="coaches-title">{data.coaches.title}</h3>
-              <div className="why-cards coach-cards" style={{ ["--cols" as string]: data.coaches.items.length }}>
-                {data.coaches.items.map((c) => (
-                  <div className="why-card coach-card" key={c.name}>
-                    <img className="coach-card__photo" src={c.photo} alt={c.name} width={72} height={72} loading="lazy" />
-                    <h4>{c.name}</h4>
-                    <span className="coach-card__role">{c.role}</span>
-                    {c.label && <span className="coach-card__label">{c.label}</span>}
-                    <p className="coach-card__quote">{c.quote}</p>
-                    <a href="/over-ons#coaches">Bekijk het profiel van {c.name.split(" ")[0]}</a>
+              <div className="why-cards">
+                {data.why.cards.map((c) => (
+                  <div className="why-card" key={c.title}>
+                    <h3>{c.title}</h3>
+                    <p>{c.text}</p>
                   </div>
                 ))}
               </div>
