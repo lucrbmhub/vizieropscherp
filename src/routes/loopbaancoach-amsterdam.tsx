@@ -124,7 +124,7 @@ const data: CityLandingData = {
     ],
     quote:
       "“Al jaren was ik toe aan iets anders. Maar wat? … Ik wilde werk wat energie geeft en heb het gevonden. Er zit weer muziek in mijn werkleven.”",
-    cite: "Chris Hartman, Coach",
+    cite: "Chris Hartman",
   },
   faq: {
     eyebrow: "Veelgestelde vragen",
