@@ -20,10 +20,10 @@ const data: CityLandingData = {
       </>
     ),
     lead:
-      "Vastgelopen, toe aan iets nieuws, of biedt je werkgever een loopbaantraject aan? In Amsterdam-Zuid, bij het Olympisch Stadion, of online praat je met een ervaren, gecertificeerde loopbaancoach. Samen bepaal je je volgende stap: sterker worden in je huidige rol of een andere richting kiezen.",
+      "Vastgelopen, toe aan iets nieuws, of biedt je werkgever een loopbaantraject aan? In Amsterdam-Zuid, vlakbij het Olympisch Stadion, of online praat je met een ervaren, gecertificeerde loopbaancoach. Samen bepaal je je volgende stap: sterker worden in je huidige rol of een andere richting kiezen.",
     primaryCta: { label: "Plan een kennismakingsgesprek" },
     secondaryCta: { label: "Bel 020 214 64 66", href: "tel:+31202146466" },
-    note: "Twintig minuten, gratis en vrijblijvend. Telefonisch of op een van onze locaties.",
+    note: "Twintig minuten, gratis en vrijblijvend.\u00a0",
     hrNote: { text: "Zoekt u als werkgever een coach voor een medewerker?", linkLabel: "Bekijk hoe wij met organisaties werken", href: "/voor-werkgevers" },
     image: { src: "/assets/coaching-gesprek.jpg", alt: "Loopbaangesprek bij Vizier op Scherp in Amsterdam" },
   },
