@@ -4,7 +4,7 @@ import { SITE_URL, socialImageMeta } from "@/lib/site";
 
 const TITLE = "Loopbaancoach Amsterdam, gratis kennismaken | Vizier op Scherp";
 const DESCRIPTION =
-  "Loopbaancoach in Amsterdam-Zuid, bij het Olympisch Stadion, of online. Start met een gratis gesprek van twintig minuten en maak daarna kennis met je coach.";
+  "Loopbaancoach in Amsterdam-Zuid of online. Loopbaanadvies en begeleiding door gecertificeerde coaches. Start met een gratis gesprek van twintig minuten.";
 const OG_DESCRIPTION =
   "Vastgelopen in je werk of toe aan een volgende stap? Persoonlijke loopbaancoaching in Amsterdam, op locatie in Amsterdam-Zuid of online.";
 const URL = `${SITE_URL}/loopbaancoach-amsterdam`;
@@ -77,24 +77,29 @@ const data: CityLandingData = {
     eyebrow: "Zo werkt het",
     title: "Wat je kunt verwachten",
     intro:
-      "Hoeveel gesprekken je nodig hebt, hangt af van je vraag. De meeste trajecten duren een paar maanden, met een gesprek om de twee à drie weken. Je begint vrijblijvend en beslist pas daarna.",
+      "Hoeveel gesprekken je nodig hebt, hangt af van je vraag. Gemiddeld zijn het er zes, verspreid over drie tot zes maanden. Je begint vrijblijvend en beslist pas daarna.",
     cta: { label: "Plan een kennismakingsgesprek" },
-    listLabel: "In drie stappen",
+    listLabel: "In vier stappen",
     items: [
       {
-        num: "Stap 1 · Kennismaken",
-        title: "Een vrijblijvend gesprek",
-        text: "In twintig minuten kijken we samen wat er speelt en wat je zoekt. Daarna stellen we een coach voor die bij je past.",
+        num: "Stap 1 · Overzicht",
+        title: "Helder krijgen waar je staat",
+        text: "Je vertelt wat er speelt, in je werk en daarbuiten. Samen ordenen jullie je vraag, zodat duidelijk wordt waar het om gaat.",
       },
       {
-        num: "Stap 2 · Je coach",
-        title: "Eerst kennismaken, dan kiezen",
-        text: "Je maakt kennis met je coach. Samen bepalen jullie wat je wilt bereiken en hoe jullie daaraan werken.",
+        num: "Stap 2 · Inzicht",
+        title: "Zicht op wat je kunt en wilt",
+        text: "Je onderzoekt je talenten, je waarden en waar je energie van krijgt. Ook kijk je naar wat je tegenhoudt, zoals overtuigingen of gewoontes die je in de weg zitten.",
       },
       {
-        num: "Stap 3 · Aan de slag",
+        num: "Stap 3 · Richting",
+        title: "Een keuze die bij je past",
+        text: "Met dat inzicht bepaal je je richting: blijven en je werk anders inrichten, of een stap buiten je huidige baan. Je neemt de tijd voor die keuze, zodat hij van jou is.",
+      },
+      {
+        num: "Stap 4 · Actie",
         title: "In beweging komen",
-        text: "Je oefent wat je wilt veranderen: een gesprek met je leidinggevende, een netwerkafspraak of een sollicitatie. Je rondt af als je zelf verder kunt.",
+        text: "Je zet concrete stappen: een gesprek met je leidinggevende, ander gedrag uitproberen, netwerken of solliciteren. Je rondt af als je zelf verder kunt.",
       },
     ],
   },
@@ -108,24 +113,32 @@ const data: CityLandingData = {
       { num: "Sinds 2016", label: "begeleiden we mensen bij hun loopbaanvragen" },
       { num: "20 min", label: "gratis kennismaking, telefonisch of op locatie, voordat er iets vastligt" },
     ],
-    cards: [
-      {
-        title: "Eerst kennismaken",
-        text: "Je ontmoet je coach voordat er iets vastligt. Een goede klik is de basis van een traject dat werkt.",
-      },
-      {
-        title: "Vertrouwelijk",
-        text: "Wat je met je coach bespreekt, blijft tussen jullie. Betaalt je werkgever mee, dan hoort die alleen of het traject loopt, nooit waarover het gaat.",
-      },
-      {
-        title: "Gecertificeerd",
-        text: "Onze coaches zijn gecertificeerd en aangesloten bij een erkende beroepsvereniging of kwaliteitsregister, zoals Noloc, NOBCO of een vergelijkbaar register.",
-      },
-    ],
     quote:
       "“Al jaren was ik toe aan iets anders. Maar wat? … Ik wilde werk wat energie geeft en heb het gevonden. Er zit weer muziek in mijn werkleven.”",
     cite: "Chris Hartman",
   },
+  coaches: [
+    {
+      name: "Zelah Dorrestijn",
+      role: "Loopbaancoach & trainer",
+      quote: "“Neem je volgende stap vanuit gevoel en het kennen van je behoeften.”",
+      photo: "/assets/zelah.jpg",
+    },
+    {
+      name: "Luc Buurman",
+      role: "Loopbaancoach, trainer & eigenaar",
+      label: "Noloc RL",
+      quote: "“Krijg scherp waar je talenten liggen en wat je belangrijk vindt. Dan kun je gerichte keuzes maken.”",
+      photo: "/assets/luc.jpg",
+    },
+    {
+      name: "Lianne Both",
+      role: "Loopbaancoach, trainer & psycholoog",
+      label: "Psycholoog",
+      quote: "“Kom in beweging en ontdek waar je blij van wordt.”",
+      photo: "/assets/lianne.jpg",
+    },
+  ],
   faq: {
     eyebrow: "Veelgestelde vragen",
     title: "Loopbaancoaching in Amsterdam: wat je wilt weten",
@@ -152,13 +165,23 @@ const data: CityLandingData = {
       },
       {
         q: "Wat kost een loopbaantraject?",
-        a: "Na de kennismaking krijg je een voorstel met een vaste prijs voor het hele traject. Hoe hoog die is, hangt af van je vraag en het aantal gesprekken dat je nodig hebt. Je weet dus vooraf waar je aan toe bent, en achteraf komen er geen kosten bij.",
-        text: "Na de kennismaking krijg je een voorstel met een vaste prijs voor het hele traject. Hoe hoog die is, hangt af van je vraag en het aantal gesprekken dat je nodig hebt. Je weet dus vooraf waar je aan toe bent, en achteraf komen er geen kosten bij.",
+        a: "Na de kennismaking krijg je een voorstel met een vaste prijs voor het hele traject. Hoe hoog die is, hangt af van je vraag en het aantal gesprekken. Gemiddeld zijn dat er zes. Je weet dus vooraf waar je aan toe bent, en achteraf komen er geen kosten bij.",
+        text: "Na de kennismaking krijg je een voorstel met een vaste prijs voor het hele traject. Hoe hoog die is, hangt af van je vraag en het aantal gesprekken. Gemiddeld zijn dat er zes. Je weet dus vooraf waar je aan toe bent, en achteraf komen er geen kosten bij.",
       },
       {
         q: "Kan mijn werkgever het traject betalen?",
         a: "Ja, dat komt vaak voor. We zetten het voorstel dan op naam van je werkgever en denken mee over hoe je het aankaart. Ook als je werkgever betaalt, blijft de inhoud van de gesprekken tussen jou en je coach. Je werkgever hoort alleen of het traject loopt, nooit waarover het gaat.",
         text: "Ja, dat komt vaak voor. We zetten het voorstel dan op naam van je werkgever en denken mee over hoe je het aankaart. Ook als je werkgever betaalt, blijft de inhoud van de gesprekken tussen jou en je coach. Je werkgever hoort alleen of het traject loopt, nooit waarover het gaat.",
+      },
+      {
+        q: "Wat is het verschil tussen een loopbaancoach, loopbaanadviseur en carrièrecoach?",
+        a: "In de praktijk bedoelen mensen hetzelfde: iemand die je helpt bij vragen over je werk en je volgende stap. Loopbaanadvies en loopbaanbegeleiding zijn andere woorden voor wat wij loopbaancoaching noemen. Onze coaches in Amsterdam denken met je mee, begeleiden je en helpen je kiezen.",
+        text: "In de praktijk bedoelen mensen hetzelfde: iemand die je helpt bij vragen over je werk en je volgende stap. Loopbaanadvies en loopbaanbegeleiding zijn andere woorden voor wat wij loopbaancoaching noemen. Onze coaches in Amsterdam denken met je mee, begeleiden je en helpen je kiezen.",
+      },
+      {
+        q: "Zoek je een jobcoach in Amsterdam?",
+        a: (<>Een jobcoach begeleidt je op de werkplek, vaak via UWV of de gemeente. Dat is iets anders dan loopbaancoaching. Heb je een uitkering en wil je via UWV weer aan het werk? Wij zijn een UWV-erkend bureau. Lees meer over <a href="/uwv-traject">ons UWV-traject</a>.</>),
+        text: "Een jobcoach begeleidt je op de werkplek, vaak via UWV of de gemeente. Dat is iets anders dan loopbaancoaching. Heb je een uitkering en wil je via UWV weer aan het werk? Wij zijn een UWV-erkend bureau. Lees meer over ons UWV-traject.",
       },
     ],
   },

@@ -4,7 +4,7 @@ import { SITE_URL, socialImageMeta } from "@/lib/site";
 
 const TITLE = "Loopbaancoach Haarlem, gratis kennismaken | Vizier op Scherp";
 const DESCRIPTION =
-  "Loopbaancoach in het centrum van Haarlem of online. Start met een gratis gesprek van twintig minuten en maak daarna kennis met je coach.";
+  "Loopbaancoach in het centrum van Haarlem of online. Loopbaanadvies en begeleiding door gecertificeerde coaches. Start met een gratis gesprek van twintig minuten.";
 const OG_DESCRIPTION =
   "Vastgelopen in je werk of toe aan een volgende stap? Persoonlijke loopbaancoaching in Haarlem, op locatie in het centrum of online.";
 const URL = `${SITE_URL}/loopbaancoach-haarlem`;
@@ -63,6 +63,7 @@ const data: CityLandingData = {
       { title: "Locatie Haarlem", text: "Klein Heiligland 84, 2011 EJ Haarlem" },
       { title: "Ook in Amsterdam", text: "IJsbaanpad 9, 1076 CV Amsterdam-Zuid" },
       { title: "Bereikbaar", text: "In het centrum, op loopafstand van station Haarlem" },
+      { title: "Parkeren", text: "Betaald parkeren op de Raamvest" },
     ],
     sideLabel: "Dichtbij en vertrouwd",
     sideText:
@@ -77,24 +78,29 @@ const data: CityLandingData = {
     eyebrow: "Zo werkt het",
     title: "Wat je kunt verwachten",
     intro:
-      "Hoeveel gesprekken je nodig hebt, hangt af van je vraag. De meeste trajecten duren een paar maanden, met een gesprek om de twee à drie weken. Je begint vrijblijvend en beslist pas daarna.",
+      "Hoeveel gesprekken je nodig hebt, hangt af van je vraag. Gemiddeld zijn het er zes, verspreid over drie tot zes maanden. Je begint vrijblijvend en beslist pas daarna.",
     cta: { label: "Plan een kennismakingsgesprek" },
-    listLabel: "In drie stappen",
+    listLabel: "In vier stappen",
     items: [
       {
-        num: "Stap 1 · Kennismaken",
-        title: "Een vrijblijvend gesprek",
-        text: "In twintig minuten kijken we samen wat er speelt en wat je zoekt. Daarna stellen we een coach voor die bij je past.",
+        num: "Stap 1 · Overzicht",
+        title: "Helder krijgen waar je staat",
+        text: "Je vertelt wat er speelt, in je werk en daarbuiten. Samen ordenen jullie je vraag, zodat duidelijk wordt waar het om gaat.",
       },
       {
-        num: "Stap 2 · Je coach",
-        title: "Eerst kennismaken, dan kiezen",
-        text: "Je maakt kennis met je coach. Samen bepalen jullie wat je wilt bereiken en hoe jullie daaraan werken.",
+        num: "Stap 2 · Inzicht",
+        title: "Zicht op wat je kunt en wilt",
+        text: "Je onderzoekt je talenten, je waarden en waar je energie van krijgt. Ook kijk je naar wat je tegenhoudt, zoals overtuigingen of gewoontes die je in de weg zitten.",
       },
       {
-        num: "Stap 3 · Aan de slag",
+        num: "Stap 3 · Richting",
+        title: "Een keuze die bij je past",
+        text: "Met dat inzicht bepaal je je richting: blijven en je werk anders inrichten, of een stap buiten je huidige baan. Je neemt de tijd voor die keuze, zodat hij van jou is.",
+      },
+      {
+        num: "Stap 4 · Actie",
         title: "In beweging komen",
-        text: "Je oefent wat je wilt veranderen: een gesprek met je leidinggevende, een netwerkafspraak of een sollicitatie. Je rondt af als je zelf verder kunt.",
+        text: "Je zet concrete stappen: een gesprek met je leidinggevende, ander gedrag uitproberen, netwerken of solliciteren. Je rondt af als je zelf verder kunt.",
       },
     ],
   },
@@ -108,24 +114,39 @@ const data: CityLandingData = {
       { num: "Sinds 2016", label: "begeleiden we mensen bij hun loopbaanvragen" },
       { num: "20 min", label: "gratis kennismaking, telefonisch of op locatie, voordat er iets vastligt" },
     ],
-    cards: [
-      {
-        title: "Eerst kennismaken",
-        text: "Je ontmoet je coach voordat er iets vastligt. Een goede klik is de basis van een traject dat werkt.",
-      },
-      {
-        title: "Vertrouwelijk",
-        text: "Wat je met je coach bespreekt, blijft tussen jullie. Betaalt je werkgever mee, dan hoort die alleen of het traject loopt, nooit waarover het gaat.",
-      },
-      {
-        title: "Gecertificeerd",
-        text: "Onze coaches zijn gecertificeerd en aangesloten bij een erkende beroepsvereniging of kwaliteitsregister, zoals Noloc, NOBCO of een vergelijkbaar register.",
-      },
-    ],
     quote:
       "“Het traject opende mijn ogen en gaf mij richting. Ik kan goed zorgen voor anderen. Nu stel ik mezelf elke dag de vraag: en wat wil ik.”",
     cite: "Romy Rutten, Officemanager",
   },
+  coaches: [
+    {
+      name: "Maaike Pannekoek-Hänschen",
+      role: "Loopbaancoach & organisatieadviseur",
+      quote: "“Ik geloof dat er voor ieder mens een juiste plek is.”",
+      photo: "/assets/maaike.jpg",
+    },
+    {
+      name: "Floor van den Berg",
+      role: "Loopbaancoach & trainer",
+      label: "NOBCO",
+      quote: "“Inzicht is pas waardevol als het leidt tot beweging.”",
+      photo: "/assets/floor.jpg",
+    },
+    {
+      name: "Luc Buurman",
+      role: "Loopbaancoach, trainer & eigenaar",
+      label: "Noloc RL",
+      quote: "“Krijg scherp waar je talenten liggen en wat je belangrijk vindt. Dan kun je gerichte keuzes maken.”",
+      photo: "/assets/luc.jpg",
+    },
+    {
+      name: "Lianne Both",
+      role: "Loopbaancoach, trainer & psycholoog",
+      label: "Psycholoog",
+      quote: "“Kom in beweging en ontdek waar je blij van wordt.”",
+      photo: "/assets/lianne.jpg",
+    },
+  ],
   faq: {
     eyebrow: "Veelgestelde vragen",
     title: "Loopbaancoaching in Haarlem: wat je wilt weten",
@@ -134,6 +155,11 @@ const data: CityLandingData = {
         q: "Waar vinden de gesprekken in Haarlem plaats?",
         a: "Op onze locatie aan het Klein Heiligland 84 in het centrum van Haarlem, of online. Wat het beste past bij jouw situatie en agenda.",
         text: "Op onze locatie aan het Klein Heiligland 84 in het centrum van Haarlem, of online. Wat het beste past bij jouw situatie en agenda.",
+      },
+      {
+        q: "Is de locatie goed bereikbaar?",
+        a: "Ja. De locatie ligt in het centrum van Haarlem, op loopafstand van station Haarlem. Met de auto parkeer je betaald op de Raamvest. Een gesprek online kan altijd.",
+        text: "Ja. De locatie ligt in het centrum van Haarlem, op loopafstand van station Haarlem. Met de auto parkeer je betaald op de Raamvest. Een gesprek online kan altijd.",
       },
       {
         q: "Kan ik ook terecht als ik buiten Haarlem woon?",
@@ -147,8 +173,8 @@ const data: CityLandingData = {
       },
       {
         q: "Wat kost een loopbaantraject?",
-        a: "Na de kennismaking krijg je een voorstel met een vaste prijs voor het hele traject. Hoe hoog die is, hangt af van je vraag en het aantal gesprekken dat je nodig hebt. Je weet dus vooraf waar je aan toe bent, en achteraf komen er geen kosten bij.",
-        text: "Na de kennismaking krijg je een voorstel met een vaste prijs voor het hele traject. Hoe hoog die is, hangt af van je vraag en het aantal gesprekken dat je nodig hebt. Je weet dus vooraf waar je aan toe bent, en achteraf komen er geen kosten bij.",
+        a: "Na de kennismaking krijg je een voorstel met een vaste prijs voor het hele traject. Hoe hoog die is, hangt af van je vraag en het aantal gesprekken. Gemiddeld zijn dat er zes. Je weet dus vooraf waar je aan toe bent, en achteraf komen er geen kosten bij.",
+        text: "Na de kennismaking krijg je een voorstel met een vaste prijs voor het hele traject. Hoe hoog die is, hangt af van je vraag en het aantal gesprekken. Gemiddeld zijn dat er zes. Je weet dus vooraf waar je aan toe bent, en achteraf komen er geen kosten bij.",
       },
       {
         q: "Kan mijn werkgever het traject betalen?",
@@ -164,6 +190,16 @@ const data: CityLandingData = {
           </>
         ),
         text: "Je maakt eerst kennis met je coach voordat er iets vastligt. Klikt het niet, dan stellen we iemand anders voor. Meer hierover lees je in een goede loopbaancoach kiezen.",
+      },
+      {
+        q: "Wat is het verschil tussen een loopbaancoach, loopbaanadviseur en carrièrecoach?",
+        a: "In de praktijk bedoelen mensen hetzelfde: iemand die je helpt bij vragen over je werk en je volgende stap. Loopbaanadvies en loopbaanbegeleiding zijn andere woorden voor wat wij loopbaancoaching noemen. Onze coaches in Haarlem denken met je mee, begeleiden je en helpen je kiezen.",
+        text: "In de praktijk bedoelen mensen hetzelfde: iemand die je helpt bij vragen over je werk en je volgende stap. Loopbaanadvies en loopbaanbegeleiding zijn andere woorden voor wat wij loopbaancoaching noemen. Onze coaches in Haarlem denken met je mee, begeleiden je en helpen je kiezen.",
+      },
+      {
+        q: "Zoek je een jobcoach in Haarlem?",
+        a: (<>Een jobcoach begeleidt je op de werkplek, vaak via UWV of de gemeente. Dat is iets anders dan loopbaancoaching. Heb je een uitkering en wil je via UWV weer aan het werk? Wij zijn een UWV-erkend bureau. Lees meer over <a href="/uwv-traject">ons UWV-traject</a>.</>),
+        text: "Een jobcoach begeleidt je op de werkplek, vaak via UWV of de gemeente. Dat is iets anders dan loopbaancoaching. Heb je een uitkering en wil je via UWV weer aan het werk? Wij zijn een UWV-erkend bureau. Lees meer over ons UWV-traject.",
       },
     ],
   },

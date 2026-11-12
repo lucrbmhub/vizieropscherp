@@ -12,3 +12,4 @@
 - City landing pages generate location-tagged planning links in their shared template, so route data supplies labels without duplicating URL construction.
 - City FAQ items provide visible answers and matching plain text used to generate FAQPage schema, so structured data stays aligned with page content.
 - City FAQs use native details/summary with scoped marker suppression, so answers remain in server HTML without duplicate disclosure icons.
+- City landing pages supply their location-specific coach cards through route data and reuse existing profile assets and classes, so other pages remain unchanged.

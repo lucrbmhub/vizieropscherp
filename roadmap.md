@@ -1,3 +1,3 @@
 # Stadspagina’s
-- [x] Gedeeld sjabloon en teksten aanpassen.
-- [x] FAQ, links, uitlijning en mobiele balk controleren.
+- [x] Vier stappen, coaches per locatie, FAQ en beschrijvingen bijwerken volgens de bijlage.
+- [x] Beide pagina’s controleren op inhoud, FAQ-schema, foto’s en mobiele en desktopindeling.

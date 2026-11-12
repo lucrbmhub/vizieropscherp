@@ -45,10 +45,10 @@ export type CityLandingData = {
     title: string;
     intro: string;
     stats: Array<{ num: string; label: string }>;
-    cards: Array<{ title: string; text: string }>;
     quote: string;
     cite: string;
   };
+  coaches: Array<{ name: string; role: string; label?: string; quote: string; photo: string }>;
   faq: {
     eyebrow: string;
     title: string;
@@ -139,7 +139,14 @@ const CSS = `
 .city .stat{position:relative}
 .city .stat__num{font-family:var(--font-display);font-weight:500;font-size:34px;color:var(--vos-petrol);line-height:1}
 .city .stat__label{font-size:14.5px;color:var(--vos-muted);margin-top:8px}
-.city .why-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.city .why-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.city .why-cards--4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.city .coaches-title{font-size:22px;color:var(--vos-petrol);margin-bottom:24px}
+.city .why-card{min-width:0;overflow-wrap:anywhere;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.city .why-card .avatar{margin-bottom:4px}
+.city .why-card .avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.city .why-card .role{font-size:14px;font-weight:500;color:var(--vos-koraal)}
+.city .why-card .li-link{margin-top:auto;font-size:14px}
 .city .why-card{background:var(--vos-paper);border:1px solid var(--vos-rand);border-radius:15px;padding:28px 26px}
 .city .why-card h3{font-size:20px;color:var(--vos-petrol);margin-bottom:8px}
 .city .why-card p{margin:0;color:var(--vos-body);font-size:15.5px}
@@ -332,12 +339,17 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
                   </div>
                 ))}
               </div>
-              <div className="why-cards">
-                {data.why.cards.map((c) => (
-                  <div className="why-card" key={c.title}>
-                    <h3>{c.title}</h3>
-                    <p>{c.text}</p>
-                  </div>
+              <h3 className="coaches-title">Je coach in {data.citySlug === "haarlem" ? "Haarlem" : "Amsterdam"}</h3>
+              <div className={`why-cards${data.coaches.length === 4 ? " why-cards--4" : ""}`}>
+                {data.coaches.map((coach) => (
+                  <article className="why-card" key={coach.name}>
+                    <span className="avatar"><img src={coach.photo} alt={coach.name} width={72} height={72} loading="lazy" /></span>
+                    <h3>{coach.name}</h3>
+                    <span className="role">{coach.role}</span>
+                    {coach.label && <span className="tag tag--hl">{coach.label}</span>}
+                    <p className="coach-quote">{coach.quote}</p>
+                    <a className="li-link" href="/over-ons#coaches">Bekijk het profiel van {coach.name.split(" ")[0]}</a>
+                  </article>
                 ))}
               </div>
               <div className="quote">
