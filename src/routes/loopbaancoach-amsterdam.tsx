@@ -15,7 +15,7 @@ const data: CityLandingData = {
     eyebrow: "Loopbaancoach · Amsterdam",
     title: (
       <>
-        Loopbaancoach <span className="idot">i</span>n Amsterdam: kiezen voor werk dat bij je past
+        Loopbaancoach <span className="nowrap"><span className="idot">i</span>n</span> Amsterdam: kiezen voor werk dat bij je past
         <span className="slotpunt">.</span>
       </>
     ),
