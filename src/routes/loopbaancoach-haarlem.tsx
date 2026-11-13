@@ -198,8 +198,8 @@ const data: CityLandingData = {
       },
       {
         q: "Zoek je een jobcoach in Haarlem?",
-        a: (<>Een jobcoach begeleidt je op de werkplek, vaak via UWV of de gemeente. Dat is iets anders dan loopbaancoaching. Heb je een uitkering en wil je via UWV weer aan het werk? Wij zijn een UWV-erkend bureau. Lees meer over <a href="/uwv-traject">ons UWV-traject</a>.</>),
-        text: "Een jobcoach begeleidt je op de werkplek, vaak via UWV of de gemeente. Dat is iets anders dan loopbaancoaching. Heb je een uitkering en wil je via UWV weer aan het werk? Wij zijn een UWV-erkend bureau. Lees meer over ons UWV-traject.",
+        a: (<>Een jobcoach begeleidt je op de werkplek, vaak via UWV of de gemeente. Dat is iets anders dan loopbaancoaching. Als je een jobcoach zoekt verwijzen we je graag door.</>),
+        text: "Een jobcoach begeleidt je op de werkplek, vaak via UWV of de gemeente. Dat is iets anders dan loopbaancoaching. Als je een jobcoach zoekt verwijzen we je graag door.",
       },
     ],
   },
