@@ -263,11 +263,13 @@ const HTML = `<main id="main">
         <h3>Haarlem</h3>
         <p style="color:var(--ink);">Klein Heiligland 84<br>2011 EJ Haarlem</p>
         <p style="margin-top:12px;">Een rustige plek in het centrum van Haarlem voor kennismakingen en coachgesprekken.</p>
+        <p><a href="/loopbaancoach-haarlem" style="border-bottom:1px solid var(--koraal);">Loopbaancoach in Haarlem</a></p>
       </div>
       <div class="card card--paper">
         <h3>Amsterdam</h3>
         <p style="color:var(--ink);">IJsbaanpad 9<br>1076 CV Amsterdam</p>
         <p style="margin-top:12px;">Goed bereikbare locatie in Amsterdam-Zuid.</p>
+        <p><a href="/loopbaancoach-amsterdam" style="border-bottom:1px solid var(--koraal);">Loopbaancoach in Amsterdam</a></p>
       </div>
     </div>
     <p style="margin-top:40px;max-width:72ch;">Ons werkgebied: Amsterdam, Haarlem en omgeving: waaronder Amstelveen, Hoofddorp, Zaanstad, Almere, Diemen, Hilversum, Heemstede en de omliggende gemeenten.</p>
@@ -291,7 +293,7 @@ const HTML = `<main id="main">
       <div class="facet-inner">
         <div>
           <h2>Eens kennismaken?</h2>
-          <p>Een vrijblijvend gesprek van een half uur, persoonlijk of online. We luisteren naar uw vraag en denken mee, ook als u nog niet precies weet wat u zoekt.</p>
+          <p>Een vrijblijvend gesprek van twintig minuten, persoonlijk of online. We luisteren naar uw vraag en denken mee, ook als u nog niet precies weet wat u zoekt.</p>
         </div>
         <a class="btn btn-primary" href="/kennismaken">Plan een kennismakingsgesprek</a>
       </div>

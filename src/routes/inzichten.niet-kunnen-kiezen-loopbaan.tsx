@@ -177,6 +177,8 @@ const HTML = `<main id="main">
     <p>De perfecte keuze bestaat niet, en wachten tot hij zich aandient, is de langste omweg. Wat wel kan: de volgorde omdraaien. Eerst helder krijgen wat voor jou het zwaarst weegt, en pas daarna de opties langs die maat leggen. Vaak valt de keuze dan verrassend snel, niet omdat de opties veranderden, maar omdat jij een meetlat hebt.</p>
     <p>En verklein de inzet waar het kan. Veel loopbaankeuzes zijn te testen voordat je springt: een dag meelopen, een project in de nieuwe richting, een gesprek met iemand die de stap al maakte. Ook goed om te weten: blijven is een volwaardige uitkomst, mits het een keuze wordt in plaats van een uitstel. Wie na eerlijk wegen besluit te blijven, ervaart dezelfde baan anders dan wie er per ongeluk bleef hangen.</p>
 
+    <p>Wil je hierover praten met een coach? Dat kan bij onze <a href="/loopbaancoach-haarlem" style="border-bottom:1px solid var(--koraal);">loopbaancoach in Haarlem</a>, onze <a href="/loopbaancoach-amsterdam" style="border-bottom:1px solid var(--koraal);">loopbaancoach in Amsterdam</a> of online.</p>
+
   </div>
 </article>
 
