@@ -124,6 +124,9 @@ const CSS = `
 .city .hero .badge{margin-bottom:18px}
 .city .dark-card .rows p{margin:0}
 .city .quote{max-width:760px;margin:40px auto 0}
+.city .two .card h3{font-size:21px;margin-bottom:12px}
+.city .two .card .label{display:block;margin-bottom:12px}
+.city .two .card p{margin:0}
 .city .two{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px}
 .city .feature h2{font-size:clamp(30px,3.4vw,42px);color:var(--vos-linnen);margin-bottom:18px;max-width:20ch}
 .city .feature__lead{font-size:17.5px;color:var(--vos-mint);max-width:60ch;margin-bottom:8px}
