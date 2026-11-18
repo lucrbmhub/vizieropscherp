@@ -83,11 +83,11 @@ const HTML = `<main id="main">
         <p class="eyebrow">Doorverwezen door je werkgever?</p>
         <h2 class="h-section">Dan kies jij alsnog zelf.</h2>
         <p style="margin-top:16px;">Veel werkgevers geven je een lijstje met loopbaanbureaus. Wat je daarvan moet weten: jij bepaalt met wie je in zee gaat, en zo hoort het ook. Bij ons werkt dat zo:</p>
-        <ul class="list-core" style="margin:20px 0 28px;">
-          <li><span class="core"></span><span>Je maakt eerst kennis met je loopbaancoach, voordat er iets vastligt</span></li>
-          <li><span class="core"></span><span>Klikt het niet? Dan stellen we iemand anders voor</span></li>
-          <li><span class="core"></span><span>Geen anonieme database: echte mensen, met een eigen verhaal en aanpak</span></li>
-          <li><span class="core"></span><span>Begeleiding in jouw tempo, gericht op concrete stappen</span></li>
+        <ul class="vos-lijst vos-lijst--check" style="margin:20px 0 28px;">
+          <li>Je maakt eerst kennis met je loopbaancoach, voordat er iets vastligt</li>
+          <li>Klikt het niet? Dan stellen we iemand anders voor</li>
+          <li>Geen anonieme database: echte mensen, met een eigen verhaal en aanpak</li>
+          <li>Begeleiding in jouw tempo, gericht op concrete stappen</li>
         </ul>
         <a class="btn btn-outline" href="/over-ons#coaches">Leer onze coaches kennen</a>
       </div>

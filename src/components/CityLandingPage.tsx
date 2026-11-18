@@ -46,6 +46,7 @@ export type CityLandingData = {
     intro: string;
     stats: Array<{ num: string; label: string }>;
     quote: string;
+    quotePhoto?: { src: string; alt: string };
     cite: string;
   };
   coaches: Array<{ name: string; role: string; label?: string; quote: string; photo: string }>;
@@ -56,6 +57,25 @@ export type CityLandingData = {
   };
   cta: { title: string; text: string; button: { label: string } };
 };
+
+function Pictogram({ name }: { name: "gesprek" | "vertrouwelijk" }) {
+  return (
+    <svg width="44" height="44" viewBox="0 0 100 100" fill="none" aria-hidden="true" style={{ display: "block", marginBottom: 16 }}>
+      {name === "gesprek" ? (
+        <>
+          <path d="M38 20 L62 44 L38 68 L14 44 Z" style={{ stroke: "var(--linnen)" }} strokeWidth="6" strokeLinejoin="round" />
+          <path d="M62 32 L86 56 L62 80 L38 56 Z" style={{ stroke: "var(--koraal)" }} strokeWidth="6" strokeLinejoin="round" />
+        </>
+      ) : (
+        <>
+          <path d="M50 18 L82 50 L50 82 L18 50 Z" style={{ stroke: "var(--linnen)" }} strokeWidth="6" strokeLinejoin="round" />
+          <path d="M50 36 L64 50 L50 64 L36 50 Z" style={{ stroke: "var(--koraal)" }} strokeWidth="6" strokeLinejoin="round" />
+          <circle cx="50" cy="50" r="5" style={{ fill: "var(--goud)" }} />
+        </>
+      )}
+    </svg>
+  );
+}
 
 const CSS = `
 .city{--vos-petrol:#1F3D3B;--vos-paper:#FAF6EF;--vos-linnen:#F5EFE3;--vos-warm:#FBF1D7;--vos-goud:#F2C879;--vos-koraal:#E8714A;--vos-koraal-deep:#C85A36;--vos-mint:#D8E5E2;--vos-mint-dof:#BFD0CB;--vos-text-koraal:#3A241A;--vos-body:#4A5550;--vos-body-warm:#5A5442;--vos-muted:#7A7466;--vos-goudlabel:#A8834B;--vos-rand:#E4DCC8;--vos-photo-overlay:linear-gradient(160deg, rgba(31,61,59,.60), rgba(31,61,59,.26) 55%, rgba(232,113,74,.18));--vos-wm-light:rgba(31,61,59,.07);--vos-wm-petrol-line:rgba(245,239,227,.09);--vos-float-shadow:0 18px 40px rgba(31,61,59,.20);--maxw:1200px;--font-display:"Bricolage Grotesque",sans-serif;--font-body:"Instrument Sans",sans-serif;background:var(--vos-paper);color:var(--vos-body);font-family:var(--font-body);font-size:16px;line-height:1.65}
@@ -72,10 +92,6 @@ const CSS = `
 .city .section--petrol{background:var(--vos-petrol);color:var(--vos-mint)}
 .city .section-title{font-size:clamp(30px,3.4vw,42px);color:var(--vos-petrol)}
 .city .section-intro{max-width:58ch;margin-top:16px}
-.city .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;text-transform:uppercase;letter-spacing:.2em;font-weight:600;color:var(--vos-muted);margin-bottom:18px}
-.city .eyebrow::before{content:"";width:7px;height:7px;background:var(--vos-koraal);transform:rotate(45deg);flex:0 0 auto}
-.city .section--petrol .eyebrow{color:var(--vos-goud)}
-.city .section--petrol .eyebrow::before{background:var(--vos-goud)}
 .city .label{font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:var(--vos-goudlabel);margin-bottom:10px}
 .city .section--petrol .label{color:var(--vos-goud)}
 .city .idot{position:relative;display:inline-block}
@@ -105,27 +121,17 @@ const CSS = `
 .city .float-card{position:absolute;left:-18px;bottom:30px;background:var(--vos-warm);border-radius:14px;padding:16px 18px;max-width:236px;box-shadow:var(--vos-float-shadow);z-index:3}
 .city .float-card .label{margin-bottom:6px}
 .city .float-card p{margin:0;font-size:14.5px;color:var(--vos-body-warm);line-height:1.5}
+.city .hero .badge{margin-bottom:18px}
+.city .dark-card .rows p{margin:0}
+.city .quote{max-width:760px;margin:40px auto 0}
 .city .two{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px}
-.city .card-anchor{position:relative;background:var(--vos-warm);border-radius:15px;padding:34px 30px 30px}
-.city .card-anchor::before{content:"";position:absolute;top:-7px;left:30px;width:12px;height:12px;background:var(--vos-koraal);transform:rotate(45deg);box-shadow:0 0 0 5px var(--vos-warm)}
-.city .card-anchor h3{font-size:22px;color:var(--vos-petrol);margin-bottom:10px}
-.city .card-anchor p{color:var(--vos-body-warm);margin:0}
-.city .card-anchor a{font-weight:500}
 .city .feature h2{font-size:clamp(30px,3.4vw,42px);color:var(--vos-linnen);margin-bottom:18px;max-width:20ch}
 .city .feature__lead{font-size:17.5px;color:var(--vos-mint);max-width:60ch;margin-bottom:8px}
 .city .feature__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start;margin-top:26px}
 .city .dark-card{border:2px solid var(--vos-wm-petrol-line);border-radius:16px;padding:32px 30px}
 .city .dark-card h3{font-size:21px;color:var(--vos-linnen);margin-bottom:12px}
 .city .dark-card p{color:var(--vos-mint);margin:0 0 .8em}
-.city .loc{display:flex;flex-direction:column;gap:10px;margin-top:14px}
-.city .loc__row{display:flex;gap:12px;align-items:flex-start}
-.city .loc__row::before{content:"";width:8px;height:8px;margin-top:8px;background:var(--vos-koraal);transform:rotate(45deg);flex:0 0 auto}
-.city .loc__row strong{color:var(--vos-linnen);font-weight:500}
 .city .feature__side p{color:var(--vos-mint)}
-.city .ruitlist{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:14px}
-.city .ruitlist li{position:relative;padding-left:26px;color:var(--vos-body)}
-.city .ruitlist li::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;background:var(--vos-koraal);transform:rotate(45deg)}
-.city .section--petrol .ruitlist li{color:var(--vos-mint)}
 .city .steps-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
 .city .steps-grid h2{font-size:clamp(30px,3.4vw,42px);color:var(--vos-petrol);margin-bottom:16px;max-width:16ch}
 .city .trap{display:flex;flex-direction:column;margin-top:6px}
@@ -135,10 +141,6 @@ const CSS = `
 .city .trap__step h3{font-size:19px;color:var(--vos-petrol);margin:4px 0}
 .city .trap__step p{margin:0;color:var(--vos-body);font-size:15.5px}
 .city .why-head{max-width:60ch;margin-bottom:36px}
-.city .stats{display:grid;grid-template-columns:repeat(3,1fr);align-items:start;gap:22px;margin-bottom:40px}
-.city .stat{position:relative}
-.city .stat__num{font-family:var(--font-display);font-weight:500;font-size:34px;color:var(--vos-petrol);line-height:1}
-.city .stat__label{font-size:14.5px;color:var(--vos-muted);margin-top:8px}
 .city .why-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .city .why-cards--4{grid-template-columns:repeat(4,minmax(0,1fr))}
 .city .coaches-title{font-size:22px;color:var(--vos-petrol);margin-bottom:24px}
@@ -150,13 +152,6 @@ const CSS = `
 .city .why-card{background:var(--vos-paper);border:1px solid var(--vos-rand);border-radius:15px;padding:28px 26px}
 .city .why-card h3{font-size:20px;color:var(--vos-petrol);margin-bottom:8px}
 .city .why-card p{margin:0;color:var(--vos-body);font-size:15.5px}
-.city .quote{display:grid;grid-template-columns:auto 1fr;gap:22px;max-width:760px;margin:40px auto 0}
-.city .quote__rail{width:9px;display:flex;flex-direction:column;align-items:center;padding-top:6px}
-.city .quote__rail i{width:9px;height:9px;background:var(--vos-koraal);transform:rotate(45deg)}
-.city .quote__rail b{width:2px;flex:1;background:var(--vos-rand);margin:6px 0}
-.city .quote__rail s{width:7px;height:7px;border-radius:50%;background:var(--vos-goud)}
-.city .quote blockquote{margin:0;font-family:var(--font-display);font-size:19px;line-height:1.55;color:var(--vos-petrol)}
-.city .quote cite{display:block;font-style:normal;font-size:14.5px;color:var(--vos-muted);margin-top:12px;font-family:var(--font-body)}
 .city .faq{max-width:820px}
 .city .faq__item{border-bottom:1px solid var(--vos-rand);padding:6px 0}
 .city .faq__question{width:100%;background:none;border:none;text-align:left;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 0;font-family:var(--font-display);font-size:19px;color:var(--vos-petrol);font-weight:500;line-height:1.3}
@@ -176,10 +171,9 @@ const CSS = `
 .city .cta-inner p{color:var(--vos-body-warm);max-width:52ch;margin:0 auto 26px}
 .city .mobile-bar{display:none;visibility:hidden}
 @media (max-width:900px){
-  .city .hero__grid,.city .feature__grid,.city .two,.city .steps-grid,.city .stats,.city .why-cards{grid-template-columns:1fr}
+  .city .hero__grid,.city .feature__grid,.city .two,.city .steps-grid,.city .why-cards{grid-template-columns:1fr}
   .city .hero-media{margin-top:36px}
   .city .float-card{left:12px;bottom:16px}
-  .city .stats{grid-template-columns:1fr;gap:26px}
   .city .section{padding:64px 0}
   .city .container{padding:0 20px}
   .city .cta-inner{padding:40px 24px}
@@ -225,7 +219,7 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
             <span className="hero__wm" aria-hidden="true"></span>
             <div className="container hero__grid">
               <div>
-                <span className="eyebrow">{data.hero.eyebrow}</span>
+                <span className="badge badge--dark">{data.hero.eyebrow}</span>
                 <h1>{data.hero.title}</h1>
                 <p className="hero__lead">{data.hero.lead}</p>
                 <div className="hero__cta">
@@ -258,8 +252,8 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
               <h2 className="section-title" style={{ maxWidth: "22ch" }}>{data.recognise.title}</h2>
               <p className="section-intro">{data.recognise.intro}</p>
               <div className="two">
-                {data.recognise.cards.map((c) => (
-                  <div className="card-anchor" key={c.title}>
+                {data.recognise.cards.map((c, i) => (
+                  <div className={i === 0 ? "card card--open open-linnen" : "card card--paper"} key={c.title}>
                     <div className="label">{c.label}</div>
                     <h3>{c.title}</h3>
                     <p>{c.body}</p>
@@ -271,25 +265,28 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
 
           <section className="section section--petrol">
             <div className="container feature">
-              <span className="eyebrow">{data.location.eyebrow}</span>
+              <span className="eyebrow eyebrow--gold">{data.location.eyebrow}</span>
               <h2>{data.location.title}</h2>
               <p className="feature__lead">{data.location.lead}</p>
               <div className="feature__grid">
                 <div className="dark-card">
+                  <Pictogram name="gesprek" />
                   <h3>{data.location.cardTitle}</h3>
                   <p>{data.location.cardText}</p>
-                  <div className="loc">
+                  <div className="rows rows--compact">
                     {data.location.rows.map((r) => (
-                      <div className="loc__row" key={r.title}>
-                        <span><strong>{r.title}</strong><br />{r.text}</span>
+                      <div className="row" key={r.title}>
+                        <div className="row-title">{r.title}</div>
+                        <p>{r.text}</p>
                       </div>
                     ))}
                   </div>
                 </div>
                 <div className="feature__side">
+                  <Pictogram name="vertrouwelijk" />
                   <div className="label">{data.location.sideLabel}</div>
                   <p>{data.location.sideText}</p>
-                  <ul className="ruitlist">
+                  <ul className="vos-lijst vos-lijst--check vos-lijst--donker" style={{ marginTop: 20 }}>
                     {data.location.sideList.map((li) => <li key={li}>{li}</li>)}
                   </ul>
                 </div>
@@ -331,13 +328,15 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
                 <h2 className="section-title">{data.why.title}</h2>
                 <p className="section-intro">{data.why.intro}</p>
               </div>
-              <div className="stats">
+              <div className="card card--petrol" style={{ marginBottom: 40 }}>
+                <div className="bigstats bigstats--3">
                 {data.why.stats.map((s) => (
-                  <div className="stat" key={s.num}>
-                    <div className="stat__num">{s.num}</div>
-                    <div className="stat__label">{s.label}</div>
+                  <div className="bigstat" key={s.num}>
+                    <b>{s.num}</b>
+                    <span>{s.label}</span>
                   </div>
                 ))}
+                </div>
               </div>
               <h3 className="coaches-title">Je coach in {data.citySlug === "haarlem" ? "Haarlem" : "Amsterdam"}</h3>
               <div className={`why-cards${data.coaches.length === 4 ? " why-cards--4" : ""}`}>
@@ -352,13 +351,21 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
                   </article>
                 ))}
               </div>
-              <div className="quote">
-                <div className="quote__rail" aria-hidden="true"><i></i><b></b><s></s></div>
+              <figure className="quote">
+                <div className="quote-rail" aria-hidden="true"><span className="top"></span><span className="bar"></span><span className="end"></span></div>
                 <div>
+                  {data.why.quotePhoto && (
+                    <div style={{ display: "flex", justifyContent: "flex-start", marginBottom: 14 }}>
+                      <span className="testimonial-avatar" style={{ display: "block", width: 72, height: 72, borderRadius: "50%", overflow: "hidden", flex: "none", background: "var(--petrol)", position: "relative" }}>
+                        <img src={data.why.quotePhoto.src} alt={data.why.quotePhoto.alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                        <span style={{ position: "absolute", right: -2, bottom: 2, width: 10, height: 10, background: "var(--goud)", transform: "rotate(45deg)", boxShadow: "0 0 0 4px var(--paper)" }}></span>
+                      </span>
+                    </div>
+                  )}
                   <blockquote>{data.why.quote}</blockquote>
                   <cite>{data.why.cite}</cite>
                 </div>
-              </div>
+              </figure>
             </div>
           </section>
 

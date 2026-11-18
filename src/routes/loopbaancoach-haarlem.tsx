@@ -116,6 +116,7 @@ const data: CityLandingData = {
     ],
     quote:
       "“Het traject opende mijn ogen en gaf mij richting. Ik kan goed zorgen voor anderen. Nu stel ik mezelf elke dag de vraag: en wat wil ik.”",
+    quotePhoto: { src: "/assets/romy.jpeg", alt: "Romy Rutten" },
     cite: "Romy Rutten, Officemanager",
   },
   coaches: [
