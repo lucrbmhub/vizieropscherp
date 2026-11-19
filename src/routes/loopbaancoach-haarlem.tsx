@@ -62,8 +62,6 @@ const data: CityLandingData = {
     rows: [
       { title: "Locatie Haarlem", text: "Klein Heiligland 84, 2011 EJ Haarlem" },
       { title: "Ook in Amsterdam", text: "IJsbaanpad 9, 1076 CV Amsterdam-Zuid" },
-      { title: "Bereikbaar", text: "In het centrum, op loopafstand van station Haarlem" },
-      { title: "Parkeren", text: "Betaald parkeren op de Raamvest" },
     ],
     sideLabel: "Dichtbij en vertrouwd",
     sideText:
@@ -159,8 +157,8 @@ const data: CityLandingData = {
       },
       {
         q: "Is de locatie goed bereikbaar?",
-        a: "Ja. De locatie ligt in het centrum van Haarlem, op loopafstand van station Haarlem. Met de auto parkeer je betaald op de Raamvest. Een gesprek online kan altijd.",
-        text: "Ja. De locatie ligt in het centrum van Haarlem, op loopafstand van station Haarlem. Met de auto parkeer je betaald op de Raamvest. Een gesprek online kan altijd.",
+        a: "Ja. De locatie ligt in het centrum van Haarlem, op loopafstand van station Haarlem. Met de auto parkeer je betaald op het Raamvest of in parkeergarage De Kamp. Een gesprek online kan altijd.",
+        text: "Ja. De locatie ligt in het centrum van Haarlem, op loopafstand van station Haarlem. Met de auto parkeer je betaald op het Raamvest of in parkeergarage De Kamp. Een gesprek online kan altijd.",
       },
       {
         q: "Kan ik ook terecht als ik buiten Haarlem woon?",
