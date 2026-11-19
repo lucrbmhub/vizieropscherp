@@ -58,7 +58,7 @@ const data: CityLandingData = {
       "Onze Haarlemse locatie ligt aan het Klein Heiligland, in het centrum en op loopafstand van station Haarlem. Een rustige plek voor een goed gesprek, dicht bij huis of werk. Je gesprekken zijn hier of, als je dat prettiger vindt, online.",
     cardTitle: "Waar en hoe we werken",
     cardText:
-      "Je gesprekken vinden plaats op onze locatie in Haarlem of online, wat het beste past bij jouw situatie en agenda. Mensen uit heel Kennemerland en daarbuiten komen daarvoor naar Haarlem.",
+      "Je gesprekken vinden plaats op onze locatie in Haarlem of online, wat het beste past bij jouw situatie en agenda. Mensen uit heel Kennemerland en daarbuiten zijn welkom op onze locatie in Haarlem.",
     rows: [
       { title: "Locatie Haarlem", text: "Klein Heiligland 84, 2011 EJ Haarlem" },
       { title: "Ook in Amsterdam", text: "IJsbaanpad 9, 1076 CV Amsterdam-Zuid" },
