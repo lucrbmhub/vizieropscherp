@@ -220,6 +220,14 @@ const HERO_AND_FEATURED = `<main id="main">
         <span style="font-size:14px;font-weight:500;color:var(--goud);">Lees verder →</span>
       </div>
     </a>
+    <a class="inz-scan" href="/inzichten/talentenscan" aria-label="Doe de talentenscan: wat gaat jou makkelijk af in je werk?">
+      <div>
+        <span class="inz-scan__label">Talentenscan</span>
+        <h3>Wat gaat jou makkelijk af in je werk?</h3>
+        <p>Zie in 10 minuten waar je sterk in bent, wat je energie geeft en welke kanten van jou een kracht zijn. Gratis en zonder account.</p>
+      </div>
+      <span class="btn btn-outline inz-scan__knop">Doe de scan</span>
+    </a>
   </div>
 </section>`;
 
@@ -276,6 +284,16 @@ const FILTER_CSS = `
 .inz-panel.is-fading{opacity:0}
 .inz-empty{padding:32px;background:var(--linnen);border-radius:16px;color:var(--muted);font-size:15px}
 @media(max-width:640px){.inz-tab{padding:8px 14px;font-size:14px}}
+/* Kaart naar de talentenscan, onder het uitgelichte artikel */
+.inz-scan{display:flex;align-items:center;justify-content:space-between;gap:20px 40px;margin-top:20px;padding:28px 36px;border-radius:18px;background:var(--warm);color:inherit}
+.inz-scan:hover{color:inherit}
+.inz-scan__label{display:inline-block;background:var(--mint);color:var(--petrol);font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:4px 12px}
+.inz-scan h3{margin-top:12px;font-size:clamp(21px,2.2vw,26px);line-height:1.2}
+.inz-scan p{margin-top:8px;max-width:60ch;font-size:15px;color:var(--body-warm)}
+.inz-scan__knop{flex:none}
+.inz-scan:hover .inz-scan__knop{border-color:var(--koraal);color:var(--koraal)}
+.inz-scan:focus-visible{outline:2px solid var(--koraal);outline-offset:3px}
+@media(max-width:640px){.inz-scan{flex-direction:column;align-items:flex-start;padding:24px}}
 `;
 
 function labelStyle(label: Article["label"]): React.CSSProperties {

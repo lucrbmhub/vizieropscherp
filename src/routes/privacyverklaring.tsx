@@ -51,7 +51,7 @@ function Page() {
       <h1>
         Pr<span className="idot" style={{ ["--idot-bg" as never]: "var(--paper)" } as CSSProperties}>i</span>vacyverklaring<span className="gold">.</span>
       </h1>
-      <p className="legal-meta">Versie 1.1, juli 2026</p>
+      <p className="legal-meta">Versie 1.2, november 2026</p>
 
       <p>
         Vizier op Scherp organiseert loopbaancoaching voor werkgevers en hun medewerkers, voor particulieren en voor mensen die via UWV een traject volgen. Daarbij verwerken wij persoonsgegevens. In deze verklaring lees je welke gegevens dat zijn, waarvoor we ze gebruiken, waar ze vandaan komen, met wie we ze delen en welke rechten je hebt. We schrijven in de je-vorm; de verklaring geldt vanzelfsprekend ook voor zakelijke contactpersonen.
@@ -112,11 +112,14 @@ function Page() {
       <p><strong>Bewaartermijn:</strong> volgens de termijnen die met UWV zijn afgesproken; administratieve gegevens zeven jaar.</p>
       <p>Je coach legt je bij de start van het traject precies uit welke informatie wel en niet met UWV wordt gedeeld, en blijft daarover met je in gesprek.</p>
 
-      <h3>Als je een werkboek of leidraad downloadt</h3>
-      <p><strong>Gegevens:</strong> je naam en e-mailadres.</p>
-      <p><strong>Doel:</strong> het toesturen van het gevraagde document en, alleen als je daarvoor kiest, het af en toe toesturen van relevante inhoud over werk en loopbaan.</p>
-      <p><strong>Grondslag:</strong> jouw toestemming. Afmelden kan altijd via de link in elke e-mail of door een bericht aan <a href="mailto:hallo@vizieropscherp.nl">hallo@vizieropscherp.nl</a>.</p>
-      <p><strong>Bewaartermijn:</strong> tot je je afmeldt.</p>
+      <h3>Als je een werkboek, leidraad of je uitslag van de talentenscan downloadt</h3>
+      <p><strong>Gegevens:</strong> je e-mailadres, je naam als je die invult, en of je het vakje voor e-mail aanvinkt.</p>
+      <p><strong>Doel:</strong> je toegang geven tot de download en bijhouden wie onze documenten downloadt. Alleen als je het vakje aanvinkt, mailen we je af en toe met een tip of vervolg. Bij de talentenscan gaat dat over je uitslag of over coaching.</p>
+      <p><strong>Grondslag:</strong> jouw toestemming. Je vult het formulier zelf in en kiest met een apart vakje of we je mogen mailen. Die toestemming kun je altijd intrekken via de link in elke e-mail of met een bericht aan <a href="mailto:hallo@vizieropscherp.nl">hallo@vizieropscherp.nl</a>.</p>
+      <p><strong>Bewaartermijn:</strong> heb je het vakje aangevinkt, dan bewaren we je gegevens tot je je afmeldt. Zonder vinkje bewaren we ze maximaal 12 maanden.</p>
+
+      <h3>Als je de talentenscan invult</h3>
+      <p>Je antwoorden blijven in je eigen browser. Ze worden niet naar ons verstuurd en je hebt geen account nodig. We tellen alleen hoeveel mensen de scan starten en afronden. Daarbij bewaren we alleen of de scan is gestart of afgerond en wanneer, zonder naam, IP-adres of cookie. Download je je uitslag als pdf, dan geldt wat hierboven staat over downloads.</p>
 
       <h3>Als je onze website bezoekt</h3>
       <p>Onze website gebruikt alleen functionele en technisch noodzakelijke cookies. Zie hierover paragraaf 10.</p>
@@ -136,7 +139,7 @@ function Page() {
         <li><strong>Voor een coachtraject</strong> hebben we je naam, contactgegevens en de informatie uit de intake nodig. Zonder die gegevens kunnen we geen coach matchen en het traject niet uitvoeren.</li>
         <li><strong>Voor een offerte of factuur</strong> hebben we de zakelijke gegevens van je organisatie nodig. Zonder die gegevens kunnen we geen overeenkomst sluiten of factureren.</li>
         <li><strong>Voor een UWV-traject</strong> hebben we de gegevens nodig die UWV voor de uitvoering en rapportage vraagt.</li>
-        <li><strong>Voor een werkboek, leidraad of onze e-mails</strong> is het geven van je gegevens vrijwillig. Geef je ze niet, dan kunnen we je het document niet toesturen, maar verder heeft dat geen gevolgen.</li>
+        <li><strong>Voor een werkboek, leidraad, de pdf van je talentenscan of onze e-mails</strong> is het geven van je gegevens vrijwillig. Geef je ze niet, dan kun je het document niet downloaden, maar verder heeft dat geen gevolgen. De talentenscan zelf kun je altijd invullen en bekijken zonder gegevens te geven.</li>
       </ul>
       <p>Wat je in de gesprekken zelf deelt, bepaal je altijd zelf.</p>
 
@@ -160,6 +163,7 @@ function Page() {
 
       <h2>10. Cookies</h2>
       <p>Onze website gebruikt alleen functionele en technisch noodzakelijke cookies om de site goed te laten werken. Wij gebruiken geen tracking- of marketingcookies en geen advertentienetwerken. Gaan wij in de toekomst websitestatistieken bijhouden, dan doen we dat privacyvriendelijk of vragen we daarvoor eerst je toestemming, en passen we deze verklaring aan.</p>
+      <p>Daarnaast bewaart je browser een paar dingen op je eigen apparaat: je voortgang in de talentenscan, zodat je later verder kunt, en na een download je e-mailadres en welke downloads je al hebt ontgrendeld, zodat je die gegevens niet opnieuw hoeft in te vullen. Dit is functionele opslag en wordt niet naar ons verstuurd.</p>
 
       <h2>11. Geautomatiseerde besluitvorming</h2>
       <p>Wij nemen geen besluiten over jou op basis van geautomatiseerde verwerking of profilering.</p>
@@ -178,7 +182,7 @@ function Page() {
             <tr><td>Inhoudelijk coachdossier</td><td>Tot 2 jaar na afronding van het traject</td></tr>
             <tr><td>UWV-trajectgegevens</td><td>Volgens de afspraken met UWV</td></tr>
             <tr><td>Offertes, facturen en administratie</td><td>7 jaar (wettelijke bewaarplicht)</td></tr>
-            <tr><td>Gegevens voor downloads en updates</td><td>Tot afmelding</td></tr>
+            <tr><td>Gegevens voor downloads en updates</td><td>Met vinkje tot afmelding, zonder vinkje maximaal 12 maanden</td></tr>
           </tbody>
         </table>
       </div>
@@ -200,7 +204,7 @@ function Page() {
       <p>Heb je een klacht over hoe wij met je gegevens omgaan? Laat het ons weten via <a href="mailto:hallo@vizieropscherp.nl">hallo@vizieropscherp.nl</a>; we zoeken graag samen naar een oplossing. Komen we er niet uit, dan heb je het recht een klacht in te dienen bij de Autoriteit Persoonsgegevens (<a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">autoriteitpersoonsgegevens.nl</a>).</p>
 
       <h2>16. Wijzigingen</h2>
-      <p>Wij kunnen deze privacyverklaring aanpassen, bijvoorbeeld bij nieuwe diensten of gewijzigde regelgeving. De meest recente versie staat altijd op onze website. Deze versie is vastgesteld in juli 2026.</p>
+      <p>Wij kunnen deze privacyverklaring aanpassen, bijvoorbeeld bij nieuwe diensten of gewijzigde regelgeving. De meest recente versie staat altijd op onze website. Deze versie is vastgesteld in november 2026.</p>
 
       <div className="legal-facet">
         <div className="legal-facet-inner">

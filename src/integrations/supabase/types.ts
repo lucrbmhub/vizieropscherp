@@ -68,6 +68,24 @@ export type Database = {
         }
         Relationships: []
       }
+      talentenscan_tellingen: {
+        Row: {
+          created_at: string
+          gebeurtenis: string
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          gebeurtenis: string
+          id?: string
+        }
+        Update: {
+          created_at?: string
+          gebeurtenis?: string
+          id?: string
+        }
+        Relationships: []
+      }
       workbook_leads: {
         Row: {
           consent: boolean
@@ -100,7 +118,16 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      talentenscan_overzicht: {
+        Row: {
+          afgerond: number | null
+          gestart: number | null
+          maand: string | null
+          met_vinkje: number | null
+          pdf_downloads: number | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       [_ in never]: never

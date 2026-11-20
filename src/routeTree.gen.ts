@@ -54,6 +54,7 @@ import { Route as InzichtenRichtingVindenInJeLoopbaanRouteImport } from './route
 import { Route as InzichtenSkillsgerichtWervenRouteImport } from './routes/inzichten.skillsgericht-werven'
 import { Route as InzichtenSolliciterenEnArbeidsmarktRouteImport } from './routes/inzichten.solliciteren-en-arbeidsmarkt'
 import { Route as InzichtenStartersBehoudenRouteImport } from './routes/inzichten.starters-behouden'
+import { Route as InzichtenTalentenscanRouteImport } from './routes/inzichten.talentenscan'
 import { Route as InzichtenVanWervenNaarBehoudenRouteImport } from './routes/inzichten.van-werven-naar-behouden'
 import { Route as InzichtenVastzittenInEenGoedeBaanRouteImport } from './routes/inzichten.vastzitten-in-een-goede-baan'
 import { Route as InzichtenVierBasisbehoeftenInWerkRouteImport } from './routes/inzichten.vier-basisbehoeften-in-werk'
@@ -315,6 +316,11 @@ const InzichtenStartersBehoudenRoute =
     path: '/starters-behouden',
     getParentRoute: () => InzichtenRoute,
   } as any)
+const InzichtenTalentenscanRoute = InzichtenTalentenscanRouteImport.update({
+  id: '/talentenscan',
+  path: '/talentenscan',
+  getParentRoute: () => InzichtenRoute,
+} as any)
 const InzichtenVanWervenNaarBehoudenRoute =
   InzichtenVanWervenNaarBehoudenRouteImport.update({
     id: '/van-werven-naar-behouden',
@@ -408,6 +414,7 @@ export interface FileRoutesByFullPath {
   '/inzichten/skillsgericht-werven': typeof InzichtenSkillsgerichtWervenRoute
   '/inzichten/solliciteren-en-arbeidsmarkt': typeof InzichtenSolliciterenEnArbeidsmarktRoute
   '/inzichten/starters-behouden': typeof InzichtenStartersBehoudenRoute
+  '/inzichten/talentenscan': typeof InzichtenTalentenscanRoute
   '/inzichten/van-werven-naar-behouden': typeof InzichtenVanWervenNaarBehoudenRoute
   '/inzichten/vastzitten-in-een-goede-baan': typeof InzichtenVastzittenInEenGoedeBaanRoute
   '/inzichten/vier-basisbehoeften-in-werk': typeof InzichtenVierBasisbehoeftenInWerkRoute
@@ -462,6 +469,7 @@ export interface FileRoutesByTo {
   '/inzichten/skillsgericht-werven': typeof InzichtenSkillsgerichtWervenRoute
   '/inzichten/solliciteren-en-arbeidsmarkt': typeof InzichtenSolliciterenEnArbeidsmarktRoute
   '/inzichten/starters-behouden': typeof InzichtenStartersBehoudenRoute
+  '/inzichten/talentenscan': typeof InzichtenTalentenscanRoute
   '/inzichten/van-werven-naar-behouden': typeof InzichtenVanWervenNaarBehoudenRoute
   '/inzichten/vastzitten-in-een-goede-baan': typeof InzichtenVastzittenInEenGoedeBaanRoute
   '/inzichten/vier-basisbehoeften-in-werk': typeof InzichtenVierBasisbehoeftenInWerkRoute
@@ -518,6 +526,7 @@ export interface FileRoutesById {
   '/inzichten/skillsgericht-werven': typeof InzichtenSkillsgerichtWervenRoute
   '/inzichten/solliciteren-en-arbeidsmarkt': typeof InzichtenSolliciterenEnArbeidsmarktRoute
   '/inzichten/starters-behouden': typeof InzichtenStartersBehoudenRoute
+  '/inzichten/talentenscan': typeof InzichtenTalentenscanRoute
   '/inzichten/van-werven-naar-behouden': typeof InzichtenVanWervenNaarBehoudenRoute
   '/inzichten/vastzitten-in-een-goede-baan': typeof InzichtenVastzittenInEenGoedeBaanRoute
   '/inzichten/vier-basisbehoeften-in-werk': typeof InzichtenVierBasisbehoeftenInWerkRoute
@@ -575,6 +584,7 @@ export interface FileRouteTypes {
     | '/inzichten/skillsgericht-werven'
     | '/inzichten/solliciteren-en-arbeidsmarkt'
     | '/inzichten/starters-behouden'
+    | '/inzichten/talentenscan'
     | '/inzichten/van-werven-naar-behouden'
     | '/inzichten/vastzitten-in-een-goede-baan'
     | '/inzichten/vier-basisbehoeften-in-werk'
@@ -629,6 +639,7 @@ export interface FileRouteTypes {
     | '/inzichten/skillsgericht-werven'
     | '/inzichten/solliciteren-en-arbeidsmarkt'
     | '/inzichten/starters-behouden'
+    | '/inzichten/talentenscan'
     | '/inzichten/van-werven-naar-behouden'
     | '/inzichten/vastzitten-in-een-goede-baan'
     | '/inzichten/vier-basisbehoeften-in-werk'
@@ -684,6 +695,7 @@ export interface FileRouteTypes {
     | '/inzichten/skillsgericht-werven'
     | '/inzichten/solliciteren-en-arbeidsmarkt'
     | '/inzichten/starters-behouden'
+    | '/inzichten/talentenscan'
     | '/inzichten/van-werven-naar-behouden'
     | '/inzichten/vastzitten-in-een-goede-baan'
     | '/inzichten/vier-basisbehoeften-in-werk'
@@ -1033,6 +1045,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InzichtenStartersBehoudenRouteImport
       parentRoute: typeof InzichtenRoute
     }
+    '/inzichten/talentenscan': {
+      id: '/inzichten/talentenscan'
+      path: '/talentenscan'
+      fullPath: '/inzichten/talentenscan'
+      preLoaderRoute: typeof InzichtenTalentenscanRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
     '/inzichten/van-werven-naar-behouden': {
       id: '/inzichten/van-werven-naar-behouden'
       path: '/van-werven-naar-behouden'
@@ -1121,6 +1140,7 @@ interface InzichtenRouteChildren {
   InzichtenSkillsgerichtWervenRoute: typeof InzichtenSkillsgerichtWervenRoute
   InzichtenSolliciterenEnArbeidsmarktRoute: typeof InzichtenSolliciterenEnArbeidsmarktRoute
   InzichtenStartersBehoudenRoute: typeof InzichtenStartersBehoudenRoute
+  InzichtenTalentenscanRoute: typeof InzichtenTalentenscanRoute
   InzichtenVanWervenNaarBehoudenRoute: typeof InzichtenVanWervenNaarBehoudenRoute
   InzichtenVastzittenInEenGoedeBaanRoute: typeof InzichtenVastzittenInEenGoedeBaanRoute
   InzichtenVierBasisbehoeftenInWerkRoute: typeof InzichtenVierBasisbehoeftenInWerkRoute
@@ -1176,6 +1196,7 @@ const InzichtenRouteChildren: InzichtenRouteChildren = {
   InzichtenSolliciterenEnArbeidsmarktRoute:
     InzichtenSolliciterenEnArbeidsmarktRoute,
   InzichtenStartersBehoudenRoute: InzichtenStartersBehoudenRoute,
+  InzichtenTalentenscanRoute: InzichtenTalentenscanRoute,
   InzichtenVanWervenNaarBehoudenRoute: InzichtenVanWervenNaarBehoudenRoute,
   InzichtenVastzittenInEenGoedeBaanRoute:
     InzichtenVastzittenInEenGoedeBaanRoute,

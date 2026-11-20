@@ -4,11 +4,52 @@ import { Dialog, DialogContent, DialogPortal, DialogOverlay, DialogClose } from 
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { supabase } from "@/integrations/supabase/client";
 
+// Een download kan eigen teksten en een eigen actie meegeven via data-attributen op de link:
+// data-workbook-eyebrow, -intro, -consent, -knop, -noot en -actie ("print" opent de printfunctie,
+// bijvoorbeeld voor de uitslag van de talentenscan). Zonder die attributen gelden de werkboekteksten.
 type Target = {
   href: string;
   slug: string;
   title: string;
+  eyebrow: string;
+  intro: string;
+  consentText: string;
+  buttonLabel: string;
+  note: string;
+  action: "download" | "print";
 };
+
+const DEFAULTS = {
+  eyebrow: "Werkboek",
+  intro: "Laat je e-mailadres achter, dan kun je het werkboek meteen downloaden.",
+  consentText:
+    "Ik vind het goed dat Vizier op Scherp mij eventueel een keer mailt met een tip of vervolg. Uitschrijven kan altijd.",
+  buttonLabel: "Download het werkboek",
+  note: "We bewaren je e-mailadres om bij te houden wie het werkboek downloadt. Alleen als je het vakje aanvinkt, mailen we je.",
+};
+
+// Per apparaat onthouden welke downloads al zijn ontgrendeld: een volgende klik opent de download
+// direct, zonder nieuwe rij in workbook_leads en zonder nieuwe melding.
+const UNLOCK_KEY = "vos_downloads_ontgrendeld";
+
+function readUnlocked(): string[] {
+  try {
+    const list = JSON.parse(localStorage.getItem(UNLOCK_KEY) ?? "[]");
+    return Array.isArray(list) ? list.filter((x) => typeof x === "string") : [];
+  } catch {
+    return [];
+  }
+}
+
+function markUnlocked(slug: string) {
+  try {
+    const list = readUnlocked();
+    if (!list.includes(slug)) list.push(slug);
+    localStorage.setItem(UNLOCK_KEY, JSON.stringify(list));
+  } catch {
+    // Geen opslag beschikbaar (bijvoorbeeld privévenster): dan volgt bij een volgende klik opnieuw het formulier.
+  }
+}
 
 const schema = z.object({
   name: z.string().trim().max(120).optional(),
@@ -32,6 +73,15 @@ function triggerDownload(href: string, filename: string) {
   document.body.appendChild(a);
   a.click();
   a.remove();
+}
+
+function runAction(t: Target) {
+  if (t.action === "print") {
+    // Even wachten tot de dialoog dicht is, zodat die niet in de pdf belandt.
+    window.setTimeout(() => window.print(), 150);
+  } else {
+    triggerDownload(t.href, t.href.split("/").pop() ?? "werkboek.pdf");
+  }
 }
 
 export function WorkbookGate() {
@@ -61,11 +111,23 @@ export function WorkbookGate() {
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0)
         return;
       e.preventDefault();
-      setTarget({
+      const d = el.dataset;
+      const next: Target = {
         href: el.href,
-        slug: el.dataset.workbook ?? "",
-        title: el.dataset.workbookTitle ?? "werkboek",
-      });
+        slug: d.workbook ?? "",
+        title: d.workbookTitle ?? "werkboek",
+        eyebrow: d.workbookEyebrow ?? DEFAULTS.eyebrow,
+        intro: d.workbookIntro ?? DEFAULTS.intro,
+        consentText: d.workbookConsent ?? DEFAULTS.consentText,
+        buttonLabel: d.workbookKnop ?? DEFAULTS.buttonLabel,
+        note: d.workbookNoot ?? DEFAULTS.note,
+        action: d.workbookActie === "print" ? "print" : "download",
+      };
+      if (next.slug && readUnlocked().includes(next.slug)) {
+        runAction(next);
+        return;
+      }
+      setTarget(next);
       setError(null);
     };
     document.addEventListener("click", onClick);
@@ -73,8 +135,6 @@ export function WorkbookGate() {
   }, []);
 
   if (!target) return null;
-
-  const filename = target.href.split("/").pop() ?? "werkboek.pdf";
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -87,8 +147,8 @@ export function WorkbookGate() {
     // Honeypot: bots die het verborgen veld invullen krijgen een "geslaagde"
     // download, maar er wordt niets opgeslagen.
     if (hpWebsite.trim().length > 0) {
-      triggerDownload(target.href, filename);
       setTarget(null);
+      runAction(target);
       return;
     }
     setSubmitting(true);
@@ -107,8 +167,9 @@ export function WorkbookGate() {
       try {
         localStorage.setItem(STORAGE_KEY, parsed.data.email);
       } catch {}
-      triggerDownload(target.href, filename);
+      markUnlocked(target.slug);
       setTarget(null);
+      runAction(target);
     } catch (err) {
       console.error(err);
       setError(
@@ -140,7 +201,6 @@ export function WorkbookGate() {
             e.preventDefault();
             setTimeout(() => emailInput.current?.focus(), 0);
           }}
-          aria-labelledby="wb-title"
           aria-describedby={undefined}
           style={{
             position: "fixed",
@@ -188,10 +248,10 @@ export function WorkbookGate() {
               margin: "0 0 10px",
             }}
           >
-            Werkboek
+            {target.eyebrow}
           </p>
+          {/* Geen eigen id: Radix koppelt de titel zelf aan de dialoog (aria-labelledby). */}
           <DialogPrimitive.Title
-            id="wb-title"
             style={{
               fontFamily: "'Bricolage Grotesque', sans-serif",
               fontWeight: 500,
@@ -205,8 +265,7 @@ export function WorkbookGate() {
             {target.title}
           </DialogPrimitive.Title>
           <p style={{ fontSize: "15px", margin: "0 0 22px", lineHeight: 1.55 }}>
-            Laat je e-mailadres achter, dan kun je het werkboek meteen
-            downloaden.
+            {target.intro}
           </p>
           <form onSubmit={submit} noValidate>
             {/* Honeypot — visually hidden, off-screen */}
@@ -293,10 +352,7 @@ export function WorkbookGate() {
                 onChange={(e) => setConsent(e.target.checked)}
                 style={{ marginTop: "3px" }}
               />
-              <span>
-                Ik vind het goed dat Vizier op Scherp mij eventueel een keer
-                mailt met een tip of vervolg. Uitschrijven kan altijd.
-              </span>
+              <span>{target.consentText}</span>
             </label>
             {error && (
               <p
@@ -324,7 +380,7 @@ export function WorkbookGate() {
                 className="btn btn-primary"
                 style={{ opacity: submitting ? 0.7 : 1 }}
               >
-                {submitting ? "Even geduld…" : "Download het werkboek"}
+                {submitting ? "Even geduld…" : target.buttonLabel}
               </button>
               <DialogClose asChild>
                 <button
@@ -350,8 +406,11 @@ export function WorkbookGate() {
                 lineHeight: 1.5,
               }}
             >
-              We gebruiken je gegevens alleen om je het werkboek te sturen en om
-              eventueel contact op te nemen.
+              {target.note} Meer in onze{" "}
+              <a href="/privacyverklaring" style={{ color: "inherit", textDecoration: "underline" }}>
+                privacyverklaring
+              </a>
+              .
             </p>
           </form>
         </DialogPrimitive.Content>
