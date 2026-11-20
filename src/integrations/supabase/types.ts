@@ -68,6 +68,24 @@ export type Database = {
         }
         Relationships: []
       }
+      talentenscan_tellingen: {
+        Row: {
+          created_at: string
+          gebeurtenis: string
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          gebeurtenis: string
+          id?: string
+        }
+        Update: {
+          created_at?: string
+          gebeurtenis?: string
+          id?: string
+        }
+        Relationships: []
+      }
       workbook_leads: {
         Row: {
           consent: boolean
