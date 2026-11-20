@@ -51,7 +51,7 @@ function Page() {
       <h1>
         Pr<span className="idot" style={{ ["--idot-bg" as never]: "var(--paper)" } as CSSProperties}>i</span>vacyverklaring<span className="gold">.</span>
       </h1>
-      <p className="legal-meta">Versie 1.2, november 2026</p>
+      <p className="legal-meta">Versie 1.3, november 2026</p>
 
       <p>
         Vizier op Scherp organiseert loopbaancoaching voor werkgevers en hun medewerkers, voor particulieren en voor mensen die via UWV een traject volgen. Daarbij verwerken wij persoonsgegevens. In deze verklaring lees je welke gegevens dat zijn, waarvoor we ze gebruiken, waar ze vandaan komen, met wie we ze delen en welke rechten je hebt. We schrijven in de je-vorm; de verklaring geldt vanzelfsprekend ook voor zakelijke contactpersonen.
@@ -112,14 +112,14 @@ function Page() {
       <p><strong>Bewaartermijn:</strong> volgens de termijnen die met UWV zijn afgesproken; administratieve gegevens zeven jaar.</p>
       <p>Je coach legt je bij de start van het traject precies uit welke informatie wel en niet met UWV wordt gedeeld, en blijft daarover met je in gesprek.</p>
 
-      <h3>Als je een werkboek, leidraad of je uitslag van de talentenscan downloadt</h3>
+      <h3>Als je een werkboek of leidraad downloadt of je hele uitslag van de talentenscan bekijkt</h3>
       <p><strong>Gegevens:</strong> je e-mailadres, je naam als je die invult, en of je het vakje voor e-mail aanvinkt.</p>
-      <p><strong>Doel:</strong> je toegang geven tot de download en bijhouden wie onze documenten downloadt. Alleen als je het vakje aanvinkt, mailen we je af en toe met een tip of vervolg. Bij de talentenscan gaat dat over je uitslag of over coaching.</p>
+      <p><strong>Doel:</strong> je toegang geven tot de download of tot je hele uitslag van de talentenscan, en bijhouden wie dat doet. Alleen als je het vakje aanvinkt, mailen we je af en toe met een tip of vervolg. Bij de talentenscan gaat dat over je uitslag of over coaching.</p>
       <p><strong>Grondslag:</strong> jouw toestemming. Je vult het formulier zelf in en kiest met een apart vakje of we je mogen mailen. Die toestemming kun je altijd intrekken via de link in elke e-mail of met een bericht aan <a href="mailto:hallo@vizieropscherp.nl">hallo@vizieropscherp.nl</a>.</p>
       <p><strong>Bewaartermijn:</strong> heb je het vakje aangevinkt, dan bewaren we je gegevens tot je je afmeldt. Zonder vinkje bewaren we ze maximaal 12 maanden.</p>
 
       <h3>Als je de talentenscan invult</h3>
-      <p>Je antwoorden blijven in je eigen browser. Ze worden niet naar ons verstuurd en je hebt geen account nodig. We tellen alleen hoeveel mensen de scan starten en afronden. Daarbij bewaren we alleen of de scan is gestart of afgerond en wanneer, zonder naam, IP-adres of cookie. Download je je uitslag als pdf, dan geldt wat hierboven staat over downloads.</p>
+      <p>Je antwoorden blijven in je eigen browser. Ze worden niet naar ons verstuurd en je hebt geen account nodig. We tellen alleen hoeveel mensen de scan starten en afronden. Daarbij bewaren we alleen of de scan is gestart of afgerond en wanneer, zonder naam, IP-adres of cookie. Je drie sterkste gebieden zie je meteen. Voor je hele uitslag vul je je e-mailadres in. Daarvoor geldt wat hierboven staat. Je antwoorden en je uitslag sturen we niet mee.</p>
 
       <h3>Als je onze website bezoekt</h3>
       <p>Onze website gebruikt alleen functionele en technisch noodzakelijke cookies. Zie hierover paragraaf 10.</p>
@@ -139,7 +139,7 @@ function Page() {
         <li><strong>Voor een coachtraject</strong> hebben we je naam, contactgegevens en de informatie uit de intake nodig. Zonder die gegevens kunnen we geen coach matchen en het traject niet uitvoeren.</li>
         <li><strong>Voor een offerte of factuur</strong> hebben we de zakelijke gegevens van je organisatie nodig. Zonder die gegevens kunnen we geen overeenkomst sluiten of factureren.</li>
         <li><strong>Voor een UWV-traject</strong> hebben we de gegevens nodig die UWV voor de uitvoering en rapportage vraagt.</li>
-        <li><strong>Voor een werkboek, leidraad, de pdf van je talentenscan of onze e-mails</strong> is het geven van je gegevens vrijwillig. Geef je ze niet, dan kun je het document niet downloaden, maar verder heeft dat geen gevolgen. De talentenscan zelf kun je altijd invullen en bekijken zonder gegevens te geven.</li>
+        <li><strong>Voor een werkboek, leidraad, je hele uitslag van de talentenscan of onze e-mails</strong> is het geven van je gegevens vrijwillig. Geef je ze niet, dan kun je het document niet downloaden of je hele uitslag niet bekijken, maar verder heeft dat geen gevolgen. De talentenscan zelf kun je altijd invullen, en je drie sterkste gebieden zie je zonder gegevens te geven.</li>
       </ul>
       <p>Wat je in de gesprekken zelf deelt, bepaal je altijd zelf.</p>
 
@@ -163,7 +163,7 @@ function Page() {
 
       <h2>10. Cookies</h2>
       <p>Onze website gebruikt alleen functionele en technisch noodzakelijke cookies om de site goed te laten werken. Wij gebruiken geen tracking- of marketingcookies en geen advertentienetwerken. Gaan wij in de toekomst websitestatistieken bijhouden, dan doen we dat privacyvriendelijk of vragen we daarvoor eerst je toestemming, en passen we deze verklaring aan.</p>
-      <p>Daarnaast bewaart je browser een paar dingen op je eigen apparaat: je voortgang in de talentenscan, zodat je later verder kunt, en na een download je e-mailadres en welke downloads je al hebt ontgrendeld, zodat je die gegevens niet opnieuw hoeft in te vullen. Dit is functionele opslag en wordt niet naar ons verstuurd.</p>
+      <p>Daarnaast bewaart je browser een paar dingen op je eigen apparaat: je voortgang in de talentenscan, zodat je later verder kunt, en na het invullen van het formulier je e-mailadres en wat je al hebt ontgrendeld, zodat je die gegevens niet opnieuw hoeft in te vullen. Dit is functionele opslag en wordt niet naar ons verstuurd.</p>
 
       <h2>11. Geautomatiseerde besluitvorming</h2>
       <p>Wij nemen geen besluiten over jou op basis van geautomatiseerde verwerking of profilering.</p>

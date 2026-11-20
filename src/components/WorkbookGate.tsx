@@ -5,8 +5,13 @@ import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { supabase } from "@/integrations/supabase/client";
 
 // Een download kan eigen teksten en een eigen actie meegeven via data-attributen op de link:
-// data-workbook-eyebrow, -intro, -consent, -knop, -noot en -actie ("print" opent de printfunctie,
-// bijvoorbeeld voor de uitslag van de talentenscan). Zonder die attributen gelden de werkboekteksten.
+// data-workbook-eyebrow, -intro, -consent, -knop, -noot en -actie. Acties:
+// - "download" (standaard): het bestand uit href downloaden;
+// - "print": de printfunctie openen;
+// - "ontgrendel": de pagina laten weten dat het formulier is ingevuld, met de DOM-gebeurtenis
+//   "vos:ontgrendeld" en detail.slug. De talentenscan toont dan de uitslag.
+// Zonder die attributen gelden de werkboekteksten.
+type Action = "download" | "print" | "ontgrendel";
 type Target = {
   href: string;
   slug: string;
@@ -16,7 +21,7 @@ type Target = {
   consentText: string;
   buttonLabel: string;
   note: string;
-  action: "download" | "print";
+  action: Action;
 };
 
 const DEFAULTS = {
@@ -79,9 +84,18 @@ function runAction(t: Target) {
   if (t.action === "print") {
     // Even wachten tot de dialoog dicht is, zodat die niet in de pdf belandt.
     window.setTimeout(() => window.print(), 150);
+  } else if (t.action === "ontgrendel") {
+    // Even wachten tot de dialoog dicht is, zodat de pagina de focus naar de uitslag kan zetten.
+    window.setTimeout(() => {
+      document.dispatchEvent(new CustomEvent("vos:ontgrendeld", { detail: { slug: t.slug } }));
+    }, 150);
   } else {
     triggerDownload(t.href, t.href.split("/").pop() ?? "werkboek.pdf");
   }
+}
+
+function readAction(value: string | undefined): Action {
+  return value === "print" || value === "ontgrendel" ? value : "download";
 }
 
 export function WorkbookGate() {
@@ -121,7 +135,7 @@ export function WorkbookGate() {
         consentText: d.workbookConsent ?? DEFAULTS.consentText,
         buttonLabel: d.workbookKnop ?? DEFAULTS.buttonLabel,
         note: d.workbookNoot ?? DEFAULTS.note,
-        action: d.workbookActie === "print" ? "print" : "download",
+        action: readAction(d.workbookActie),
       };
       if (next.slug && readUnlocked().includes(next.slug)) {
         runAction(next);

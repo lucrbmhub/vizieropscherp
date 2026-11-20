@@ -1,4 +1,4 @@
-/* Talentenscan 1.3. Alle uitspraken, uitslagteksten en rekenregels staan in het object SCAN hieronder.
+/* Talentenscan 1.5. Alle uitspraken, uitslagteksten en rekenregels staan in het object SCAN hieronder.
    De rekenfunctie berekenUitslag staat los van de schermen. Verhoog na een wijziging VERSIE in src/routes/inzichten.talentenscan.tsx. */
 /* =========================================================
    Talentenscan Vizier op Scherp, versie 1.3 (20-11-2026)
@@ -10,7 +10,7 @@
 
 /* ---------- 1. Inhoud en regels ---------- */
 const SCAN = {
-  versie: "1.3",
+  versie: "1.5",
   opslagSleutel: "vos-talentenscan-v1",
   totaalVragen: 55,
 
@@ -299,6 +299,33 @@ const SCAN = {
     stapLink: "/kennismaken",
     stapPrint: "Een kennismaking plan je via vizieropscherp.nl/kennismaken.",
     pdf: "Download je uitslag als pdf",
+    /* Poort voor de rest van de uitslag, alleen met data-poort="uitslag" (de site). In het kort en de top
+       drie zijn vrij. Daaronder staat deze kaart; de knop opent het formulier van de site (WorkbookGate).
+       Na het opslaan stuurt de site de gebeurtenis "vos:ontgrendeld" en toont de scan de hele uitslag.
+       De pdf-knop print dan direct. */
+    poort: {
+      kop: "Je hele uitslag",
+      tekst: "Dit is het begin van je uitslag. Laat je e-mailadres achter, dan zie je ook:",
+      inhoud: {
+        vijf: "De vijf uitspraken die je zelf koos",
+        vijfMinder: "De uitspraken die je zelf koos",
+        rij: "Al je gebieden op een rij",
+        laagste: "Wat je minder makkelijk afgaat, met tips",
+        energie: "Wat je energie geeft en wat energie kost",
+        polen: "Welke kanten van jou een kracht zijn",
+        pdf: "Je uitslag als pdf"
+      },
+      knop: "Bekijk je hele uitslag",
+      noot: "Je antwoorden blijven op je eigen apparaat. Alleen als je het vakje aanvinkt, mailen we je.",
+      formulier: {
+        bovenregel: "Talentenscan",
+        titel: "Je hele uitslag",
+        tekst: "Vul je e-mailadres in, dan zie je meteen je hele uitslag. Daarna kun je hem ook als pdf downloaden.",
+        vinkje: "Ik vind het goed dat Vizier op Scherp me mailt over mijn uitslag of over coaching. Afmelden kan altijd.",
+        knop: "Toon je hele uitslag",
+        noot: "Je antwoorden blijven op je eigen apparaat. We bewaren alleen je naam en e-mailadres. Alleen als je het vakje aanvinkt, mailen we je."
+      }
+    },
     /* Teksten voor het downloadformulier van de site (WorkbookGate), alleen gebruikt met data-pdf="poort" */
     pdfPoort: {
       bovenregel: "Talentenscan",
@@ -530,8 +557,22 @@ function startTalentenscan() {
   SCHERMEN.push({ deel: 3, items: CLUSTERCODES.slice() });
   SCHERMEN.push({ deel: 4, items: [] });
 
-  function leeg() { return { antw: {}, tp: {}, en: {}, keuze: [], scherm: 0, klaar: false }; }
+  function leeg() { return { antw: {}, tp: {}, en: {}, keuze: [], scherm: 0, klaar: false, ontgrendeld: false }; }
   let st = leeg();
+
+  /* ---- Poort voor de uitslag (alleen op de site, data-poort="uitslag") ----
+     Koppeling met het formulier van de site (WorkbookGate): dezelfde slug, dezelfde opslagsleutel
+     voor ontgrendelde downloads en dezelfde gebeurtenis. */
+  const POORT = { slug: "talentenscan", sleutel: "vos_downloads_ontgrendeld", gebeurtenis: "vos:ontgrendeld" };
+  const poortActief = !!wortel && wortel.getAttribute("data-poort") === "uitslag";
+  function ontgrendeld() {
+    if (!poortActief || st.ontgrendeld) return true;
+    try {
+      const lijst = JSON.parse(localStorage.getItem(POORT.sleutel) || "[]");
+      return Array.isArray(lijst) && lijst.indexOf(POORT.slug) > -1;
+    } catch (e) { return false; }
+  }
+  function poortDicht() { return !ontgrendeld(); }
 
   /* ---- Opslag in de browser (mag ontbreken of falen) ---- */
   function geldig(v) { return Number.isInteger(v) && v >= 1 && v <= 5; }
@@ -544,6 +585,7 @@ function startTalentenscan() {
     if (Array.isArray(d.keuze)) s.keuze = d.keuze.filter(function (k) { return SCAN.volgorde.indexOf(k) > -1; });
     if (Number.isInteger(d.scherm) && d.scherm >= 0 && d.scherm < SCHERMEN.length) s.scherm = d.scherm;
     s.klaar = d.klaar === true;
+    s.ontgrendeld = d.ontgrendeld === true;
     return s;
   }
   function bewaar() { try { localStorage.setItem(SCAN.opslagSleutel, JSON.stringify(st)); } catch (e) { /* geen opslag beschikbaar */ } }
@@ -589,6 +631,7 @@ function startTalentenscan() {
   const knopVorige = $("#knop-vorige");
   const knopVolgende = $("#knop-volgende");
   const uitslag = $("#uitslag");
+
 
   /* ---- Opties (keuzerondjes) ---- */
   function opties(naam, waarde, zichtbaar, voorlezen, extra) {
@@ -873,6 +916,15 @@ function startTalentenscan() {
           el("h3", { id: "u-vlak" }, U.vlakKop), el("p", null, U.vlak[sleutel]))));
     }
 
+    /* Op de site met poort is de uitslag tot hier vrij. De rest volgt na het formulier. */
+    if (poortDicht()) {
+      uitslag.append(poortKaart(u));
+      uitslag.append(el("p", { class: "disclaimer" }, U.disclaimer));
+      return;
+    }
+    /* Het eerste blok hierna is het vervolg: daar gaat de pagina heen na het ontgrendelen */
+    const eersteVervolg = uitslag.children.length;
+
     /* 3. Jouw vijf */
     if (u.vijf.length) {
       uitslag.append(el("section", { class: "blok", "aria-labelledby": "u-vijf" },
@@ -980,6 +1032,35 @@ function startTalentenscan() {
         el("button", { class: "knop knop--tekst", type: "button", "data-actie": "opnieuw" }, U.opnieuw)),
       el("p", { class: "print-alleen" }, U.stapPrint)));
     uitslag.append(el("p", { class: "disclaimer" }, U.disclaimer));
+
+    const vervolg = uitslag.children[eersteVervolg];
+    if (vervolg) {
+      vervolg.setAttribute("data-vervolg", "");
+      vervolg.style.scrollMarginTop = "calc(var(--nav-h) + 20px)";
+    }
+  }
+
+  /* Kaart onder de top drie, zolang de rest van de uitslag dicht is. De knop opent het formulier van de site. */
+  function poortKaart(u) {
+    const P = SCAN.uitslag.poort;
+    const F = P.formulier;
+    const I = P.inhoud;
+    const inhoud = [];
+    if (u.vijf.length) inhoud.push(u.vijf.length === R.aantalKeuzes ? I.vijf : I.vijfMinder);
+    inhoud.push(I.rij);
+    if (u.laagsteTwee.length) inhoud.push(I.laagste);
+    inhoud.push(I.energie, I.polen, I.pdf);
+    return el("section", { class: "blok stap", "aria-labelledby": "u-poort", "data-test": "poort" },
+      el("h3", { id: "u-poort" }, P.kop),
+      el("p", null, P.tekst),
+      el("ul", { class: "vos-lijst vos-lijst--check" }, inhoud.map(function (t) { return el("li", null, t); })),
+      el("div", { class: "uitslag__acties" },
+        el("a", { class: "knop knop--primair", href: "#uitslag", "data-workbook": POORT.slug,
+          "data-workbook-title": F.titel, "data-workbook-eyebrow": F.bovenregel, "data-workbook-intro": F.tekst,
+          "data-workbook-consent": F.vinkje, "data-workbook-knop": F.knop, "data-workbook-noot": F.noot,
+          "data-workbook-actie": "ontgrendel" }, P.knop),
+        el("button", { class: "knop knop--tekst", type: "button", "data-actie": "opnieuw" }, SCAN.uitslag.opnieuw)),
+      el("p", { class: "disclaimer" }, P.noot));
   }
 
   function toonUitslag(focus) {
@@ -993,13 +1074,37 @@ function startTalentenscan() {
     }
   }
 
+  /* Na de scan, en bij terugkomst met een afgeronde scan */
+  function toonAfgerond(focus) {
+    heroStatus("klaar");
+    toonUitslag(focus);
+  }
+
   function afronden() {
     st.klaar = true;
     bewaar();
     meld("afgerond");
-    heroStatus("klaar");
-    toonUitslag(true);
+    toonAfgerond(true);
   }
+
+  /* Het formulier van de site meldt dat de uitslag is ontgrendeld: hele uitslag tekenen en
+     naar het eerste deel gaan dat net zichtbaar werd */
+  function opOntgrendeld(e) {
+    if (!poortActief || !e.detail || e.detail.slug !== POORT.slug) return;
+    st.ontgrendeld = true;
+    bewaar();
+    /* Alleen opnieuw tekenen als de poortkaart nu in beeld is. Kijk niet naar poortDicht(): het formulier
+       heeft de download dan al als ontgrendeld opgeslagen. */
+    if (uitslag.hidden || !uitslag.querySelector('[data-test="poort"]')) return;
+    toonUitslag(false);
+    const vervolg = uitslag.querySelector("[data-vervolg]");
+    if (vervolg) {
+      const kop = vervolg.querySelector("h3");
+      naar(vervolg);
+      if (kop) { kop.setAttribute("tabindex", "-1"); kop.focus({ preventScroll: true }); }
+    }
+  }
+  document.addEventListener(POORT.gebeurtenis, opOntgrendeld);
 
   /* ---- Startscherm ---- */
   function heroStatus(soort) {
@@ -1054,8 +1159,7 @@ function startTalentenscan() {
   const opgeslagen = laad();
   if (opgeslagen && opgeslagen.klaar && compleet(opgeslagen)) {
     st = opgeslagen;
-    heroStatus("klaar");
-    toonUitslag(false);
+    toonAfgerond(false);
   } else if (opgeslagen && aantalBeantwoord(opgeslagen) > 0) {
     st = opgeslagen;
     st.klaar = false;
@@ -1064,6 +1168,7 @@ function startTalentenscan() {
 
   return function stopTalentenscan() {
     document.removeEventListener("click", opKlik);
+    document.removeEventListener(POORT.gebeurtenis, opOntgrendeld);
     if (toggle && links) document.removeEventListener("keydown", opToets);
   };
 }
