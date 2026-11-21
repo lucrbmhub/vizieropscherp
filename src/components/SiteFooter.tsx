@@ -1,3 +1,6 @@
+import { Button } from "@/components/ui/button";
+import { OPEN_COOKIE_SETTINGS } from "@/lib/vos-consent";
+
 export default function SiteFooter() {
   return (
     <footer className="site-footer">
@@ -36,6 +39,7 @@ export default function SiteFooter() {
         <div className="footer-bottom">
           <span>© 2016 - 2026 Vizier op Scherp · KVK 81088701 · BTW NL003529887B45</span>
           <a href="/privacyverklaring">Privacyverklaring</a>
+          <Button variant="ghost" className="vos-cookie-reopen" onClick={() => window.dispatchEvent(new Event(OPEN_COOKIE_SETTINGS))}>Cookie-instellingen</Button>
           <a href="/algemene-voorwaarden">Algemene voorwaarden</a>
           <a href="https://www.linkedin.com/company/10002759/" rel="noopener noreferrer">LinkedIn</a>
         </div>

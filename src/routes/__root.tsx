@@ -14,6 +14,9 @@ import { SITE_URL } from "@/lib/site";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { WorkbookGate } from "../components/WorkbookGate";
+import CookieBanner from "@/components/CookieBanner";
+import { CONSENT_DEFAULTS } from "@/lib/consent-bootstrap";
+import { VOS_CONSENT_RESTORE } from "@/lib/vos-consent";
 
 function NotFoundComponent() {
   return (
@@ -105,16 +108,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     scripts: [
       {
-        children: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('consent', 'default', {
-  ad_storage: 'denied',
-  ad_user_data: 'denied',
-  ad_personalization: 'denied',
-  analytics_storage: 'denied',
-  wait_for_update: 500
-});
-gtag('js', new Date());`,
+        children: `${CONSENT_DEFAULTS}\n${VOS_CONSENT_RESTORE}`,
       },
       {
         src: "https://www.googletagmanager.com/gtm.js?id=GTM-5WK88SBS",
@@ -181,6 +175,7 @@ function RootComponent() {
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
       <WorkbookGate />
+      <CookieBanner />
     </QueryClientProvider>
   );
 }

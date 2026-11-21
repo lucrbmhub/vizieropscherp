@@ -51,7 +51,7 @@ function Page() {
       <h1>
         Pr<span className="idot" style={{ ["--idot-bg" as never]: "var(--paper)" } as CSSProperties}>i</span>vacyverklaring<span className="gold">.</span>
       </h1>
-      <p className="legal-meta">Versie 1.3, november 2026</p>
+      <p className="legal-meta">Versie 1.4, november 2026</p>
 
       <p>
         Vizier op Scherp organiseert loopbaancoaching voor werkgevers en hun medewerkers, voor particulieren en voor mensen die via UWV een traject volgen. Daarbij verwerken wij persoonsgegevens. In deze verklaring lees je welke gegevens dat zijn, waarvoor we ze gebruiken, waar ze vandaan komen, met wie we ze delen en welke rechten je hebt. We schrijven in de je-vorm; de verklaring geldt vanzelfsprekend ook voor zakelijke contactpersonen.
@@ -122,7 +122,7 @@ function Page() {
       <p>Je antwoorden blijven in je eigen browser. Ze worden niet naar ons verstuurd en je hebt geen account nodig. We tellen alleen hoeveel mensen de scan starten en afronden. Daarbij bewaren we alleen of de scan is gestart of afgerond en wanneer, zonder naam, IP-adres of cookie. Je drie sterkste gebieden zie je meteen. Voor je hele uitslag vul je je e-mailadres in. Daarvoor geldt wat hierboven staat. Je antwoorden en je uitslag sturen we niet mee.</p>
 
       <h3>Als je onze website bezoekt</h3>
-      <p>Onze website gebruikt alleen functionele en technisch noodzakelijke cookies. Zie hierover paragraaf 10.</p>
+      <p>Met jouw toestemming meten we hoe onze website wordt gebruikt. Zie hierover paragraaf 10.</p>
 
       <h2>4. Waar je gegevens vandaan komen</h2>
       <p>De meeste gegevens krijgen we rechtstreeks van jou: via het contactformulier, in een gesprek, per e-mail of telefoon, of tijdens je traject.</p>
@@ -156,14 +156,23 @@ function Page() {
         <li><strong>UWV</strong>, alleen als je een UWV-traject volgt, en alleen de voortgangsinformatie die daarvoor nodig is.</li>
         <li><strong>Leveranciers die ons ondersteunen</strong>, zoals onze e-mail- en documentomgeving (Google Workspace), onze websitehost en formulierverwerking, onze boekingsagenda en onze boekhouder. Met partijen die in onze opdracht persoonsgegevens verwerken sluiten wij verwerkersovereenkomsten.</li>
       </ul>
-      <p>Wij verkopen nooit persoonsgegevens en delen ze niet met derden voor reclamedoeleinden.</p>
+      <p>Wij verkopen nooit persoonsgegevens. Alleen met jouw toestemming delen we gegevens met Google voor het meten van advertenties (zie paragraaf 10).</p>
 
       <h2>9. Doorgifte buiten de Europese Economische Ruimte</h2>
       <p>Sommige van onze leveranciers, zoals Google, verwerken gegevens deels buiten de Europese Economische Ruimte. Dat gebeurt alleen met passende waarborgen, zoals een adequaatheidsbesluit van de Europese Commissie (bijvoorbeeld het EU-VS Data Privacy Framework) of de Europese standaardcontractbepalingen.</p>
 
-      <h2>10. Cookies</h2>
-      <p>Onze website gebruikt alleen functionele en technisch noodzakelijke cookies om de site goed te laten werken. Wij gebruiken geen tracking- of marketingcookies en geen advertentienetwerken. Gaan wij in de toekomst websitestatistieken bijhouden, dan doen we dat privacyvriendelijk of vragen we daarvoor eerst je toestemming, en passen we deze verklaring aan.</p>
+      <h2 id="cookies">10. Cookies</h2>
+      <p>Onze website gebruikt functionele en technisch noodzakelijke cookies om de site goed te laten werken. Daarvoor vragen we geen toestemming.</p>
+      <p>Daarnaast gebruiken we Google Tag Manager. Alleen als jij daar toestemming voor geeft, plaatsen we daarmee cookies voor websitestatistieken (Google Analytics) en, als je ook advertenties toestaat, voor het meten van onze advertenties (Google Ads). Zonder toestemming plaatsen we deze cookies niet. Google ontvangt dan alleen beperkte, technische signalen zonder cookies.</p>
+      <p>Je kiest zelf via de cookiebanner en kunt je keuze altijd aanpassen via Cookie-instellingen onderaan elke pagina. We bewaren je keuze 12 maanden in je browser; daarna vragen we het opnieuw.</p>
       <p>Daarnaast bewaart je browser een paar dingen op je eigen apparaat: je voortgang in de talentenscan, zodat je later verder kunt, en na het invullen van het formulier je e-mailadres en wat je al hebt ontgrendeld, zodat je die gegevens niet opnieuw hoeft in te vullen. Dit is functionele opslag en wordt niet naar ons verstuurd.</p>
+      <h3>Bezoekstatistieken zonder cookies</h3>
+      <p>Lovable meet bezoeken aan onze website zonder cookies, slaat hiervoor niets op je apparaat op, bewaart geen IP-adressen en identificeert bezoekers niet. Lovable verzamelt deze gegevens voor ons. In <a href="https://lovable.dev/privacy" rel="noopener noreferrer">de privacyverklaring van Lovable</a> lees je hoe Lovable daarmee omgaat.</p>
+      <p>Deze statistieken bevatten de bezochte pagina’s, waar bezoekers vandaan kwamen, hun land, browser, besturingssysteem en type apparaat, hoe lang ze blijven, hoe snel pagina’s laden en fouten. Gedetailleerde gegevens worden 90 dagen bewaard en dagelijkse samenvattingen een jaar.</p>
+      <p>Klikken op knoppen en links worden pas gemeten nadat je statistieken toestaat. Geeft je browser het privacysignaal Global Privacy Control door, dan worden klikken nooit gemeten, ook niet na toestemming. Paginaweergaven, tijd op de pagina, laadsnelheid en fouten worden voor iedere bezoeker geregistreerd, zonder cookies en zonder iemand te identificeren.</p>
+      <h3>Google en onze boekingsagenda</h3>
+      <p>Google ontvangt bij toegestane statistiek- en advertentiecookies gegevens over bezoeken, interacties, apparaat en browser en advertentiemetingen. Deze cookies kunnen een browser herkennen. Zonder toestemming kunnen beperkte technische signalen zonder cookies naar Google worden gestuurd. Lees meer over de verwerking door Google in <a href="https://business.safety.google/privacy/" rel="noopener noreferrer">het privacybeleid van Google</a>.</p>
+      <p>Op de kennismakingspagina gebruiken we de agenda van Cal.com. Bij het laden ontvangt Cal.com technische verbindingsgegevens, zoals je IP-adres en browserinformatie. Als je een afspraak maakt, ontvangt Cal.com je ingevulde contactgegevens en de afspraakgegevens om de boeking te verwerken. De agenda kan functionele opslag gebruiken. Lees hierover <a href="https://cal.com/privacy" rel="noopener noreferrer">het privacybeleid van Cal.com</a>. Het contactformulier en het downloadformulier worden via Lovable Cloud verwerkt; welke gegevens en bewaartermijnen daarbij horen, staat in paragraaf 3.</p>
 
       <h2>11. Geautomatiseerde besluitvorming</h2>
       <p>Wij nemen geen besluiten over jou op basis van geautomatiseerde verwerking of profilering.</p>

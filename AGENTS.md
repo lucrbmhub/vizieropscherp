@@ -13,3 +13,4 @@
 - City FAQ items provide visible answers and matching plain text used to generate FAQPage schema, so structured data stays aligned with page content.
 - City FAQs use native details/summary with scoped marker suppression, so answers remain in server HTML without duplicate disclosure icons.
 - City landing pages supply their location-specific coach cards through route data and reuse existing profile assets and classes, so other pages remain unchanged.
+- Cookie consent uses the shared consent module with a versioned site-choice adapter and a pre-GTM bootstrap; the adapter mirrors purpose answers so the banner, other tabs and Google apply the same choice.
