@@ -62,16 +62,14 @@ const HTML = `<main id="main">
     .vos-herken .h-section{max-width:17ch;letter-spacing:0}
     .vos-herken .vos-herken-intro{font-size:17.5px;color:var(--petrol);max-width:44ch}
     .vos-herken .vos-herken-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;grid-auto-rows:1fr}
-    .vos-herken .vos-herken-card{display:flex;flex-direction:column;min-width:0;color:var(--body-c);border:0;box-shadow:none;transition:transform .2s ease}
-    .vos-herken .vos-herken-card:hover{outline:1.5px solid var(--line);transform:translateY(-3px)}
-    .vos-herken .vos-herken-card:focus-visible{outline:1.5px solid var(--petrol);outline-offset:3px}
+    .vos-herken .vos-herken-card{display:flex;flex-direction:column;min-width:0;color:var(--body-c);border:0;box-shadow:none}
     .vos-herken .vos-herken-card h3{font-size:20px;color:var(--petrol);line-height:1.25;letter-spacing:0}
     .vos-herken .vos-herken-card p{font-size:14.5px;color:var(--body-c)}
-    .vos-herken .vos-herken-card .foot{margin-top:auto;padding-top:20px;color:var(--petrol)}
-    .vos-herken .vos-herken-card:hover .foot{color:var(--koraal)}
+    .vos-herken .vos-herken-cta{margin-top:28px;font-size:16px;color:var(--petrol);font-weight:500}
+    .vos-herken .vos-herken-cta a{color:var(--koraal);font-weight:500}
+    .vos-herken .vos-herken-cta a:hover{color:var(--koraal-deep)}
     @media(max-width:860px){.vos-herken .vos-herken-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:620px){.vos-herken .vos-herken-head{grid-template-columns:minmax(0,1fr);gap:24px}.vos-herken .vos-herken-grid{grid-template-columns:minmax(0,1fr)}}
-    @media(prefers-reduced-motion:reduce){.vos-herken .vos-herken-card{transition:none}.vos-herken .vos-herken-card:hover{transform:none}}
   </style>
   <div class="container">
     <div class="vos-herken-head">
@@ -82,43 +80,38 @@ const HTML = `<main id="main">
       <p class="vos-herken-intro">Bijna iedereen loopt een keer vast in zijn werk. De meeste mensen wachten te lang voordat ze er iets mee doen. Je hoeft niet te wachten tot het knelt.</p>
     </div>
     <div class="grid vos-herken-grid">
-      <a class="card vos-herken-card" href="/inzichten/richting-vinden-in-je-loopbaan">
+      <div class="card vos-herken-card">
         <span class="label">Richting</span>
         <h3>Ik wil iets anders, maar wat?</h3>
         <p>Je weet wat je niet meer wilt, maar niet wat dan wel.</p>
-        <span class="foot">Lees meer <span aria-hidden="true">→</span></span>
-      </a>
-      <a class="card vos-herken-card" href="/inzichten/loopbaanswitch-na-je-40e">
+      </div>
+      <div class="card vos-herken-card">
         <span class="label">Overstappen</span>
         <h3>Toe aan een carrièreswitch?</h3>
         <p>Er liggen kansen, maar je twijfelt welke kant je op wilt.</p>
-        <span class="foot">Lees meer <span aria-hidden="true">→</span></span>
-      </a>
-      <a class="card vos-herken-card" href="/inzichten/vastzitten-in-een-goede-baan">
+      </div>
+      <div class="card vos-herken-card">
         <span class="label">Twijfel</span>
         <h3>Blijven of ontslag nemen?</h3>
         <p>Zekerheid houdt je vast, maar het werk past niet meer.</p>
-        <span class="foot">Lees meer <span aria-hidden="true">→</span></span>
-      </a>
-      <a class="card vos-herken-card" href="/inzichten/passie-terugvinden-in-je-werk">
+      </div>
+      <div class="card vos-herken-card">
         <span class="label">Werkplezier</span>
         <h3>Het zondagavondgevoel</h3>
         <p>Op papier prima, maar de zin is weg.</p>
-        <span class="foot">Lees meer <span aria-hidden="true">→</span></span>
-      </a>
-      <a class="card vos-herken-card" href="/inzichten/grenzen-stellen-op-werk">
+      </div>
+      <div class="card vos-herken-card">
         <span class="label">Grenzen</span>
         <h3>Altijd aan, nooit klaar</h3>
         <p>Je bent er voor iedereen, behalve voor jezelf.</p>
-        <span class="foot">Lees meer <span aria-hidden="true">→</span></span>
-      </a>
-      <a class="card vos-herken-card" href="/inzichten/je-eerste-baan">
+      </div>
+      <div class="card vos-herken-card">
         <span class="label">Starten</span>
         <h3>Net begonnen, en nu al twijfel</h3>
         <p>Je dacht dat dit het zou zijn. Toch twijfel je over de richting.</p>
-        <span class="foot">Lees meer <span aria-hidden="true">→</span></span>
-      </a>
+      </div>
     </div>
+    <p class="vos-herken-cta">Herken je jezelf? <a href="/kennismaken">Plan een gratis kennismaking van 30 minuten →</a></p>
   </div>
 </section>
 
