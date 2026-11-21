@@ -81,9 +81,9 @@ const HTML = `<main id="main">
     </div>
     <div class="grid vos-herken-grid">
       <div class="card vos-herken-card">
-        <span class="label">Richting</span>
-        <h3>Ik wil iets anders, maar wat?</h3>
-        <p>Je weet wat je niet meer wilt, maar niet wat dan wel.</p>
+        <span class="label">Ontwikkeling</span>
+        <h3>Ik weet dat er meer in zit</h3>
+        <p>Je doet je werk goed, maar je talenten blijven liggen.</p>
       </div>
       <div class="card vos-herken-card">
         <span class="label">Overstappen</span>
