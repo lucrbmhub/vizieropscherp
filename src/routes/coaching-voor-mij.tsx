@@ -69,7 +69,7 @@ const HTML = `<main id="main">
     .vos-herken .vos-herken-cta a{color:var(--koraal);font-weight:500}
     .vos-herken .vos-herken-cta a:hover{color:var(--koraal-deep)}
     @media(max-width:860px){.vos-herken .vos-herken-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:620px){.vos-herken .vos-herken-head{grid-template-columns:minmax(0,1fr);gap:24px}.vos-herken .vos-herken-grid{grid-template-columns:minmax(0,1fr)}}
+    @media(max-width:620px){.vos-herken .vos-herken-head{grid-template-columns:minmax(0,1fr);gap:24px}.vos-herken .vos-herken-grid{grid-template-columns:minmax(0,1fr);grid-auto-rows:auto}}
   </style>
   <div class="container">
     <div class="vos-herken-head">
