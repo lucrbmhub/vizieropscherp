@@ -50,7 +50,7 @@ const HTML = `<main id="main">
         <a class="btn btn-primary" href="/kennismaken">Maak vrijblijvend kennis</a>
         <a class="btn btn-outline" href="/over-ons#coaches">Bekijk eerst onze coaches</a>
       </div>
-      <p class="text-sm mt-4">Gratis kennismaking van 30 minuten · Vanaf € 1.650 inclusief btw · Vaak vergoed door je werkgever</p>
+      <p class="text-sm mt-4">Gratis kennismaking van 30 minuten · Een coachtraject vaak vergoed door je werkgever</p>
     </div>
   </div>
 </section>
