@@ -14,7 +14,7 @@ import { SITE_URL, socialImageMeta } from "@/lib/site";
 
 const PATH = "/inzichten/talentenscan";
 const URL = `${SITE_URL}${PATH}`;
-const VERSIE = "1.5";
+const VERSIE = "1.6";
 const TITEL = "Talentenscan voor je werk | Vizier op Scherp";
 const OG_TITEL = "Talentenscan: wat gaat jou makkelijk af in je werk?";
 const OMSCHRIJVING =

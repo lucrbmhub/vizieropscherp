@@ -339,7 +339,6 @@
 
 /* ---------- Print: alleen de uitslag ---------- */
 @media print{
-  @page{margin:16mm 14mm}
   .vos{background:var(--papier); -webkit-print-color-adjust:exact; print-color-adjust:exact}
   .vos .skip,.vos .nav,.vos .hero,.vos .scan-kaart,.vos .faq-sectie,.vos .afsluiting,.vos .footer,.vos .uitslag__acties{display:none!important}
   .vos .section{padding-block:0}
@@ -359,7 +358,9 @@
 .vos .faq details:last-child{border-bottom:1px solid var(--rand)}
 .vos .faq summary::after{content:none}
 .vos .chip{border:0}
-/* Printen: alleen de uitslag, zonder de navigatie en footer van de site */
+/* Printen: alleen de uitslag, zonder de navigatie, footer en cookiemelding van de site.
+   Geen eigen paginamarges en geen overflow op html en body: daarmee kapt de printfunctie van de iPhone lange pagina's af. */
 @media print{
-  .skip,.site-header,.site-footer{display:none!important}
+  .skip,.site-header,.site-footer,.vos-cookie{display:none!important}
+  html,body{overflow:visible!important;height:auto!important}
 }
