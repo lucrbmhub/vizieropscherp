@@ -186,11 +186,11 @@ const HTML = `<main id="main">
     <div class="grid g2-wide">
       <div>
         <p class="eyebrow eyebrow--gold">Wat je eraan overhoudt</p>
-        <h2 class="h-section">Een besluit en een plan, geen map vol oefeningen</h2>
+        <h2 class="h-section">Een besluit en een plan dat goed voelt</h2>
         <ul class="vos-lijst vos-lijst--check vos-lijst--donker text-[var(--mint)] mt-6">
-          <li>Zes gesprekken met een vaste loopbaancoach</li>
+          <li>Zes gesprekken met een ervaren loopbaancoach</li>
           <li>Een talent- en drijfverenassessment met persoonlijk rapport</li>
-          <li>Een rapportage met wat je hebt ontdekt en welke stappen je zet</li>
+          <li>Meer rust, balans en voldoening</li>
           <li>Helderheid over wat bij je past, en een plan om daar te komen</li>
         </ul>
       </div>
