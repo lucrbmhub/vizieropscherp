@@ -61,29 +61,33 @@ const HTML = `<main id="main">
     <div class="split">
       <div>
         <p class="eyebrow">Herken je dit?</p>
-        <h2 class="h-section">Vijf momenten waarop loopbaancoaching helpt</h2>
-        <p class="pull" style="margin-top:32px;font-size:20px;">Wat deze momenten gemeen hebben: je hoeft het niet alleen uit te zoeken. <span class="mark-gold">Samen kijken werkt beter.</span></p>
+        <h2 class="h-section">Zes momenten waarop loopbaancoaching helpt</h2>
+        <p class="pull" style="margin-top:32px;font-size:20px;">Wat deze momenten gemeen hebben: je hoeft niet te wachten tot het knelt, en je hoeft het niet alleen uit te zoeken. <span class="mark-gold">Samen kijken werkt beter.</span></p>
       </div>
       <div class="rows">
         <div class="row">
+          <div class="row-title">Ik wil iets anders, maar wat?</div>
+          <p>Je weet wat je niet meer wilt, maar niet wat dan wel. Je scrolt door vacatures en herkent jezelf in geen enkele. Je wilt eerst weten welk werk echt bij je past.</p>
+        </div>
+        <div class="row">
+          <div class="row-title">Toe aan een carrièreswitch?</div>
+          <p>Er liggen kansen, maar je twijfelt of dit de richting is die je wilt. Misschien is het tijd voor iets heel anders. Een stap zetten zonder te weten waarom, voelt niet goed.</p>
+        </div>
+        <div class="row">
+          <div class="row-title">Blijven of ontslag nemen?</div>
+          <p>Je speelt al een tijd met de gedachte om op te zeggen, maar weet niet of dat de oplossing is. Zekerheid, salaris en collega's houden je vast. Je wilt een besluit waar je achter staat, geen sprong in het duister.</p>
+        </div>
+        <div class="row">
           <div class="row-title">Het zondagavondgevoel</div>
-          <p>Je werk is op papier prima, maar de energie is weg. Elke week voelt als dezelfde week. Je weet alleen niet of het aan de baan ligt, aan de organisatie, of aan iets anders.</p>
+          <p>Je werk is op papier prima, maar de zin is weg. Elke week voelt als dezelfde week. Je weet alleen niet of het aan de baan ligt, aan de organisatie, of aan iets anders.</p>
         </div>
         <div class="row">
-          <div class="row-title">Doorgroeien of iets heel anders?</div>
-          <p>Er liggen kansen, maar je twijfelt: is dit echt de richting die je wilt? Een volgende stap zetten zonder te weten waarom, voelt niet goed.</p>
+          <div class="row-title">Altijd aan, nooit klaar</div>
+          <p>Je bent er voor iedereen, behalve voor jezelf. Nee zeggen lukt slecht en je werk loopt door in je avonden. Je wilt weer grip op wat je oppakt en wat niet.</p>
         </div>
         <div class="row">
-          <div class="row-title">Nieuwe rol, oude aanpak</div>
-          <p>Je hebt de stap gemaakt waar je naartoe werkte: meer verantwoordelijkheid, misschien voor het eerst een team. Maar wat je altijd goed deed, werkt in deze rol ineens niet vanzelf. Knopen doorhakken, loslaten wat je vroeger zelf oppakte, oude collega's aansturen. De rol krijgen bleek makkelijker dan de rol worden.</p>
-        </div>
-        <div class="row">
-          <div class="row-title">Terug na een zware periode</div>
-          <p>Na ziekte, mantelzorg of een moeilijke tijd wil je weer opbouwen, maar je oude tempo en je oude rol passen misschien niet meer.</p>
-        </div>
-        <div class="row">
-          <div class="row-title">Doorverwezen, en nu?</div>
-          <p>Je werkgever biedt je een coachtraject aan. Fijn, maar ook spannend. Wat kun je verwachten, en wat gebeurt er met wat je vertelt?</p>
+          <div class="row-title">Net begonnen, en nu al twijfel</div>
+          <p>Je werkt een paar jaar en dacht dat dit het zou zijn. Toch vraag je je af of je de goede kant op gaat, terwijl iedereen om je heen zijn weg lijkt te vinden.</p>
         </div>
       </div>
     </div>
