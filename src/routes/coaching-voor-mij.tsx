@@ -56,40 +56,68 @@ const HTML = `<main id="main">
 </section>
 
 <!-- HERKEN JE DIT -->
-<section class="section">
+<section class="section vos-herken">
+  <style>
+    .vos-herken .vos-herken-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:end;margin-bottom:32px}
+    .vos-herken .h-section{max-width:17ch;letter-spacing:0}
+    .vos-herken .vos-herken-intro{font-size:17.5px;color:var(--petrol);max-width:44ch}
+    .vos-herken .vos-herken-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;grid-auto-rows:1fr}
+    .vos-herken .vos-herken-card{display:flex;flex-direction:column;min-width:0;color:var(--body-c);border:0;box-shadow:none;transition:transform .2s ease}
+    .vos-herken .vos-herken-card:hover{outline:1.5px solid var(--line);transform:translateY(-3px)}
+    .vos-herken .vos-herken-card:focus-visible{outline:1.5px solid var(--petrol);outline-offset:3px}
+    .vos-herken .vos-herken-card h3{font-size:20px;color:var(--petrol);line-height:1.25;letter-spacing:0}
+    .vos-herken .vos-herken-card p{font-size:14.5px;color:var(--body-c)}
+    .vos-herken .vos-herken-card .foot{margin-top:auto;padding-top:20px;color:var(--petrol)}
+    .vos-herken .vos-herken-card:hover .foot{color:var(--koraal)}
+    @media(max-width:860px){.vos-herken .vos-herken-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:620px){.vos-herken .vos-herken-head{grid-template-columns:minmax(0,1fr);gap:24px}.vos-herken .vos-herken-grid{grid-template-columns:minmax(0,1fr)}}
+    @media(prefers-reduced-motion:reduce){.vos-herken .vos-herken-card{transition:none}.vos-herken .vos-herken-card:hover{transform:none}}
+  </style>
   <div class="container">
-    <div class="split">
+    <div class="vos-herken-head">
       <div>
         <p class="eyebrow">Herken je dit?</p>
-        <h2 class="h-section">Zes momenten waarop loopbaancoaching helpt</h2>
-        <p class="pull" style="margin-top:32px;font-size:20px;">Wat deze momenten gemeen hebben: je hoeft niet te wachten tot het knelt, en je hoeft het niet alleen uit te zoeken. <span class="mark-gold">Samen kijken werkt beter.</span></p>
+        <h2 class="h-section">Op papier klopt het. Toch voelt het niet goed.</h2>
       </div>
-      <div class="rows">
-        <div class="row">
-          <div class="row-title">Ik wil iets anders, maar wat?</div>
-          <p>Je weet wat je niet meer wilt, maar niet wat dan wel. Je scrolt door vacatures en herkent jezelf in geen enkele. Je wilt eerst weten welk werk echt bij je past.</p>
-        </div>
-        <div class="row">
-          <div class="row-title">Toe aan een carrièreswitch?</div>
-          <p>Er liggen kansen, maar je twijfelt of dit de richting is die je wilt. Misschien is het tijd voor iets heel anders. Een stap zetten zonder te weten waarom, voelt niet goed.</p>
-        </div>
-        <div class="row">
-          <div class="row-title">Blijven of ontslag nemen?</div>
-          <p>Je speelt al een tijd met de gedachte om op te zeggen, maar weet niet of dat de oplossing is. Zekerheid, salaris en collega's houden je vast. Je wilt een besluit waar je achter staat, geen sprong in het duister.</p>
-        </div>
-        <div class="row">
-          <div class="row-title">Het zondagavondgevoel</div>
-          <p>Je werk is op papier prima, maar de zin is weg. Elke week voelt als dezelfde week. Je weet alleen niet of het aan de baan ligt, aan de organisatie, of aan iets anders.</p>
-        </div>
-        <div class="row">
-          <div class="row-title">Altijd aan, nooit klaar</div>
-          <p>Je bent er voor iedereen, behalve voor jezelf. Nee zeggen lukt slecht en je werk loopt door in je avonden. Je wilt weer grip op wat je oppakt en wat niet.</p>
-        </div>
-        <div class="row">
-          <div class="row-title">Net begonnen, en nu al twijfel</div>
-          <p>Je werkt een paar jaar en dacht dat dit het zou zijn. Toch vraag je je af of je de goede kant op gaat, terwijl iedereen om je heen zijn weg lijkt te vinden.</p>
-        </div>
-      </div>
+      <p class="vos-herken-intro">Bijna iedereen loopt een keer vast in zijn werk. De meeste mensen wachten te lang voordat ze er iets mee doen. Je hoeft niet te wachten tot het knelt.</p>
+    </div>
+    <div class="grid vos-herken-grid">
+      <a class="card vos-herken-card" href="/inzichten/richting-vinden-in-je-loopbaan">
+        <span class="label">Richting</span>
+        <h3>Ik wil iets anders, maar wat?</h3>
+        <p>Je weet wat je niet meer wilt, maar niet wat dan wel.</p>
+        <span class="foot">Lees meer <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card vos-herken-card" href="/inzichten/loopbaanswitch-na-je-40e">
+        <span class="label">Overstappen</span>
+        <h3>Toe aan een carrièreswitch?</h3>
+        <p>Er liggen kansen, maar je twijfelt welke kant je op wilt.</p>
+        <span class="foot">Lees meer <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card vos-herken-card" href="/inzichten/vastzitten-in-een-goede-baan">
+        <span class="label">Twijfel</span>
+        <h3>Blijven of ontslag nemen?</h3>
+        <p>Zekerheid houdt je vast, maar het werk past niet meer.</p>
+        <span class="foot">Lees meer <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card vos-herken-card" href="/inzichten/passie-terugvinden-in-je-werk">
+        <span class="label">Werkplezier</span>
+        <h3>Het zondagavondgevoel</h3>
+        <p>Op papier prima, maar de zin is weg.</p>
+        <span class="foot">Lees meer <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card vos-herken-card" href="/inzichten/grenzen-stellen-op-werk">
+        <span class="label">Grenzen</span>
+        <h3>Altijd aan, nooit klaar</h3>
+        <p>Je bent er voor iedereen, behalve voor jezelf.</p>
+        <span class="foot">Lees meer <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card vos-herken-card" href="/inzichten/je-eerste-baan">
+        <span class="label">Starten</span>
+        <h3>Net begonnen, en nu al twijfel</h3>
+        <p>Je dacht dat dit het zou zijn. Toch twijfel je over de richting.</p>
+        <span class="foot">Lees meer <span aria-hidden="true">→</span></span>
+      </a>
     </div>
   </div>
 </section>
