@@ -69,6 +69,17 @@ const HTML = `<main id="main" class="vos-home">
 .vos-home .vos-cta2-col .btn{margin-top:auto;white-space:normal;text-align:center}
 @media (max-width:860px){.vos-home .facet-inner.vos-cta2{grid-template-columns:1fr}.vos-home .vos-cta2-col{padding:36px 28px}.vos-home .vos-cta2-col+.vos-cta2-col{border-left:0;border-top:1px solid rgba(168,131,75,.35)}}
 @media (max-width:620px){.vos-home .vos-zelf-panel{padding:30px 22px}}
+.vos-home .vos-google{display:inline-flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.vos-home .vos-google-pil{display:inline-flex;align-items:center;gap:14px;background:#fff;border-radius:999px;padding:12px 24px 12px 26px;box-shadow:0 1px 2px rgba(22,48,46,.25)}
+.vos-home .vos-google-score{font-family:var(--f-display);font-weight:500;font-size:32px;line-height:1;color:var(--petrol);letter-spacing:-0.01em}
+.vos-home .vos-google-sterren{display:inline-flex;gap:4px}
+.vos-home .vos-google-sterren svg{display:block;width:22px;height:22px;fill:#CFA24E}
+.vos-home .vos-google-link{font-size:16px;color:var(--mint);border-bottom:1px solid rgba(216,229,226,.55);padding-bottom:2px;transition:color .15s,border-color .15s}
+.vos-home .vos-google:hover .vos-google-link,.vos-home .vos-google:focus-visible .vos-google-link{color:var(--goud);border-bottom-color:var(--goud)}
+.vos-home .vos-google:focus-visible{outline:2px solid var(--goud);outline-offset:6px;border-radius:12px}
+.vos-home .vos-google-alle{margin-top:16px;font-size:14.5px}
+.vos-home .vos-google-alle a{color:var(--mint-dof);border-bottom:1px solid rgba(191,208,203,.45);padding-bottom:1px;transition:color .15s,border-color .15s}
+.vos-home .vos-google-alle a:hover{color:var(--goud);border-bottom-color:var(--goud)}
 </style>
 
 <!-- HERO: gedeelde voordeur -->
@@ -193,7 +204,7 @@ const HTML = `<main id="main" class="vos-home">
       <div class="bigstat"><b>100%</b><span>gecertificeerde coaches, met achtergronden in coaching, psychologie, HR en recruitment</span></div>
       <div class="bigstat"><b>2 locaties</b><span>Coaching in Haarlem, Amsterdam en online</span></div>
     </div>
-    <div class="grid g2" style="gap:48px;">
+    <div class="grid g2" style="gap:48px;align-items:center;">
       <figure class="quote" style="margin:0;">
         <div class="quote-rail"><span class="top"></span><span class="bar"></span><span class="end"></span></div>
         <div>
@@ -202,13 +213,19 @@ const HTML = `<main id="main" class="vos-home">
           <cite>Wouter van der Meij, partner bij Quatronic</cite>
         </div>
       </figure>
-      <figure class="quote" style="margin:0;">
+      <div class="quote vos-google-blok">
         <div class="quote-rail"><span class="top"></span><span class="bar"></span><span class="end"></span></div>
         <div>
-          <blockquote>&ldquo;Het traject heeft me geholpen om rustig te kijken naar wat ik echt wilde. Geen druk, wel concrete stappen. Ik heb nu een rol die beter past bij wat ik kan en wil.&rdquo;</blockquote>
-          <cite>Anouk V., Beleidsadviseur, publieke sector</cite>
+          <a class="vos-google" href="https://www.google.com/maps/search/?api=1&amp;query=Vizier%20op%20Scherp%20Haarlem&amp;query_place_id=ChIJefzwiBnhxUcRX8SiF1qidt4" target="_blank" rel="noopener noreferrer" aria-label="Gemiddeld 5,0 van de 5 sterren. Bekijk onze reviews op Google">
+            <span class="vos-google-pil">
+              <span class="vos-google-score">5,0</span>
+              <span class="vos-google-sterren" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.94 5.96 6.58.96-4.76 4.64 1.12 6.55L12 17.52l-5.88 3.09 1.12-6.55L2.48 9.42l6.58-.96z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.94 5.96 6.58.96-4.76 4.64 1.12 6.55L12 17.52l-5.88 3.09 1.12-6.55L2.48 9.42l6.58-.96z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.94 5.96 6.58.96-4.76 4.64 1.12 6.55L12 17.52l-5.88 3.09 1.12-6.55L2.48 9.42l6.58-.96z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.94 5.96 6.58.96-4.76 4.64 1.12 6.55L12 17.52l-5.88 3.09 1.12-6.55L2.48 9.42l6.58-.96z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.94 5.96 6.58.96-4.76 4.64 1.12 6.55L12 17.52l-5.88 3.09 1.12-6.55L2.48 9.42l6.58-.96z"/></svg></span>
+            </span>
+            <span class="vos-google-link">Google reviews</span>
+          </a>
+          <p class="vos-google-alle"><a href="https://www.google.com/maps/search/?api=1&amp;query=Vizier%20op%20Scherp%20Haarlem&amp;query_place_id=ChIJefzwiBnhxUcRX8SiF1qidt4" target="_blank" rel="noopener noreferrer">Lees alle reviews op onze Google-bedrijfspagina</a></p>
         </div>
-      </figure>
+      </div>
     </div>
   </div>
 </section>
