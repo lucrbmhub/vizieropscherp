@@ -14,3 +14,4 @@
 - City FAQs use native details/summary with scoped marker suppression, so answers remain in server HTML without duplicate disclosure icons.
 - City landing pages supply their location-specific coach cards through route data and reuse existing profile assets and classes, so other pages remain unchanged.
 - Cookie consent uses the shared consent module with a versioned site-choice adapter and a pre-GTM bootstrap; the adapter mirrors purpose answers so the banner, other tabs and Google apply the same choice.
+- Interactive controls inside imported page HTML mount through a scoped React portal after hydration, preserving the original document structure and shared design-system controls.

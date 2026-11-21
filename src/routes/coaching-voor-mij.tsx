@@ -1,4 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+import { Button } from "@/components/ui/button";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { SITE_URL, socialImageMeta } from "@/lib/site";
@@ -7,20 +10,31 @@ import { SITE_URL, socialImageMeta } from "@/lib/site";
 export const Route = createFileRoute("/coaching-voor-mij")({
   head: () => ({
     meta: [
-      { title: "Loopbaancoaching voor jezelf | Vizier op Scherp" },
-      { name: "description", content: "Loopbaancoaching voor medewerkers en particulieren in Amsterdam en Haarlem. Je kiest zelf je coach, in jouw tempo, gericht op concrete stappen." },
-      { property: "og:title", content: "Loopbaancoaching voor jezelf | Vizier op Scherp" },
-      { name: "twitter:title", content: "Loopbaancoaching voor jezelf | Vizier op Scherp" },
+      { title: "Loopbaancoach en loopbaanbegeleiding voor jezelf | Vizier op Scherp" },
+      { name: "description", content: "Loopbaancoaching voor jezelf met een vaste loopbaancoach. Zes gesprekken met talent- en drijfverenassessment, vanaf € 1.650 inclusief btw. De kennismaking is gratis." },
+      { property: "og:title", content: "Loopbaancoach en loopbaanbegeleiding voor jezelf | Vizier op Scherp" },
+      { name: "twitter:title", content: "Loopbaancoach en loopbaanbegeleiding voor jezelf | Vizier op Scherp" },
       { property: "og:description", content: "Doorverwezen of zoek je zelf coaching? Maak vrijblijvend kennis met een coach die bij je past." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE_URL}/coaching-voor-mij` },
       ...socialImageMeta,
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/coaching-voor-mij` }],
-    scripts: [{ type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Moet ik al weten wat ik wil voordat ik begin?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Nee, juist niet. De meeste mensen beginnen met twijfel of een vaag gevoel dat het anders moet. Samen met je coach breng je eerst rust en overzicht aan, en ontdek je daarna wat je kunt en wilt. De richting komt onderweg.\"}}, {\"@type\": \"Question\", \"name\": \"Wat vertellen jullie mijn werkgever?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Alleen of het traject loopt: aanwezigheid, voortgang in algemene zin en afronding. De inhoud van jullie gesprekken blijft tussen jou en je coach. Die afspraak leggen we bij de start vast, voor jou en voor je werkgever.\"}}, {\"@type\": \"Question\", \"name\": \"Hoe lang duurt een traject?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Dat verschilt per persoon en per vraag. Gemiddeld zes gesprekken, verspreid over drie tot zes maanden. Tussendoor kun je oefenen met wat je bespreekt. Hoeveel gesprekken je nodig hebt en in welk tempo, stem je af met je coach. Je zit nergens aan vast.\"}}, {\"@type\": \"Question\", \"name\": \"Wat als het niet klikt met mijn coach?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Dan stellen we iemand anders voor. Zonder gedoe en zonder dat je je hoeft te verantwoorden. Daarom begint elk traject met een vrijblijvende kennismaking: een goede klik is de basis van alles wat daarna komt.\"}}, {\"@type\": \"Question\", \"name\": \"Waar vinden de gesprekken plaats?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"In Haarlem, in Amsterdam-Zuid, online, of op een plek die voor jou goed werkt. Dat stem je gewoon af met je coach.\"}}, {\"@type\": \"Question\", \"name\": \"Wat kost een traject?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Vaak betaalt je werkgever. Vraag ernaar bij HR, veel organisaties hebben hier budget voor. Betaal je zelf, dan krijg je vooraf een heldere prijsafspraak, zodat je precies weet waar je aan toe bent.\"}}]}" }],
+    scripts: [{ type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Moet ik al weten wat ik wil voordat ik begin?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Nee, juist niet. De meeste mensen beginnen met twijfel of een vaag gevoel dat het anders moet. Samen met je coach breng je eerst rust en overzicht aan, en ontdek je daarna wat je kunt en wilt. De richting komt onderweg.\"}}, {\"@type\": \"Question\", \"name\": \"Wat vertellen jullie mijn werkgever?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Alleen of het traject loopt: aanwezigheid, voortgang in algemene zin en afronding. De inhoud van jullie gesprekken blijft tussen jou en je coach. Die afspraak leggen we bij de start vast, voor jou en voor je werkgever.\"}}, {\"@type\": \"Question\", \"name\": \"Hoe lang duurt een traject?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Dat verschilt per persoon en per vraag. Gemiddeld zes gesprekken, verspreid over drie tot zes maanden. Tussendoor kun je oefenen met wat je bespreekt. Hoeveel gesprekken je nodig hebt en in welk tempo, stem je af met je coach. Je zit nergens aan vast.\"}}, {\"@type\": \"Question\", \"name\": \"Wat als het niet klikt met mijn coach?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Dan stellen we iemand anders voor. Zonder gedoe en zonder dat je je hoeft te verantwoorden. Daarom begint elk traject met een vrijblijvende kennismaking: een goede klik is de basis van alles wat daarna komt.\"}}, {\"@type\": \"Question\", \"name\": \"Waar vinden de gesprekken plaats?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"In Haarlem (Klein Heiligland), in Amsterdam-Zuid (IJsbaanpad) of online. Je kunt dat per gesprek afwisselen.\"}}, {\"@type\": \"Question\", \"name\": \"Wat kost een loopbaancoach?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Een loopbaantraject voor jezelf kost vanaf € 1.650 inclusief btw. Daarvoor krijg je zes gesprekken met een vaste loopbaancoach, een talent- en drijfverenassessment en een rapportage. Voor zzp'ers is dat € 1.650 exclusief btw. Vaak betaalt je werkgever mee; vraag ernaar bij HR. Het kennismakingsgesprek is gratis.\"}}, {\"@type\": \"Question\", \"name\": \"Is loopbaancoaching hetzelfde als therapie?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Nee. Loopbaancoaching gaat over je werk en je loopbaan, en is gericht op keuzes en concrete stappen. Zit je thuis met klachten waardoor je niet goed meer kunt werken? Dan is je huisarts of bedrijfsarts de eerste stap.\"}}]}" }],
   }),
   component: Page,
 });
+
+const EMPLOYER_EMAIL = `Onderwerp: Aanvraag loopbaantraject
+
+Hoi [naam],
+
+Ik wil graag stilstaan bij mijn ontwikkeling en mijn loopbaan. Daarvoor wil ik een loopbaantraject volgen bij Vizier op Scherp. Het gaat om zes gesprekken met een gecertificeerde loopbaancoach, inclusief een talent- en drijfverenassessment en een rapportage.
+
+Ik denk dat dit mij helpt om [scherper te krijgen waar ik goed in ben / te bepalen welke volgende stap bij mij past]. Kan dit vanuit het opleidings- of ontwikkelbudget? Vizier op Scherp stuurt graag een offerte.
+
+Groet,
+[jouw naam]`;
 
 const HTML = `<main id="main">
 
@@ -36,6 +50,7 @@ const HTML = `<main id="main">
         <a class="btn btn-primary" href="/kennismaken">Maak vrijblijvend kennis</a>
         <a class="btn btn-outline" href="/over-ons#coaches">Bekijk eerst onze coaches</a>
       </div>
+      <p class="text-sm mt-4">Gratis kennismaking van 30 minuten · Vanaf € 1.650 inclusief btw · Vaak vergoed door je werkgever</p>
     </div>
   </div>
 </section>
@@ -111,24 +126,56 @@ const HTML = `<main id="main">
     <div class="steps steps--4">
       <div class="step">
         <span class="num">1</span>
-        <h3>Rust en overzicht</h3>
+        <h3>Overzicht</h3>
         <p>Eerst even landen. Wat speelt er, in je hoofd en in je lijf? Waar zit de onrust precies? Je hoeft nog niets op te lossen, alleen helder krijgen waar je staat.</p>
       </div>
       <div class="step">
         <span class="num">2</span>
-        <h3>Zicht op wat je kunt en wilt</h3>
+        <h3>Inzicht</h3>
         <p>Je onderzoekt je talenten, je waarden en waar je energie van krijgt. Vaak weet je meer dan je denkt. Het is alleen nog nooit op een rij gezet.</p>
       </div>
       <div class="step">
         <span class="num">3</span>
-        <h3>Richting kiezen</h3>
+        <h3>Richting</h3>
         <p>Met dat inzicht bepaal je je richting: in je huidige werk, in een andere rol, of ergens anders. Geen overhaaste keuzes, wel een keuze die van jou is.</p>
       </div>
       <div class="step">
         <span class="num">4</span>
-        <h3>Concrete stappen zetten</h3>
+        <h3>Actie</h3>
         <p>Gesprekken voeren, solliciteren, netwerken, ander gedrag oefenen. Je coach blijft erbij tot je stappen in de praktijk staan, niet alleen op papier.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAT JE ERAAN OVERHOUDT -->
+<section class="section section--petrol">
+  <div class="container">
+    <div class="grid g2-wide">
+      <div>
+        <p class="eyebrow eyebrow--gold">Wat je eraan overhoudt</p>
+        <h2 class="h-section">Een besluit en een plan, geen map vol oefeningen</h2>
+        <ul class="vos-lijst vos-lijst--check vos-lijst--donker text-[var(--mint)] mt-6">
+          <li>Zes gesprekken met een vaste loopbaancoach</li>
+          <li>Een talent- en drijfverenassessment met persoonlijk rapport</li>
+          <li>Een rapportage met wat je hebt ontdekt en welke stappen je zet</li>
+          <li>Helderheid over wat bij je past, en een plan om daar te komen</li>
+        </ul>
+      </div>
+      <aside class="card card--petrol border border-[var(--mint-dof)]">
+        <h3>Er zijn twee goede uitkomsten</h3>
+        <p>We sturen niet op vertrekken. Soms blijkt je huidige werk goed te passen, als je er iets aan verandert.</p>
+        <div class="grid g2 mt-6">
+          <div>
+            <h3>Blijven</h3>
+            <p>Met een andere rol, andere grenzen of een andere kijk op je werk.</p>
+          </div>
+          <div>
+            <h3>Gaan</h3>
+            <p>Naar werk dat beter past, met een plan om daar te komen.</p>
+          </div>
+        </div>
+      </aside>
     </div>
   </div>
 </section>
@@ -162,7 +209,7 @@ const HTML = `<main id="main">
     <div class="card--open" style="padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;">
       <div style="max-width:640px;">
         <h2 style="font-size:22px;margin-bottom:8px;">Een eerste gesprek verplicht je tot niets</h2>
-        <p style="font-size:15px;">Je vertelt wat er speelt, wij stellen een coach voor die bij je past. Daarna beslis jij.</p>
+        <p style="font-size:15px;">Het is gratis en duurt 30 minuten. Je vertelt wat er speelt, wij stellen een coach voor die bij je past. Daarna beslis jij.</p>
       </div>
       <a class="btn btn-outline" href="/kennismaken">Plan een vrijblijvende kennismaking</a>
     </div>
@@ -179,18 +226,26 @@ const HTML = `<main id="main">
     <div class="grid g3">
       <div class="card card--paper card--anchor ring-paper">
         <h3>Waar en hoe</h3>
-        <p>Gesprekken vinden plaats in <a href="/loopbaancoach-haarlem">Haarlem</a> (Klein Heiligland), in <a href="/loopbaancoach-amsterdam">Amsterdam-Zuid</a> (IJsbaanpad), online, of op een plek die voor jou goed werkt. Je spreekt af in een tempo dat bij je past, coaching is geen sprint.</p>
+        <p>Gesprekken vinden plaats in <a href="/loopbaancoach-haarlem">Haarlem</a> (Klein Heiligland), in <a href="/loopbaancoach-amsterdam">Amsterdam-Zuid</a> (IJsbaanpad) of online. Je spreekt af in een tempo dat bij je past, coaching is geen sprint.</p>
       </div>
       <div class="card card--paper">
-        <h3>Wie betaalt het traject?</h3>
-        <p>Vaak je werkgever. Veel organisaties hebben budget voor ontwikkeling en duurzame inzetbaarheid. Vraag ernaar bij HR; we denken graag mee over hoe je dat aankaart.</p>
-        <p>Betaal je zelf? Ook dan ben je welkom. Je krijgt vooraf een heldere prijsafspraak, zodat je precies weet waar je aan toe bent.</p>
+        <h3>Wat kost het?</h3>
+        <p>Een loopbaantraject kost vanaf € 1.650 inclusief btw: zes gesprekken, een talent- en drijfverenassessment en een rapportage. Werk je als zzp'er, dan is dat € 1.650 exclusief btw.</p>
+        <p>Vaak betaalt je werkgever mee. Veel organisaties hebben een ontwikkelbudget, en in veel cao's staat geld voor loopbaanontwikkeling. Gebruik de voorbeeldmail hieronder.</p>
       </div>
       <div class="card card--paper">
         <h3>Kwaliteit</h3>
         <p>Onze coaches zijn gecertificeerd en aangesloten bij een erkende beroepsvereniging of kwaliteitsregister, zoals Noloc, NOBCO of een vergelijkbaar register.</p>
       </div>
     </div>
+    <div class="mt-10">
+      <h3 class="mb-4">Vraag het je werkgever</h3>
+      <div class="card card--petrol">
+        <p class="whitespace-pre-wrap select-text">${EMPLOYER_EMAIL}</p>
+      </div>
+      <div class="mt-4" data-copy-employer-mail></div>
+    </div>
+    <p class="mt-6">Wat je in de gesprekken vertelt, blijft tussen jou en je coach. Je werkgever hoort alleen of het traject loopt.</p>
   </div>
 </section>
 
@@ -219,6 +274,7 @@ const HTML = `<main id="main">
             <a href="/assets/Aan_het_roer_van_je_werk.pdf" data-workbook="aan-het-roer" data-workbook-title="Aan het roer van je werk" class="btn btn-primary" style="margin-top:auto;">Download het werkboek</a>
           </div>
         </div>
+        <p class="mt-6">Liever eerst zelf ontdekken waar je sterk in bent? Doe de <a href="/inzichten/talentenscan">gratis talentenscan</a>.</p>
       </div>
     </div>
   </div>
@@ -281,11 +337,15 @@ const HTML = `<main id="main">
       </details>
       <details>
         <summary>Waar vinden de gesprekken plaats?</summary>
-        <div class="answer">In Haarlem, in Amsterdam-Zuid, online, of op een plek die voor jou goed werkt. Dat stem je gewoon af met je coach.</div>
+        <div class="answer">In Haarlem (Klein Heiligland), in Amsterdam-Zuid (IJsbaanpad) of online. Je kunt dat per gesprek afwisselen.</div>
       </details>
       <details>
-        <summary>Wat kost een traject?</summary>
-        <div class="answer">Vaak betaalt je werkgever. Vraag ernaar bij HR, veel organisaties hebben hier budget voor. Betaal je zelf, dan krijg je vooraf een heldere prijsafspraak, zodat je precies weet waar je aan toe bent.</div>
+        <summary>Wat kost een loopbaancoach?</summary>
+        <div class="answer">Een loopbaantraject voor jezelf kost vanaf € 1.650 inclusief btw. Daarvoor krijg je zes gesprekken met een vaste loopbaancoach, een talent- en drijfverenassessment en een rapportage. Voor zzp'ers is dat € 1.650 exclusief btw. Vaak betaalt je werkgever mee; vraag ernaar bij HR. Het kennismakingsgesprek is gratis.</div>
+      </details>
+      <details>
+        <summary>Is loopbaancoaching hetzelfde als therapie?</summary>
+        <div class="answer">Nee. Loopbaancoaching gaat over je werk en je loopbaan, en is gericht op keuzes en concrete stappen. Zit je thuis met klachten waardoor je niet goed meer kunt werken? Dan is je huisarts of bedrijfsarts de eerste stap.</div>
       </details>
     </div>
   </div>
@@ -323,11 +383,43 @@ const HTML = `<main id="main">
 
 `;
 
+function CopyEmployerMail() {
+  const [copied, setCopied] = useState(false);
+  const [error, setError] = useState(false);
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(EMPLOYER_EMAIL);
+      setCopied(true);
+      setError(false);
+    } catch {
+      setCopied(false);
+      setError(true);
+    }
+  };
+  return (
+    <>
+      <Button variant="ghost" className="btn btn-outline h-auto" onClick={copy}>
+        {copied ? "Gekopieerd" : "Kopieer de mail"}
+      </Button>
+      <p role="status" aria-live="polite" className={error ? "mt-3" : "sr-only"}>
+        {error ? "Kopiëren lukte niet. Selecteer de tekst en kopieer hem zelf." : copied ? "Gekopieerd" : ""}
+      </p>
+    </>
+  );
+}
+
 function Page() {
+  const content = useRef<HTMLDivElement>(null);
+  const pageContent = useMemo(() => <div ref={content} dangerouslySetInnerHTML={{ __html: HTML }} />, []);
+  const [copyTarget, setCopyTarget] = useState<HTMLElement | null>(null);
+  useEffect(() => {
+    setCopyTarget(content.current?.querySelector<HTMLElement>("[data-copy-employer-mail]") ?? null);
+  }, []);
   return (
     <>
       <SiteHeader active="coaching-voor-mij" />
-      <div dangerouslySetInnerHTML={{ __html: HTML }} />
+      {pageContent}
+      {copyTarget && createPortal(<CopyEmployerMail />, copyTarget)}
       <SiteFooter />
     </>
   );

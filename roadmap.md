@@ -11,3 +11,7 @@
 - [x] Cookiebanner, heropenbare instellingen en Consent Mode toevoegen.
 - [x] Privacyverklaring bijwerken.
 - [x] Toestemmingsregels, eerste bezoek, heropenen en foutloze site controleren.
+
+# Coaching voor mij
+- [x] Gevraagde teksten, aanbodblokken en voorbeeldmail toevoegen.
+- [x] Bedragen, kennismakingsduur, kopieerknop en FAQ-schema controleren.
