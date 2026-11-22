@@ -28,28 +28,18 @@ const data: CityLandingData = {
     image: { src: "/assets/coaching-gesprek.jpg", alt: "Loopbaangesprek bij Vizier op Scherp in Haarlem" },
   },
   recognise: {
-    eyebrow: "Twee richtingen",
-    title: "Sterker in je huidige rol, of verder als je wilt",
-    intro:
-      "Loopbaancoaching klinkt al snel als de deur uit. Vaak blijkt dat een aanpassing in je huidige werk al veel verandert: een ander perspectief, andere prioriteiten of een frissere kijk op wat je doet. Pas als dat helder is, weet je of je wilt blijven of verder wilt.",
+    eyebrow: "Herken je dit?",
+    title: "Een loopbaanvraag begint vaak klein",
+    intro: "Een gevoel dat blijft hangen of een vraag die steeds terugkomt. Met een coach in Haarlem maak je er een heldere keuze van.",
     cards: [
-      {
-        label: "Weer op je plek",
-        title: "Sterker in je huidige rol",
-        body:
-          "Weer energie en plezier, helderdere prioriteiten, prettiger samenwerken. Voor als je op de goede plek zit, maar merkt dat het schuurt of dat je vastloopt.",
-      },
-      {
-        label: "Richting en keuze",
-        title: "Een nieuwe richting",
-        body: (
-          <>
-            Twijfel ordenen en ontdekken wat bij je past. Daarna zet je een volgende stap, in je eigen tempo. Lees hoe je{" "}
-            <a href="/inzichten/richting-vinden-in-je-loopbaan">richting vindt in je loopbaan</a>.
-          </>
-        ),
-      },
+      { label: "Richting", title: "Welk werk past eigenlijk bij mij?", body: "Je weet wat je niet meer wilt. Wat je wél wilt, is nog vaag." },
+      { label: "Keuze", title: "Moet ik hier nog blijven?", body: "Je zit er al jaren goed, maar je vraagt je steeds vaker af of dit het nog is." },
+      { label: "Balans", title: "Elke dag de trein naar Amsterdam", body: "Het werk is goed, maar de reistijd gaat ten koste van alles eromheen." },
+      { label: "Overstap", title: "Na je veertigste nog iets anders?", body: "Je hebt ervaring genoeg, maar je vraagt je af of een nieuwe stap nog realistisch is." },
+      { label: "Solliciteren", title: "Solliciteren levert niets op", body: "Je stuurt brief na brief, maar een uitnodiging voor een gesprek blijft uit." },
+      { label: "Energie", title: "Je werk kost meer dan het oplevert", body: "Je doet wat er moet gebeuren, maar aan het eind van de week is er weinig van je over." },
     ],
+    cta: { text: "Herken je jezelf?", linkLabel: "Plan een gratis kennismaking →" },
   },
   location: {
     eyebrow: "In Haarlem",
@@ -76,7 +66,7 @@ const data: CityLandingData = {
     eyebrow: "Zo werkt het",
     title: "Wat je kunt verwachten",
     intro:
-      "Hoeveel gesprekken je nodig hebt, hangt af van je vraag. Gemiddeld zijn het er zes, verspreid over drie tot zes maanden. Je begint vrijblijvend en beslist pas daarna.",
+      "Een traject bestaat meestal uit zes gesprekken, verspreid over drie tot zes maanden. Betaal je zelf, dan kost het vanaf € 1.650 inclusief btw, als zzp'er € 1.650 exclusief btw. Betaalt je werkgever, dan maken we een voorstel op maat. Je begint met een gratis kennismaking en beslist pas daarna.",
     cta: { label: "Plan een kennismakingsgesprek" },
     listLabel: "In vier stappen",
     items: [
@@ -172,13 +162,13 @@ const data: CityLandingData = {
       },
       {
         q: "Wat kost een loopbaantraject?",
-        a: "Voor particulieren kost een traject vanaf € 1.650 inclusief btw: zes gesprekken, een talent- en drijfverenassessment en een rapportage. Werk je als zzp'er, dan is dat € 1.650 exclusief btw. Voor organisaties maken we een offerte. Na de gratis kennismaking krijg je een voorstel met een vaste prijs, dus je weet vooraf waar je aan toe bent.",
-        text: "Voor particulieren kost een traject vanaf € 1.650 inclusief btw: zes gesprekken, een talent- en drijfverenassessment en een rapportage. Werk je als zzp'er, dan is dat € 1.650 exclusief btw. Voor organisaties maken we een offerte. Na de gratis kennismaking krijg je een voorstel met een vaste prijs, dus je weet vooraf waar je aan toe bent.",
+        a: "Betaal je zelf, dan kost een traject vanaf € 1.650 inclusief btw: zes gesprekken, een talent- en drijfverenassessment en een rapportage. Werk je als zzp'er, dan is dat € 1.650 exclusief btw. Betaalt je werkgever, dan maken we een voorstel op maat. Na de gratis kennismaking weet je precies waar je aan toe bent.",
+        text: "Betaal je zelf, dan kost een traject vanaf € 1.650 inclusief btw: zes gesprekken, een talent- en drijfverenassessment en een rapportage. Werk je als zzp'er, dan is dat € 1.650 exclusief btw. Betaalt je werkgever, dan maken we een voorstel op maat. Na de gratis kennismaking weet je precies waar je aan toe bent.",
       },
       {
         q: "Kan mijn werkgever het traject betalen?",
-        a: "Ja, dat komt vaak voor. We zetten het voorstel dan op naam van je werkgever en denken mee over hoe je het aankaart. Ook als je werkgever betaalt, blijft de inhoud van de gesprekken tussen jou en je coach. Je werkgever hoort alleen of het traject loopt, nooit waarover het gaat.",
-        text: "Ja, dat komt vaak voor. We zetten het voorstel dan op naam van je werkgever en denken mee over hoe je het aankaart. Ook als je werkgever betaalt, blijft de inhoud van de gesprekken tussen jou en je coach. Je werkgever hoort alleen of het traject loopt, nooit waarover het gaat.",
+        a: "Ja, dat komt vaak voor. We maken dan een voorstel op maat voor je werkgever en denken mee over hoe je het aankaart. Ook als je werkgever betaalt, blijft de inhoud van de gesprekken tussen jou en je coach. Je werkgever hoort alleen of het traject loopt, nooit waarover het gaat.",
+        text: "Ja, dat komt vaak voor. We maken dan een voorstel op maat voor je werkgever en denken mee over hoe je het aankaart. Ook als je werkgever betaalt, blijft de inhoud van de gesprekken tussen jou en je coach. Je werkgever hoort alleen of het traject loopt, nooit waarover het gaat.",
       },
       {
         q: "Hoe kies ik een coach?",

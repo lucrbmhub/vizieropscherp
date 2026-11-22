@@ -22,6 +22,7 @@ export type CityLandingData = {
     title: string;
     intro: string;
     cards: Array<{ label: string; title: string; body: ReactNode }>;
+    cta?: { text: string; linkLabel: string };
   };
   location: {
     eyebrow: string;
@@ -198,6 +199,19 @@ const CSS = `
 .vos-google-blok--licht .vos-google-alle{margin-top:16px;font-size:14.5px}
 .vos-google-blok--licht .vos-google-alle a{color:var(--body-c);border-bottom:1px solid var(--line);padding-bottom:1px;transition:color .15s,border-color .15s}
 .vos-google-blok--licht .vos-google-alle a:hover{color:var(--koraal-deep);border-bottom-color:var(--koraal)}
+.city .vos-herken-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:end;margin-bottom:32px}
+.city .vos-herken .section-title{max-width:17ch}
+.city .vos-herken-intro{font-size:17.5px;color:var(--vos-petrol);max-width:44ch}
+.city .vos-herken-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;grid-auto-rows:1fr}
+.city .vos-herken-card{display:flex;flex-direction:column;min-width:0;border:0;box-shadow:none}
+.city .vos-herken-card .label{display:block;margin-bottom:12px}
+.city .vos-herken-card h3{font-size:20px;color:var(--vos-petrol);line-height:1.25;letter-spacing:0;margin-bottom:10px}
+.city .vos-herken-card p{font-size:14.5px;color:var(--body-c);margin:0}
+.city .vos-herken-cta{margin-top:28px;font-size:16px;color:var(--vos-petrol);font-weight:500}
+.city .vos-herken-cta a{color:var(--koraal);font-weight:500}
+.city .vos-herken-cta a:hover{color:var(--koraal-deep)}
+@media(max-width:860px){.city .vos-herken-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.city .vos-herken-head{grid-template-columns:minmax(0,1fr);gap:20px}.city .vos-herken-grid{grid-template-columns:minmax(0,1fr);grid-auto-rows:auto}}
 `;
 
 export default function CityLandingPage({ data }: { data: CityLandingData }) {
@@ -205,7 +219,7 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
   const slotRef = useRef<HTMLElement>(null);
   const [heroPassed, setHeroPassed] = useState(false);
   const [slotReached, setSlotReached] = useState(true);
-  const planLink = (place: "hero" | "stappen" | "slot" | "balk") =>
+  const planLink = (place: "hero" | "stappen" | "slot" | "balk" | "herken") =>
     `/kennismaken?locatie=${data.citySlug}&knop=${place}#plannen`;
 
   useEffect(() => {
@@ -262,20 +276,29 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
             </div>
           </section>
 
-          <section className="section section--linnen">
+          <section className="section section--linnen vos-herken">
             <div className="container">
-              <span className="eyebrow">{data.recognise.eyebrow}</span>
-              <h2 className="section-title" style={{ maxWidth: "22ch" }}>{data.recognise.title}</h2>
-              <p className="section-intro">{data.recognise.intro}</p>
-              <div className="two">
-                {data.recognise.cards.map((c, i) => (
-                  <div className={i === 0 ? "card card--open open-linnen" : "card card--paper"} key={c.title}>
-                    <div className="label">{c.label}</div>
+              <div className="vos-herken-head">
+                <div>
+                  <span className="eyebrow">{data.recognise.eyebrow}</span>
+                  <h2 className="section-title">{data.recognise.title}</h2>
+                </div>
+                <p className="vos-herken-intro">{data.recognise.intro}</p>
+              </div>
+              <div className="vos-herken-grid">
+                {data.recognise.cards.map((c) => (
+                  <div className="card card--paper vos-herken-card" key={c.title}>
+                    <span className="label">{c.label}</span>
                     <h3>{c.title}</h3>
                     <p>{c.body}</p>
                   </div>
                 ))}
               </div>
+              {data.recognise.cta && (
+                <p className="vos-herken-cta">
+                  {data.recognise.cta.text} <a href={planLink("herken")}>{data.recognise.cta.linkLabel}</a>
+                </p>
+              )}
             </div>
           </section>
 
