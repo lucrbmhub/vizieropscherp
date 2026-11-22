@@ -4,7 +4,7 @@ import { SITE_URL, socialImageMeta } from "@/lib/site";
 
 const TITLE = "Loopbaancoach Amsterdam, gratis kennismaken | Vizier op Scherp";
 const DESCRIPTION =
-  "Loopbaancoach in Amsterdam-Zuid of online. Loopbaanadvies en begeleiding door gecertificeerde coaches. Start met een gratis gesprek van twintig minuten.";
+  "Loopbaancoach in Amsterdam-Zuid of online. Loopbaanadvies en begeleiding door gecertificeerde coaches. Start met een gratis kennismaking.";
 const OG_DESCRIPTION =
   "Vastgelopen in je werk of toe aan een volgende stap? Persoonlijke loopbaancoaching in Amsterdam, op locatie in Amsterdam-Zuid of online.";
 const URL = `${SITE_URL}/loopbaancoach-amsterdam`;
@@ -23,7 +23,7 @@ const data: CityLandingData = {
       "Vastgelopen, toe aan iets nieuws, of biedt je werkgever een loopbaantraject aan? In Amsterdam-Zuid, vlakbij het Olympisch Stadion, of online praat je met een ervaren, gecertificeerde loopbaancoach. Samen bepaal je je volgende stap: sterker worden in je huidige rol of een andere richting kiezen.",
     primaryCta: { label: "Plan een kennismakingsgesprek" },
     secondaryCta: { label: "Bel 020 214 64 66", href: "tel:+31202146466" },
-    note: "Twintig minuten, gratis en vrijblijvend.\u00a0",
+    note: "Gratis kennismaking · Een coachtraject vaak vergoed door je werkgever",
     hrNote: { text: "Zoekt u als werkgever een coach voor een medewerker?", linkLabel: "Bekijk hoe wij met organisaties werken", href: "/voor-werkgevers" },
     image: { src: "/assets/coaching-gesprek.jpg", alt: "Loopbaangesprek bij Vizier op Scherp in Amsterdam" },
   },
@@ -111,7 +111,7 @@ const data: CityLandingData = {
     stats: [
       { num: "1.000+", label: "trajecten begeleid door ons coachnetwerk, in uiteenlopende sectoren" },
       { num: "Sinds 2016", label: "begeleiden we mensen bij hun loopbaanvragen" },
-      { num: "20 min", label: "gratis kennismaking, telefonisch of op locatie, voordat er iets vastligt" },
+      { num: "Gratis", label: "kennismaking, telefonisch of op locatie, voordat er iets vastligt" },
     ],
     quote:
       "“Al jaren was ik toe aan iets anders. Maar wat? … Ik wilde werk wat energie geeft en heb het gevonden. Er zit weer muziek in mijn werkleven.”",
@@ -166,8 +166,8 @@ const data: CityLandingData = {
       },
       {
         q: "Wat kost een loopbaantraject?",
-        a: "Na de kennismaking krijg je een voorstel met een vaste prijs voor het hele traject. Hoe hoog die is, hangt af van je vraag en het aantal gesprekken. Gemiddeld zijn dat er zes. Je weet dus vooraf waar je aan toe bent, en achteraf komen er geen kosten bij.",
-        text: "Na de kennismaking krijg je een voorstel met een vaste prijs voor het hele traject. Hoe hoog die is, hangt af van je vraag en het aantal gesprekken. Gemiddeld zijn dat er zes. Je weet dus vooraf waar je aan toe bent, en achteraf komen er geen kosten bij.",
+        a: "Voor particulieren kost een traject vanaf € 1.650 inclusief btw: zes gesprekken, een talent- en drijfverenassessment en een rapportage. Werk je als zzp'er, dan is dat € 1.650 exclusief btw. Voor organisaties maken we een offerte. Na de gratis kennismaking krijg je een voorstel met een vaste prijs, dus je weet vooraf waar je aan toe bent.",
+        text: "Voor particulieren kost een traject vanaf € 1.650 inclusief btw: zes gesprekken, een talent- en drijfverenassessment en een rapportage. Werk je als zzp'er, dan is dat € 1.650 exclusief btw. Voor organisaties maken we een offerte. Na de gratis kennismaking krijg je een voorstel met een vaste prijs, dus je weet vooraf waar je aan toe bent.",
       },
       {
         q: "Kan mijn werkgever het traject betalen?",
@@ -189,7 +189,7 @@ const data: CityLandingData = {
   cta: {
     title: "Benieuwd of het klikt?",
     text:
-      "Plan een kennismaking van twintig minuten. Daarna krijg je een voorstel: een coach die bij je past en een vaste prijs voor het hele traject.",
+      "Plan een gratis kennismaking. Daarna krijg je een voorstel: een coach die bij je past en een vaste prijs voor het hele traject.",
     button: { label: "Plan een kennismakingsgesprek" },
   },
 };

@@ -2,6 +2,8 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 
+const GOOGLE_REVIEWS_URL = "https://www.google.com/maps/search/?api=1&query=Vizier%20op%20Scherp%20Haarlem&query_place_id=ChIJefzwiBnhxUcRX8SiF1qidt4";
+
 export type CityLandingData = {
   citySlug: "haarlem" | "amsterdam";
   hero: {
@@ -185,6 +187,17 @@ const CSS = `
   .city .mobile-bar .btn{padding:13px 10px;min-width:0}
 }
 @media (prefers-reduced-motion:reduce){.city *{transition:none!important;animation:none!important}}
+.vos-google-blok--licht .vos-google{display:inline-flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.vos-google-blok--licht .vos-google-pil{display:inline-flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:12px 24px 12px 26px;box-shadow:0 1px 2px rgba(22,48,46,.08)}
+.vos-google-blok--licht .vos-google-score{font-family:var(--f-display);font-weight:500;font-size:32px;line-height:1;color:var(--petrol);letter-spacing:-0.01em}
+.vos-google-blok--licht .vos-google-sterren{display:inline-flex;gap:4px}
+.vos-google-blok--licht .vos-google-sterren svg{display:block;width:22px;height:22px;fill:#CFA24E}
+.vos-google-blok--licht .vos-google-link{font-size:16px;font-weight:500;color:var(--petrol);border-bottom:1px solid var(--koraal);padding-bottom:2px;transition:color .15s}
+.vos-google-blok--licht .vos-google:hover .vos-google-link,.vos-google-blok--licht .vos-google:focus-visible .vos-google-link{color:var(--koraal-deep)}
+.vos-google-blok--licht .vos-google:focus-visible{outline:2px solid var(--koraal);outline-offset:6px;border-radius:12px}
+.vos-google-blok--licht .vos-google-alle{margin-top:16px;font-size:14.5px}
+.vos-google-blok--licht .vos-google-alle a{color:var(--body-c);border-bottom:1px solid var(--line);padding-bottom:1px;transition:color .15s,border-color .15s}
+.vos-google-blok--licht .vos-google-alle a:hover{color:var(--koraal-deep);border-bottom-color:var(--koraal)}
 `;
 
 export default function CityLandingPage({ data }: { data: CityLandingData }) {
@@ -354,21 +367,40 @@ export default function CityLandingPage({ data }: { data: CityLandingData }) {
                   </article>
                 ))}
               </div>
-              <figure className="quote">
-                <div className="quote-rail" aria-hidden="true"><span className="top"></span><span className="bar"></span><span className="end"></span></div>
-                <div>
-                  {data.why.quotePhoto && (
-                    <div style={{ display: "flex", justifyContent: "flex-start", marginBottom: 14 }}>
-                      <span className="testimonial-avatar" style={{ display: "block", width: 72, height: 72, borderRadius: "50%", overflow: "hidden", flex: "none", background: "var(--petrol)", position: "relative" }}>
-                        <img src={data.why.quotePhoto.src} alt={data.why.quotePhoto.alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                        <span style={{ position: "absolute", right: -2, bottom: 2, width: 10, height: 10, background: "var(--goud)", transform: "rotate(45deg)", boxShadow: "0 0 0 4px var(--paper)" }}></span>
+              <div className="grid g2" style={{ gap: 48, alignItems: "center" }}>
+                <figure className="quote">
+                  <div className="quote-rail" aria-hidden="true"><span className="top"></span><span className="bar"></span><span className="end"></span></div>
+                  <div>
+                    {data.why.quotePhoto && (
+                      <div style={{ display: "flex", justifyContent: "flex-start", marginBottom: 14 }}>
+                        <span className="testimonial-avatar" style={{ display: "block", width: 72, height: 72, borderRadius: "50%", overflow: "hidden", flex: "none", background: "var(--petrol)", position: "relative" }}>
+                          <img src={data.why.quotePhoto.src} alt={data.why.quotePhoto.alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                          <span style={{ position: "absolute", right: -2, bottom: 2, width: 10, height: 10, background: "var(--goud)", transform: "rotate(45deg)", boxShadow: "0 0 0 4px var(--paper)" }}></span>
+                        </span>
+                      </div>
+                    )}
+                    <blockquote>{data.why.quote}</blockquote>
+                    <cite>{data.why.cite}</cite>
+                  </div>
+                </figure>
+                <div className="quote vos-google-blok vos-google-blok--licht">
+                  <div className="quote-rail" aria-hidden="true"><span className="top"></span><span className="bar"></span><span className="end"></span></div>
+                  <div>
+                    <a className="vos-google" href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" aria-label="Gemiddeld 5,0 van de 5 sterren. Bekijk onze reviews op Google">
+                      <span className="vos-google-pil">
+                        <span className="vos-google-score">5,0</span>
+                        <span className="vos-google-sterren" aria-hidden="true">
+                          {[0, 1, 2, 3, 4].map((i) => (
+                            <svg key={i} viewBox="0 0 24 24"><path d="M12 2.5l2.94 5.96 6.58.96-4.76 4.64 1.12 6.55L12 17.52l-5.88 3.09 1.12-6.55L2.48 9.42l6.58-.96z" /></svg>
+                          ))}
+                        </span>
                       </span>
-                    </div>
-                  )}
-                  <blockquote>{data.why.quote}</blockquote>
-                  <cite>{data.why.cite}</cite>
+                      <span className="vos-google-link">Google reviews</span>
+                    </a>
+                    <p className="vos-google-alle"><a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">Lees alle reviews op onze Google-bedrijfspagina</a></p>
+                  </div>
                 </div>
-              </figure>
+              </div>
             </div>
           </section>
 

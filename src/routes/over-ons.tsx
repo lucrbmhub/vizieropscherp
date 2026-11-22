@@ -293,7 +293,7 @@ const HTML = `<main id="main">
       <div class="facet-inner">
         <div>
           <h2>Eens kennismaken?</h2>
-          <p>Een vrijblijvend gesprek van twintig minuten, persoonlijk of online. We luisteren naar uw vraag en denken mee, ook als u nog niet precies weet wat u zoekt.</p>
+          <p>Een vrijblijvend gesprek, persoonlijk of online. We luisteren naar uw vraag en denken mee, ook als u nog niet precies weet wat u zoekt.</p>
         </div>
         <a class="btn btn-primary" href="/kennismaken">Plan een kennismakingsgesprek</a>
       </div>

@@ -18,11 +18,9 @@ test("the freelancer trajectory starts at 1650 euros excluding VAT", () => {
   assert.deepEqual(prices.find((price) => price.tax === "exclusief"), { amount: 1650, tax: "exclusief" });
 });
 
-test("the introduction on this page lasts 30 minutes", () => {
-  const heroDuration = Number(source.match(/kennismaking van (\d+) minuten/)?.[1]);
-  const ctaDuration = Number(source.match(/Het is gratis en duurt (\d+) minuten/)?.[1]);
-  assert.equal(heroDuration, 30);
-  assert.equal(ctaDuration, 30);
+test("the introduction is free and names no duration", () => {
+  assert.match(source, /Gratis kennismaking/);
+  assert.doesNotMatch(source, /kennismaking van \d+ minuten|duurt \d+ minuten/);
 });
 
 test("the personal offer includes six sessions", () => {

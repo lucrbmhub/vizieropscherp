@@ -50,7 +50,7 @@ const HTML = `<main id="main">
         <a class="btn btn-primary" href="/kennismaken">Maak vrijblijvend kennis</a>
         <a class="btn btn-outline" href="/over-ons#coaches">Bekijk eerst onze coaches</a>
       </div>
-      <p class="text-sm mt-4">Gratis kennismaking van 30 minuten · Een coachtraject vaak vergoed door je werkgever</p>
+      <p class="text-sm mt-4">Gratis kennismaking · Een coachtraject vaak vergoed door je werkgever</p>
     </div>
   </div>
 </section>
@@ -111,7 +111,7 @@ const HTML = `<main id="main">
         <p>Je dacht dat dit het zou zijn. Toch twijfel je over de richting.</p>
       </div>
     </div>
-    <p class="vos-herken-cta">Herken je jezelf? <a href="/kennismaken">Plan een gratis kennismaking van 30 minuten →</a></p>
+    <p class="vos-herken-cta">Herken je jezelf? <a href="/kennismaken">Plan een gratis kennismaking →</a></p>
   </div>
 </section>
 
@@ -234,7 +234,7 @@ const HTML = `<main id="main">
     <div class="card--open" style="padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;">
       <div style="max-width:640px;">
         <h2 style="font-size:22px;margin-bottom:8px;">Een eerste gesprek verplicht je tot niets</h2>
-        <p style="font-size:15px;">Het is gratis en duurt 30 minuten. Je vertelt wat er speelt, wij stellen een coach voor die bij je past. Daarna beslis jij.</p>
+        <p style="font-size:15px;">Het is gratis en vrijblijvend. Je vertelt wat er speelt, wij stellen een coach voor die bij je past. Daarna beslis jij.</p>
       </div>
       <a class="btn btn-outline" href="/kennismaken">Plan een vrijblijvende kennismaking</a>
     </div>

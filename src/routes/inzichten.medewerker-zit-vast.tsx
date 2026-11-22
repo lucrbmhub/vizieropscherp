@@ -230,7 +230,7 @@ const HTML = `<main id="main">
     <div class="facet-buiten">
       <div class="facet-binnen">
         <h2>Herkent u dit bij een van uw medewerkers?</h2>
-        <p>In een gesprek van twintig minuten denken we vrijblijvend met u mee: wat u ziet, wat een passende route is en hoe u het aankaart.</p>
+        <p>In een vrijblijvend gesprek denken we met u mee: wat u ziet, wat een passende route is en hoe u het aankaart.</p>
         <p class="werkgever">Veel opdrachtgevers beginnen met een losse verwijzing of een ronde proactieve loopbaangesprekken; een doorlopende jaarafspraak is daarna een logisch vervolg.</p>
         <a class="btn-primair" href="/kennismaken">Plan een vrijblijvende kennismaking</a>
       </div>

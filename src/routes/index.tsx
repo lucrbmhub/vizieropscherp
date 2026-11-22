@@ -8,7 +8,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Loopbaancoaching | Amsterdam & Haarlem | Vizier op Scherp" },
-      { name: "description", content: "Persoonlijke loopbaancoaching in Amsterdam en Haarlem. Voor mensen die richting zoeken in hun werk en voor werkgevers en HR. Gratis kennismaking van 30 minuten." },
+      { name: "description", content: "Persoonlijke loopbaancoaching in Amsterdam en Haarlem. Voor mensen die richting zoeken in hun werk en voor werkgevers en HR. Gratis kennismaking." },
       { property: "og:title", content: "Loopbaancoaching in Amsterdam & Haarlem | Vizier op Scherp" },
       { property: "og:description", content: "Persoonlijke loopbaancoaching, goed geregeld. Een klein netwerk van gecertificeerde coaches in Amsterdam en Haarlem, voor mensen en organisaties." },
       { property: "og:type", content: "website" },
@@ -113,7 +113,7 @@ const HTML = `<main id="main" class="vos-home">
           <h2>Richting vinden in je werk, met een coach die bij je past</h2>
           <p class="vos-zelf-intro">Je twijfelt over je baan, je wilt iets anders of je weet dat er meer in zit. Samen met je coach breng je dat in kaart en zet je concrete stappen. Je komt op eigen initiatief of via je werkgever.</p>
           <ul class="vos-lijst vos-lijst--check">
-            <li>Eerst een gratis kennismaking van 30 minuten met je coach</li>
+            <li>Eerst een gratis kennismaking met je coach</li>
             <li>Klikt het niet? Dan stellen we iemand anders voor</li>
             <li>Zes gesprekken, met een talent- en drijfverenassessment</li>
             <li>Vaak vergoed door je werkgever</li>
@@ -272,7 +272,7 @@ const HTML = `<main id="main" class="vos-home">
         <div class="vos-cta2-col">
           <div class="eyebrow">Voor jezelf</div>
           <h2>Kennismaken met je coach</h2>
-          <p>Een gratis gesprek van 30 minuten met de coach die bij je past. Daarna beslis je pas of je verder wilt.</p>
+          <p>Een gratis kennismaking met de coach die bij je past. Daarna beslis je pas of je verder wilt.</p>
           <a class="btn btn-primary" href="/kennismaken">Plan een gratis kennismaking</a>
         </div>
         <div class="vos-cta2-col">
