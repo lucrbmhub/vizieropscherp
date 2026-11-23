@@ -175,6 +175,7 @@ const HTML = `<main id="main">
     <h2>Hoe doorverwijzen bij ons werkt</h2>
     <p>Een verwijzing begint met een kennismaking, zonder verplichting voor de medewerker. Op basis van de intake stellen wij een coach voor die past bij de persoon en de vraag; klikt het niet, dan stellen we iemand anders voor. De inhoud van de gesprekken blijft vertrouwelijk: u ontvangt terugkoppeling op procesniveau, over aanwezigheid, voortgang in algemene zin en afronding, nooit over de inhoud. Die afspraak leggen we vooraf vast, voor beide kanten.</p>
     <p>Over de uitkomst zijn we graag vooraf eerlijk: die kan twee kanten op. Soms vindt een medewerker binnen de huidige rol nieuwe grond, met meer energie en een gezondere werkverhouding als resultaat. Soms wordt helder dat een andere stap beter past, en wordt die stap zorgvuldig gezet in plaats van gestapeld uitgesteld. Beide uitkomsten zijn in ons werk winst voor de organisatie: een medewerker die blijft omdat het weer klopt, of een vertrek zonder slepend traject. Wat verdwijnt, is de derde variant, en dat is meestal de duurste: jaren van terugkerende gesprekken zonder beweging.</p>
+    <p>Lees ook: <a href="/inzichten/loopbaangesprek-met-medewerker">het loopbaangesprek met uw medewerker</a>.</p>
 
   </div>
 </article>
