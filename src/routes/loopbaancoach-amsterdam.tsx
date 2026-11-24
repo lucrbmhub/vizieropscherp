@@ -214,7 +214,7 @@ export const Route = createFileRoute("/loopbaancoach-amsterdam")({
               description:
                 "Loopbaancoaching in Amsterdam: een klein netwerk van gecertificeerde coaches, op locatie in Amsterdam-Zuid of online.",
               url: URL,
-              image: `${SITE_URL}/assets/social-share.jpg`,
+              image: `${SITE_URL}/assets/social-share-v2.jpg`,
               telephone: "+31202146466",
               areaServed: [
                 { "@type": "City", name: "Amsterdam" },

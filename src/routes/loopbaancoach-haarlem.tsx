@@ -230,7 +230,7 @@ export const Route = createFileRoute("/loopbaancoach-haarlem")({
               description:
                 "Loopbaancoaching in Haarlem: een klein netwerk van gecertificeerde coaches, op locatie in het centrum van Haarlem of online.",
               url: URL,
-              image: `${SITE_URL}/assets/social-share.jpg`,
+              image: `${SITE_URL}/assets/social-share-v2.jpg`,
               telephone: "+31202146466",
               areaServed: [
                 { "@type": "City", name: "Haarlem" },

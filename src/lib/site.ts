@@ -1,6 +1,6 @@
 export const SITE_URL = "https://vizieropscherp.nl";
 
-export const SOCIAL_IMAGE_URL = `${SITE_URL}/assets/social-share.jpg`;
+export const SOCIAL_IMAGE_URL = `${SITE_URL}/assets/social-share-v2.jpg`;
 export const socialImageMeta = [
   { property: "og:image", content: SOCIAL_IMAGE_URL },
   { property: "og:image:secure_url", content: SOCIAL_IMAGE_URL },
